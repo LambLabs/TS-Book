@@ -1,0 +1,82 @@
+Oblicz energię sygnału okresowego $f(t)$ przedstawionego na rysunku 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$f(t)$};
+  \draw[-,red, thick] (-1.5,0.5) -- (-1.0,1.0) -- (-1.0,0.0) -- (0.0,1.0) -- (0.0,+0.0) -- (+1.0,+1.0) -- (1.0,+1.0) -- (+1.0,+0.0) -- (1.0,+0.0) -- (+2.0,+1.0) -- (+2.0,+0.0) -- (2.5,0.5);
+  \draw[-,red, dashed] (-1.5,1.0) -- (2.5,1.0);
+  %\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=10pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$2 \cdot T$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, left] {$A$};
+
+\end{tikzpicture}
+\end{figure}
+
+W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku.
+Jest to funkcja odcinkowa. W pierwszym okresie możemy ja opisać ogólnym równaniem prostej:
+
+\begin{equation}
+f(t) = a \cdot t + b
+\end{equation}
+
+ W pierwszym okresie wykres funkcji jest prostą przechodzącą przez dwa punkty: $(0,0)$ oraz $(T,A)$. Możemy wiec napisać układ równań rozwiązać go i znaleźć nie znane parametry $a$ i $b$.  
+
+\begin{align*}
+&\left\{\begin{matrix}
+0 = a\cdot 0 +b\\ 
+A = a\cdot T +b
+\end{matrix}\right. \\
+&\left\{\begin{matrix}
+0 = b\\ 
+A = a\cdot T +b
+\end{matrix}\right. \\
+&\left\{\begin{matrix}
+0 = b\\ 
+A = a\cdot T +0
+\end{matrix}\right. \\
+&\left\{\begin{matrix}
+0 = b\\ 
+\frac{A}{T} = a
+\end{matrix}\right.
+\end{align*}
+A więc funkcję przedstawioną na rysunku, w pierwszy okresie można opisać wzorem
+\begin{align*}
+f(t) = \frac{A}{T}\cdot t
+\end{align*}
+I ogólniej całą funkcję można wyrazić następującym wzorem
+\begin{align*}
+f(t) = \frac{A}{T}\cdot \left(t-k\cdot T\right) \wedge k \in C
+\end{align*}
+Energię sygnału okresowego wyznaczamy z wzoru
+
+
+\begin{equation}
+E=\int_{T}^{}\left|f(t)\right|^2 \cdot dt
+\end{equation}
+
+Podstawiamy do wzoru wzór naszej funkcji
+
+%\begin{equation}
+%\begin{aligned}
+\begin{align*}
+E&=\int_{T}^{}\left|f(t)\right|^2 \cdot dt\\
+ &=\int_{0}^{T}\left|\frac{A}{T}\cdot t \right|^2 \cdot dt\\ 
+ &=\int_{0}^{T}\left(\frac{A}{T}\cdot t \right)^2 \cdot dt\\ 
+ &=\int_{0}^{T}\frac{A^2}{T^2}\cdot t^2 \cdot dt\\ 
+ &=\frac{A^2}{T^2}\cdot \int_{0}^{T} t^2 \cdot dt\\ 
+ &=\frac{A^2}{T^2}\cdot \left(\left. \frac{1}{3}\cdot t^3 \right|_{0}^{T}\right)\\ 
+ &=\frac{A^2}{T^2}\cdot \left(\frac{1}{3}\cdot T^3  - \frac{1}{3}\cdot 0^3 \right)\\
+ &=\frac{A^2}{T^2}\cdot \left(\frac{1}{3}\cdot T^3  - 0 \right)\\
+ &=\frac{A^2}{T^2}\cdot \frac{1}{3}\cdot T^3\\
+ &=\frac{A^2}{3}\cdot T\\
+\end{align*}
+%\end{aligned}
+%\end{equation}
+
+Energia sygnału wynosi $\frac{A^2}{3}\cdot T$
+\newpage

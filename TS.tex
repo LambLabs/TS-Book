@@ -1,0 +1,176 @@
+\documentclass[a4paper,11pt]{LambBook} %6 inch 800x600
+
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{graphicx} 
+\usepackage{array}
+\usepackage{float} %Wymuszenie wstawienia obrazka w miejscu wstawienia
+%\usepackage[europeancurrents, europeanvoltages, europeanresistors, americaninductors, europeanports]{circuitikz} %Do rysowania obwodów elektrycznych
+\usepackage{tikz}
+\selectlanguage{polish}
+
+\allowdisplaybreaks
+%https://www.codecogs.com/latex/eqneditor.php
+
+\def\booktitle{Teoria Sygnałów w zadaniach}
+\def\bookauthors{Tomasz Grajek, Jakub Stankowski, Krzysztof Wegner}
+
+\usepackage[pdftex,
+        unicode=true, % Aby działały polskie literki
+        colorlinks=true,
+        urlcolor=rltblue,       % \href{...}{...} external (URL)
+        filecolor=rltgreen,     % \href{...} local file
+        linkcolor=rltred,       % \ref{...} and \pageref{...}
+        citecolor=blue,
+        pdfstartview={FitV},
+        pdftitle={\booktitle},
+        pdfauthor={\bookauthors},
+        pdfsubject={Teoria Sygnałów},
+        pdfkeywords={Teoria Sygnałów, Zadania},
+        pdfproducer={pdfLaTeX},
+        %pdfadjustspacing=1,
+        pagebackref=false, %activate back references inside bibliography. Must be specified as part
+        bookmarksopen=true]{hyperref}
+
+\setcounter{secnumdepth}{2}
+%====================================================
+\begin{document}
+%====================================================
+\definecolor{rltred}{rgb}{0.75,0,0} %Definicja kolorów
+\definecolor{rltgreen}{rgb}{0,0.5,0}
+\definecolor{rltblue}{rgb}{0,0,0.75}
+%====================================================
+\title{\booktitle}
+\author{\bookauthors}
+%====================================================
+%Strona Tytułowa
+\label{page:titlepage}
+\makebooktitle
+%====================================================
+%Druga Strona z ISBN'em
+\thispagestyle{empty}
+\begin{flushleft}
+\textsc{Politechnika Poznańska}\\%
+Wydział Elektroniki i Telekomunikacji\\%
+Katedra Telekomunikacji Multimedialnej i~Mikroelektroniki\\[1em]
+
+pl. M. Skłodowskiej-Curie 5\\
+60-965 Poznań\\[1em]
+
+www.et.put.poznan.pl\\
+www.multimedia.edu.pl
+\end{flushleft}
+
+\vfill
+
+\begin{flushleft}
+Copyright © Krzysztof Wegner, 2019\\
+Wszelkie prawa zastrzeżone\\
+%\ISBN\\
+Wydrukowano w Polsce\\[1em]
+
+Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskiego Funduszu Społecznego.\\
+\end{flushleft}
+\clearpage
+%====================================================
+%\input{01_opor_zastepczy/_opor_zastepczy.tex}
+%\input{02_zrodla/_zrodla.tex}
+%\input{03_prawa_kirchhoffa/_prawa_kirchhoffa.tex}
+%\input{04_metoda_wezlowa/_metoda_wezlowa.tex}
+%\input{05_metoda_oczkowa/_metoda_oczkowa.tex}
+%\input{06_thevenin_norton/_thevenin_norton.tex}
+%\input{07_moc/_moc.tex}
+%\input{08_superpozycja/_metoda_superpozycji.tex}
+%\input{08_uklady_nieliniowe/_uklady_nieliniowe.tex}
+%\input{09_impedancja_zastepcza/_impedancja_zastepcza.tex}
+%\input{10_metoda_oczkowa_wezlowa_AC/_metoda_oczkowa_wezlowa_AC.tex}
+%\input{11_moc_AC/_moc_AC.tex}
+
+
+%Fundamental concepts and measures
+%	Signals and their models
+%	Signal classes and examples
+%		Continuous, discrete, analogue, quantized and digital signals
+%		Periodic signals
+%		Sinusoidal signals: real and complex
+%		Non-periodic signals
+%	Basic signal metrics
+%		Amplitude
+%		Mean value
+\input{zad001.tex}
+\input{zad002.tex}
+%		Energy of a signal
+\input{zad003.tex}
+\input{zad004.tex}
+\input{zad005.tex}
+%		Power of s signal
+%		Effective value of a signal (RMS)
+%	Energy signals vs power signals
+%	Orthogonality. Orthogonal signals and vectors
+%	Signal components
+%		DC and AC signal components
+%		Odd and even signal components
+%Analysis of periodic signals using orthogonal series
+%	Hilbert space
+%	Orthogonal bases
+%	Orthogonal series of functions
+%	Trigonometric Fourier series
+%	The influence of signal symmetries on the coefficients of the trigonometric Fourier series
+%	Complex exponential Fourier series
+%	The harmonic spectrum of a real signal
+%	The relationship of the complex exponential and the trigonometric Fourier series
+%	Linearity of Fourier series
+%	The influence of signal symmetries on the coefficients of complex exponential Fourier series
+%	The effect of signal shift in time on the complex exponential Fourier series
+%	Spectrum of a product of two signals
+%	Computing the power of a signal – the Parseval theorem
+%Analysis of non-periodic signals. Fourier Transformation and Transform
+%	An intuitive introduction
+%	Definition
+%	Fourier Transform vs Laplace Transform
+%	The Magnitude Spectrum and Phase Spectrum
+%	Symmetries of the Fourier Transform for real-valued signals
+%	Special case of Fourier Transform for symmetrical signals
+%	Theorems describing the properties of Fourier Transformation
+%		Linearity
+%		Shift theorem – shifting in time domain
+%		Shifting in frequency domain (also known as modulation theorem)
+%		Scaling theorem (also called the similarity theorem)
+%		Time-frequency duality (also known as the symmetry theorem)
+%		Derivative theorem (differentiation in time domain)
+%		Integration theorem
+%	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
+%	Generalization of the Fourier transformation for infinite energy signals
+%	Fourier transform of a periodic signal
+%	Calculating the power of a signal from its Fourier transform. The Parseval's theorem for power signals
+%Processing of signals by linear and time invariant (LTI) systems
+%	Introduction to LTI systems. Fundamental properties
+%	Impulse response of an LTI system
+%	Impulse response of a causal system
+%	The response of an LTI system to arbitrary input
+%	Properties of linear convolution
+%	Frequency response
+%	Determining the frequency response of an electronic circuit
+%Filters
+%	Sampling. Discrete-time signals
+%	Introduction to discrete signals
+%	Spectrum of a sampled signal
+%	Spectral efect of sampling a continuous signal
+%	Reconstruction of the continuous signal from its samples
+%	Non-periodic and periodic discrete-time signals
+%	Fourier transforms of discrete-time signals
+%	Processing of discrete-time signals
+%	Frequency response of discrete-time LTI systems
+
+%====================================================
+\end{document}
+
+%Tom pierwszy zadania
+%Tom drugi rozwiązania
+
+%TODO

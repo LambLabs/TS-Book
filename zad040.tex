@@ -1,0 +1,137 @@
+Oblicz energię sygnału okresowego $f(t)=A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right )$ przedstawionego na rysunku 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$f(t)$};
+  \draw[-,red, dashed] (-4.0,+1.4) -- (+4.0,+1.4);
+  \draw[-,red, dashed] (-4.0,-0.6) -- (+4.0,-0.6);
+  \draw[-,red, dashed] (-4.0,+0.4) -- (+4.0,+0.4);
+  \draw[-,red, dashed] (+1.0,+0.0) -- (+1.0,+0.4);
+  \draw[-,red, dashed] (+2.0,+0.0) -- (+2.0,+0.4);
+  %\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=10pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,+1.4-0.1)--(+0.1,+1.4+0.1) node[midway, left] {$A+B$};
+  \draw[-] (-0.1,+0.4-0.1)--(+0.1,+0.4+0.1) node[midway, left] {$A$};
+  \draw[-] (-0.1,-0.6-0.1)--(+0.1,-0.6+0.1) node[midway, left] {$A-B$};
+  
+  \draw[scale=1.0,domain=-4.0:4.0,smooth,variable=\x,red,thick] plot ({\x},{0.4+ sin(\x*180.0/3.141592*2*3.141592/2.0)});
+
+\end{tikzpicture}
+\end{figure}
+
+Energię sygnału okresowego wyznaczamy z wzoru
+
+\begin{equation}
+E=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(t)\right|^2 \cdot dt
+\end{equation}
+
+Podstawiamy do wzoru wzór naszej funkcji
+
+%\begin{equation}
+%\begin{aligned}
+\begin{align*}
+\bar{f} &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}f(t) \cdot dt\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}} \mathbf{1}(t)\cdot e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \int_{-\frac{\tau}{2}}^{0} 0 \cdot e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt +
+ \int_{0}^{\frac{\tau}{2}} 1 \cdot e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt \right)\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \int_{-\frac{\tau}{2}}^{0} 0 \cdot dt +
+ \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt \right)\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ 0 +
+ \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt \right)\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt \right)\\
+ &=\begin{Bmatrix*}[l]
+ u=sin(\frac{2\pi}{T}\cdot t) & dv = e^{-a \cdot t}\cdot dt\\ 
+ du=\frac{T}{2\pi} \cdot cos(\frac{2\pi}{T}\cdot t)\cdot dt & v=-\frac{1}{a}\cdot e^{-a\cdot t}
+ \end{Bmatrix*}\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \left. -\frac{1}{a}\cdot e^{-a\cdot t} \cdot sin \left(\frac{2\pi}{T}\cdot t\right) \right|_{0}^{\frac{\tau}{2}}
+ -\int_{0}^{\frac{\tau}{2}} -\frac{1}{a}\cdot e^{-a\cdot t} \cdot \frac{T}{2\pi} \cdot cos\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \right)\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \left( -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a}\cdot e^{-a\cdot 0} \cdot sin \left(\frac{2\pi}{T}\cdot 0\right) \right)\right.\\
+ &\left.+\frac{1}{a} \cdot \frac{T}{2\pi} \cdot \int_{0}^{\frac{\tau}{2}} \cdot e^{-a\cdot t} \cdot cos\left(\frac{2\pi}{T}\cdot t\right)\cdot dt \right)\\
+ &=\begin{Bmatrix*}[l]
+ u=cos(\frac{2\pi}{T}\cdot t) & dv = e^{-a \cdot t}\cdot dt\\ 
+ du=-\frac{T}{2\pi} \cdot sin(\frac{2\pi}{T}\cdot t)\cdot dt & v=-\frac{1}{a}\cdot e^{-a\cdot t}
+ \end{Bmatrix*}\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \left( -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a}\cdot e^{-a\cdot 0} \cdot sin \left(\frac{2\pi}{T}\cdot 0\right) \right)\right.\\
+ &\left.+\frac{1}{a} \cdot \frac{T}{2\pi} \cdot 
+ \left(
+ \left. -\frac{1}{a}\cdot e^{-a\cdot t} \cdot cos \left(\frac{2\pi}{T}\cdot t\right) \right|_{0}^{\frac{\tau}{2}}
+ -\int_{0}^{\frac{\tau}{2}} -\frac{1}{a}\cdot e^{-a\cdot t} \cdot \frac{T}{2\pi} \cdot sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \right)
+ \right)\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \left( -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a}\cdot 1 \cdot 0 \right)\right.\\
+ &\left.+\frac{1}{a} \cdot \frac{T}{2\pi} \cdot 
+ \left(
+ \left( -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a}\cdot e^{-a\cdot 0} \cdot cos \left(\frac{2\pi}{T}\cdot 0\right) \right)
+ \right.\right. \\
+ &\left.\left.+\frac{1}{a}\cdot \frac{T}{2\pi} \cdot \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \right)
+ \right)\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ \left( -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + 0 \right)\right.\\
+ &\left.+\frac{1}{a} \cdot \frac{T}{2\pi} \cdot 
+ \left(
+ \left( -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a}\cdot 1 \cdot 1 \right)
+ \right.\right. \\
+ &\left.\left.+\frac{1}{a}\cdot \frac{T}{2\pi} \cdot \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \right)
+ \right)\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(
+ -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right)\right.\\
+ &\left.-\frac{1}{a^2} \cdot \frac{T}{2\pi} \cdot 
+ e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a^2}\cdot \frac{T}{2\pi}
+ \right. \\
+ &\left.+\frac{1}{a^2}\cdot \frac{T^2}{4\pi^2} \cdot \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \right)\\
+ &=\begin{Bmatrix*}[l]
+ -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right)\\
+ -\frac{1}{a^2} \cdot \frac{T}{2\pi} \cdot 
+ e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a^2}\cdot \frac{T}{2\pi}
+  \\
+ +\frac{1}{a^2}\cdot \frac{T^2}{4\pi^2} \cdot \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt = \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \end{Bmatrix*}\\
+ &=\begin{Bmatrix*}[l]
+ -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right)
+ -\frac{1}{a^2} \cdot \frac{T}{2\pi} \cdot 
+ e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a^2}\cdot \frac{T}{2\pi}
+  \\
+ = \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt - \frac{1}{a^2}\cdot \frac{T^2}{4\pi^2} \cdot \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \end{Bmatrix*}\\
+ &=\begin{Bmatrix*}[l]
+ -\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right)
+ -\frac{1}{a^2} \cdot \frac{T}{2\pi} \cdot 
+ e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a^2}\cdot \frac{T}{2\pi}
+ \\
+ = \left(1 - \frac{1}{a^2}\cdot \frac{T^2}{4\pi^2}\right) \cdot \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \end{Bmatrix*}\\
+ &=\begin{Bmatrix*}[l]
+ \frac{-\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right)
+ -\frac{1}{a^2} \cdot \frac{T}{2\pi} \cdot 
+ e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a^2}\cdot \frac{T}{2\pi}}
+ {\left(1 - \frac{1}{a^2}\cdot \frac{T^2}{4\pi^2}\right)}
+ \\
+ = \int_{0}^{\frac{\tau}{2}} e^{-a\cdot t} \cdot  sin\left(\frac{2\pi}{T}\cdot t\right)\cdot dt
+ \end{Bmatrix*}\\
+ &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\left(\frac{-\frac{1}{a}\cdot e^{-a\cdot \frac{\tau}{2}} \cdot sin \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right)
+   -\frac{1}{a^2} \cdot \frac{T}{2\pi} \cdot 
+   e^{-a\cdot \frac{\tau}{2}} \cdot cos \left(\frac{2\pi}{T}\cdot \frac{\tau}{2}\right) + \frac{1}{a^2}\cdot \frac{T}{2\pi}}
+ {\left(1 - \frac{1}{a^2}\cdot \frac{T^2}{4\pi^2}\right)} \right)\\
+ &=0
+\end{align*}
+%\end{aligned}
+%\end{equation}
+
+Średnia wartość sygnału wynosi $0$
+\newpage
