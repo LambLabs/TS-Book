@@ -79,86 +79,54 @@ Wartość współczynnika $F_0$ wynosi $\frac{A}{2}$
 Współczynnik $F_k$ wyznaczamy ze wzoru
 
 \begin{equation}
-F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{ k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
+F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
 \end{equation}
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\int_{0}^{T} \frac{A}{T} \cdot t \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2\cdot A}{T^2}\int_{0}^{T} t \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
+\begin{align*}
+F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
+&=\frac{1}{T}\int_{0}^{T} \frac{A}{T} \cdot t \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
+&=\frac{1\cdot A}{T^2}\int_{0}^{T} t \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
 &=\begin{Bmatrix*}[l]
-u&=t & dv&=cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \\
-du&=dt & v&=\frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right)
+u&=t & dv&=e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt \\
+du&=dt & v&=\frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
 \end{Bmatrix*}\\
-&=\frac{2\cdot A}{T^2}\cdot \left( \left. t \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} - \int_{0}^{T}  \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left( \left( T \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) - 0 \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot 0\right) \right) + \left.  \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left(\frac{T^2}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) + \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot \left( cos\left( k \cdot \frac{2\pi}{T} \cdot T\right) - cos\left( k \cdot \frac{2\pi}{T} \cdot 0\right) \right) \right)\\
-&=2\cdot A\cdot \left(\frac{1}{k\cdot 2\pi}\cdot sin\left( k \cdot 2\pi\right) + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( cos\left( k \cdot 2\pi\right) - cos\left( 0\right) \right) \right)\\
-&=2\cdot A\cdot \left(\frac{1}{k\cdot 2\pi}\cdot 0 + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( 1 - 1 \right) \right)\\
-&=2\cdot A\cdot \left(0 + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)\\
-&=2\cdot A\cdot 0\\
-&=0
-\end{aligned}
-\end{equation}
+&=\frac{A}{T^2}\cdot \left( \left. t \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{T} - \int_{0}^{T}  \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt \right)\\
+&=\frac{A}{T^2}\cdot \left( \left( T \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} - 0 \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0} \right) + \left.  \frac{T^2}{\left(-\jmath \cdot k\cdot 2\pi\right)^2}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{T} \right)\\
+&=\frac{A}{T^2}\cdot \left(\frac{T^2}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} + \frac{T^2}{- \left(k\cdot 2\pi\right)^2}\cdot \left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} - e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0} \right) \right)\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(e^{ -\jmath \cdot k \cdot 2\pi} -e^{ 0} \right) \right)\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( 1 - 1 \right) \right)\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - 0\right)\\
+&=\frac{A}{-\jmath \cdot k\cdot 2\pi}\\
+&=\jmath \cdot \frac{A}{k\cdot 2\pi}\\
+\end{align*}
 
-Wartość współczynnika $a_k$ wynosi $0$
+Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2\pi}$
 
-
-Współczynnik $b_k$ wyznaczamy ze wzoru
-
-\begin{equation}
-b_k=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt
-\end{equation}
-
-Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
+Ostatecznie współczynniki zespolonego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
 
 \begin{equation}
 \begin{aligned}
-b_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\int_{0}^{T}\frac{A}{T}\cdot t \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2\cdot A}{T^2}\int_{0}^{T} t \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\begin{Bmatrix*}[l]
-u&=t & dv&=sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \\
-du&=dt & v&=-\frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right)
-\end{Bmatrix*}\\
-&=\frac{2\cdot A}{T^2}\cdot \left(- \left.t \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right)\right|_{0}^{T} + \int_{0}^{T} \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left(- \left(T \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot T\right) - 0 \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot 0\right)\right) + \left. \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left(- \left(\frac{T^2}{k\cdot 2\pi}\cdot cos\left( k \cdot 2\pi\right) \right) + \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot \left(sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) - sin\left( k \cdot \frac{2\pi}{T} \cdot 0\right)\right) \right)\\
-&=2\cdot A \cdot \left(- \left(\frac{1}{k\cdot 2\pi}\cdot 1 \right) + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(sin\left( k \cdot 2\pi\right) - sin\left( 0\right)\right) \right)\\
-&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi} + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(0 - 0\right) \right)\\
-&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi} + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)\\
-&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi}\right)\\
-&=-\frac{2 \cdot A}{k\cdot 2\pi}\\
-&=-\frac{A}{k\cdot \pi}\\
+F_0&=\frac{A}{2}\\
+F_k&=\jmath \cdot \frac{A}{k\cdot 2\pi}\\
 \end{aligned}
 \end{equation}
 
-Wartość współczynnika $b_k$ wynosi $-\frac{A}{k\cdot \pi}$
-
-Ostatecznie współczynniki trygonometrycznego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
-
-\begin{equation}
-\begin{aligned}
-a_0&=\frac{A}{2}\\
-a_k&=0\\
-b_k&=-\frac{A}{k\cdot \pi}\\
-\end{aligned}
-\end{equation}
-
-Możemy wyznaczyć kilka wartości współczynników $a_k$ i $b_k$
+Możemy wyznaczyć kilka wartości współczynników $F_k$
 
 \begin{table}[H]
   \centering  
-  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
     \hline 
-    $k$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\ 
+    $k$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$\\ 
     \hline 
-    $a_k$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\ 
+    $F_k$ & $-\jmath\cdot \frac{A}{10\cdot \pi}$ & $-\jmath\cdot \frac{A}{8\cdot \pi}$ & $-\jmath\cdot \frac{A}{6\cdot \pi}$ & $-\jmath\cdot \frac{A}{4\cdot \pi}$ & $-\jmath\cdot \frac{A}{2\cdot \pi}$ & $\frac{A}{2}$ & $\jmath\cdot \frac{A}{2\cdot \pi}$ & $\jmath\cdot \frac{A}{4\cdot \pi}$ & $\jmath\cdot \frac{A}{6\cdot \pi}$ & $\jmath\cdot \frac{A}{8\cdot \pi}$ & $\jmath\cdot \frac{A}{10\cdot \pi}$\\ 
     \hline 
-    $b_k$ & $-\frac{A}{\pi}$ & $-\frac{A}{2\cdot \pi}$ & $-\frac{A}{3\cdot \pi}$ & $-\frac{A}{4\cdot \pi}$ & $-\frac{A}{5\cdot \pi}$ & $-\frac{A}{6\cdot \pi}$\\ 
+    $\left|F_k\right|$ & $\frac{A}{10\cdot \pi}$ & $\frac{A}{8\cdot \pi}$ & $\frac{A}{6\cdot \pi}$ & $\frac{A}{4\cdot \pi}$ & $\frac{A}{2\cdot \pi}$ & $\frac{A}{2}$ & $\frac{A}{2\cdot \pi}$ & $\frac{A}{4\cdot \pi}$ & $\frac{A}{6\cdot \pi}$ & $\frac{A}{8\cdot \pi}$ & $\frac{A}{10\cdot \pi}$\\ 
+    \hline 
+    $Arg\left(F_k\right)$ & $-\frac{\pi}{2}$ & $-\frac{\pi}{2}$ & $-\frac{\pi}{2}$ & $-\frac{\pi}{2}$ & $-\frac{\pi}{2}$ & $0$ & $\frac{\pi}{2}$ & $\frac{\pi}{2}$ & $\frac{\pi}{2}$ & $\frac{\pi}{2}$ & $\frac{\pi}{2}$\\ 
     \hline 
   \end{tabular} 
 \end{table}
@@ -167,11 +135,11 @@ Podstawiając to wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako
 
 \begin{equation}
 \begin{aligned}
-f(t) &= a_0 + \sum_{k=1}^{\infty} \left[ a_k \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) + b_k \cdot sin\left(k \cdot \frac{2\pi}{T} \cdot t\right)\right]
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
 \end{aligned}
 \end{equation}
 
-W przypadku sumowania do $k_{max}=1$ otrzymujemy 
+W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy 
 
 \begin{figure}[H]
   \centering
@@ -190,7 +158,7 @@ W przypadku sumowania do $k_{max}=1$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania do $k_{max}=2$ otrzymujemy 
+W przypadku sumowania od $k_{min}=-2$ do $k_{max}=2$ otrzymujemy 
 
 \begin{figure}[H]
   \centering
@@ -209,7 +177,7 @@ W przypadku sumowania do $k_{max}=2$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania do $k_{max}=3$ otrzymujemy 
+W przypadku sumowania od $k_{min}=-3$ do $k_{max}=3$ otrzymujemy 
 
 \begin{figure}[H]
   \centering
@@ -228,7 +196,7 @@ W przypadku sumowania do $k_{max}=3$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania do $k_{max}=7$ otrzymujemy 
+W przypadku sumowania od $k_{min}=-7$ do $k_{max}=7$ otrzymujemy 
 
 \begin{figure}[H]
   \centering
@@ -247,7 +215,7 @@ W przypadku sumowania do $k_{max}=7$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania do $k_{max}=11$ otrzymujemy 
+W przypadku sumowania od $k_{min}=-11$ do $k_{max}=11$ otrzymujemy 
 
 \begin{figure}[H]
   \centering
@@ -266,6 +234,6 @@ W przypadku sumowania do $k_{max}=11$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W granicy sumowania do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.
+W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.
 
 \newpage
