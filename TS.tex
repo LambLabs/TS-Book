@@ -12,6 +12,8 @@
 \usepackage{float} %Wymuszenie wstawienia obrazka w miejscu wstawienia
 %\usepackage[europeancurrents, europeanvoltages, europeanresistors, americaninductors, europeanports]{circuitikz} %Do rysowania obwodów elektrycznych
 \usepackage{tikz}
+\usepackage{ifthen}
+
 \selectlanguage{polish}
 
 \allowdisplaybreaks
@@ -37,7 +39,16 @@
         pagebackref=false, %activate back references inside bibliography. Must be specified as part
         bookmarksopen=true]{hyperref}
 
+\def\debugbook{0}
+\newcommand{\setdebug}{\def\debugbook{1}}
+
+\newcommand{\inputTask}[1]
+{
+  \ifthenelse{\equal{debugbook}{0}}{\input{#1}}{}
+}
 \setcounter{secnumdepth}{2}
+
+\setdebug
 %====================================================
 \begin{document}
 %====================================================
@@ -102,14 +113,15 @@ Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskie
 %	Basic signal metrics
 %		Amplitude
 %		Mean value
-\input{zadKW001.tex}
-\input{zadKW002.tex}
-\input{zadKW007.tex}
+\inputTask{zadKW001.tex}
+\inputTask{zadKW002.tex}
+\inputTask{zadKW007.tex}
 %		Energy of a signal
-\input{zadKW003.tex}
-\input{zadKW004.tex}
-\input{zadKW005.tex}
-\input{zadKW006.tex}
+\inputTask{zadKW003.tex}
+\inputTask{zadKW004.tex}
+\inputTask{zadKW005.tex}
+\inputTask{zadKW006.tex}
+\input{zadKW016.tex}
 %		Power of s signal
 %		Effective value of a signal (RMS)
 %	Energy signals vs power signals
@@ -122,16 +134,16 @@ Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskie
 %	Orthogonal bases
 %	Orthogonal series of functions
 %	Trigonometric Fourier series
-\input{zadKW008.tex}
-\input{zadKW009.tex}
-\input{zadKW010.tex}
-\input{zadKW011.tex}
+\inputTask{zadKW008.tex}
+\inputTask{zadKW009.tex}
+\inputTask{zadKW010.tex}
+\inputTask{zadKW011.tex}
 %	The influence of signal symmetries on the coefficients of the trigonometric Fourier series
 %	Complex exponential Fourier series
-\input{zadKW012.tex}
-\input{zadKW013.tex}
-\input{zadKW014.tex}
-\input{zadKW015.tex}
+\inputTask{zadKW012.tex}
+\inputTask{zadKW013.tex}
+\inputTask{zadKW014.tex}
+\inputTask{zadKW015.tex}
 %	The harmonic spectrum of a real signal
 %	The relationship of the complex exponential and the trigonometric Fourier series
 %	Linearity of Fourier series
