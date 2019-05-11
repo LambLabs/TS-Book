@@ -113,6 +113,23 @@
 %\numberwithin{myschematcounter}{section}%
 
 %====================================================
+%\def\debugbook{0}
+\newcommand{\setdebug}{\def\bookcompilation{Debug}}
+\newcommand{\setrelease}{\def\bookcompilation{Release}}
+%Wyswietlanie wylko jednego zadania w trybie debugbook
+\newcommand{\inputTask}[2][Release] 
+{
+%  \ifthenelse{\equal{#1}{Release}}{\input{#2}}{}
+  \ifthenelse{\equal{#1}{\bookcompilation}}{\input{#2}}{}
+}
+%====================================================
+%Nowe  środowisko dla zadań
+\newcounter{tasknumber}[section]
+\newenvironment{task}[1][]{\refstepcounter{tasknumber}\par\medskip
+  \noindent \textbf{Zadanie~\thetasknumber. #1} \rmfamily}{\newpage}%\medskip
+
+%\newpage
+
 %\raggedbottom
 %\setlength{\topskip}{1\topskip \@plus 5\p@}
 %\doublehyphendemerits=10000       % No consecutive line hyphens.

@@ -39,16 +39,10 @@
         pagebackref=false, %activate back references inside bibliography. Must be specified as part
         bookmarksopen=true]{hyperref}
 
-\def\debugbook{0}
-\newcommand{\setdebug}{\def\debugbook{1}}
-
-\newcommand{\inputTask}[1]
-{
-  \ifthenelse{\equal{debugbook}{0}}{\input{#1}}{}
-}
 \setcounter{secnumdepth}{2}
 
-\setdebug
+%\setdebug
+\setrelease
 %====================================================
 \begin{document}
 %====================================================
@@ -154,7 +148,7 @@ Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskie
 %Analysis of non-periodic signals. Fourier Transformation and Transform
 %	An intuitive introduction
 %	Definition
-\input{zadTG001.tex}
+\inputTask[Debug]{zadTG001.tex}
 %	Fourier Transform vs Laplace Transform
 %	The Magnitude Spectrum and Phase Spectrum
 %	Symmetries of the Fourier Transform for real-valued signals
