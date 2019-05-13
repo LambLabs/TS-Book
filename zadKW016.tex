@@ -1,0 +1,46 @@
+\begin{task}
+Oblicz wartość energii okresowego sygnału $f(t)$ przedstawionego na rysunku 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-,red, thick] (-2.5,+0.0) -- (-2.0,+0.0) -- (-2.0,+1.0) -- (-1.4,+1.0) -- (-1.4,+0.0)--(+0.0,+0.0) -- (+0.0,+1.0) -- (+0.6,+1.0) -- (+0.6,+0.0) -- (+2.0,+0.0) -- (+2.0,+1.0) -- (2.6,1.0) -- (2.6,0.0) -- (3.5,0.0);
+  %\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=10pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (-1.4-0.1,-0.1)--(-1.4+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{2\cdot T}{3}$};
+  \draw[-] (+0.6-0.1,-0.1)--(+0.6+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{3}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+\end{tikzpicture}
+\end{figure}
+
+Zaczynamy od zapisania wzoru funkcji przedstawionej na rysunku
+
+\begin{equation}
+f(x)=\begin{cases}A & t \in \left (  0+k \cdot T; \frac{T}{3}+k \cdot T \right ) \\0 & t \in \left ( \frac{T}{3}+k \cdot T; T +k \cdot T\right )\end{cases} \wedge k \in C 
+\end{equation}
+
+Energię sygnału nieokresowego wyznaczamy z wzoru
+\begin{equation}
+E=\int_{T}\left|f(t)\right|^2 \cdot dt
+\end{equation}
+
+Podstawiamy do wzoru na enargie wzór naszej funkcji dla pierwszego okresu $k=0$
+%\begin{equation}
+%\begin{aligned}
+\begin{align*}
+E&=\int_{T}\left|f(t)\right|^2 \cdot dt \\
+&=\int_{0}^{\frac{T}{3}}\left| A \right|^2 \cdot dt + \int_{\frac{T}{3}}^{T}\left| 0 \right|^2 \cdot dt\\
+&=\int_{0}^{\frac{T}{3}} A ^2 \cdot dt + \int_{\frac{T}{3}}^{T}0 \cdot dt\\
+&=A ^2 \cdot \int_{0}^{\frac{T}{3}} dt + 0\\
+&=A ^2 \cdot \left. t \right|_{0}^{\frac{T}{3}}\\
+&=A ^2 \cdot \left( \frac{T}{3} - 0 \right)\\
+&=A ^2 \cdot \frac{T}{3}\\
+\end{align*}
+%\end{aligned}
+%\end{equation}
+
+Energia sygnału wynosi $A ^2 \cdot \frac{T}{3}$
+\end{task}
