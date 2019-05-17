@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku 
+Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku oraz narysuj jego widmo amplitudowe i fazowe
 
 \begin{figure}[H]
 \centering
@@ -50,5 +50,96 @@ sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}
 \end{equation}
 
 Transformata sygnału $f(t)=A\cdot\Pi(\frac{t}{\tau})$ to $F(\jmath \omega)=A \cdot \tau \cdot Sa\left(\omega \cdot \frac{\tau}{2}\right)$
+
+
+Narysujmy widmo sygnału $f(t)=A\cdot\Pi(\frac{t}{\tau})$ czyli:
+\begin{equation}
+F(\jmath \omega)=A \cdot \tau \cdot Sa\left(\omega \cdot \frac{\tau}{2}\right)
+\end{equation}
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+4.0) node[above] {$F(\jmath \cdot \omega)$};
+
+	\draw[scale=1.0,domain=-4.0:4.0,samples=2000,smooth,variable=\x,red,thick] plot ({\x},{3*sinc(3.141592*\x)});
+
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{2 \pi}{\tau}$};
+	\draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{4 \pi}{\tau}$};
+	\draw[-] (-3.0-0.1,-0.1)--(-3.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{6 \pi}{\tau}$};
+	\draw[-] (-4.0-0.1,-0.1)--(-4.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{8 \pi}{\tau}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2 \pi}{\tau}$};
+	\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{4 \pi}{\tau}$};
+	\draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{6 \pi}{\tau}$};
+	\draw[-] (+4.0-0.1,-0.1)--(+4.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{8 \pi}{\tau}$};
+	\draw[-] (-0.1,+3.0-0.1)--(+0.1,+3.0+0.1) node[midway, left] {$A \cdot \tau$};
+
+	\end{tikzpicture}
+\end{figure}
+
+
+
+Widmo amplitudowe obliczamy ze wzoru:
+\begin{equation}
+M(\omega)=\left | F(j \cdot \omega) \right |
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+4.0) node[above] {$M(\omega)$};
+	
+	\draw[scale=1.0,domain=-4.0:4.0,samples=2000,smooth,variable=\x,red,thick] plot ({\x},{abs(3*sinc(3.141592*\x))});
+	
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{2 \pi}{\tau}$};
+	\draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{4 \pi}{\tau}$};
+	\draw[-] (-3.0-0.1,-0.1)--(-3.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{6 \pi}{\tau}$};
+	\draw[-] (-4.0-0.1,-0.1)--(-4.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{8 \pi}{\tau}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2 \pi}{\tau}$};
+	\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{4 \pi}{\tau}$};
+	\draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{6 \pi}{\tau}$};
+	\draw[-] (+4.0-0.1,-0.1)--(+4.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{8 \pi}{\tau}$};
+	\draw[-] (-0.1,+3.0-0.1)--(+0.1,+3.0+0.1) node[midway, left] {$A \cdot \tau$};
+		
+	\end{tikzpicture}
+\end{figure}
+
+Widmo fazowe obliczamy ze wzoru:
+\begin{equation}
+\Phi ( \omega )=arctg(\frac{Im\{F(\jmath \cdot \omega )\}}{Re\{F(\jmath \cdot \omega )\}})
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$\Phi(\omega)$};
+	
+	\draw[-,red] (-4.0,-1.0) -- (-3.0,-1.0);
+	\draw[-,red] (-3.0,0.0) -- (-2.0,0.0);
+	\draw[-,red] (-2.0,1.0) -- (-1.0,1.0);
+	\draw[-,red] (-1.0,0.0) -- (1.0,0.0);
+	\draw[-,red] (1.0,-1.0) -- (2.0,-1.0);
+	\draw[-,red] (2.0,0.0) -- (3.0,0.0);
+	\draw[-,red] (3.0,1.0) -- (4.0,1.0);
+	
+	  
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{2 \pi}{\tau}$};
+	\draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{4 \pi}{\tau}$};
+	\draw[-] (-3.0-0.1,-0.1)--(-3.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{6 \pi}{\tau}$};
+	\draw[-] (-4.0-0.1,-0.1)--(-4.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{8 \pi}{\tau}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2 \pi}{\tau}$};
+	\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{4 \pi}{\tau}$};
+	\draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{6 \pi}{\tau}$};
+	\draw[-] (+4.0-0.1,-0.1)--(+4.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{8 \pi}{\tau}$};
+	\draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, above left] {$\pi$};
+	\draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, above left] {-$\pi$};
+	
+	\end{tikzpicture}
+\end{figure}
+
 \end{task}
 
