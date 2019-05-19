@@ -18,6 +18,7 @@
 
 \allowdisplaybreaks
 %https://www.codecogs.com/latex/eqneditor.php
+%http://www.sciweavers.org/free-online-latex-equation-editor
 
 \def\booktitle{Teoria Sygnałów w zadaniach}
 \def\bookauthors{Tomasz Grajek, Krzysztof Wegner}
@@ -40,6 +41,21 @@
         bookmarksopen=true]{hyperref}
 
 \setcounter{secnumdepth}{2}
+
+%sinc
+\usetikzlibrary{math}
+\tikzmath{
+	function sinc(\x) {
+		if  abs(\x) < .001 then { % (|x| < .001) ~ (x = 0)
+			return 1;
+		} else {
+			return sin(\x r)/\x;
+		};
+	};
+}
+
+
+
 
 \setdebug
 %\setrelease
@@ -151,6 +167,7 @@ Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskie
 %	An intuitive introduction
 %	Definition
 \inputTask{zadTG001.tex}
+\inputTask[Debug]{zadTG002.tex}
 %	Fourier Transform vs Laplace Transform
 %	The Magnitude Spectrum and Phase Spectrum
 %	Symmetries of the Fourier Transform for real-valued signals
