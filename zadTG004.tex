@@ -1,0 +1,98 @@
+\begin{task}
+Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-2.0) -- (+0.0,+2.0) node[above] {$f(t)$};
+
+  \draw[scale=1.0,domain=-2.5:0.0,smooth,variable=\x,red,thick] plot ({\x},{0});
+  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(-\x)*sin(\x*96*3.141592)});
+  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick,dashed] plot ({\x},{1.5*exp(-\x)});
+  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick,dashed] plot ({\x},{-1.5*exp(-\x)});  
+\end{tikzpicture}
+\end{figure}
+
+\begin{equation}
+f(t) = \left\{\begin{matrix*}[l]
+0 & dla & t \in \left(-\infty; 0\right)\\
+e^{-a\cdot t} \cdot sin(\omega_{0} \cdot t) & dla & t \in \left(0; \infty\right)
+\end{matrix*}\right.
+\end{equation}
+
+Transformatę Fouriera obliczamy ze wzoru:
+
+\begin{equation}
+F(\jmath \omega )=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
+\end{equation}
+
+Podstawiamy do wzoru na transformatę wzór naszej funkcji
+
+\begin{align*}
+F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=\int_{-\infty}^{0} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
++\int_{0}^{\infty} e^{-a \cdot t} \cdot sin(\omega_{0} \cdot t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=\begin{Bmatrix*}[l]%12
+sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}\\
+\end{Bmatrix*}\\
+&=\int_{-\infty}^{0} 0 \cdot dt +\int_{0}^{\infty} e^{-a \cdot t} \cdot \left(\frac{e^{\jmath \cdot \omega_{0} \cdot t} - e^{-\jmath \cdot  \omega_{0} \cdot t}}{2 \cdot \jmath} \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=0 + \lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}\left(
+\int_{0}^{\tau} e^{-a\cdot t}\cdot e^{\jmath \cdot \omega_{0} \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt
+-\int_{0}^{\tau} e^{-a\cdot t}\cdot e^{-\jmath \cdot \omega_{0} \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt \right)\\
+&=\lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}\left(
+\int_{0}^{\tau} e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t} \cdot dt
+-\int_{0}^{\tau} e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t} \cdot dt \right)\\
+&=\begin{Bmatrix}
+z&=&(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t&w&=&(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t\\
+dz&=&(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot dt&dw&=&(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot dt\\
+dt&=&\frac{1}{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot dz&dt&=&\frac{1}{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot dw\\
+\end{Bmatrix}\\
+&=\lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}
+\int_{0}^{\tau} e^{z} \cdot \frac{dz}{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}
+-\lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}
+\int_{0}^{\tau} e^{w} \cdot \frac{dw}{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\int_{0}^{\tau} e^{z} \cdot dz
+-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\int_{0}^{\tau} e^{w} \cdot dw\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\left. e^{z}\right|_{0}^{\tau}
+-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\left. e^{w}\right|_{0}^{\tau}\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\left. e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t}\right|_{0}^{\tau}\\
+&-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\left. e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t}\right|_{0}^{\tau}\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\left( e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 0} \right)\\
+&-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
+\left( e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 0} \right)\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
+\left( e^{-a \cdot \tau} \cdot e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau} \right)-\lim_{\tau \rightarrow \infty }1\right)\\
+&-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
+\left( e^{-a \cdot \tau} \cdot e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau} \right)-\lim_{\tau \rightarrow \infty }1\right)\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
+( e^{-a \cdot \tau})\cdot \lim_{\tau \rightarrow \infty } e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
+&-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
+( e^{-a \cdot \tau})\cdot \lim_{\tau \rightarrow \infty } e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty } e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
+&-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty } e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
+&=\frac{-1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}+\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}\\
+&=\frac{-(2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega))+2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}\\
+&=\frac{2 \cdot \jmath \cdot a + 2 \cdot \jmath^{2} \cdot \omega_{0} + 2 \cdot \jmath^{2} \cdot \omega - 2 \cdot \jmath \cdot a + 2 \cdot \jmath^{2} \cdot \omega_{0} - 2 \cdot \jmath^{2} \cdot \omega}
+{4 \cdot \jmath^{2} \cdot 
+	(a^{2}+ a \cdot \jmath \cdot \omega_{0}+ a \cdot \jmath \cdot \omega
+-a \cdot \jmath \cdot \omega_{0}- \jmath^{2} \cdot \omega_{0}^{2}- \jmath^{2} \cdot \omega_{0} \cdot \omega
++a \cdot \jmath \cdot \omega+ \jmath^{2} \cdot \omega_{0} \cdot \omega + \jmath^{2} \cdot \omega^{2})}\\
+&=\frac{4 \cdot \jmath^{2} \cdot \omega_{0}}
+{4 \cdot \jmath^{2} \cdot (a^{2} + 2 \cdot a \cdot \jmath \cdot \omega - \jmath^{2} \cdot \omega_{0}^{2} + \jmath^{2} \cdot \omega^{2})}\\
+&=\frac{\omega_{0}}{a^{2} + 2 \cdot a \cdot \jmath \cdot \omega + \omega_{0}^{2} - \omega^{2}}\\
+&=\frac{\omega_{0}}{\omega_{0}^{2} + (a^{2} + 2 \cdot a \cdot \jmath \cdot \omega - \omega^{2})}\\
+&=\frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}}\\
+\end{align*}
+
+Transformata sygnału $f(t)$ to $F(\jmath \omega)=\frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}}\\$
+
+\end{task}
