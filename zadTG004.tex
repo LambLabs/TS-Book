@@ -5,13 +5,22 @@ Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku
 \centering
 \begin{tikzpicture}
   %\draw (0,0) circle (1in);
-  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (-3.0,+0.0) -- (+7.0,+0.0) node[right] {$t$};
   \draw[->] (+0.0,-2.0) -- (+0.0,+2.0) node[above] {$f(t)$};
 
   \draw[scale=1.0,domain=-2.5:0.0,smooth,variable=\x,red,thick] plot ({\x},{0});
-  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(-\x)*sin(\x*96*3.141592)});
-  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick,dashed] plot ({\x},{1.5*exp(-\x)});
-  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick,dashed] plot ({\x},{-1.5*exp(-\x)});  
+  \draw[scale=1.0,domain=0.0:6.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(-0.5*\x)*sin(\x*180)});%96%3.141592
+  \draw[scale=1.0,domain=0.0:6.0,smooth,variable=\x,red,thick,dashed] plot ({\x},{1.5*exp(-0.5*\x)});
+  \draw[scale=1.0,domain=0.0:6.0,smooth,variable=\x,red,thick,dashed] plot ({\x},{-1.5*exp(-0.5*\x)});
+  
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{\pi}{\omega_0}$};  
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2\cdot \pi}{\omega_0}$};  
+  \draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{3\cdot \pi}{\omega_0}$};  
+  
+  \draw[-] (+0.0-0.1,1.5-0.1)--(+0.0+0.1,1.5+0.1) node[midway, left, outer sep=5pt] {$A$}; 
+  
+  \draw[-] (+0.0-0.1,-1.5-0.1)--(+0.0+0.1,-1.5+0.1) node[midway, left, outer sep=5pt] {$-A$}; 
+  
 \end{tikzpicture}
 \end{figure}
 
@@ -94,5 +103,86 @@ dt&=&\frac{1}{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot dz&dt&=
 \end{align*}
 
 Transformata sygnału $f(t)$ to $F(\jmath \omega)=\frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}}\\$
+
+Widmo amplitudowe obliczamy ze wzoru:
+\begin{align*}
+M(\omega)&=\left| F(j \omega) \right|\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}} \right|\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega + \left(\jmath \cdot \omega\right)^{2}}\right|\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega - \omega^{2}}\right|\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega }\right|\\
+&=\begin{Bmatrix}
+\left|\frac{z_1}{z_2}\right| = \frac{\left|z_1\right|}{\left|z_2\right|}
+\end{Bmatrix}\\
+&=\frac{\left|\omega_{0}\right|}{\left|\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega \right|}\\
+&=\begin{Bmatrix}
+\left|a+\jmath \cdot b\right| = \sqrt{a^2+b^2}
+\end{Bmatrix}\\
+&=\frac{\omega_{0}}{\sqrt{\left(\omega_{0}^{2}- \omega^{2} + a^2 \right)^2+ \left( 2\cdot a \cdot \omega \right)^2}}\\
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+4.0) node[above] {$M(\omega)$};
+  
+  \draw[scale=1.0,domain=-4.0:4.0,samples=2000,smooth,variable=\x,red,thick] plot ({\x},{4*2/sqrt((2^2-(\x)^2+(0.6)^2)^2+(2*0.6*\x)^2)});
+  
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-\omega_{0}$};
+  \draw[-] (+2 .0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\omega_{0}$};
+  %\draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-2 \cdot a$};
+  %\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$2 \cdot a$};
+  %\draw[-] (-0.1,+3.0-0.1)--(+0.1,+3.0+0.1) node[midway, left] {$\frac{A}{a}$};
+  \pgfmathsetlengthmacro{\radius}{4*2/sqrt((0.6)^4+4*(0.6)^2*2^2)*1cm}
+  \draw[-] (-0.1,\radius-0.1)--(+0.1,\radius+0.1) node[midway, left] {$\frac{\omega_{0}}{\sqrt{a^4 + 4\cdot a^2 \omega_0^2}}$};
+  %\draw[-] (-0.1,+3.0/2.2360-0.1)--(+0.1,+3.0/2.2360+0.1) node[midway, left] {$\frac{A}{\sqrt{5}\cdot a}$};
+  \draw[-,dashed] (-2.0,\radius)--(+2.0,\radius);
+  %\draw[-,dashed] (-1.0,+0.0)--(-1.0,+3.0/1.4142);
+  %\draw[-,dashed] (+1.0,+0.0)--(+1.0,+3.0/1.4142);
+  %\draw[-,dashed] (-2.0,+3.0/2.2360)--(+2.0,+3.0/2.2360);
+  %\draw[-,dashed] (-2.0,+0.0)--(-2.0,+3.0/2.2360);
+  %\draw[-,dashed] (+2.0,+0.0)--(+2.0,+3.0/2.2360);
+  
+  \draw[-,dashed] (+2.0,+0.0)--(+2.0,\radius);
+  \draw[-,dashed] (-2.0,+0.0)--(-2.0,\radius);
+  \end{tikzpicture}
+\end{figure}
+
+Widmo fazowe obliczamy ze wzoru:
+\begin{align*}
+\Phi ( \omega )&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}} \right)\\
+&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega + \left(\jmath \cdot \omega\right)^{2}}\right)\\
+&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega - \omega^{2}}\right)\\
+&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega }\right)\\
+&=\begin{Bmatrix}
+arg\left(\frac{z_1}{z_2}\right) = arg\left(z_1\right) -arg\left(z_2\right)
+\end{Bmatrix}\\
+&=arg\left( \omega_{0}\right) - arg\left(\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega \right)\\
+&=\begin{Bmatrix}
+arg\left(a + \jmath \cdot b\right) = arctg(\frac{b}{a})\\
+\end{Bmatrix}\\
+&=arctg\left(\frac{0}{\omega_0}\right) - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
+&=arctg\left(0\right) - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
+&=0 - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
+&=- arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$\Phi(\omega)$};
+  
+  \draw[scale=1.0,domain=-4.0:4.0,samples=2000,smooth,variable=\x,red,thick] plot ({\x},{-atan(\x*2*0.6/(2^2-(\x)^2+(0.6)^2))/90});
+  
+  
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-\omega_0$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\omega_0$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, above left] {$\pi$};
+  \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, above left] {-$\pi$};
+  
+  \end{tikzpicture}
+\end{figure}
 
 \end{task}
