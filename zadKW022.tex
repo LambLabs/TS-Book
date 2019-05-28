@@ -1,0 +1,303 @@
+\begin{task}
+Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku za pomocą twierdzeń.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-,red, thick] (-3.5,+0.0) -- (-1.0,+0.0);
+  \draw[-,red, thick] (+1.0,+0.0) -- (+3.5,+0.0);
+  \draw[-,red, thick] (-1.0,+0.0) -- (+1.0,+1.0);
+  \draw[-,red, thick] (+1.0,+0.0) -- (+1.0,+1.0);
+  
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_0$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$t_0$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, above left] {$A$};
+\end{tikzpicture}
+\end{figure}
+
+W pierwszej kolejności trzeba wyznaczyć jawną postać równań opisujących funkcję $f(t)$.
+
+
+W tym celu wyznaczamy równanie prostej na odcinku $(-t_{0}, t_0)$ 
+
+Ogólne równanie prostej to:
+
+\begin{equation}
+f(t) = m \cdot t + b
+\end{equation}
+
+Dla rozważanego zakresu wartości $t$ wykres funkcji jest prostą przechodzącą przez dwa punkty: $(-t_{0},0)$ oraz $(t_{0},A)$. Możemy więc napisać układ równań, rozwiązać go i wyznaczyć parametry prostej $m$ i $b$.
+
+\begin{align*}
+&\left\{\begin{matrix*}[l]
+0 = m\cdot (-t_{0}) +b\\ 
+A = m\cdot t_0 +b
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+-b = m\cdot (-t_{0})\\ 
+A = m\cdot t_0 +b
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+\frac{b}{t_{0}} = m\\ 
+A = \frac{b}{t_{0}} \cdot t_0 +b
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+\frac{b}{t_{0}} = m\\ 
+A =b +b
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+\frac{b}{t_{0}} = m\\ 
+A =2\cdot b
+\end{matrix*}\right.\\
+&\left\{\begin{matrix*}[l]
+\frac{b}{t_{0}} = m\\ 
+\frac{A}{2} = b
+\end{matrix*}\right.\\
+&\left\{\begin{matrix*}[l]
+\frac{A}{2\cdot t_{0}} = m\\ 
+\frac{A}{2} = b
+\end{matrix*}\right.\\
+\end{align*}
+Równianie prostej dla $t$ z zakresu  $(-t_{0},t_0)$ to:
+\begin{align*}
+f(t) = \frac{A}{2\cdot t_{0}}\cdot t + \frac{A}{2}
+\end{align*}
+
+Podsumowując, sygnal $f(t)$ możemy opisać jako:
+
+\begin{equation}
+f(t)=\begin{cases}
+0 & t \in \left( -\infty; -t_0 \right ) \\
+\frac{A}{2\cdot t_{0}}\cdot t + \frac{A}{2} & t \in \left( -t_0; t_0 \right ) \\
+0 & t \in \left( t_0; \infty \right )
+\end{cases} 
+\end{equation}
+
+W pierwszej kolejności wyznaczamy pochodna sygnału $f(t)$
+
+\begin{equation}
+g(t)=f'(t)=\begin{cases}
+0 & t \in \left( -\infty; -t_0 \right ) \\
+\frac{A}{2 \cdot t_0} & t \in \left( -t_0; t_0 \right ) \\
+0 & t \in \left( t_0; \infty \right )
+\end{cases} - A \cdot \delta(t-t_0)
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$g(t)$};
+  \draw[-,red, thick] (-3.5,+0.0) -- (-1.0,+0.0);
+  \draw[-,red, thick] (-1.0,+0.0) -- (-1.0,+1.0);
+  \draw[-,red, thick] (-1.0,+1.0) -- (+1.0,+1.0);
+  \draw[-,red, thick] (+1.0,+1.0) -- (+1.0,+0.0);
+  \draw[-,red, thick] (+1.0,+0.0) -- (+3.5,+0.0);
+  \draw[->,red, thick] (+1.0,+0.0) -- (+1.0,-1.0);
+  
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_0$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below right, outer sep=5pt] {$t_0$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, above left] {$\frac{A}{2\cdot t_0}$};
+  \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, left] {$-A$};
+  \end{tikzpicture}
+\end{figure}
+
+Funkcja $g(t)$ składa się z dwóch sygnałów $g_1(t)$ i $g_2(t)$
+
+\begin{equation}
+g(t)=g_1(t)+g_2(t)
+\end{equation}
+
+\begin{equation}
+g_1(t)=\begin{cases}
+0 & t \in \left( -\infty; -t_0 \right ) \\
+\frac{A}{2 \cdot t_0} & t \in \left( -t_0; t_0 \right ) \\
+0 & t \in \left( t_0; \infty \right )
+\end{cases}
+\end{equation}
+
+\begin{equation}
+g_2(t)= - A \cdot \delta(t-t_0)
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$g_1(t)$};
+  \draw[-,red, thick] (-3.5,+0.0) -- (-1.0,+0.0);
+  \draw[-,red, thick] (-1.0,+0.0) -- (-1.0,+1.0);
+  \draw[-,red, thick] (-1.0,+1.0) -- (+1.0,+1.0);
+  \draw[-,red, thick] (+1.0,+1.0) -- (+1.0,+0.0);
+  \draw[-,red, thick] (+1.0,+0.0) -- (+3.5,+0.0);
+  
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_0$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$t_0$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, above left] {$\frac{A}{2\cdot t_0}$};
+  \end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$g_2(t)$};
+  \draw[-,red, thick] (-3.5,+0.0) -- (+3.5,+0.0);
+  \draw[->,red, thick] (+1.0,+0.0) -- (+1.0,-1.0);
+  
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_0$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, above, outer sep=5pt] {$t_0$};
+  \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, left] {$-A$};
+  \end{tikzpicture}
+\end{figure}
+
+Wyznaczenie transformaty sygnału $g_2(t)$ złożonego z delty diracka jest znacznie prostsze.
+
+\begin{equation}
+G_2(\jmath \omega )=\int_{-\infty }^{\infty}g_2(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
+\end{equation}
+
+Podstawiamy do wzoru na transformatę wzór naszej funkcji
+
+\begin{align*}
+G_2(\jmath \omega )&=\int_{-\infty }^{\infty}g_2(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=\int_{-\infty }^{\infty}\left( -A \cdot \delta(t-t_0) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=-A \cdot \int_{-\infty }^{\infty} \delta(t-t_0) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=\begin{Bmatrix}
+\SamplingPropertyOfDelta
+\end{Bmatrix}\\
+&= -A \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
+\end{align*}
+
+Transformata sygnału $g_2(t)$ to $G_2(\jmath \omega)=-A \cdot e^{-\jmath \cdot \omega \cdot t_0}$
+
+Funkcja $g_1(t)$ jest jeszcze złożona tak wiec wyznaczamy pochodną raz jeszcze 
+
+\begin{equation}
+h(t)=g_1'(t)=\begin{cases}
+0 & t \in \left( -\infty; -t_0 \right ) \\
+0 & t \in \left( -t_0; t_0 \right ) \\
+0 & t \in \left( t_0; \infty \right )
+\end{cases} + \frac{A}{2\cdot t_0} \delta(t+t_0) - \frac{A}{2\cdot t_0} \delta(t-t_0)
+\end{equation}
+
+czyli po prostu
+
+\begin{equation}
+h(t)=g_1'(t)= \frac{A}{2\cdot t_0} \delta(t+t_0) - \frac{A}{2\cdot t_0} \delta(t-t_0)
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$h(t)$};
+  \draw[-,red, thick] (-3.5,+0.0) -- (+3.5,+0.0);
+  \draw[->,red, thick] (-1.0,+0.0) -- (-1.0,+1.0);
+  \draw[->,red, thick] (+1.0,+0.0) -- (+1.0,-1.0);
+  
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_0$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, above, outer sep=5pt] {$t_0$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, left] {$\frac{A}{2\cdot t_0}$};
+  \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, left] {$-\frac{A}{2\cdot t_0}$};
+  \end{tikzpicture}
+\end{figure}
+
+Wyznaczanie transformaty sygnału $h(t)$ złożonego z delt diracka jest znacznie prostsze. 
+
+\begin{equation}
+H(\jmath \omega )=\int_{-\infty }^{\infty}h(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
+\end{equation}
+
+Podstawiamy do wzoru na transformatę wzór naszej funkcji
+
+\begin{align*}
+H(\jmath \omega )&=\int_{-\infty }^{\infty}h(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=\int_{-\infty }^{\infty}\left( \frac{A}{2\cdot t_0} \cdot \delta(t+t_0) - \frac{A}{2\cdot t_0} \cdot \delta(t-t_0) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+&=\int_{-\infty }^{\infty}\left( \frac{A}{2\cdot t_0} \cdot \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t} - \frac{A}{2\cdot t_0} \cdot \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \right) \cdot dt\\
+&=\int_{-\infty }^{\infty} \frac{A}{2\cdot t_0} \cdot \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt - \int_{-\infty }^{\infty} \frac{A}{2\cdot t_0} \cdot \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt\\
+&= \frac{A}{2\cdot t_0} \cdot \int_{-\infty }^{\infty} \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt - \frac{A}{2\cdot t_0} \cdot \int_{-\infty }^{\infty}  \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt\\
+&=\begin{Bmatrix}
+\SamplingPropertyOfDelta
+\end{Bmatrix}\\
+&= \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot (-t_0)} - \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
+&= \frac{A}{2\cdot t_0} \cdot e^{\jmath \cdot \omega \cdot t_0} - \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
+&= \frac{A}{2\cdot t_0} \cdot \left(e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}\right)\\
+&= \frac{A}{2\cdot t_0} \cdot \left(e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}\right) \cdot \frac{\jmath}{\jmath}\\
+&= \frac{A}{t_0} \cdot \jmath \cdot \frac{e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}}{2\cdot \jmath}\\
+&=\begin{Bmatrix}
+\EulerSin
+\end{Bmatrix}\\
+&= \frac{A}{t_0} \cdot \jmath \cdot sin\left( \omega \cdot t_0\right)\\
+&= \jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right)\\
+\end{align*}
+
+Transformata sygnału $h(t)$ to $H(\jmath \omega)=\jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right)$
+\\
+
+Następnie możemy wykorzystać twierdzenie o całkowaniu aby wyznaczyć transformatę sygnału $g_1(t)$ na podstawie transformaty sygnału $h(t)=g_1'(t)$
+\begin{align*}
+\IntegralTeorem{h}{H}{g_1}{G_1}
+\end{align*}
+
+Podstawiając obliczona wcześniej transformatę $H(\jmath \omega)$ sygnału $h(t)$ otrzymujemy transformatę $G_1(\jmath \omega)$ sygnału $g_1(t)$
+
+\begin{align*}
+G_1(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot H(\jmath \omega) + \pi \cdot \delta(0) \cdot H(0)\\
+&=\frac{1}{\jmath \cdot \omega} \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right) + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( 0 \cdot t_0\right)\\
+&=\frac{1}{\omega} \cdot \frac{A}{t_0}\cdot sin\left( \omega \cdot t_0\right) + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( 0\right)\\
+&= A \cdot \frac{sin\left( \omega \cdot t_0\right)}{\omega \cdot t_0} + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot 0\\
+&= A \cdot \frac{sin\left( \omega \cdot t_0\right)}{\omega \cdot t_0} + 0\\
+&=\begin{Bmatrix}
+\SaDef
+\end{Bmatrix}\\
+&=A \cdot Sa\left( \omega \cdot t_0\right)\\
+\end{align*}
+
+Ostatecznie transformata sygnału $g_1(t)$ jest równa $G_1(\jmath \omega)=A \cdot Sa\left( \omega \cdot t_0\right)$.
+
+Korzystając z jednorodności transformaty Fouriera 
+
+\begin{align*}
+\HomogeneousTeorem{g}{G}
+\end{align*}
+
+można wyznaczyć transformatę Fouriera $G(\jmath \omega)$ funkcji $g(t)$
+
+\begin{align*}
+G(\jmath \omega) &= G_1(\jmath \omega)+G_2(\jmath \omega)\\
+&= A \cdot Sa\left( \omega \cdot t_0\right) -A \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
+&= A \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right)\\
+\end{align*}
+
+Znając transformatę $G(\jmath \omega)$ i korzystając z twierdzenia o całkowaniu można wyznaczyć transformatę $F(\jmath \omega)$ funkcji $f(t)$
+
+\begin{align*}
+\IntegralTeorem{g}{G}{f}{F}
+\end{align*}
+ 
+ Podstawiając otrzymujemy
+ 
+\begin{align*}
+F(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(0) \cdot G(0)\\
+&=\frac{1}{\jmath \cdot \omega} \cdot A \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( Sa\left( 0 \cdot t_0\right) - e^{-\jmath \cdot 0 \cdot t_0} \right)\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( Sa\left( 0 \right) - e^{0} \right)\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( 1 - 1 \right)\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot 0\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + 0\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right)\\
+\end{align*}
+
+
+Ostatecznie transformata sygnału $f(t)$ jest równa $F(\jmath \omega)=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right)$.
+
+
+\end{task}
+

@@ -1,0 +1,148 @@
+\begin{task}
+Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku wykorzystując twierdzenia opisujące własciwości transformacji Fouriera.
+Wykorzystaj informację o tym, że $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+	\draw[-,red, thick] (-3.5,+0.0) -- (-1.0,+0.0) -- (0.0,+1.0) -- (1.0,+0.0) -- (3.0,0.0);
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_{0}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$t_{0}$};
+	\draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, above left] {$A$};
+\end{tikzpicture}
+\end{figure}
+
+W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku.
+Wykorzystując sygnały elementarne możemy napisać:
+\begin{equation}
+f(t) = A \cdot \Lambda(\frac{t}{t_{0}})
+\end{equation}
+
+Wyznaczmy pochodną sygnału $f(t)$, czyli sygnał $g(t)= \frac{\partial}{\partial t}f(t)$.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$g(t)$};
+	\draw[-,red, thick] (-3.5,+0.0) -- (-1.0,+0.0) -- (-1.0,+1.0) -- (0.0,+1.0) -- (0.0,-1.0) -- (1.0,-1.0) -- (1.0,0.0) -- (3.0,0.0);
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_{0}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$t_{0}$};
+	\draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, above left] {$\frac{A}{t_{0}}$};
+	\draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, below left] {$-\frac{A}{t_{0}}$};
+	\end{tikzpicture}
+\end{figure}
+
+Sygnał $g(t)$ można opisać, wykorzystując sygnały elementarne:
+
+\begin{equation}
+g(t) = \frac{A}{t_{0}} \cdot \Pi(\frac{t-(-\frac{t_{0}}{2})}{t_{0}})-\frac{A}{t_{0}} \cdot \Pi(\frac{t-\frac{t_{0}}{2}}{t_{0}})
+\end{equation}
+
+Można sprawdzić, że całkując sygnał $g(t)$ otrzymamy sygnał $f(t)$, czyli:
+
+\begin{equation}
+f(t) = \int_{-\infty}^{t} g(x) \cdot dx
+\end{equation}
+
+Skoro tak jest, to transformatę sygnału $f(t)$ mozna wyznaczyć z twierdzenia o całkowaniu sygnału, w tym przypadku całkować będziemy sygnał $g(t)$:
+
+\begin{equation}
+F(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)
+\end{equation}
+
+Z powyzszego równania widać, że musimy znać $G(\jmath \omega)$, czyli transformatę sygnału $g(t)$:
+
+\begin{equation}
+g(t) = \frac{A}{t_{0}} \cdot \Pi(\frac{t-(-\frac{t_{0}}{2})}{t_{0}})-\frac{A}{t_{0}} \cdot \Pi(\frac{t-\frac{t_{0}}{2}}{t_{0}})
+\end{equation}
+
+Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych prostokątów, czyli:
+
+\begin{equation}
+g(t) = g_{1}(t) - g_{2}(t)
+\end{equation}
+gdzie:
+\begin{align*}
+g_{1}(t) = \frac{A}{t_{0}} \cdot \Pi(\frac{t-(-\frac{t_{0}}{2})}{t_{0}})\\
+g_{2}(t) = \frac{A}{t_{0}} \cdot \Pi(\frac{t-\frac{t_{0}}{2}}{t_{0}})
+\end{align*}
+
+Wyznaczmy transformtę sygnału $g_{1}(t)$, czyli $G_{1}(\jmath \omega)$.
+
+Z tablic matematycznych wiemy, że:
+$\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.
+
+\begin{align*}
+\Pi(t) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right)\\
+\Pi(\frac{t}{t_{0}}) \xrightarrow{\mathcal F} & \frac{1}{\left|\frac{1}{t_{0}}\right|} \cdot Sa\left(\frac{ \frac{\omega}{ \frac{1}{t_{0}} }}{2}\right)\\
+\Pi(\frac{t}{t_{0}}) \xrightarrow{\mathcal F} & t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\Pi(\frac{t-(-\frac{t_{0}}{2})}{t_{0}}) \xrightarrow{\mathcal F} & e^{-\jmath \cdot \omega \cdot (-\frac{t_{0}}{2})} \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\Pi(\frac{t-(-\frac{t_{0}}{2})}{t_{0}}) \xrightarrow{\mathcal F} & e^{\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\frac{A}{t_{0}} \cdot \Pi(\frac{t-(-\frac{t_{0}}{2})}{t_{0}}) \xrightarrow{\mathcal F} & \frac{A}{t_{0}} \cdot e^{\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\frac{A}{t_{0}} \cdot \Pi(\frac{t-(-\frac{t_{0}}{2})}{t_{0}}) \xrightarrow{\mathcal F} & A \cdot e^{\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)
+\end{align*}
+
+Transformata sygnału $g_{1}(t)$ to:
+\begin{equation}
+G_{1}(\jmath \omega) = \mathcal F\{g_{1}(t)\} = A \cdot e^{\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)
+\end{equation}
+
+Teraz wyznaczmy transformtę sygnału $g_{2}(t)$, czyli $G_{2}(\jmath \omega)$.
+
+\begin{align*}
+\Pi(t) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right)\\
+\Pi(\frac{t}{t_{0}}) \xrightarrow{\mathcal F} & \frac{1}{\left|\frac{1}{t_{0}}\right|} \cdot Sa\left(\frac{ \frac{\omega}{ \frac{1}{t_{0}} }}{2}\right)\\
+\Pi(\frac{t}{t_{0}}) \xrightarrow{\mathcal F} & t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\Pi(\frac{t-(\frac{t_{0}}{2})}{t_{0}}) \xrightarrow{\mathcal F} & e^{-\jmath \cdot \omega \cdot (\frac{t_{0}}{2})} \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\Pi(\frac{t-\frac{t_{0}}{2}}{t_{0}}) \xrightarrow{\mathcal F} & e^{-\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\frac{A}{t_{0}} \cdot \Pi(\frac{t-\frac{t_{0}}{2}}{t_{0}}) \xrightarrow{\mathcal F} & \frac{A}{t_{0}} \cdot e^{-\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\frac{A}{t_{0}} \cdot \Pi(\frac{t-\frac{t_{0}}{2}}{t_{0}}) \xrightarrow{\mathcal F} & A \cdot e^{-\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)
+\end{align*}
+
+Transformata sygnału $g_{2}(t)$ to:
+\begin{equation}
+G_{2}(\jmath \omega) = \mathcal F\{g_{2}(t)\} = A \cdot e^{-\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)
+\end{equation}
+
+Czyli transformata sygnału $g(t)$ to:
+\begin{align*}
+G(\jmath \omega) = \mathcal F\{g(t)\} &= A \cdot e^{\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) - A \cdot  e^{-\jmath \cdot \omega \cdot \frac{t_{0}}{2}} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+G(\jmath \omega) &= A \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) \cdot \left(e^{\jmath \cdot \omega \cdot \frac{t_{0}}{2}} - e^{-\jmath \cdot \omega \cdot \frac{t_{0}}{2}}\right)\\
+G(\jmath \omega) &= A \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) \cdot \left(e^{\jmath \cdot \omega \cdot \frac{t_{0}}{2}} - e^{-\jmath \cdot \omega \cdot \frac{t_{0}}{2}}\right)\\
+&\begin{Bmatrix*}[l]
+sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}
+\end{Bmatrix*}\\
+G(\jmath \omega) &= A \cdot 2 \cdot \jmath \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) \cdot sin\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\end{align*}
+
+Mamy wyznaczoną transformatę $G(\jmath \omega)$. Teraz, z twierdzenia o całkowaniu sygnału, możemy wyznaczyc transformatę sygnału $f(t)$:
+
+\begin{equation}
+F(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)
+\end{equation}
+
+\begin{align*}
+F(\jmath \omega)&= \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)\\
+&=\frac{1}{\jmath \cdot \omega} \cdot A \cdot 2 \cdot \jmath \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) \cdot sin\left(\frac{\omega \cdot t_{0}}{2}\right)+ \pi \cdot \delta(\omega) \cdot G(0)\\
+&\begin{Bmatrix*}[l]
+G(0)=A \cdot 2 \cdot \jmath \cdot Sa\left(\frac{0 \cdot t_{0}}{2}\right) \cdot sin\left(\frac{0 \cdot t_{0}}{2}\right)\\
+G(0)=A \cdot 2 \cdot \jmath \cdot Sa(0) \cdot sin(0)\\
+G(0)=A \cdot 2 \cdot \jmath \cdot 1 \cdot 0\\
+G(0)=0\\
+\end{Bmatrix*}\\
+&=\frac{1}{\jmath \cdot \omega} \cdot A \cdot 2 \cdot \jmath \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) \cdot sin\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+&=\begin{Bmatrix*}[l]
+\frac{sin(x)}{x}=Sa(x)
+\end{Bmatrix*}\\
+&=\frac{A \cdot 2 \cdot t_{0}}{\omega \cdot t_{0}} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) \cdot sin\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+&=A \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right) \cdot Sa\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+&= A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})
+\end{align*}
+
+
+Transformata sygnału $f(t) = A \cdot \Lambda(\frac{t}{t_{0}})$ to $F(\jmath \omega)=A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})$
+
+\end{task}

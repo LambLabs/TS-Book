@@ -11,6 +11,7 @@
 \usepackage{array}
 \usepackage{float} %Wymuszenie wstawienia obrazka w miejscu wstawienia
 %\usepackage[europeancurrents, europeanvoltages, europeanresistors, americaninductors, europeanports]{circuitikz} %Do rysowania obwodów elektrycznych
+\usepackage[ISBN=978-83-939620-1-3,SC2]{ean13isbn} %Drukowanie numeru ISBN
 \usepackage{tikz}
 \usepackage{ifthen}
 
@@ -54,8 +55,30 @@
 	};
 }
 
-
-
+% Własność próbkująca delty diraca
+\newcommand{\SamplingPropertyOfDelta}{
+  \int_{-\infty }^{\infty} \delta(t-t_0)\cdot f(t) \cdot dt = f(t_0)
+}
+% Wzory Eulera
+\newcommand{\EulerSin}{
+  sin\left(x\right) = \frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}
+}
+% Definicja Sa
+\newcommand{\SaDef}{
+  Sa\left(x\right) = \frac{sin\left(x\right)}{x}
+}
+% Twierdzenie o całkowaniu % \IntegralTeorem{g}{G}{f}{F}
+\newcommand{\IntegralTeorem}[4]{
+  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
+  #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\overset{F}{\rightarrow} 
+  #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(0) \cdot #2(0)
+}
+% Twierdzenie o jednorodności % \HomogeneousTeorem{f}{F}
+\newcommand{\HomogeneousTeorem}[2]{
+  #1_1(t) &\overset{F}{\rightarrow} #2_1(\jmath \omega) \\
+  #1_2(t) &\overset{F}{\rightarrow} #2_2(\jmath \omega) \\
+  #1(t) = #1_1(t) + #1_2(t) &\overset{F}{\rightarrow} #2(\jmath \omega)=#2_1(\jmath \omega) + #2_2(\jmath \omega)
+}
 
 %\setdebug
 \setrelease
@@ -92,10 +115,10 @@ www.multimedia.edu.pl
 \begin{flushleft}
 Copyright © Krzysztof Wegner, 2019\\
 Wszelkie prawa zastrzeżone\\
-%\ISBN\\
+\ISBN\\
 Wydrukowano w Polsce\\[1em]
 
-Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskiego Funduszu Społecznego.\\
+%Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskiego Funduszu Społecznego.\\
 \end{flushleft}
 \clearpage
 %====================================================
@@ -184,6 +207,10 @@ Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskie
 %		Time-frequency duality (also known as the symmetry theorem)
 %		Derivative theorem (differentiation in time domain)
 %		Integration theorem
+\inputTask{zadTG005.tex}
+\inputTask{zadTG006.tex}
+\inputTask{zadKW021.tex}
+\inputTask{zadKW022.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal

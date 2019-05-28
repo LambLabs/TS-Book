@@ -74,8 +74,9 @@
 \begin{titlepage}
 \begin{center}
 
-\@title
-
+{\fontsize{100}{120}\selectfont \@title}
+%\@title
+\\[10em]
 \@author
 
 \vfill
