@@ -63,6 +63,9 @@
 \newcommand{\EulerSin}{
   sin\left(x\right) = \frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}
 }
+\newcommand{\EulerCos}{
+  cos\left(x\right) = \frac{e^{\jmath \cdot x} + e^{-\jmath \cdot x}}{2}
+}
 % Definicja Sa
 \newcommand{\SaDef}{
   Sa\left(x\right) = \frac{sin\left(x\right)}{x}
@@ -71,7 +74,7 @@
 \newcommand{\IntegralTeorem}[4]{
   #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
   #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\overset{F}{\rightarrow} 
-  #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(0) \cdot #2(0)
+  #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(\omega) \cdot #2(0)
 }
 % Twierdzenie o jednorodności % \HomogeneousTeorem{f}{F}
 \newcommand{\HomogeneousTeorem}[2]{
@@ -209,8 +212,9 @@ Wydrukowano w Polsce\\[1em]
 %		Integration theorem
 \inputTask{zadTG005.tex}
 \inputTask{zadTG006.tex}
-\inputTask[Debug]{zadKW021.tex}
+\inputTask{zadKW021.tex}
 \inputTask{zadKW022.tex}
+\inputTask[Debug]{zadKW023.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal
