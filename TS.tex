@@ -55,11 +55,28 @@
 	};
 }
 
+% Własność próbkująca delty diraca
+\newcommand{\SamplingPropertyOfDelta}{
+  \int_{-\infty }^{\infty} \delta(t+t_0)\cdot f(t) \cdot dt = f(t_0)
+}
+% Wzory Eulera
+\newcommand{\EulerSin}{
+  sin\left(x\right) = \frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}
+}
+% Definicja Sa
+\newcommand{\SaDef}{
+  Sa\left(x\right) = \frac{sin\left(x\right)}{x}
+}
+% Twierdzenie o całkowaniu
+\newcommand{\IntegralTeorem}{
+  g(t) &\overset{F}{\rightarrow} G(\jmath \omega)\\
+  f(t) = \int_{-\infty}^{t} g(\tau)\cdot d\tau &\overset{F}{\rightarrow} 
+  F(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(0) \cdot G(0)
+}
 
 
-
-%\setdebug
-\setrelease
+\setdebug
+%\setrelease
 %====================================================
 \begin{document}
 %====================================================
@@ -187,6 +204,7 @@ Wydrukowano w Polsce\\[1em]
 %		Integration theorem
 \inputTask{zadTG005.tex}
 \inputTask{zadTG006.tex}
+\inputTask[Debug]{zadKW021.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal
