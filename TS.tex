@@ -76,6 +76,25 @@
   #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\overset{F}{\rightarrow} 
   #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(\omega) \cdot #2(0)
 }
+% Twierdzenie o przesunięciu w dziedzinie częstotliwości % \FrequencyShiftTeorem{g}{G}{f}{F}
+\newcommand{\FrequencyShiftTeorem}[4]{
+  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
+  #3(t) = #1(t) \cdot e^{\jmath \cdot \omega_0 \cdot t} &\overset{F}{\rightarrow} 
+  #4(\jmath \omega) = #2(\jmath \left(\omega - \omega_0\right))
+}
+% Twierdzenie o symetrii % \SymetryTeorem{g}{G}{f}{F}
+\newcommand{\SymetryTeorem}[4]{
+  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
+  #3(t) = #2(t) &\overset{F}{\rightarrow} 
+  #4(\jmath \omega) = 2\pi \cdot #1(- \jmath \omega)
+}
+% Twierdzenie o zmianie skali % \FrequencyShiftTeorem{g}{G}{f}{F}
+\newcommand{\TimeScalingTeorem}[4]{
+  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
+  #3(t) = #1(a \cdot t) &\overset{F}{\rightarrow} 
+  #4(\jmath \omega) = \frac{1}{\left|a\right|} \cdot #2(\jmath \frac{\omega}{a})
+}
+
 % Twierdzenie o jednorodności % \HomogeneousTeorem{f}{F}
 \newcommand{\HomogeneousTeorem}[2]{
   #1_1(t) &\overset{F}{\rightarrow} #2_1(\jmath \omega) \\
@@ -214,7 +233,8 @@ Wydrukowano w Polsce\\[1em]
 \inputTask{zadTG006.tex}
 \inputTask{zadKW021.tex}
 \inputTask{zadKW022.tex}
-\inputTask[Debug]{zadKW023.tex}
+\inputTask{zadKW023.tex}
+\inputTask[Debug]{zadKW024.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal
