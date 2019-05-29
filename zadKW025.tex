@@ -1,0 +1,153 @@
+\begin{task}
+Oblicz transformatę Fouriera sygnału $f(t)=Sa^2\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)$ za pomocą twierdzeń, wiedząc że transformata sygnału $\Lambda(t)$ jest rowna $Sa^2\left(\frac{\omega}{2}\right)$.
+
+\begin{equation}
+f(t) = Sa^2\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)
+\end{equation}
+
+\begin{equation}
+\Lambda(t) \overset{F}{\rightarrow} Sa^2\left(\frac{\omega}{2}\right)
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$f(t)$};
+  \draw[scale=1.0,domain=-3.5:3.5,samples=1000,smooth,variable=\x,red,thick] plot ({\x},{2*sinc(\x*3.141592*2)*sinc(\x*3.141592*2)*cos(\x*3.141592*2 r)});%
+  
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, above, outer sep=5pt,align=center] {$-\frac{2\pi}{\omega_0}$};
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, above, outer sep=5pt,align=center] {$-\frac{4\pi}{\omega_0}$};
+  \draw[-] (-3.0-0.1,-0.1)--(-3.0+0.1,0.1) node[midway, above, outer sep=5pt,align=center] {$-\frac{6\pi}{\omega_0}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2\pi}{\omega_0}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{4\pi}{\omega_0}$};
+  \draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{6\pi}{\omega_0}$};
+  \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, left] {$A$};
+  \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-A$};
+\end{tikzpicture}
+\end{figure}
+
+W pierwszej kolejności można funkcję $f(t)$ rozpisać następująco
+
+\begin{align*}
+f(t) &= Sa^2\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)\\
+&=\begin{Bmatrix}
+\EulerCos
+\end{Bmatrix}\\
+&= Sa^2\left(\omega_0 \cdot t\right) \cdot \frac{e^{\jmath \cdot \omega_0 \cdot t} + e^{-\jmath \cdot \omega_0 \cdot t}}{2}\\
+&= \frac{1}{2} \cdot \left( Sa^2\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t} + Sa^2\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t} \right)\\
+&=\begin{Bmatrix}
+f_1(t) &= Sa^2\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t} \\
+f_2(t) &= Sa^2\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t}
+\end{Bmatrix}\\
+&=\frac{1}{2} \cdot \left(f_1(t) + f_2(t) \right)\\
+\end{align*}
+
+Należy zauważyć iż funkcja $f_1(t)$ i $f_2(t)$ jest złożeniem funkcji $Sa^2$ i funkcji wykładniczych.
+
+\begin{align*}
+f_1(t) &= Sa\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t} = g(t)\cdot e^{\jmath \cdot \omega_0 \cdot t}\\
+f_2(t) &= Sa\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t} = g(t) \cdot e^{-\jmath \cdot \omega_0 \cdot t}
+\end{align*}
+
+Znając transformatę sygnału $g(t) = Sa\left(\omega_0 \cdot t\right)$ możemy skorzystać z twierdzenia o przesunięciu w dziedzinie częstotliwości. 
+
+\begin{align*}
+\FrequencyShiftTeorem{g}{G}{f}{F}
+\end{align*}
+
+Aby wyznaczyć transformatę sygnału $g(t)$ możemy skorzystać z twierdzenia o symetrii. Znając transformatę $H(\jmath \omega)$ sygnału $h(t)$ można wyznaczyć transformatę $G(\jmath \omega)$ sygnału $g(t)$
+
+\begin{align*}
+\SymetryTeorem{h}{H}{g}{G}
+\end{align*}
+
+Tak wiec zacznijmy od transformaty sygnału prostokątnego $h(t)=\Pi(t)$ i wyznaczymy transformatę funkcji $Sa$
+
+\begin{align*}
+h(t)=\Lambda(t) &\overset{F}{\rightarrow} H(\jmath \omega) = Sa^2\left(\frac{\omega}{2}\right)\\
+g_1(t) = H(t) = Sa^2\left(\frac{t}{2}\right) &\overset{F}{\rightarrow} 
+G_1(\jmath \omega) = 2\pi \cdot h(- \jmath \omega) = \pi \cdot  \Lambda\left(-\omega\right) = 2\pi \cdot  \Lambda\left(\omega\right)
+\end{align*}
+
+Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $g(t)$ 
+
+\begin{align*}
+g(t)&=Sa^2\left(\omega_0 \cdot t\right)\\
+&=Sa^2\left(\omega_0 \cdot t \cdot \frac{2}{2}\right)\\
+&=Sa^2\left(2\cdot \omega_0 \cdot \frac{t}{2}\right)\\
+&=Sa^2\left(\frac{2\cdot \omega_0 \cdot t}{2}\right)\\
+&=\begin{Bmatrix}
+a = 2\cdot \omega_0
+\end{Bmatrix}\\
+&=Sa^2\left(\frac{a\cdot t}{2}\right)\\
+&=g_1(a\cdot t) \\
+\end{align*}
+
+Znając transformatę funkcji $g_1(t)$ możemy wyznaczyć transformatę funkcji $g(t)=g_1(a \cdot t)$ za pomocą twierdzenia o zmianie skali.
+
+\begin{align*}
+\TimeScalingTeorem{g_1}{G_1}{g}{G}
+\end{align*}
+
+Podstawiając wyznaczoną transformatę $G_1(\jmath \omega)$
+
+\begin{align*}
+G(\jmath \omega) &= \frac{1}{\left|a\right|} \cdot G_1(\jmath \frac{\omega}{a})\\
+&=\begin{Bmatrix}
+a = 2\cdot \omega_0
+\end{Bmatrix}\\
+&=\frac{1}{\left| 2\cdot \omega_0 \right|} \cdot G_1( \frac{\omega}{2\cdot \omega_0})\\
+&=\begin{Bmatrix}
+G_1(\jmath \omega) = 2\pi \cdot \Lambda\left(\omega\right)
+\end{Bmatrix}\\
+&=\frac{1}{ 2\cdot \omega_0 } \cdot 2\pi \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)\\
+&=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)\\
+\end{align*}
+
+Tak wiec transformata sygnału $g(t)=Sa\left(\omega_0 \cdot t\right)$ jest równa $G(\jmath \omega)=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)$
+
+Kolejnym krokiem jest wyznaczenie transformaty dwóch sygnałów
+
+\begin{align*}
+f_1(t)&=Sa^2\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t}\\
+f_2(t)&=Sa^2\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t}\\
+\end{align*}
+
+Korzystając z twierdzenie o przesunięciu w dziedzinie częstotliwości
+
+\begin{align*}
+\FrequencyShiftTeorem{g}{G}{f_1}{F_1}
+\end{align*}
+
+otrzymujemy wprost
+
+\begin{align*}
+F_1(\jmath \omega)&=G\left(\jmath \left(\omega -\omega_0\right)\right)\\
+&=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right)
+\end{align*}
+
+\begin{align*}
+F_2(\jmath \omega)&=G\left(\jmath \left(\omega +\omega_0\right)\right)\\
+&=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right)
+\end{align*}
+
+Ostatecznie korzystając z liniowości transformaty Fouriera
+
+\begin{align*}
+\HomogeneousTeorem{f}{F}
+\end{align*}
+
+otrzymujemy
+
+\begin{align*}
+F(\jmath \omega)&=F_1(\jmath \omega)-F_2(\jmath \omega)\\
+&=\frac{1}{2} \cdot \left( \frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right) - \frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right) \right)
+\end{align*}
+
+
+Transformata Fouriera sygnału $f(t)$ jest równa $F(\jmath \omega)=\frac{1}{2 } \cdot \left( \frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right) - \frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right) \right)$
+
+\end{task}
+
