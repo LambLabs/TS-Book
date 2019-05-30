@@ -14,6 +14,7 @@
 \usepackage[ISBN=978-83-939620-1-3,SC2]{ean13isbn} %Drukowanie numeru ISBN
 \usepackage{tikz}
 \usepackage{ifthen}
+\usepackage{ bbold }
 
 \selectlanguage{polish}
 
@@ -88,7 +89,7 @@
   #3(t) = #2(t) &\overset{F}{\rightarrow} 
   #4(\jmath \omega) = 2\pi \cdot #1(- \jmath \omega)
 }
-% Twierdzenie o zmianie skali % \FrequencyShiftTeorem{g}{G}{f}{F}
+% Twierdzenie o zmianie skali % \TimeScalingTeorem{g}{G}{f}{F}
 \newcommand{\TimeScalingTeorem}[4]{
   #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
   #3(t) = #1(a \cdot t) &\overset{F}{\rightarrow} 
@@ -235,7 +236,8 @@ Wydrukowano w Polsce\\[1em]
 \inputTask{zadKW022.tex}
 \inputTask{zadKW023.tex}
 \inputTask{zadKW024.tex}
-\inputTask[Debug]{zadKW025.tex}
+\inputTask{zadKW025.tex}
+\inputTask[Debug]{zadKW026.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal

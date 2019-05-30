@@ -1,0 +1,143 @@
+\begin{task}
+Oblicz transformatę Fouriera sygnału $f(t)=sgn(t)$ za pomocą twierdzeń.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$f(t)$};
+  
+  \draw[-,red, thick] (-3.5,-2.0) -- (+0.0,-2.0);
+  \draw[-,red, thick] (+0.0,-2.0) -- (+0.0,+2.0);
+  \draw[-,red, thick] (+0.0,+2.0) -- (+3.5,+2.0);
+  
+  \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, left] {$1$};
+  \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, right] {$-1$};
+\end{tikzpicture}
+\end{figure}
+
+Sygnał $f(t)$ można zapisać jako
+
+\begin{align*}
+f(t) & = sgn(t) \\
+& = \mathbb{1}(t) - \mathbb{1}(-t)\\
+& = f_1(t) - f_2(t)
+\end{align*}
+
+Wyrażnie widac iż funkcja jest złożeniem dwóch skoków jednostkowych
+
+\begin{align*}
+f_1(t)&= \mathbb{1}(t)
+f_2(t)&= \mathbb{1}(-t)\\
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.5) node[above] {$f_1(t)$};
+  
+  \draw[-,red, thick] (-3.5,+0.0) -- (+0.0,+0.0);
+  \draw[-,red, thick] (+0.0,+0.0) -- (+0.0,+2.0);
+  \draw[-,red, thick] (+0.0,+2.0) -- (+3.5,+2.0);
+  
+  \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, left] {$1$};
+  \end{tikzpicture}
+\end{figure}
+
+Transformaty sygnału $f_1(t)=\mathbb{1}(t)$ nie można wyznaczyć wprost ze wzoru. Ale łatwo można wyznaczyć pochodnią $f_1'(t)$
+
+\begin{align*}
+g(t) = f_1'(t) = \delta(t)
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.5) node[above] {$g(t)$};
+  
+  \draw[-,red, thick] (-3.5,+0.0) -- (+3.5,+0.0);
+  \draw[->,red, thick] (+0.0,+0.0) -- (+0.0,+2.0);
+  
+  \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, left] {$1$};
+  \end{tikzpicture}
+\end{figure}
+
+dla której w bardzo łatwy sposób można wyznaczyć transformatę Fouriera.
+
+\begin{align*}
+G(\jmath \omega) &= \int_{-\infty}^{\infty} g(t) \cdot e^{-\jmath \cdot \omega \cdot t}\\
+&=\int_{-\infty}^{\infty} \delta(t) \cdot e^{-\jmath \cdot \omega \cdot t}\\
+&=\begin{Bmatrix}
+\SamplingPropertyOfDelta
+\end{Bmatrix}\\
+&=e^{-\jmath \cdot \omega \cdot 0}\\
+&=e^{0}\\
+&=1
+\end{align*}
+
+Transformatą Fouriera sygnału $g(t)=\delta(t)$ jest $G(\jmath \omega)=1$
+
+Korzystając z twierdzenia o całkowaniu można wyznaczyć transformatę funkcji $f_1(t)$
+
+\begin{align*}
+\IntegralTeorem{g}{G}{f_1}{F_1}
+\end{align*}
+
+Tak wiec mamy
+
+\begin{align*}
+F_1(\jmath \omega)&=\frac{1}{\jmath \cdot \omega } \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)\\
+&=\frac{1}{\jmath \cdot \omega } \cdot 1 + \pi \cdot \delta(\omega) \cdot 1\\
+&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)\\
+\end{align*}
+
+A wiec transformata skoku jednostkowego jest $F_1(\jmath \omega)=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$
+
+Funkcję $f_2(t)$ można zapisać jako
+\begin{align*}
+f_2(t)&=\mathbb{1}(-t)\\
+&=\mathbb{1}(-1 \cdot t)\\
+&=f_1(-1 \cdot t)
+\end{align*}
+
+A wiec transformatę funkcji $f_2(t)$ można wyznaczyć z twierdzenia o zmianie skali
+
+\begin{align*}
+\TimeScalingTeorem{f_1}{F_1}{f_2}{F_2}
+\end{align*}
+
+\begin{align*}
+F_2(\jmath \omega)&=\frac{1}{\left| a \right|} \cdot F_1(\jmath \frac{\omega}{a})\\
+&=\begin{Bmatrix}
+a=-1
+\end{Bmatrix}\\
+&=\frac{1}{\left| -1 \right|} \cdot \frac{1}{\jmath \cdot \frac{\omega}{-1} } + \pi \cdot \delta(\frac{\omega}{-1})\\
+&=\frac{1}{1} \cdot \frac{1}{-\jmath \cdot \omega } + \pi \cdot \delta(-\omega)\\
+&=- \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)\\
+\end{align*}
+
+A więc transformata funkcji $f_2(t)$ jest równa $F_2(\jmath \omega)- \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$
+
+Transformatę funkcji $f(t)$ możemy wyznaczyć z twierdzenia o jednorodności 
+
+\begin{align*}
+\HomogeneousTeorem{f}{F}
+\end{align*}
+
+
+\begin{align*}
+F(\jmath \omega)&=F_1(\jmath \omega) - F_2(\jmath \omega)\\
+&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega) - \left(-\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)\right)\\
+&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega) +\frac{1}{\jmath \cdot \omega } - \pi \cdot \delta(\omega)\\
+&=\frac{2}{\jmath \cdot \omega }\\
+\end{align*}
+
+Ostatecznie transformata funkcji $f(t)$ jest równa $F(\jmath \omega)=\frac{2}{\jmath \cdot \omega }$.
+
+\end{task}
+
