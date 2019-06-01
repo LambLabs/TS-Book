@@ -1,0 +1,181 @@
+\begin{task}
+Oblicz splot sygnałów $f(t)=\Pi\left(\frac{t}{T}\right)$ i $g(t)=\Lambda\left(\frac{t}{T}\right)$
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-2.0-5.0,+0.0) -- (+2.0-5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0-5.0,-1.0) -- (+0.0-5.0,+2.5) node[above] {$f(t)$};
+  
+  \draw[-,red, thick] (-1.0-5.0,+2.0) -- (+1.0-5.0,+2.0);
+  \draw[-,red, thick] (-1.0-5.0,+0.0) -- (-1.0-5.0,+2.0);
+  \draw[-,red, thick] (+1.0-5.0,+0.0) -- (+1.0-5.0,+2.0);
+  
+  \draw[-] (-0.1-5.0,+2.0-0.1)--(+0.1-5.0,+2.0+0.1) node[midway, above left] {$1$};
+  \draw[-] (-1.0-0.1-5.0,-0.1)--(-1.0+0.1-5.0,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1-5.0,-0.1)--(+1.0+0.1-5.0,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{T}{2}$};
+  
+  
+  \draw[->] (-2.0,+0.0) -- (+2.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$g(t)$};
+  
+  %\draw[-,red, thick] (-1.0,+2.0) -- (+1.0,+2.0);
+  \draw[-,green, thick] (-1.0,+0.0) -- (+0.0,+2.0);
+  \draw[-,green, thick] (+1.0,+0.0) -- (+0.0,+2.0);
+  
+  \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, above left] {$1$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-T$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+  
+\end{tikzpicture}
+\end{figure}
+
+Wzór na slot sygnałów
+\begin{equation}
+\Convolution{h}{f}{g}
+\end{equation}
+
+Wzory sygnałów pod całką
+\begin{align*}
+f(\tau)&=\Pi\left(\frac{\tau}{T}\right)\\
+g(t-\tau)&=\Lambda\left(\frac{t - \tau}{T}\right)
+\end{align*}
+
+Wykresy obu funkcji dla różnych wartości $t$
+
+\begin{figure}[H]
+  \centering
+  \begin{animateinline}[controls,autoplay,loop,poster = 25,palindrome]{10}
+    \multiframe{101}{n=-2.5+0.05}{%Number of Frames, variable = initial + increment
+      \begin{tikzpicture}
+      %\draw (0,0) circle (1in);
+      \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+      \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau),g(t-\tau)$};
+      
+      \draw[-,red, thick] (-0.5,+2.0) -- (+0.5,+2.0);
+      \draw[-,red, thick] (-0.5,+0.0) -- (-0.5,+2.0);
+      \draw[-,red, thick] (+0.5,+0.0) -- (+0.5,+2.0);
+      
+      \draw[-,green, thick] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
+      \draw[-,green, thick] (+1.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      \draw[-,green, dashed] (+0.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      
+      \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, above left] {$1$};
+      \draw[-] (-1.0-0.1+\n,-0.1)--(-1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t-T$};
+      \draw[-] (+1.0-0.1+\n,-0.1)--(+1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t+T$};
+      \draw[-] (+0.0-0.1+\n,-0.1)--(+0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+      
+      \draw[-] (-0.5-0.1,-0.1)--(-0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+      \draw[-] (+0.5-0.1,-0.1)--(+0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{T}{2}$};
+      
+      \end{tikzpicture}  
+    }
+  \end{animateinline}
+\end{figure}
+
+Po wymnożeniu obu funkcji dla przykładowych wartości $t$ otrzymujemy
+
+\begin{figure}[H]
+  \centering
+  \begin{animateinline}[controls,autoplay,loop,poster = 25,palindrome]{10}
+    \multiframe{101}{n=-2.5+0.05}{%Number of Frames, variable = initial + increment
+      \begin{tikzpicture}
+      \tikzmath{
+        function fun1(\x,\n,\T) {
+          if (\x < -\T/2) || (\x < \n- \T) || (\x > \T/2) || (\x > \n + \T) then {
+            return 0.0;
+          } else {
+            if \x < \n then {
+              return \x/\T -(\n-\T)/\T;
+            } else {
+              return -\x/\T - (-\n-\T)/\T;
+            };
+          };
+        };
+      }
+      
+      %\draw (0,0) circle (1in);
+      \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+      \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot g(t-\tau)$};
+      
+      \draw[-,red, dotted] (-0.5,+2.0) -- (+0.5,+2.0);
+      \draw[-,red, dotted] (-0.5,+0.0) -- (-0.5,+2.0);
+      \draw[-,red, dotted] (+0.5,+0.0) -- (+0.5,+2.0);
+      
+      \draw[-,green, dotted] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
+      \draw[-,green, dotted] (+1.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      \draw[-,green, dashed] (+0.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      
+      \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, above left] {$1$};
+      \draw[-] (-1.0-0.1+\n,-0.1)--(-1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t-T$};
+      \draw[-] (+1.0-0.1+\n,-0.1)--(+1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t+T$};
+      \draw[-] (+0.0-0.1+\n,-0.1)--(+0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+      
+      \draw[-] (-0.5-0.1,-0.1)--(-0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+      \draw[-] (+0.5-0.1,-0.1)--(+0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{T}{2}$};
+      
+      %\draw[-,pink, thick] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
+      \draw[scale=1.0,domain=-3.5:3.5,smooth,samples=200,variable=\x,red,thick] plot ({\x},{2*fun1(\x,\n,1)});
+      
+      \end{tikzpicture}  
+    }
+  \end{animateinline}
+\end{figure}
+
+Jak widać dla różnych wartości $t$ otrzymujemy różny kształt funkcji podcałkowej $f(\tau)\cdot g(t-\tau)$.
+
+Przedział 1.
+
+\begin{figure}[H]
+  \centering
+  \begin{animateinline}[controls,autoplay,loop,poster = 21,palindrome]{10}
+    \multiframe{22}{n=-2.5+0.05}{%Number of Frames, variable = initial + increment
+      \begin{tikzpicture}
+      \tikzmath{
+        function fun1(\x,\n,\T) {
+          if (\x < -\T/2) || (\x < \n- \T) || (\x > \T/2) || (\x > \n + \T) then {
+            return 0.0;
+          } else {
+            if \x < \n then {
+              return \x/\T -(\n-\T)/\T;
+            } else {
+              return -\x/\T - (-\n-\T)/\T;
+            };
+          };
+        };
+      }
+      
+      %\draw (0,0) circle (1in);
+      \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+      \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot g(t-\tau)$};
+      
+      \draw[-,red, dotted] (-0.5,+2.0) -- (+0.5,+2.0);
+      \draw[-,red, dotted] (-0.5,+0.0) -- (-0.5,+2.0);
+      \draw[-,red, dotted] (+0.5,+0.0) -- (+0.5,+2.0);
+      
+      \draw[-,green, dotted] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
+      \draw[-,green, dotted] (+1.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      \draw[-,green, dashed] (+0.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      
+      \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, above left] {$1$};
+      \draw[-] (-1.0-0.1+\n,-0.1)--(-1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t-T$};
+      \draw[-] (+1.0-0.1+\n,-0.1)--(+1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t+T$};
+      \draw[-] (+0.0-0.1+\n,-0.1)--(+0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+      
+      \draw[-] (-0.5-0.1,-0.1)--(-0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+      \draw[-] (+0.5-0.1,-0.1)--(+0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{T}{2}$};
+      
+      %\draw[-,pink, thick] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
+      \draw[scale=1.0,domain=-3.5:3.5,smooth,samples=200,variable=\x,red,thick] plot ({\x},{2*fun1(\x,\n,1)});
+      
+      \end{tikzpicture}  
+    }
+  \end{animateinline}
+\end{figure}
+
+Dla wartości $t$ spełniających warunek $t+T<\frac{T}{2}$ 
+
+\end{task}
+

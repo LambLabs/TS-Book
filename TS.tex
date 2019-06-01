@@ -15,6 +15,8 @@
 \usepackage{tikz}
 \usepackage{ifthen}
 \usepackage{ bbold }
+\usepackage{animate}
+
 
 \selectlanguage{polish}
 
@@ -101,6 +103,11 @@
   #1_1(t) &\xrightarrow{\mathcal F} #2_1(\jmath \omega) \\
   #1_2(t) &\xrightarrow{\mathcal F} #2_2(\jmath \omega) \\
   #1(t) = \alpha \cdot #1_1(t) + \beta \cdot #1_2(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)=\alpha \cdot #2_1(\jmath \omega) + \beta \cdot #2_2(\jmath \omega)
+}
+
+%Splot %\Convolution{h}{f}{g}
+\newcommand{\Convolution}[3]{
+#1(t) = \int_{-\infty}^{\infty} #2(\tau) \cdot #3(t-\tau) \cdot d\tau
 }
 
 \setdebug
@@ -239,7 +246,7 @@ Wydrukowano w Polsce\\[1em]
 \inputTask{zadKW024.tex}
 \inputTask{zadKW025.tex}
 \inputTask{zadKW026.tex}
-\inputTask[Debug]{zadKW027.tex}
+\inputTask{zadKW027.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal
@@ -250,6 +257,7 @@ Wydrukowano w Polsce\\[1em]
 %	Impulse response of a causal system
 %	The response of an LTI system to arbitrary input
 %	Properties of linear convolution
+\inputTask[Debug]{zadKW028.tex}
 %	Frequency response
 %	Determining the frequency response of an electronic circuit
 %Filters
