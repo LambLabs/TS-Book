@@ -88,7 +88,7 @@
 % Twierdzenie o symetrii % \SymetryTeorem{g}{G}{f}{F}
 \newcommand{\SymetryTeorem}[4]{
   #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
-  #3(t) = #2(t) &\xrightarrow{\mathcal F} 
+  #3(t) = #2(t) &\xrightarrow{\mathcal F}
   #4(\jmath \omega) = 2\pi \cdot #1(-\omega)
 }
 % Twierdzenie o zmianie skali % \TimeScalingTeorem{g}{G}{f}{F}
@@ -110,8 +110,13 @@
 #1(t) = \int_{-\infty}^{\infty} #2(\tau) \cdot #3(t-\tau) \cdot d\tau
 }
 
-%\setdebug
-\setrelease
+%Splot %\Parseval{F}
+\newcommand{\Parseval}[1]{
+ E = \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|#1(\jmath \omega)\right|^2 \cdot d\omega
+}
+
+\setdebug
+%\setrelease
 %====================================================
 \begin{document}
 %====================================================
@@ -248,6 +253,8 @@ Wydrukowano w Polsce\\[1em]
 \inputTask{zadKW026.tex}
 \inputTask{zadKW027.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
+\inputTask{zadTG009.tex}
+\inputTask[Debug]{zadTG010.tex}
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal
 %	Calculating the power of a signal from its Fourier transform. The Parseval's theorem for power signals
