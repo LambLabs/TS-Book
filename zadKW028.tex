@@ -278,20 +278,116 @@ wartość splotu wyznaczamy z ze wzoru
 \begin{align*}
 h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
 &=\int_{-\infty}^{\frac{T}{2}} 0 \cdot d\tau + \int_{-\frac{T}{2}}^{t+T}\left( -\frac{1}{T}\cdot \tau - \frac{-t-T}{T} \right)\cdot d\tau +\int_{t+T}^{\infty} 0 \cdot d\tau\\
-&=0 - \int_{-\frac{T}{2}}^{t+T} \frac{1}{T}\cdot \tau d\tau - \int_{-\frac{T}{2}}^{t+T} \frac{-t-T}{T} \cdot d\tau +0\\
-&=- \frac{1}{T}\cdot \int_{-\frac{T}{2}}^{t+T} \tau d\tau - \frac{-t-T}{T} \cdot \int_{-\frac{T}{2}}^{t+T} d\tau\\
-&=- \frac{1}{T}\cdot \left( \frac{1}{2} \cdot \tau^2 \right)_{-\frac{T}{2}}^{t+T} - \frac{-t-T}{T} \cdot \left(\tau \right)_{-\frac{T}{2}}^{t+T}\\
-&=- \frac{1}{T}\cdot \frac{1}{2} \cdot \left(  \left(t+T\right)^2 -\left(-\frac{T}{2}\right)^2 \right) - \frac{-t-T}{T} \cdot \left(t+T - \left(-\frac{T}{2}\right) \right)\\
-&=- \frac{1}{T}\cdot \frac{1}{2} \cdot \left(  t^2 -2 \cdot t \cdot T +  T^2 + \frac{1}{4}\cdot T^2 \right) - \frac{-t-T}{T} \cdot \left(t+T + \frac{T}{2} \right)\\
-&=- \frac{1}{2 \cdot T} \cdot \left(  t^2 -2 \cdot t \cdot T +  T^2 + \frac{1}{4}\cdot T^2 \right) + \frac{1}{T} \cdot \left(t+T\right)\cdot \left(t+T + \frac{T}{2} \right)\\
-&=- \frac{1}{2 \cdot T}\cdot \left(  t^2 -2 \cdot t \cdot T +  T^2 + \frac{1}{4}\cdot T^2 \right) + \frac{1}{2\cdot T} \cdot \left(t+T\right)\cdot \left(2 \cdot t+ 2\cdot T + T \right)\\
-&=- \frac{1}{2 \cdot T}\cdot \left(  t^2 -2 \cdot t \cdot T +  T^2 + \frac{1}{4}\cdot T^2 \right) + \frac{1}{2\cdot T} \cdot \left(t+T\right)\cdot \left(2 \cdot t+ 3\cdot T \right)\\
-&=- \frac{1}{2 \cdot T}\cdot \left(  t^2 -2 \cdot t \cdot T +  T^2 + \frac{1}{4}\cdot T^2 \right) + \frac{1}{2\cdot T} \cdot \left(2 \cdot t^2 + 3\cdot t \cdot T + 2 \cdot t \cdot T + 3 \cdot T^2\right)\\
-&= \frac{1}{2\cdot T} \cdot \left( -t^2 +2 \cdot t \cdot T -  T^2 - \frac{1}{4}\cdot T^2  + 2 \cdot t^2 + 3\cdot t \cdot T + 2 \cdot t \cdot T + 3 \cdot T^2\right)\\
-&= \frac{1}{2\cdot T} \cdot \left(t^2 + 7\cdot t \cdot T + 2 \cdot T^2  - \frac{1}{4}\cdot T^2 \right)\\
-&= \frac{1}{2\cdot T} \cdot t^2 + \frac{1}{2\cdot T} \cdot 7\cdot t \cdot T + \frac{1}{2\cdot T} \cdot 2 \cdot T^2  - \frac{1}{2\cdot T} \cdot \frac{1}{4}\cdot T^2\\
-&= \frac{1}{2\cdot T} \cdot t^2 + \frac{7}{2} \cdot t + \frac{7}{8} \cdot T\\
+&=0 - \int_{-\frac{T}{2}}^{t+T} \frac{1}{T}\cdot \tau d\tau + \int_{-\frac{T}{2}}^{t+T} \frac{t+T}{T} \cdot d\tau +0\\
+&=- \frac{1}{T}\cdot \int_{-\frac{T}{2}}^{t+T} \tau \cdot d\tau + \frac{t+T}{T} \cdot \int_{-\frac{T}{2}}^{t+T} d\tau\\
+&=- \frac{1}{T}\cdot \left( \frac{1}{2} \cdot \tau^2 \right)_{-\frac{T}{2}}^{t+T} + \frac{t+T}{T} \cdot \left(\tau \right)_{-\frac{T}{2}}^{t+T}\\
+&=- \frac{1}{T}\cdot \frac{1}{2} \cdot \left(  \left(t+T\right)^2 -\left(-\frac{T}{2}\right)^2 \right) + \frac{t+T}{T} \cdot \left(t+T - \left(-\frac{T}{2}\right) \right)\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + T^2 -\frac{T^2}{4} \right) + \frac{t+T}{T} \cdot \left(t+T + \frac{T}{2} \right)\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{t+T}{T} \cdot \left(t+\frac{3}{2}\cdot T\right)\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{1}{T} \cdot \left(t^2 + \frac{3}{2} \cdot t \cdot T + t\cdot T +\frac{3}{2}\cdot T^2\right)\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{2}{2\cdot T} \cdot \left(t^2 + \frac{5}{2} \cdot t \cdot T+\frac{3}{2}\cdot T^2\right)\\
+&=\frac{1}{2\cdot T} \cdot \left(  -t^2-2\cdot t\cdot T - \frac{3}{4}\cdot T^2 \right) + \frac{1}{2\cdot T} \cdot \left(2\cdot t^2 + 5 \cdot t \cdot T+3\cdot T^2\right)\\
+&=\frac{1}{2\cdot T} \cdot \left(  -t^2-2\cdot t\cdot T - \frac{3}{4}\cdot T^2 + 2\cdot t^2 + 5 \cdot t \cdot T+3\cdot T^2\right)\\
+&=\frac{1}{2\cdot T} \cdot \left( t^2 + 3 \cdot t \cdot T+2 \frac{1}{4} \cdot  T^2\right)\\
+&=\frac{1}{2\cdot T} \cdot t^2 + \frac{1}{2 \cdot T} \cdot 3 \cdot t \cdot T+\frac{1}{2\cdot T} \cdot \frac{9}{4} \cdot  T^2\\
+&=\frac{1}{2\cdot T} \cdot t^2 + \frac{3}{2} \cdot t+\frac{9}{8} \cdot  T\\
 \end{align*}
+
+\paragraph{Przedział 3}.
+
+\begin{figure}[H]
+  \centering
+  \begin{animateinline}[controls,autoplay,loop,poster = 20,palindrome]{10}
+    \multiframe{21}{n=-0.5+0.05}{%Number of Frames, variable = initial + increment
+      \begin{tikzpicture}
+      \tikzmath{
+        function fun1(\x,\n,\T) {
+          if (\x < -\T/2) || (\x < \n- \T) || (\x > \T/2) || (\x > \n + \T) then {
+            return 0.0;
+          } else {
+            if \x < \n then {
+              return \x/\T -(\n-\T)/\T;
+            } else {
+              return -\x/\T - (-\n-\T)/\T;
+            };
+          };
+        };
+      }
+      
+      %\draw (0,0) circle (1in);
+      \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+      \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot g(t-\tau)$};
+      
+      \draw[-,red, dotted] (-0.5,+2.0) -- (+0.5,+2.0);
+      \draw[-,red, dotted] (-0.5,+0.0) -- (-0.5,+2.0);
+      \draw[-,red, dotted] (+0.5,+0.0) -- (+0.5,+2.0);
+      
+      \draw[-,green, dotted] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
+      \draw[-,green, dotted] (+1.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      \draw[-,green, dashed] (+0.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      
+      \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, above left] {$1$};
+      \draw[-] (-1.0-0.1+\n,-0.1)--(-1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t-T$};
+      \draw[-] (+1.0-0.1+\n,-0.1)--(+1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t+T$};
+      \draw[-] (+0.0-0.1+\n,-0.1)--(+0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+      
+      \draw[-] (-0.5-0.1,-0.1)--(-0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+      \draw[-] (+0.5-0.1,-0.1)--(+0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{T}{2}$};
+      
+      %\draw[-,pink, thick] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
+      \draw[scale=1.0,domain=-3.5:3.5,smooth,samples=200,variable=\x,red,thick] plot ({\x},{2*fun1(\x,\n,1)});
+      
+      \end{tikzpicture}  
+    }
+  \end{animateinline}
+\end{figure}
+
+Dla wartości $t$ spełniających warunki $t \geq -\frac{T}{2}$ i $t<\frac{T}{2}$
+
+\begin{align*}
+t& \geq -\frac{T}{2} &\wedge&&  t&<\frac{T}{2}\\
+\end{align*}
+
+a więc $t\in \left<-\frac{1}{2}\cdot T, \frac{1}{2}\cdot T \right)$
+
+w wyniku mnożenia otrzymujemy dwie proste zdefiniowaną na odcinkach $t \in \left(-\frac{T}{2}, t\right)$ oraz $t \in \left(t, \frac{T}{2}\right)$.
+
+\begin{align*}
+f(\tau) \cdot g(t-\tau)&=\begin{cases}
+0 & \tau \in \left(-\infty; -\frac{T}{2}\right)\\
+\frac{1}{T}\cdot \tau - \frac{t-T}{T} & \tau \in \left(-\frac{T}{2}; t\right)\\
+-\frac{1}{T}\cdot \tau - \frac{-t-T}{T} & \tau \in \left(t; \frac{T}{2}\right)\\
+0 & \tau \in \left( \frac{T}{2}; \infty \right)\\
+\end{cases}
+\end{align*}
+
+wartość splotu wyznaczamy z ze wzoru
+
+\begin{align*}
+h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
+&=\int_{-\infty}^{-\frac{T}{2}} 0 \cdot d\tau 
++ \int_{-\frac{T}{2}}^{t}\left( \frac{1}{T}\cdot \tau - \frac{t-T}{T} \right)\cdot d\tau 
++ \int_{t}^{\frac{T}{2}}\left( -\frac{1}{T}\cdot \tau - \frac{-t-T}{T} \right)\cdot d\tau 
++\int_{\frac{T}{2}}^{\infty} 0 \cdot d\tau\\
+&=0 
++ \int_{-\frac{T}{2}}^{t} \frac{1}{T}\cdot \tau \cdot d\tau -  \int_{-\frac{T}{2}}^{t} \frac{t-T}{T} \cdot d\tau 
++ \int_{t}^{\frac{T}{2}}\left( -\frac{1}{T}\cdot \tau\right) \cdot d\tau - \int_{t}^{\frac{T}{2}} \frac{-t-T}{T} \cdot d\tau 
++0\\
+&=\frac{1}{T}\cdot \int_{-\frac{T}{2}}^{t} \tau \cdot d\tau -  \frac{t-T}{T} \cdot \int_{-\frac{T}{2}}^{t} d\tau 
+-\frac{1}{T}\cdot \int_{t}^{\frac{T}{2}} \tau \cdot d\tau +  \frac{t+T}{T} \cdot \int_{t}^{\frac{T}{2}} d\tau\\
+&=\frac{1}{T}\cdot \left. \frac{1}{2} \cdot \tau^2\right|_{-\frac{T}{2}}^{t} -  \frac{t-T}{T} \cdot \left. \tau 
+\right|_{-\frac{T}{2}}^{t} - \frac{1}{T}\cdot \left. \frac{1}{2} \cdot \tau^2 \right|_{t}^{\frac{T}{2}} +  \frac{t+T}{T} \cdot \left. \tau \right|_{t}^{\frac{T}{2}}\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 - \left(-\frac{T}{2}\right)^2\right) -  \frac{t-T}{T} \cdot \left( t - \left(-\frac{T}{2}\right) \right) - \frac{1}{2\cdot T}\cdot \left( \left(\frac{T}{2}\right)^2 - t^2\right) +  \frac{t+T}{T} \cdot \left( \frac{T}{2} - t \right)\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{t-T}{T} \cdot \left( t + \frac{T}{2} \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{t+T}{T} \cdot \left( \frac{T}{2} - t \right)\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{2}{2\cdot T} \cdot \left(t-T\right) \cdot \left( t + \frac{T}{2} \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{2}{2 \cdot T} \cdot \left(t+T\right) \cdot \left( \frac{T}{2} - t \right)\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{2}{2\cdot T} \cdot \left(t^2 + \frac{1}{2} \cdot t \cdot T - t \cdot T - \frac{1}{2} \cdot T^2 \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{2}{2 \cdot T} \cdot \left(\frac{1}{2}\cdot t \cdot T - t^2 + \frac{1}{2} \cdot T^2 - t \cdot T \right)\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) +  \frac{1}{2\cdot T} \cdot \left(-2 \cdot t^2 - t \cdot T + 2\cdot t \cdot T + T^2 \right) + \frac{1}{2\cdot T}\cdot \left( -\frac{1}{4}\cdot T^2 + t^2\right) +  \frac{1}{2 \cdot T} \cdot \left( t \cdot T - 2 \cdot t^2 + T^2 - 2 \cdot t \cdot T \right)\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2 -2 \cdot t^2 - t \cdot T + 2\cdot t \cdot T + T^2 -\frac{1}{4}\cdot T^2 + t^2 + t \cdot T - 2 \cdot t^2 + T^2 - 2 \cdot t \cdot T \right)\\
+&=\frac{1}{2 \cdot T}\cdot \left( - 2 \cdot t^2 + 2 \cdot T^2  \right)\\
+&=\frac{1}{T}\cdot \left( - t^2 + T^2  \right)\\
+&=- \frac{1}{T}\cdot t^2 + T  \right)\\
+\end{align*}
+
 
 
 \end{task}
