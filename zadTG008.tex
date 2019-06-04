@@ -298,7 +298,7 @@ y(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau\\
 Podsumowując:
 
 \begin{align*}
-y(t)=f(\tau) \cdot h(t-\tau)&=\begin{cases}
+y(t)=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau &=\begin{cases}
 0 & t \in \left(-\infty; 0\right)\\
 \frac{A}{a} \cdot \left(1 - e^{-a \cdot t}\right) & t \in \left(0; T\right)\\
 \frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - 1 \right) & t \in \left( T; \infty \right)
