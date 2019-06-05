@@ -1,0 +1,330 @@
+\begin{task}
+Oblicz splot sygnałów $f(t)=A \cdot \Pi\left(\frac{t-T}{T}\right)$ i $h(t)=\mathbb{1}(t) \cdot e^{-a \cdot t}$
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-2.0-5.0,+0.0) -- (+2.0-5.0,+0.0) node[right] {$t$};
+  \draw[->] (-1.0-5.0,-1.0) -- (-1.0-5.0,+2.5) node[above] {$f(t)$};
+  
+  \draw[-,red, thick] (-1.0-5.0,+1.5) -- (1.0-5.0,+1.5);
+  \draw[-,red, thick] (-1.0-5.0,+0.0) -- (-1.0-5.0,+1.5);
+  \draw[-,red, thick] (1.0-5.0,+0.0) -- (1.0-5.0,+1.5);
+  
+  \draw[-] (-0.1-6.0,+1.5-0.1)--(+0.1-6.0,+1.5+0.1) node[midway, above left] {$A$};
+  \draw[-] (+1.0-0.1-5.0,-0.1)--(+1.0+0.1-5.0,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+  
+  
+  \draw[->] (-2.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
+  \draw[->] (-1.0,-1.0) -- (-1.0,+2.5) node[above] {$h(t)$};
+  
+  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,green,thick] plot ({\x-1},{2*exp(-\x)});
+ 
+  \draw[-] (-1.0-0.1,+2.0-0.1)--(-1.0+0.1,+2.0+0.1) node[midway, above left] {$1$};
+  
+\end{tikzpicture}
+\end{figure}
+
+Wzór na slot sygnałów
+\begin{equation}
+\Convolution{y}{f}{h}
+\end{equation}
+
+Wzory sygnałów pod całką
+\begin{align*}
+f(\tau)&=A \cdot \Pi\left(\frac{\tau}{T}\right)\\
+h(t-\tau)&=\mathbb{1}(t) \cdot e^{-a \cdot (t-\tau)}
+\end{align*}
+
+\begin{align*}
+f(\tau) &= \begin{cases}
+0 & \tau \in \left( -\infty; 0 \right) \\
+A & \tau \in \left(0; T \right) \\
+0 & \tau \in \left(T; \infty \right) \\
+\end{cases}\\
+h(t-\tau) &= \begin{cases}
+e^{-a \cdot (t-\tau)} & \tau \in \left(-\infty; t\right)\\
+0 & \tau \in \left(t; \infty \right)
+\end{cases}
+\end{align*}
+
+Wykresy obu funkcji w dziedzinie $\tau$ dla różnych wartości $t$:
+
+\begin{figure}[H]
+  \centering
+  \begin{animateinline}[controls,autoplay,loop,poster = 45]{10}
+    \multiframe{81}{n=-1.0+0.05}{%Number of Frames, variable = initial + increment
+      \begin{tikzpicture}
+      \draw[->] (-5.0,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+      \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau),h(t-\tau)$};
+      
+      \draw[-,red, thick] (0.0,+1.5) -- (2.0,+1.5);
+      \draw[-,red, thick] (0.0,+0.0) -- (0.0,+1.5);
+      \draw[-,red, thick] (2.0,+0.0) -- (2.0,+1.5);
+      
+      \draw[scale=1.0,domain=-4.0:0.0,smooth,variable=\x,green,thick] plot ({\x+\n},{2*exp(\x)});
+      \draw[-,green, thick] (0.0+\n,+0.0) -- (0.0+\n,+2.0);
+           
+      \draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, above left] {$A$};
+      \draw[-] (-0.0-0.1+\n,-0.1)--(-0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+      
+      \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+      
+      \end{tikzpicture}  
+    }
+  \end{animateinline}
+\end{figure}
+
+Po wymnożeniu obu funkcji, dla przykładowych wartości $t$, otrzymujemy (ciągła, czerwona linia):
+
+\begin{figure}[H]
+	\centering
+	\begin{animateinline}[controls,autoplay,loop,poster = 45]{10}
+		\multiframe{81}{n=-1.0+0.05}{%Number of Frames, variable = initial + increment
+			\begin{tikzpicture}
+			
+			\tikzmath{
+				function fun_tg01(\x,\n,\T) {
+					if (\x < 0) || (\x > 2)|| (\x > \n) then {
+						return 0.0;
+					} else {
+						return exp(\x-\n);
+					};
+				};
+			}
+			\draw[->] (-5.0,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+			\draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot h(t-\tau)$};
+			
+      	    \draw[-,red, dotted] (0.0,+1.5) -- (2.0,+1.5);
+           \draw[-,red, dotted] (0.0,+0.0) -- (0.0,+1.5);
+           \draw[-,red, dotted] (2.0,+0.0) -- (2.0,+1.5);
+			
+			\draw[scale=1.0,domain=-4.0:0.0,smooth,variable=\x,green,dotted] plot ({\x+\n},{2*exp(\x)});
+			\draw[-,green, dotted] (0.0+\n,+0.0) -- (0.0+\n,+2.0);
+			
+			\draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, above left] {$A$};
+			\draw[-] (-0.0-0.1+\n,-0.1)--(-0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+			
+			\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+			
+			\draw[scale=1.0,domain=-4.0:4.0,samples=200,variable=\x,red,thick] plot ({\x},{1.5*fun_tg01(\x,\n,2)});
+			
+			\end{tikzpicture}  
+		}
+	\end{animateinline}
+\end{figure}
+
+Z wykresu widać, że dla różnych wartości $t$ otrzymujemy różny kształt funkcji podcałkowej $f(\tau)\cdot h(t-\tau)$. W związku z tym, wyznaczymy splot oddzielnie dla posczególnych przedziałów wartości $t$
+
+
+\paragraph{Przedział 1}
+
+Dla wartości $t$ spełniających warunek $t<0$ otrzymujemy:
+
+\begin{figure}[H]
+	\centering
+	\begin{animateinline}[controls,autoplay,loop,poster = 10]{10}
+		\multiframe{21}{n=-1.0+0.05}{%Number of Frames, variable = initial + increment
+			\begin{tikzpicture}
+			
+			\tikzmath{
+				function fun_tg01(\x,\n,\T) {
+					if (\x < 0) || (\x > 2)|| (\x > \n) then {
+						return 0.0;
+					} else {
+						return exp(\x-\n);
+					};
+				};
+			}
+			\draw[->] (-5.0,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+			\draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot h(t-\tau)$};
+			
+			\draw[-,red, dotted] (0.0,+1.5) -- (2.0,+1.5);
+			\draw[-,red, dotted] (0.0,+0.0) -- (0.0,+1.5);
+			\draw[-,red, dotted] (2.0,+0.0) -- (2.0,+1.5);
+			
+			\draw[scale=1.0,domain=-4.0:0.0,smooth,variable=\x,green,dotted] plot ({\x+\n},{2*exp(\x)});
+			\draw[-,green, dotted] (0.0+\n,+0.0) -- (0.0+\n,+2.0);
+			
+			\draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, above left] {$A$};
+			\draw[-] (-0.0-0.1+\n,-0.1)--(-0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+			
+			\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+			
+			\draw[scale=1.0,domain=-4.0:4.0,samples=200,variable=\x,red,thick] plot ({\x},{1.5*fun_tg01(\x,\n,2)});
+			
+			\end{tikzpicture}  
+		}
+	\end{animateinline}
+\end{figure}
+
+
+\begin{align*}
+y(t)&=\int_{-\infty}^{\infty} 0 \cdot d\tau\\
+&=0
+\end{align*}
+
+\paragraph{Przedział 2}
+
+Dla wartości $t$ spełniających warunki $t \geq 0$ i $t < T$ otrzymujemy
+
+
+\begin{figure}[H]
+	\centering
+	\begin{animateinline}[controls,autoplay,loop,poster = 10]{10}
+		\multiframe{41}{n=0.0+0.05}{%Number of Frames, variable = initial + increment
+			\begin{tikzpicture}
+			
+			\tikzmath{
+				function fun_tg01(\x,\n,\T) {
+					if (\x < 0) || (\x > 2)|| (\x > \n) then {
+						return 0.0;
+					} else {
+						return exp(\x-\n);
+					};
+				};
+			}
+			\draw[->] (-5.0,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+			\draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot h(t-\tau)$};
+			
+			\draw[-,red, dotted] (0.0,+1.5) -- (2.0,+1.5);
+			\draw[-,red, dotted] (0.0,+0.0) -- (0.0,+1.5);
+			\draw[-,red, dotted] (2.0,+0.0) -- (2.0,+1.5);
+			
+			\draw[scale=1.0,domain=-4.0:0.0,smooth,variable=\x,green,dotted] plot ({\x+\n},{2*exp(\x)});
+			\draw[-,green, dotted] (0.0+\n,+0.0) -- (0.0+\n,+2.0);
+			
+			\draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, above left] {$A$};
+			\draw[-] (-0.0-0.1+\n,-0.1)--(-0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+			
+			\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+			
+			\draw[scale=1.0,domain=-4.0:4.0,samples=200,variable=\x,red,thick] plot ({\x},{1.5*fun_tg01(\x,\n,2)});
+			
+			\end{tikzpicture}  
+		}
+	\end{animateinline}
+\end{figure}
+
+
+\begin{align*}
+f(\tau) \cdot h(t-\tau)&=\begin{cases}
+0 & \tau \in \left(-\infty; 0\right)\\
+A \cdot e^{-a \cdot (t-\tau)} & \tau \in \left(0; t\right)\\
+0 & \tau \in \left( t; \infty \right)
+\end{cases}
+\end{align*}
+
+Wartość splotu $y(t)$ wyznaczamy ze wzoru:
+
+\begin{align*}
+y(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau\\
+&=\int_{-\infty}^{0} 0 \cdot d\tau + \int_{0}^{t}\left(A \cdot e^{-a \cdot (t-\tau)}\right)\cdot d\tau +\int_{t}^{\infty} 0 \cdot d\tau\\
+&=0 + A \cdot \int_{0}^{t}\left(e^{-a \cdot t}\cdot e^{a \cdot \tau}\right)\cdot d\tau +0\\
+&=A \cdot e^{-a \cdot t} \cdot \int_{0}^{t}\left(e^{a \cdot \tau}\right)\cdot d\tau\\
+&=A \cdot e^{-a \cdot t} \cdot \frac{1}{a} \cdot \left.e^{a \cdot \tau}\right|_{0}^{t}\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot t} - e^{a \cdot 0} \right)\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot t} - 1 \right)\\
+&=\frac{A}{a} \cdot \left(e^{a \cdot t} \cdot e^{-a \cdot t} - 1 \cdot e^{-a \cdot t}\right)\\
+&=\frac{A}{a} \cdot \left(e^{a \cdot t -a \cdot t} - e^{-a \cdot t}\right)\\
+&=\frac{A}{a} \cdot \left(e^{0} - e^{-a \cdot t}\right)\\
+&=\frac{A}{a} \cdot \left(1 - e^{-a \cdot t}\right)\\
+\end{align*}
+
+\paragraph{Przedział 3}
+
+Dla wartości $t$ spełniających warunki $t \geq T$ otrzymujemy
+
+
+\begin{figure}[H]
+	\centering
+	\begin{animateinline}[controls,autoplay,loop,poster = 5]{10}
+		\multiframe{41}{n=2.0+0.05}{%Number of Frames, variable = initial + increment
+			\begin{tikzpicture}
+			
+			\tikzmath{
+				function fun_tg01(\x,\n,\T) {
+					if (\x < 0) || (\x > 2)|| (\x > \n) then {
+						return 0.0;
+					} else {
+						return exp(\x-\n);
+					};
+				};
+			}
+			\draw[->] (-5.0,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
+			\draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot h(t-\tau)$};
+			
+			\draw[-,red, dotted] (0.0,+1.5) -- (2.0,+1.5);
+			\draw[-,red, dotted] (0.0,+0.0) -- (0.0,+1.5);
+			\draw[-,red, dotted] (2.0,+0.0) -- (2.0,+1.5);
+			
+			\draw[scale=1.0,domain=-4.0:0.0,smooth,variable=\x,green,dotted] plot ({\x+\n},{2*exp(\x)});
+			\draw[-,green, dotted] (0.0+\n,+0.0) -- (0.0+\n,+2.0);
+			
+			\draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, above left] {$A$};
+			\draw[-] (-0.0-0.1+\n,-0.1)--(-0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
+			
+			\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+			
+			\draw[scale=1.0,domain=-4.0:4.0,samples=200,variable=\x,red,thick] plot ({\x},{1.5*fun_tg01(\x,\n,2)});
+			
+			\end{tikzpicture}  
+		}
+	\end{animateinline}
+\end{figure}
+
+
+\begin{align*}
+f(\tau) \cdot h(t-\tau)&=\begin{cases}
+0 & \tau \in \left(-\infty; 0\right)\\
+A \cdot e^{-a \cdot (t-\tau)} & \tau \in \left(0; T\right)\\
+0 & \tau \in \left( T; \infty \right)
+\end{cases}
+\end{align*}
+
+Wartość splotu $y(t)$ wyznaczamy ze wzoru:
+
+\begin{align*}
+y(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau\\
+&=\int_{-\infty}^{0} 0 \cdot d\tau + \int_{0}^{T}\left(A \cdot e^{-a \cdot (t-\tau)}\right)\cdot d\tau +\int_{T}^{\infty} 0 \cdot d\tau\\
+&=0 + A \cdot \int_{0}^{T}\left(e^{-a \cdot t}\cdot e^{a \cdot \tau}\right)\cdot d\tau +0\\
+&=A \cdot e^{-a \cdot t} \cdot \int_{0}^{T}\left(e^{a \cdot \tau}\right)\cdot d\tau\\
+&=A \cdot e^{-a \cdot t} \cdot \frac{1}{a} \cdot \left.e^{a \cdot \tau}\right|_{0}^{T}\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - e^{a \cdot 0} \right)\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - 1 \right)\\
+\end{align*}
+
+Podsumowując:
+
+\begin{align*}
+y(t)=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau &=\begin{cases}
+0 & t \in \left(-\infty; 0\right)\\
+\frac{A}{a} \cdot \left(1 - e^{-a \cdot t}\right) & t \in \left(0; T\right)\\
+\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - 1 \right) & t \in \left( T; \infty \right)
+\end{cases}
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	%\draw (0,0) circle (1in);
+	\draw[->] (-2.0,+0.0) -- (+6.0,+0.0) node[right] {$t$};
+	\draw[->] (0.0,-1.0) -- (0.0,+2.5) node[above] {$y(t)$};
+	
+	
+	\draw[-] (-0.1,1.3-0.1)--(+0.1,+1.3+0.1) node[midway, above left] {$\frac{A}{a} \cdot \left(1 -e^{-a \cdot T} \right)$};
+	\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$T$};
+	
+	\draw[-,red, thick] (-2.0,0.0) -- (0.0,0.0);
+	\draw[-,red, dashed] (0.0,1.3) -- (2.0,1.3);
+	
+	\draw[scale=1.0,domain=0.0:2.0,smooth,variable=\x,red,thick] plot ({\x},{1.5- 1.5*exp(-\x)});
+    \draw[scale=1.0,domain=2.0:5.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(-\x)*(exp(2)-1)});
+	
+	\end{tikzpicture}
+\end{figure}
+
+
+\end{task}
+

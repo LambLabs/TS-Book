@@ -15,6 +15,8 @@
 \usepackage{tikz}
 \usepackage{ifthen}
 \usepackage{ bbold }
+\usepackage{animate}
+
 
 \selectlanguage{polish}
 
@@ -73,34 +75,44 @@
 }
 % Twierdzenie o całkowaniu % \IntegralTeorem{g}{G}{f}{F}
 \newcommand{\IntegralTeorem}[4]{
-  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
-  #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\overset{F}{\rightarrow} 
+  #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
+  #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\xrightarrow{\mathcal F}
   #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(\omega) \cdot #2(0)
 }
 % Twierdzenie o przesunięciu w dziedzinie częstotliwości % \FrequencyShiftTeorem{g}{G}{f}{F}
 \newcommand{\FrequencyShiftTeorem}[4]{
-  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
-  #3(t) = #1(t) \cdot e^{\jmath \cdot \omega_0 \cdot t} &\overset{F}{\rightarrow} 
+  #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
+  #3(t) = #1(t) \cdot e^{\jmath \cdot \omega_0 \cdot t} &\xrightarrow{\mathcal F} 
   #4(\jmath \omega) = #2(\jmath \left(\omega - \omega_0\right))
 }
 % Twierdzenie o symetrii % \SymetryTeorem{g}{G}{f}{F}
 \newcommand{\SymetryTeorem}[4]{
-  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
-  #3(t) = #2(t) &\overset{F}{\rightarrow} 
-  #4(\jmath \omega) = 2\pi \cdot #1(- \jmath \omega)
+  #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
+  #3(t) = #2(t) &\xrightarrow{\mathcal F}
+  #4(\jmath \omega) = 2\pi \cdot #1(-\omega)
 }
 % Twierdzenie o zmianie skali % \TimeScalingTeorem{g}{G}{f}{F}
 \newcommand{\TimeScalingTeorem}[4]{
-  #1(t) &\overset{F}{\rightarrow} #2(\jmath \omega)\\
-  #3(t) = #1(a \cdot t) &\overset{F}{\rightarrow} 
-  #4(\jmath \omega) = \frac{1}{\left|a\right|} \cdot #2(\jmath \frac{\omega}{a})
+  #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
+  #3(t) = #1(\alpha \cdot t) &\xrightarrow{\mathcal F}
+  #4(\jmath \omega) = \frac{1}{\left|\alpha \right|} \cdot #2(\jmath \frac{\omega}{\alpha})
 }
 
-% Twierdzenie o jednorodności % \HomogeneousTeorem{f}{F}
+% Twierdzenie o liniowości % \HomogeneousTeorem{f}{F}
 \newcommand{\HomogeneousTeorem}[2]{
-  #1_1(t) &\overset{F}{\rightarrow} #2_1(\jmath \omega) \\
-  #1_2(t) &\overset{F}{\rightarrow} #2_2(\jmath \omega) \\
-  #1(t) = #1_1(t) + #1_2(t) &\overset{F}{\rightarrow} #2(\jmath \omega)=#2_1(\jmath \omega) + #2_2(\jmath \omega)
+  #1_1(t) &\xrightarrow{\mathcal F} #2_1(\jmath \omega) \\
+  #1_2(t) &\xrightarrow{\mathcal F} #2_2(\jmath \omega) \\
+  #1(t) = \alpha \cdot #1_1(t) + \beta \cdot #1_2(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)=\alpha \cdot #2_1(\jmath \omega) + \beta \cdot #2_2(\jmath \omega)
+}
+
+%Splot %\Convolution{h}{f}{g}
+\newcommand{\Convolution}[3]{
+#1(t) = \int_{-\infty}^{\infty} #2(\tau) \cdot #3(t-\tau) \cdot d\tau
+}
+
+%Splot %\Parseval{F}
+\newcommand{\Parseval}[1]{
+ E = \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|#1(\jmath \omega)\right|^2 \cdot d\omega
 }
 
 %\setdebug
@@ -239,7 +251,10 @@ Wydrukowano w Polsce\\[1em]
 \inputTask{zadKW024.tex}
 \inputTask{zadKW025.tex}
 \inputTask{zadKW026.tex}
+\inputTask{zadKW027.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
+\inputTask{zadTG009.tex}
+\inputTask{zadTG010.tex}
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal
 %	Calculating the power of a signal from its Fourier transform. The Parseval's theorem for power signals
@@ -249,6 +264,8 @@ Wydrukowano w Polsce\\[1em]
 %	Impulse response of a causal system
 %	The response of an LTI system to arbitrary input
 %	Properties of linear convolution
+\inputTask{zadTG008.tex}
+\inputTask{zadKW028.tex}
 %	Frequency response
 %	Determining the frequency response of an electronic circuit
 %Filters
