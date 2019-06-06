@@ -129,33 +129,11 @@
 %====================================================
 %Strona Tytułowa
 \label{page:titlepage}
-\makebooktitle
+\input{TitlePage.tex}
 %====================================================
 %Druga Strona z ISBN'em
-\thispagestyle{empty}
-\begin{flushleft}
-\textsc{Politechnika Poznańska}\\%
-Wydział Elektroniki i Telekomunikacji\\%
-Katedra Telekomunikacji Multimedialnej i~Mikroelektroniki\\[1em]
-
-pl. M. Skłodowskiej-Curie 5\\
-60-965 Poznań\\[1em]
-
-www.et.put.poznan.pl\\
-www.multimedia.edu.pl
-\end{flushleft}
-
-\vfill
-
-\begin{flushleft}
-Copyright © Krzysztof Wegner, 2019\\
-Wszelkie prawa zastrzeżone\\
-\ISBN\\
-Wydrukowano w Polsce\\[1em]
-
-%Książka współfinansowana ze środków Unii Europejskiej w ramach Europejskiego Funduszu Społecznego.\\
-\end{flushleft}
-\clearpage
+\label{page:firstpage}
+\input{FirstPage.tex}
 %====================================================
 %\input{01_opor_zastepczy/_opor_zastepczy.tex}
 %\input{02_zrodla/_zrodla.tex}
@@ -279,6 +257,11 @@ Wydrukowano w Polsce\\[1em]
 %	Processing of discrete-time signals
 %	Frequency response of discrete-time LTI systems
 
+%====================================================
+% Ostatna stona z ISBN'em
+%====================================================
+\label{page:lastpage}
+\input{LastPage.tex}
 %====================================================
 \end{document}
 

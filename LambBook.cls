@@ -68,27 +68,6 @@
 \pagestyle{main}
 
 %====================================================
-% Title Page definition
-\newcommand{\makebooktitle}{%
-\thispagestyle{empty}
-\begin{titlepage}
-\begin{center}
-
-{\fontsize{100}{120}\selectfont \@title}
-%\@title
-\\[10em]
-\@author
-
-\vfill
-
-% Bottom of the page
-{\large \@date}
-
-\end{center}
-\end{titlepage}
-\cleardoublepage
-}
-%====================================================
 % Schematic environment
 %\RequirePackage{tabularx}
 \newcounter{myschematcounter}

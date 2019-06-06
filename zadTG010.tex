@@ -69,10 +69,10 @@ Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right
 
 \begin{align*}
 \left|F(\jmath \omega)\right| &= \begin{cases}
-0 & \omega \in \left( -\infty; -3 \cdot \omega_0 \right) \\
-\left(\frac{\pi}{4 \cdot \omega_0^2}\right) \cdot \omega + \frac{3 \cdot \pi}{4 \cdot \omega_0} & \omega \in \left( -3 \cdot \omega_0; -\omega_0 \right) \\
-\frac{\pi}{2 \cdot \omega_0} & \omega \in \left(-\omega_0; \omega_0 \right) \\
-\left(-\frac{\pi}{4 \cdot \omega_0^2}\right) \cdot \omega + \frac{3 \cdot \pi}{4 \cdot \omega_0} & \omega \in \left(\omega_0; 3 \cdot \omega_0 \right)\\
+0 & \omega \in \left( -\infty; -3 \cdot \omega_0 \right> \\
+\frac{\pi}{4 \cdot \omega_0^2} \cdot \omega + \frac{3 \cdot \pi}{4 \cdot \omega_0} & \omega \in \left( -3 \cdot \omega_0; -\omega_0 \right> \\
+\frac{\pi}{2 \cdot \omega_0} & \omega \in \left(-\omega_0; \omega_0 \right> \\
+-\frac{\pi}{4 \cdot \omega_0^2} \cdot \omega + \frac{3 \cdot \pi}{4 \cdot \omega_0} & \omega \in \left(\omega_0; 3 \cdot \omega_0 \right>\\
 0 & \omega \in \left(3 \cdot \omega_0; \infty \right)\\
 \end{cases}\\
 \end{align*}
@@ -80,7 +80,12 @@ Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right
 Podstawiając do wzoru na całkowitą energie otrzymujemy:
 \begin{align*}
 E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^2 \cdot d\omega\\
-&= \frac{1}{2\pi} \cdot \left(\int_{-\infty}^{-3 \cdot \omega_0} \left|0\right|^2 \cdot d\omega + \int_{-3 \cdot \omega_0}^{-\omega_0} \left|\left(\frac{\pi}{4 \cdot \omega_0^2}\right) \cdot \omega + \frac{3 \cdot \pi}{4 \cdot \omega_0}\right|^2 \cdot d\omega + \int_{-\omega_0}^{\omega_0} \left|\frac{\pi}{2 \cdot \omega_0}\right|^2 \cdot d\omega + tttttttttttt\right)\\
+&= \frac{1}{2\pi} \cdot \left(\int_{-\infty}^{-3 \cdot \omega_0} \left|0\right|^2 \cdot d\omega + \int_{-3 \cdot \omega_0}^{-\omega_0} \left|\frac{\pi}{4 \cdot \omega_0^2} \cdot \omega + \frac{3 \cdot \pi}{4 \cdot \omega_0}\right|^2 \cdot d\omega + \int_{-\omega_0}^{\omega_0} \left|\frac{\pi}{2 \cdot \omega_0}\right|^2 \cdot d\omega\right.\\
+&\left.+\int_{\omega_0}^{3 \cdot \omega_0} \left|-\frac{\pi}{4 \cdot \omega_0^2} \cdot \omega + \frac{3 \cdot \pi}{4 \cdot \omega_0}\right|^2 \cdot d\omega + \int_{3 \cdot \omega_0}^{\infty} \left|0\right|^2 \cdot d\omega \right)\\
+&= \frac{1}{2\pi} \cdot \left(0 + \int_{-3 \cdot \omega_0}^{-\omega_0} \left(\left(\frac{\pi}{4 \cdot \omega_0^2}\right)^2 \cdot \omega^2 + 2 \cdot \frac{\pi}{4 \cdot \omega_0^2} \cdot \frac{3 \cdot \pi}{4 \cdot \omega_0} \cdot \omega + \left(\frac{3 \cdot \pi}{4 \cdot \omega_0}\right)^2\right) \cdot d\omega + \frac{\pi^2}{4 \cdot \omega_0^2}\cdot \int_{-\omega_0}^{\omega_0} d\omega\right.\\
+&\left.+ \int_{\omega_0}^{3 \cdot \omega_0} \left(\left(-\frac{\pi}{4 \cdot \omega_0^2}\right)^2 \cdot \omega^2 - 2 \cdot \frac{\pi}{4 \cdot \omega_0^2} \cdot \frac{3 \cdot \pi}{4 \cdot \omega_0} \cdot \omega + \left(\frac{3 \cdot \pi}{4 \cdot \omega_0}\right)^2\right) \cdot d\omega + 0 \right)\\
+&= \frac{1}{2\pi} \cdot \left(\frac{\pi^2}{16 \cdot \omega_0^4} \cdot \int_{-3 \cdot \omega_0}^{-\omega_0} \omega^2 \cdot d\omega + \frac{6 \cdot \pi^2}{16 \cdot \omega_0^3} \cdot \int_{-3 \cdot \omega_0}^{-\omega_0} \omega \cdot d\omega + \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \int_{-3 \cdot \omega_0}^{-\omega_0} d\omega + \frac{\pi^2}{4 \cdot \omega_0^2}\cdot \left. \omega\right|_{-\omega_0}^{\omega_0}\right.\\
+&\left.+ \frac{\pi^2}{16 \cdot \omega_0^4} \cdot \int_{\omega_0}^{3 \cdot \omega_0} \omega^2 \cdot d\omega - \frac{6 \cdot \pi^2}{16 \cdot \omega_0^3} \cdot \int_{\omega_0}^{3 \cdot \omega_0} \omega \cdot d\omega + \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \int_{\omega_0}^{3 \cdot \omega_0} d\omega \right)\\
 \end{align*}
 
 
