@@ -589,19 +589,22 @@ h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
         function fun2(\x,\n,\T) {
           if (\x < (-3.0 * \T/2.0)) then {
             return 0;
-          };
-          if (\x < -\T/2) then {
-            return \x*\x/(2*\T) + 3*\x/2 + 9*\T/8;
-          };
-          if (\x < \T/2) then {
-            return -\x*\x/\T +\T;
-          };
-          if (\x < 3*\T/2) then {
-            return \x*\x/(2*\T) - 3*\x/2 + 9*\T/8;
           } else {
-            return 0;
+              if (\x < -\T/2.0) then {
+                return \x*\x/(2*\T) + 3*\x/2 + 9*\T/8;
+              } else {
+                  if (\x < \T/2.0) then {
+                    return -\x*\x/\T +\T;
+                  } else {
+                      if (\x < 3*\T/2) then {
+                        return \x*\x/(2*\T) - 3*\x/2 + 9*\T/8;
+                      } else {
+                        return 0;
+                      };
+                  };
+              };
           };
-          return 0.0;
+          %return 0.0;
         };
       }
       
