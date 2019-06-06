@@ -563,7 +563,7 @@ h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
 &=\begin{cases}
 0 & \tau \in \left(-\infty; -\frac{3}{2}\cdot T\right);\\
 \frac{1}{2\cdot T} \cdot t^2 + \frac{3}{2} \cdot t+\frac{9}{8} \cdot  T & \tau \in \left( -\frac{3}{2}\cdot T; -\frac{1}{2} \cdot T\right);\\
-- \frac{1}{T}\cdot t^2 + T & \tau \in \left( -\frac{1}{2}\cdot T; \frac{1}{2} \cdot T\right);\\
+- \frac{1}{T}\cdot t^2 + \frac{3}{4} \cdot T & \tau \in \left( -\frac{1}{2}\cdot T; \frac{1}{2} \cdot T\right);\\
 \frac{9}{8}\cdot T - \frac{3}{2} \cdot t  +  \frac{1}{2 \cdot T} \cdot t^2 & \tau \in \left( \frac{1}{2}\cdot T; \frac{3}{2} \cdot T\right);\\
 0 & \tau \in \left(\frac{3}{2}\cdot T ; \infty\right);\\
 \end{cases}
@@ -571,8 +571,6 @@ h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
 
 \begin{figure}[H]
   \centering
-  \begin{animateinline}[controls,autoplay,loop,poster = 20,palindrome]{10}
-    \multiframe{21}{n=1.5+0.05}{%Number of Frames, variable = initial + increment
       \begin{tikzpicture}
       \tikzmath{
         %function fun1(\x,\n,\T) {
@@ -594,7 +592,7 @@ h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
                 return \x*\x/(2*\T) + 3*\x/2 + 9*\T/8;
               } else {
                   if (\x < \T/2.0) then {
-                    return -\x*\x/\T +\T;
+                    return -\x*\x/\T +3*\T / 4;
                   } else {
                       if (\x < 3*\T/2) then {
                         return \x*\x/(2*\T) - 3*\x/2 + 9*\T/8;
@@ -609,31 +607,22 @@ h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
       }
       
       %\draw (0,0) circle (1in);
-      \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$\tau$};
-      \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f(\tau) \cdot g(t-\tau)$};
-      
-      \draw[-,red, dotted] (-0.5,+2.0) -- (+0.5,+2.0);
-      \draw[-,red, dotted] (-0.5,+0.0) -- (-0.5,+2.0);
-      \draw[-,red, dotted] (+0.5,+0.0) -- (+0.5,+2.0);
-      
-      \draw[-,green, dotted] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
-      \draw[-,green, dotted] (+1.0+\n,+0.0) -- (-0.0+\n,+2.0);
-      \draw[-,green, dashed] (+0.0+\n,+0.0) -- (-0.0+\n,+2.0);
+      \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$t$};
+      \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$h(t)$};
       
       \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, above left] {$1$};
-      \draw[-] (-1.0-0.1+\n,-0.1)--(-1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t-T$};
-      \draw[-] (+1.0-0.1+\n,-0.1)--(+1.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t+T$};
-      \draw[-] (+0.0-0.1+\n,-0.1)--(+0.0+0.1+\n,0.1) node[midway, below, outer sep=25pt,align=center] {$t$};
-      
-      \draw[-] (-0.5-0.1,-0.1)--(-0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
-      \draw[-] (+0.5-0.1,-0.1)--(+0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{T}{2}$};
+      \draw[-] (-0.1,+2.0*3/4-0.1)--(+0.1,+2.0*3/4+0.1) node[midway, above left] {$\frac{3}{4} \cdot T$};
+
+
+      \draw[-] (-1.5-0.1,-0.1)--(-1.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{3}{2}\cdot T$};
+      \draw[-] (+1.5-0.1,-0.1)--(+1.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{3}{2}\cdot T$};
+      \draw[-] (-0.5-0.1,-0.1)--(-0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{1}{2}\cdot T$};
+      \draw[-] (+0.5-0.1,-0.1)--(+0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{1}{2}\cdot T$};
       
       %\draw[-,pink, thick] (-1.0+\n,+0.0) -- (+0.0+\n,+2.0);
-      \draw[scale=1.0,domain=-3.5:3.5,smooth,samples=200,variable=\x,red,thick] plot ({\x},{2*fun2(\x,\n,1)});
+      \draw[scale=1.0,domain=-3.5:3.5,smooth,samples=200,variable=\x,red,thick] plot ({\x},{2*fun2(\x,1,1)});
       
       \end{tikzpicture}  
-    }
-  \end{animateinline}
 \end{figure}
 
 \end{task}
