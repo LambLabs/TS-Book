@@ -94,33 +94,30 @@ E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^
 + \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \left.\omega\right|_{\omega_0}^{3 \cdot \omega_0} \right]\\
 &= \frac{1}{2\pi} \cdot \left[\frac{\pi^2}{16 \cdot \omega_0^4} \cdot \left(-\frac{\omega_0^3}{3}-\left(-\frac{27 \cdot \omega_0^3}{3}\right)\right) 
 + \frac{6 \cdot \pi^2}{16 \cdot \omega_0^3} \cdot \left(\frac{\omega_0^2}{2}-\frac{9 \cdot \omega_0^2}{2}\right) 
-+ \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \left(\omega_0-\left(-3 \cdot \omega_0\right)\right)\right.\\
++ \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \left(-\omega_0-\left(-3 \cdot \omega_0\right)\right)\right.\\
 &+\left. \frac{\pi^2}{4 \cdot \omega_0^2}\cdot 2 \cdot \omega_0 + \frac{\pi^2}{16 \cdot \omega_0^4} \cdot \left(\frac{27 \cdot \omega_0^3}{3}-\frac{\omega_0^3}{3}\right) 
 - \frac{6 \cdot \pi^2}{16 \cdot \omega_0^3} \cdot \left(\frac{9 \cdot \omega_0^2}{2}-\frac{\omega_0^2}{2}\right) 
 + \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \left(3 \cdot \omega_0 - \omega_0\right) \right]\\
 &= \frac{1}{2\pi} \cdot \left[\frac{\pi^2}{16 \cdot \omega_0^4} \cdot \frac{26 \cdot \omega_0^3}{3} 
 + \frac{6 \cdot \pi^2}{16 \cdot \omega_0^3} \cdot \left(-\frac{8 \cdot \omega_0^2}{2}\right) 
-+ \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot 4 \cdot \omega_0 + \frac{\pi^2}{2 \cdot \omega_0}\right.\\
++ \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot 2 \cdot \omega_0 + \frac{\pi^2}{2 \cdot \omega_0}\right.\\
 &+\left. \frac{\pi^2}{16 \cdot \omega_0^4} \cdot \frac{26 \cdot \omega_0^3}{3} 
 - \frac{6 \cdot \pi^2}{16 \cdot \omega_0^3} \cdot \frac{8 \cdot \omega_0^2}{2}
 + \frac{9 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot 2 \cdot \omega_0 \right]\\
 &= \frac{1}{2\pi} \cdot \left[\frac{26 \cdot \pi^2}{48 \cdot \omega_0} - \frac{48 \cdot \pi^2}{32 \cdot \omega_0}
-+ \frac{36 \cdot \pi^2}{16 \cdot \omega_0} + \frac{\pi^2}{2 \cdot \omega_0}+\frac{26 \cdot \pi^2}{48 \cdot \omega_0}
++ \frac{18 \cdot \pi^2}{16 \cdot \omega_0} + \frac{\pi^2}{2 \cdot \omega_0}+\frac{26 \cdot \pi^2}{48 \cdot \omega_0}
 - \frac{48 \cdot \pi^2}{32 \cdot \omega_0} + \frac{18 \cdot \pi^2}{16 \cdot \omega_0}\right]\\
-&= \frac{1}{2\pi} \cdot \frac{\pi^2}{2 \cdot \omega_0} \cdot \left[\frac{26}{24} - \frac{48}{16}+ \frac{36}{8} + 1 +\frac{26}{24}
+&= \frac{1}{2\pi} \cdot \frac{\pi^2}{2 \cdot \omega_0} \cdot \left[\frac{26}{24} - \frac{48}{16}+ \frac{18}{8} + 1 +\frac{26}{24}
 - \frac{48}{16} + \frac{18}{8}\right]\\
-&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{52}{24} - \frac{96}{16}+ \frac{54}{8} + 1\right]\\
-&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{52}{24} - 6 + \frac{162}{24} + 1\right]\\
-&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{214}{24} - 5\right]\\
-&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{214}{24} - \frac{140}{24}\right]\\
-&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{74}{24}\right]\\
-&= \frac{37 \cdot \pi}{48 \cdot \omega_0}\\
+&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{52}{24} - \frac{96}{16}+ \frac{36}{8} + 1\right]\\
+&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{52}{24} - 6 + \frac{108}{24} + 1\right]\\
+&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{160}{24} - 5\right]\\
+&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{160}{24} - \frac{120}{24}\right]\\
+&= \frac{\pi}{4 \cdot \omega_0} \cdot \left[\frac{40}{24}\right]\\
+&= \frac{5 \cdot \pi}{12 \cdot \omega_0}\\
 \end{align*}
 
-
-%ToDo
-%Policzyć całkę z kwadratu widma amplitudowego :)
-
+Podsumowując, całkowita energia sygnału $f(t) = Sa^2\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)$ to $E=\frac{5 \cdot \pi}{12 \cdot \omega_0}$.
 
 Energię sygnału dla pewnego zakresu pulsacji, także można wyznaczyc z twierdzenia Parsevala, ale zmieniając granice w całce zgodnie z oczekiwanym zakresem pulsacji, czyli dla pulsacji $\left| \omega \right| < \omega_0$ otrzymamy wzór:
 \begin{equation}
@@ -139,7 +136,19 @@ E_{\left| \omega \right| < \omega_0} &= \frac{1}{2\pi} \cdot \int_{-\omega_0}^{\
 &= \frac{\pi}{4 \cdot \omega_0}\\
 \end{align*}
 
+Podsumowując $ E_{\left| \omega \right| < \omega_0} = \frac{\pi}{4 \cdot \omega_0}$.
 
+Teraz możemy obliczyć:
+\begin{equation}
+\frac{E_{\left| \omega \right| < \omega_0}}{E} = ?
+\end{equation}
+
+Podstawiając nasze wczesniejsze wyniki otrzymujemy:
+\begin{align*}
+\frac{E_{\left| \omega \right| < \omega_0}}{E} = \frac{\frac{\pi}{4 \cdot \omega_0}}{\frac{5 \cdot \pi}{12 \cdot \omega_0}} =\frac{\pi}{4 \cdot \omega_0} \cdot \frac{12 \cdot \omega_0}{5 \cdot \pi} =\frac{12}{20} =\frac{6}{10}=60\%
+\end{align*}
+
+Dla pulsacji z zakresu $\left| \omega \right| < \omega_0$ przypada $60\%$ energi sygnału.
 
 \end{task}
 
