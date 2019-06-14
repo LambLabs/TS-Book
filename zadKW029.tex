@@ -155,30 +155,23 @@ du&=dt & v&=\frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t
 \EulerCos
 \end{Bmatrix*}\\
 &= \frac{2\cdot A}{\omega}\cdot sin\left(\omega \cdot t_{0}\right) + \frac{A}{t_{0}}\cdot \frac{1}{\jmath^{2} \cdot \omega^{2}} \cdot \left(2  - 2\cdot cos \left( \omega \cdot t_{0}\right)\right)\\
-%&=-\frac{A}{\jmath \cdot \omega} \cdot e^{ \jmath \cdot \omega \cdot t_{0}} - \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} + \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} \cdot e^{ \jmath \cdot \omega \cdot t_{0}} %9
-%- \frac{A}{\jmath \cdot \omega} + \frac{A}{\jmath \cdot \omega} \cdot e^{ \jmath \cdot \omega \cdot t_{0}}\\
-%&+\frac{A}{\jmath \cdot \omega} \cdot e^{ -\jmath \cdot \omega \cdot t_{0}}  + \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} \cdot e^{- \jmath \cdot \omega \cdot t_{0}} - \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}}
-%- \frac{A}{\jmath \cdot \omega} \cdot e^{ -\jmath \cdot \omega \cdot t_{0}} + \frac{A}{\jmath \cdot \omega}\\
-%&=- \frac{2 \cdot A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} + \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}}  \cdot \left(e^{ \jmath \cdot \omega \cdot t_{0}}+e^{ -\jmath \cdot \omega \cdot t_{0}} \right)\\ %10
-%&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} - \frac{A}{t_{0} \cdot \omega^{2}} \cdot \left(e^{ \jmath \cdot \omega \cdot t_{0}}+e^{ -\jmath \cdot \omega \cdot t_{0}} \right)\\%11
-%&=\begin{Bmatrix*}[l]%12
-%cos(x)=\frac{e^{\jmath \cdot x} + e^{-\jmath \cdot x}}{2}\\
-%\end{Bmatrix*}\\
-%&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} - \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot cos(\omega \cdot t_{0})\\%13
-%&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot (1 - cos(\omega \cdot t_{0}))\\%14
-%&=\begin{Bmatrix*}[l]%15
-%sin^{2}(x)=\frac{1}{2}-\frac{1}{2}\cdot cos(2 \cdot x)\\
-%cos(2 \cdot x)= 1-2\cdot sin^{2}(x)\\
-%\end{Bmatrix*}\\
-%&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot (1 - 1 + 2\cdot sin^{2}(\frac{\omega \cdot t_{0}}{2}))\\%16
-%&= \frac{4 \cdot A}{t_{0} \cdot \omega^{2}} \cdot sin^{2}(\frac{\omega \cdot t_{0}}{2})\\%16
-%&= \frac{A \cdot t_{0}}{\frac{t_{0}^{2} \cdot \omega^{2}}{4}} \cdot sin^{2}(\frac{\omega \cdot t_{0}}{2})\\%17
-%&=\begin{Bmatrix*}[l]%18
-%\frac{sin(x)}{x}=Sa(x)
-%\end{Bmatrix*}\\
+&= \frac{2\cdot A}{\omega}\cdot sin\left(\omega \cdot t_{0}\right) + \frac{A}{t_{0}}\cdot \frac{1}{\jmath^{2} \cdot \omega^{2}} \cdot 4 \cdot \left(\frac{1}{2}  - \frac{1}{2}\cdot cos \left( \omega \cdot t_{0}\right)\right)\\
+&=\begin{Bmatrix*}[l]%15
+sin^2\left(x\right)=\frac{1}{2}-\frac{1}{2}\cdot cos\left(2\cdot x\right)
+\end{Bmatrix*}\\
+&= \frac{2\cdot A}{\omega}\cdot sin\left(\omega \cdot t_{0}\right) + \frac{A}{t_{0}}\cdot \frac{4}{\jmath^{2} \cdot \omega^{2}} \cdot sin^2 \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)\\
+&= \frac{2\cdot A}{\omega}\cdot \frac{t_{0}}{t_{0}}sin\left(\omega \cdot t_{0}\right) + \frac{A}{t_{0}}\cdot \frac{4}{\jmath^{2} \cdot \omega^{2}} \cdot \frac{t_{0}}{t_{0}} \cdot sin^2 \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)\\
+&= 2\cdot A \cdot t_{0} \cdot \frac{sin\left(\omega \cdot t_{0}\right)}{t_{0} \cdot \omega} + A \cdot t_{0} \cdot \frac{4}{-1 \cdot \omega^{2} \cdot t_{0}^2} \cdot sin^2 \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)\\
+&= 2\cdot A \cdot t_{0} \cdot \frac{sin\left(\omega \cdot t_{0}\right)}{t_{0} \cdot \omega} + A \cdot t_{0} \cdot \frac{-1}{\frac{\omega^{2} \cdot t_{0}^2}{4}} \cdot sin^2 \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)\\
+&= 2\cdot A \cdot t_{0} \cdot \frac{sin\left(\omega \cdot t_{0}\right)}{t_{0} \cdot \omega} - A \cdot t_{0} \cdot \frac{sin^2 \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)}{\left(\frac{\omega \cdot t_{0}}{2}\right)^2} \\
+&= 2\cdot A \cdot t_{0} \cdot \frac{sin\left(\omega \cdot t_{0}\right)}{t_{0} \cdot \omega} - A \cdot t_{0} \cdot \left( \frac{sin \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)}{\frac{1}{2} \cdot \omega \cdot t_{0}}\right)^2 \\
+&=\begin{Bmatrix*}[l]%18
+\SaDef
+\end{Bmatrix*}\\
+&= 2\cdot A \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - A \cdot t_{0} \cdot Sa^2 \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)\\
 %&= A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})\\%17
 \end{align*}
 
-Transformata sygnału $f(t) =\cdots$
+Transformata sygnału $f(t) =2\cdot A \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - A \cdot t_{0} \cdot Sa^2 \left( \frac{1}{2} \cdot \omega \cdot t_{0}\right)$
 
 \end{task}
