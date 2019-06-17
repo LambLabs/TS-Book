@@ -79,6 +79,12 @@
   #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\xrightarrow{\mathcal F}
   #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(\omega) \cdot #2(0)
 }
+% Twierdzenie o przesunięciu w czasu częstotliwości % \TimeShiftTeorem{g}{G}{f}{F}
+\newcommand{\TimeShiftTeorem}[4]{
+  #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
+  #3(t) = #1(t-t_0) &\xrightarrow{\mathcal F} 
+  #4(\jmath \omega) = #2(\jmath \omega) \cdot e^{-\jmath \cdot \omega \cdot t_0}
+}
 % Twierdzenie o przesunięciu w dziedzinie częstotliwości % \FrequencyShiftTeorem{g}{G}{f}{F}
 \newcommand{\FrequencyShiftTeorem}[4]{
   #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
@@ -208,7 +214,7 @@
 \inputTask{zadTG004.tex}
 \inputTask{zadKW019.tex}
 \inputTask{zadKW020.tex}
-\inputTask[Debug]{zadKW029.tex}
+\inputTask{zadKW029.tex}
 %	Fourier Transform vs Laplace Transform
 %	The Magnitude Spectrum and Phase Spectrum
 %	Symmetries of the Fourier Transform for real-valued signals
@@ -231,7 +237,8 @@
 \inputTask{zadKW025.tex}
 \inputTask{zadKW026.tex}
 \inputTask{zadKW027.tex}
-\inputTask[Debug]{zadKW030.tex}
+\inputTask{zadKW030.tex}
+\inputTask[Debug]{zadKW031.tex}
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 \inputTask{zadTG009.tex}
 \inputTask{zadTG013.tex}
