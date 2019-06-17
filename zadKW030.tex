@@ -1,0 +1,86 @@
+\begin{task}
+Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku wykorzystując twierdzenia opisujące własciwości transformacji Fouriera.
+Wykorzystaj informację o tym, że $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$ oraz $\mathcal F\{\Lambda(t)\}=Sa^2\left(\frac{\omega}{2}\right)$.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  %\draw[-,red, thick] (-3.5,+0.0) -- (-1.0,+0.0) -- (0.0,+1.0) -- (1.0,+0.0) -- (3.0,0.0);
+  \draw[-,red, thick] (-3.0,+0.0) -- (-1.0,+0.0) -- (-1.0,+1.0) -- (0.0,+0.0) -- (1.0,1.0) -- (1.0,0.0) -- (3.0,0.0);
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-t_{0}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$t_{0}$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, above left] {$A$};
+  \end{tikzpicture}
+\end{figure}
+
+W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku. Możemy zauważyć iż przedstawiony sygnał można otrzymać przez oodjęcie trójkąta od sygnału prostokątnego. 
+Wykorzystując sygnały elementarne możemy to zapisać następująco:
+\begin{equation}
+f(t) = A \cdot \left(\Pi\left(\frac{t}{2\cdot t_{0}}\right) - \Lambda\left(\frac{t}{t_{0}}\right)\right)
+\end{equation}
+
+Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych sygnałów elementarnych, czyli:
+
+\begin{equation}
+f(t) = A\cdot \left( f_{1}(t) - f_{2}(t) \right)
+\end{equation}
+gdzie:
+\begin{align*}
+f_{1}(t) = \Pi\left(\frac{t}{2\cdot t_{0}}\right)\\
+f_{2}(t) = \Lambda\left(\frac{t}{t_{0}}\right)
+\end{align*}
+
+Wyznaczmy transformtę sygnału $f_{1}(t)$, czyli $F_{1}(\jmath \omega)$.
+
+Z treści zadania wiemy, że:
+$\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$. Wykorzystując twierdzenie o zmianie skali mamy:
+
+\begin{align*}
+\TimeScalingTeorem{g}{G}{f}{F}
+\end{align*}
+
+
+\begin{align*}
+\Pi(t) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right)\\
+\Pi(\frac{t}{2\cdot t_{0}}) \xrightarrow{\mathcal F} & \frac{1}{\left|\frac{1}{2 \cdot t_{0}}\right|} \cdot Sa\left(\frac{ \frac{\omega}{ \frac{1}{2\cdot t_{0}} }}{2}\right)\\
+\Pi(\frac{t}{2\cdot t_{0}}) \xrightarrow{\mathcal F} & 2 \cdot t_{0} \cdot Sa\left(\frac{\omega \cdot 2 \cdot t_{0}}{2}\right)\\
+\Pi(\frac{t}{2\cdot t_{0}}) \xrightarrow{\mathcal F} & 2 \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right)\\
+\end{align*}
+
+Transformata sygnału $f_{1}(t)$ to:
+\begin{equation}
+F_{1}(\jmath \omega) = \mathcal F\{f_{1}(t)\} = 2 \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right)
+\end{equation}
+
+Teraz wyznaczmy transformtę sygnału $f_{2}(t)$, czyli $F_{2}(\jmath \omega)$.
+
+Z treści zadania wiemy, że:
+$\mathcal F \{\Lambda(t)\} = Sa^2\left(\frac{\omega}{2}\right)$.
+
+Wykorzystując twierdzenie o zmianie skali mamy:
+
+\begin{align*}
+\TimeScalingTeorem{g}{G}{f}{F}
+\end{align*}
+
+\begin{align*}
+\Lambda(t) \xrightarrow{\mathcal F} & Sa^2\left(\frac{\omega}{2}\right)\\
+\Lambda(\frac{t}{t_{0}}) \xrightarrow{\mathcal F} & \frac{1}{\left|\frac{1}{t_{0}}\right|} \cdot Sa^2\left(\frac{ \frac{\omega}{ \frac{1}{t_{0}} }}{2}\right)\\
+\Lambda(\frac{t}{t_{0}}) \xrightarrow{\mathcal F} & t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)\\
+\end{align*}
+
+Transformata sygnału $f_{2}(t)$ to:
+\begin{equation}
+F_{2}(\jmath \omega) = \mathcal F\{f_{2}(t)\} = t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)
+\end{equation}
+
+Czyli transformata sygnału $f(t)$ to:
+\begin{align*}
+F(\jmath \omega) = \mathcal F\{f(t)\} &= A \cdot \left( 2 \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)\right)
+\end{align*}
+
+Transformata sygnału $f(t) = A \cdot \Pi\left(\frac{t}{2\cdot t_{0}}\right) - A \cdot \Lambda(\frac{t}{t_{0}})$ to $F(\jmath \omega)=2 \cdot  A \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - A \cdot  t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)$
+
+\end{task}
