@@ -84,11 +84,29 @@ H_n(\jmath\omega) &= H(\jmath\omega) \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
 &=T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \left(\frac{T}{2} + n\cdot T\right)}
 \end{align*}
 
-Osatatecznie wzór na transformatę sygnału $f(t)$ jest równy 
+Ostatecznie wzór na transformatę sygnału $f(t)$ jest równy 
 \begin{align*}
 F(\jmath\omega) &= \sum_{n=0}^{\infty}  \frac{A}{2^{n}}\cdot H_{n}(\jmath\omega)\\
 &=\sum_{n=0}^{\infty}  \frac{A}{2^{n}}\cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \left(\frac{T}{2} + n\cdot T\right)}\\
-&=\sum_{n=0}^{\infty}  \frac{A}{2^{n}}\cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot e^{-\jmath \cdot \omega \cdot n\cdot T}
+&=\sum_{n=0}^{\infty}  \frac{A}{2^{n}}\cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot e^{-\jmath \cdot \omega \cdot n\cdot T}\\
+&=\sum_{n=0}^{\infty} T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  \frac{A}{2^{n}}\cdot e^{-\jmath \cdot \omega \cdot n\cdot T}\\
+&=\sum_{n=0}^{\infty} T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  A \cdot \left(\frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}\right)^n\\
+&=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  \sum_{n=0}^{\infty} \left(\frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}\right)^n\\
+\end{align*}
+
+Można zauważyć że suma w rozwiązaniu to szereg geometryczny. Z wzoru na sumę szeregu geometrycznego mamy
+
+\begin{align*}
+F(\jmath\omega) &=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  \sum_{n=0}^{\infty} \left(\frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}\right)^n\\
+&=\begin{Bmatrix}
+\sum_{n=0}^{\infty}q^n = \frac{1}{1-q}
+\end{Bmatrix}\\
+&=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot \frac{1}{1 - \frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}}\\
+\end{align*}
+
+Ostatecznie transformata sygnału $f(t)$ równa się:
+\begin{align*}
+F(\jmath\omega) &=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot \frac{1}{1 - \frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}}
 \end{align*}
 
 \end{task}
