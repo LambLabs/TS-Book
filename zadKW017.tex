@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz wartość energii sygnału $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$ okresowego przedstawionego na rysunku 
+Oblicz moc sygnału okresowego $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$ przedstawionego na rysunku 
 
 \begin{figure}[H]
 \centering
@@ -19,21 +19,21 @@ Oblicz wartość energii sygnału $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right
 \end{tikzpicture}
 \end{figure}
 
-Energię sygnału okresowego wyznaczamy ze wzoru
+Moc sygnału okresowego wyznaczamy ze wzoru
 \begin{equation}
-E=\int_{T}\left|f(t)\right|^2 \cdot dt
+P=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru na enargie wzór naszej funkcji dla pierwszego okresu $k=0$
+Podstawiamy do wzoru na moc wzór naszej funkcji dla pierwszego okresu $k=0$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-E&=\int_{T}\left|f(t)\right|^2 \cdot dt \\
-&=\int_{0}^{T}\left| A\cdot sin^2\left(\omega_0 \cdot t\right) \right|^2 \cdot dt \\
-&=\int_{0}^{T} A^2 \cdot sin^4\left(\omega_0 \cdot t\right) \cdot dt \\
-&=\left\{ sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}\right\}\\
-&=\int_{0}^{T} A^2 \cdot \left( \frac{e^{\jmath \cdot \omega_0 \cdot t} - e^{-\jmath \cdot \omega_0 \cdot t}}{2 \cdot \jmath} \right)^4 \cdot dt \\
-&=\int_{0}^{T} A^2 \cdot \frac{\left(e^{\jmath \cdot \omega_0 \cdot t} - e^{-\jmath \cdot \omega_0 \cdot t}\right)^4}{\left(2 \cdot \jmath\right)^4} \cdot dt \\
+P&=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt \\
+&=\frac{1}{T} \cdot \int_{0}^{T}\left| A\cdot sin^2\left(\omega_0 \cdot t\right) \right|^2 \cdot dt \\
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot sin^4\left(\omega_0 \cdot t\right) \cdot dt \\
+&=\frac{1}{T} \cdot \left\{ sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}\right\}\\
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \left( \frac{e^{\jmath \cdot \omega_0 \cdot t} - e^{-\jmath \cdot \omega_0 \cdot t}}{2 \cdot \jmath} \right)^4 \cdot dt \\
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \frac{\left(e^{\jmath \cdot \omega_0 \cdot t} - e^{-\jmath \cdot \omega_0 \cdot t}\right)^4}{\left(2 \cdot \jmath\right)^4} \cdot dt \\
 &=\left\{\begin{matrix}
 n=0: &   &   &   &   & 1 &   &   &   &   \\
 n=1: &   &   &   & 1 &   & 1 &   &   &   \\
@@ -41,56 +41,56 @@ n=2: &   &   & 1 &   & 2 &   & 1 &   &   \\
 n=3: &   & 1 &   & 3 &   & 3 &   & 1 &   \\
 n=4: & 1 &   & 4 &   & 6 &   & 4 &   & 1 
 \end{matrix}\right\}\\
-&=\int_{0}^{T} A^2 \cdot \frac{
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \frac{
   1 \cdot \left(e^{\jmath \cdot \omega_0 \cdot t}\right)^4 \cdot \left(-e^{-\jmath \cdot \omega_0 \cdot t}\right)^0 
   + 4 \cdot \left(e^{\jmath \cdot \omega_0 \cdot t}\right)^3 \cdot \left(-e^{-\jmath \cdot \omega_0 \cdot t}\right)^1 
   + 6 \cdot \left(e^{\jmath \cdot \omega_0 \cdot t}\right)^2 \cdot \left(-e^{-\jmath \cdot \omega_0 \cdot t}\right)^2 
   + 4 \cdot \left(e^{\jmath \cdot \omega_0 \cdot t}\right)^1 \cdot \left(-e^{-\jmath \cdot \omega_0 \cdot t}\right)^3 
   + 1 \cdot \left(e^{\jmath \cdot \omega_0 \cdot t}\right)^0 \cdot \left(-e^{-\jmath \cdot \omega_0 \cdot t}\right)^4 
 }{\left(2 \cdot \jmath\right)^4} \cdot dt \\
-&=\int_{0}^{T} A^2 \cdot \frac{
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \frac{
   e^{4 \cdot \jmath \cdot \omega_0 \cdot t} \cdot e^{-0 \cdot \jmath \cdot \omega_0 \cdot t}
   - 4 \cdot e^{3 \cdot \jmath \cdot \omega_0 \cdot t} \cdot e^{-\jmath \cdot \omega_0 \cdot t} 
   + 6 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t} \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{\jmath \cdot \omega_0 \cdot t} \cdot e^{-3 \cdot \jmath \cdot \omega_0 \cdot t} 
   + e^{0 \cdot \jmath \cdot \omega_0 \cdot t} \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} 
 }{2 ^ 4\cdot \jmath^4} \cdot dt \\
-&=\int_{0}^{T} A^2 \cdot \frac{
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \frac{
   e^{4 \cdot \jmath \cdot \omega_0 \cdot t - 0 \cdot \jmath \cdot \omega_0 \cdot t}
   - 4 \cdot e^{3 \cdot \jmath \cdot \omega_0 \cdot t -\jmath \cdot \omega_0 \cdot t} 
   + 6 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t -2 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{\jmath \cdot \omega_0 \cdot t -3 \cdot \jmath \cdot \omega_0 \cdot t} 
   + e^{0 \cdot \jmath \cdot \omega_0 \cdot t -4 \cdot \jmath \cdot \omega_0 \cdot t} 
 }{16\cdot 1} \cdot dt \\
-&=\int_{0}^{T} A^2 \cdot \frac{
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \frac{
   e^{4 \cdot \jmath \cdot \omega_0 \cdot t}
   - 4 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t} 
   + 6 \cdot e^{0 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot t} 
   + e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} 
 }{16} \cdot dt \\
-&=\int_{0}^{T} A^2 \cdot \frac{
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \frac{
   e^{4 \cdot \jmath \cdot \omega_0 \cdot t}
   + e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}
   - 4 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot t} 
   + 6 \cdot e^{0} 
 }{16} \cdot dt \\
-&=\int_{0}^{T} A^2 \cdot \frac{
+&=\frac{1}{T} \cdot \int_{0}^{T} A^2 \cdot \frac{
   e^{4 \cdot \jmath \cdot \omega_0 \cdot t}
   + e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot t} 
   + 6
 }{16} \cdot dt \\
-&=\frac{A^2}{16} \cdot \int_{0}^{T} \left(
+&=\frac{A^2}{16 \cdot T} \cdot \int_{0}^{T} \left(
   e^{4 \cdot \jmath \cdot \omega_0 \cdot t}
   + e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t} 
   - 4 \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot t} 
   + 6
 \right) dt \\
-&=\frac{A^2}{16} \cdot \left( \int_{0}^{T} 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \int_{0}^{T} 
 e^{4 \cdot \jmath \cdot \omega_0 \cdot t} \cdot dt + \int_{0}^{T} 
  e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} \cdot dt
 - 4 \cdot \int_{0}^{T} e^{2 \cdot \jmath \cdot \omega_0 \cdot t} \cdot dt
@@ -101,95 +101,95 @@ z_1 = 4 \cdot \jmath \cdot \omega_0 \cdot t & z_2 = -4 \cdot \jmath \cdot \omega
 dz_1 = 4 \cdot \jmath \cdot \omega_0 \cdot dt & dz_2 = -4 \cdot \jmath \cdot \omega_0 \cdot dt & dz_3 = 2 \cdot \jmath \cdot \omega_0 \cdot dt & dz_4 = -2 \cdot \jmath \cdot \omega_0 \cdot dt \\
 dt = \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot dz_1 & dt = \frac{1}{-4 \cdot \jmath \cdot \omega_0}\cdot dz_2 & dt = \frac{1}{2 \cdot \jmath \cdot \omega_0}\cdot dz_3 & dt = \frac{1}{-2 \cdot \jmath \cdot \omega_0}\cdot dz_4
 \end{Bmatrix}\\
-&=\frac{A^2}{16} \cdot \left( \int_{0}^{T} 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \int_{0}^{T} 
 e^{z_1} \cdot \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot dz_1 
 + \int_{0}^{T} e^{z_2} \cdot \frac{1}{-4 \cdot \jmath \cdot \omega_0}\cdot dz_2
 - 4 \cdot \int_{0}^{T} e^{z_3} \cdot \frac{1}{2 \cdot \jmath \cdot \omega_0}\cdot dz_3
 - 4 \cdot \int_{0}^{T} e^{z_4} \cdot \frac{1}{-2 \cdot \jmath \cdot \omega_0}\cdot dz_4
 + 6 \cdot \int_{0}^{T} dt \right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \int_{0}^{T} 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \int_{0}^{T} 
 e^{z_1} \cdot  dz_1 
 + \frac{1}{-4 \cdot \jmath \cdot \omega_0}\cdot \int_{0}^{T} e^{z_2} \cdot dz_2
 - 4 \cdot \frac{1}{2 \cdot \jmath \cdot \omega_0}\cdot \int_{0}^{T} e^{z_3} \cdot  dz_3
 - 4 \cdot \frac{1}{-2 \cdot \jmath \cdot \omega_0}\cdot \int_{0}^{T} e^{z_4} \cdot dz_4
 + 6 \cdot \int_{0}^{T} dt \right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left. 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left. 
 e^{z_1} \right|_{0}^{T} 
 - \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left. e^{z_2} \right|_{0}^{T}
 - \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left. e^{z_3} \right|_{0}^{T}
 + \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left. e^{z_4} \right|_{0}^{T}
 + 6 \cdot \left. t \right|_{0}^{T}\right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left. 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left. 
 e^{4 \cdot \jmath \cdot \omega_0 \cdot t} \right|_{0}^{T} 
 - \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left. e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} \right|_{0}^{T}
 - \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left. e^{2 \cdot \jmath \cdot \omega_0 \cdot t} \right|_{0}^{T}
 + \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left. e^{-2 \cdot \jmath \cdot \omega_0 \cdot t} \right|_{0}^{T}
 + 6 \cdot \left. t \right|_{0}^{T}\right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( 
 e^{4 \cdot \jmath \cdot \omega_0 \cdot T} -  
 e^{4 \cdot \jmath \cdot \omega_0 \cdot 0} \right)
 - \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( e^{-4 \cdot \jmath \cdot \omega_0 \cdot T} - e^{-4 \cdot \jmath \cdot \omega_0 \cdot 0} \right)
 - \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left( e^{2 \cdot \jmath \cdot \omega_0 \cdot T} -e^{2 \cdot \jmath \cdot \omega_0 \cdot 0}\right)
 + \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left( e^{-2 \cdot \jmath \cdot \omega_0 \cdot T} -e^{-2 \cdot \jmath \cdot \omega_0 \cdot 0}\right)
 + 6 \cdot \left(T - 0 \right)\right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( 
 e^{4 \cdot \jmath \cdot \omega_0 \cdot T} -  
 e^{0} \right)
 - \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( e^{-4 \cdot \jmath \cdot \omega_0 \cdot T} - e^{0} \right)
 - \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left( e^{2 \cdot \jmath \cdot \omega_0 \cdot T} -e^{0}\right)
 + \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left( e^{-2 \cdot \jmath \cdot \omega_0 \cdot T} -e^{0}\right)
 + 6 \cdot T \right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( 
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( 
 e^{4 \cdot \jmath \cdot \omega_0 \cdot T} - 1 \right)
 - \frac{1}{4 \cdot \jmath \cdot \omega_0}\cdot \left( e^{-4 \cdot \jmath \cdot \omega_0 \cdot T} - 1 \right)
 - \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left( e^{2 \cdot \jmath \cdot \omega_0 \cdot T} -1\right)
 + \frac{4}{2 \cdot \jmath \cdot \omega_0}\cdot \left( e^{-2 \cdot \jmath \cdot \omega_0 \cdot T} -1\right)
 + 6 \cdot T \right)\\
-&=\frac{A^2}{16} \cdot \left( 
+&=\frac{A^2}{16 \cdot T} \cdot \left( 
 \frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot T}}{4 \cdot \jmath \cdot \omega_0} - \frac{1}{4 \cdot \jmath \cdot \omega_0} 
 - \frac{e^{-4 \cdot \jmath \cdot \omega_0 \cdot T}}{4 \cdot \jmath \cdot \omega_0}  + \frac{1}{4 \cdot \jmath \cdot \omega_0} 
 - \frac{4 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot T}}{2 \cdot \jmath \cdot \omega_0} + \frac{4}{2 \cdot \jmath \cdot \omega_0}
 + \frac{4 \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot T}}{2 \cdot \jmath \cdot \omega_0} -\frac{4}{2 \cdot \jmath \cdot \omega_0}
 + 6 \cdot T \right)\\
-&=\frac{A^2}{16} \cdot \left( 
+&=\frac{A^2}{16 \cdot T} \cdot \left( 
 \frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot T}}{4 \cdot \jmath \cdot \omega_0} 
 - \frac{e^{-4 \cdot \jmath \cdot \omega_0 \cdot T}}{4 \cdot \jmath \cdot \omega_0}  
 - \frac{4 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot T}}{2 \cdot \jmath \cdot \omega_0}
 + \frac{4 \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot T}}{2 \cdot \jmath \cdot \omega_0}
 + 6 \cdot T \right)\\
-&=\frac{A^2}{16} \cdot \left( 
+&=\frac{A^2}{16 \cdot T} \cdot \left( 
 \frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot T} - e^{-4 \cdot \jmath \cdot \omega_0 \cdot T}}{4 \cdot \jmath \cdot \omega_0} 
 - \frac{4 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot T} - 4 \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot T}}{2 \cdot \jmath \cdot \omega_0}
 + 6 \cdot T \right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
 \frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot T} - e^{-4 \cdot \jmath \cdot \omega_0 \cdot T}}{2 \cdot \jmath} 
 - \frac{4}{\omega_0} \cdot \frac{e^{2 \cdot \jmath \cdot \omega_0 \cdot T} - e^{-2 \cdot \jmath \cdot \omega_0 \cdot T}}{2 \cdot \jmath}
 + 6 \cdot T \right)\\
 &=\begin{Bmatrix}
 sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \ cdot x}}{2\cdot \jmath}
 \end{Bmatrix}\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
+&=\frac{A^2}{16 \cdot T} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
 sin\left(4 \cdot \omega_0 \cdot T\right)
 - \frac{4}{\omega_0} \cdot sin\left(2 \cdot \omega_0 \cdot T\right)
 + 6 \cdot T \right)\\
 &=\begin{Bmatrix}
 T=\frac{2\pi}{\omega_0}
 \end{Bmatrix}\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
+&=\frac{A^2}{16 \cdot \frac{2\pi}{\omega_0}} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
 sin\left(4 \cdot \omega_0 \cdot \frac{2\pi}{\omega_0}\right)
 - \frac{4}{\omega_0} \cdot sin\left(2 \cdot \omega_0 \cdot \frac{2\pi}{\omega_0}\right)
 + 6 \cdot \frac{2\pi}{\omega_0} \right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
+&=\frac{A^2 \cdot \omega_0}{32 \pi} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot
 sin\left(8 \pi\right)
 - \frac{4}{\omega_0} \cdot sin\left(4\pi\right)
 + 6 \cdot \frac{2\pi}{\omega_0} \right)\\
-&=\frac{A^2}{16} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot 0
+&=\frac{A^2 \cdot \omega_0}{32 \pi} \cdot \left( \frac{1}{2 \cdot \omega_0} \cdot 0
 - \frac{4}{\omega_0} \cdot 0 + 6 \cdot \frac{2\pi}{\omega_0} \right)\\
-&=\frac{A^2}{16} \cdot \frac{12\pi}{\omega_0}\\
-&=\frac{A^2}{4} \cdot \frac{3\pi}{\omega_0}\\
+&=\frac{A^2 \cdot \omega_0}{32 \pi} \cdot \frac{12\pi}{\omega_0}\\
+&=\frac{3 \cdot A^2}{8}\\
 \end{align*}
 %\end{aligned}
 %\end{equation}
 
-Energia sygnału wynosi $\frac{A^2}{4} \cdot \frac{3\pi}{\omega_0}$
+Moc sygnału wynosi $\frac{3 \cdot A^2}{8}$
 \end{task}
