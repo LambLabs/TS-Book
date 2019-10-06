@@ -98,63 +98,63 @@ f(t) = A \cdot \Lambda(\frac{t}{t_{0}}) = \left\{\begin{matrix*}[l]
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\ %1
+F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\ %1
 &=\int_{-\infty}^{-t_{0}} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt %2
-+\int_{-t_{0}}^{0} \left(\frac{A}{t_{0}} \cdot t + A\right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
++\int_{-t_{0}}^{0} \left(\frac{A}{t_{0}} \cdot t + A\right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &+\int_{0}^{t_{0}} \left(-\frac{A}{t_{0}} \cdot t + A\right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
-+\int_{t_{0}}^{\infty} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
++\int_{t_{0}}^{\infty} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=\int_{-\infty}^{-t_{0}} 0 \cdot dt +\int_{-t_{0}}^{0}\frac{A}{t_{0}} \cdot t \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt %3
-+\int_{-t_{0}}^{0}A \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
++\int_{-t_{0}}^{0}A \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &+\int_{0}^{t_{0}} -\frac{A}{t_{0}} \cdot t \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt 
-+\int_{0}^{t_{0}} A \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{t_{0}}^{\infty} 0 \cdot dt\\
++\int_{0}^{t_{0}} A \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{t_{0}}^{\infty} 0 \cdot dt=\\
 &= 0  + \frac{A}{t_{0}} \cdot \int_{-t_{0}}^{0} t \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt %4
-+A \cdot \int_{-t_{0}}^{0} e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
++A \cdot \int_{-t_{0}}^{0} e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &-\frac{A}{t_{0}} \cdot \int_{0}^{t_{0}} t \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt 
-+A \cdot \int_{0}^{t_{0}} e^{-\jmath \cdot \omega \cdot t}\cdot dt + 0\\
++A \cdot \int_{0}^{t_{0}} e^{-\jmath \cdot \omega \cdot t}\cdot dt + 0=\\
 &=\begin{Bmatrix*}[l] %5
 u&=t & dv&=e^{ -\jmath \cdot \omega \cdot t} \cdot dt \\
 du&=dt & v&=\frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t}
-\end{Bmatrix*}\\
+\end{Bmatrix*}=\\
 &=\frac{A}{t_{0}}\cdot \left( \left. t \cdot \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{-t_{0}}^{0} %6
-- \int_{-t_{0}}^{0} \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \cdot dt \right)\\
-&+ A\cdot \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{-t_{0}}^{0}\right)\\
+- \int_{-t_{0}}^{0} \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \cdot dt \right)=\\
+&+ A\cdot \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{-t_{0}}^{0}\right)=\\
 &-\frac{A}{t_{0}}\cdot \left( \left. t \cdot \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{0}^{t_{0}}
-- \int_{0}^{t_{0}} \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \cdot dt \right)\\
-&+ A\cdot \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{0}^{t_{0}}\right)\\
+- \int_{0}^{t_{0}} \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \cdot dt \right)=\\
+&+ A\cdot \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{0}^{t_{0}}\right)=\\
 &=\frac{A}{t_{0}}\cdot \left( 0 \cdot e^{-\jmath \cdot \omega \cdot 0} - (-t_{0}) \cdot \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot (-t_{0})} %7
-+ \frac{1}{\jmath \cdot \omega} \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{-t_{0}}^{0}\right)\right)\\
-&+ \frac{A}{-\jmath \cdot \omega} \cdot \left( e^{ -\jmath \cdot \omega \cdot 0} - e^{ -\jmath \cdot \omega \cdot (-t_{0})} \right)\\
++ \frac{1}{\jmath \cdot \omega} \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{-t_{0}}^{0}\right)\right)=\\
+&+ \frac{A}{-\jmath \cdot \omega} \cdot \left( e^{ -\jmath \cdot \omega \cdot 0} - e^{ -\jmath \cdot \omega \cdot (-t_{0})} \right)=\\
 &-\frac{A}{t_{0}}\cdot \left(t_{0} \cdot \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t_{0}} - 0 \cdot e^{-\jmath \cdot \omega \cdot 0} 
-+ \frac{1}{\jmath \cdot \omega} \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{0}^{t_{0}}\right)\right)\\
-&+ \frac{A}{-\jmath \cdot \omega} \cdot \left( e^{ -\jmath \cdot \omega \cdot t_{0}} - e^{ -\jmath \cdot \omega \cdot 0} \right)\\
++ \frac{1}{\jmath \cdot \omega} \left( \left. \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t} \right|_{0}^{t_{0}}\right)\right)=\\
+&+ \frac{A}{-\jmath \cdot \omega} \cdot \left( e^{ -\jmath \cdot \omega \cdot t_{0}} - e^{ -\jmath \cdot \omega \cdot 0} \right)=\\
 &=\frac{A}{t_{0}}\cdot \left( 0 - t_{0} \cdot \frac{1}{\jmath \cdot \omega}\cdot e^{ \jmath \cdot \omega \cdot t_{0}} %8
-- \frac{1}{\jmath^{2} \cdot \omega^{2}} \left( e^{ -\jmath \cdot \omega \cdot 0} - e^{ -\jmath \cdot \omega \cdot (-t_{0})} \right)\right)\\
-&- \frac{A}{\jmath \cdot \omega} \cdot \left( 1 - e^{ \jmath \cdot \omega \cdot t_{0}} \right)\\
+- \frac{1}{\jmath^{2} \cdot \omega^{2}} \left( e^{ -\jmath \cdot \omega \cdot 0} - e^{ -\jmath \cdot \omega \cdot (-t_{0})} \right)\right)=\\
+&- \frac{A}{\jmath \cdot \omega} \cdot \left( 1 - e^{ \jmath \cdot \omega \cdot t_{0}} \right)=\\
 &-\frac{A}{t_{0}}\cdot \left(t_{0} \cdot \frac{1}{-\jmath \cdot \omega}\cdot e^{ -\jmath \cdot \omega \cdot t_{0}} - 0 
-- \frac{1}{\jmath^{2} \cdot \omega^{2}} \left(e^{ -\jmath \cdot \omega \cdot t_{0}}-e^{ -\jmath \cdot \omega \cdot 0}\right)\right)\\
-&- \frac{A}{\jmath \cdot \omega} \cdot \left( e^{ -\jmath \cdot \omega \cdot t_{0}} - 1\right)\\
+- \frac{1}{\jmath^{2} \cdot \omega^{2}} \left(e^{ -\jmath \cdot \omega \cdot t_{0}}-e^{ -\jmath \cdot \omega \cdot 0}\right)\right)=\\
+&- \frac{A}{\jmath \cdot \omega} \cdot \left( e^{ -\jmath \cdot \omega \cdot t_{0}} - 1\right)=\\
 &=-\frac{A}{\jmath \cdot \omega} \cdot e^{ \jmath \cdot \omega \cdot t_{0}} - \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} + \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} \cdot e^{ \jmath \cdot \omega \cdot t_{0}} %9
-- \frac{A}{\jmath \cdot \omega} + \frac{A}{\jmath \cdot \omega} \cdot e^{ \jmath \cdot \omega \cdot t_{0}}\\
+- \frac{A}{\jmath \cdot \omega} + \frac{A}{\jmath \cdot \omega} \cdot e^{ \jmath \cdot \omega \cdot t_{0}}=\\
 &+\frac{A}{\jmath \cdot \omega} \cdot e^{ -\jmath \cdot \omega \cdot t_{0}}  + \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} \cdot e^{- \jmath \cdot \omega \cdot t_{0}} - \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}}
-- \frac{A}{\jmath \cdot \omega} \cdot e^{ -\jmath \cdot \omega \cdot t_{0}} + \frac{A}{\jmath \cdot \omega}\\
-&=- \frac{2 \cdot A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} + \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}}  \cdot \left(e^{ \jmath \cdot \omega \cdot t_{0}}+e^{ -\jmath \cdot \omega \cdot t_{0}} \right)\\ %10
-&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} - \frac{A}{t_{0} \cdot \omega^{2}} \cdot \left(e^{ \jmath \cdot \omega \cdot t_{0}}+e^{ -\jmath \cdot \omega \cdot t_{0}} \right)\\%11
+- \frac{A}{\jmath \cdot \omega} \cdot e^{ -\jmath \cdot \omega \cdot t_{0}} + \frac{A}{\jmath \cdot \omega}=\\
+&=- \frac{2 \cdot A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}} + \frac{A}{t_{0} \cdot \jmath^{2} \cdot \omega^{2}}  \cdot \left(e^{ \jmath \cdot \omega \cdot t_{0}}+e^{ -\jmath \cdot \omega \cdot t_{0}} \right)=\\ %10
+&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} - \frac{A}{t_{0} \cdot \omega^{2}} \cdot \left(e^{ \jmath \cdot \omega \cdot t_{0}}+e^{ -\jmath \cdot \omega \cdot t_{0}} \right)=\\%11
 &=\begin{Bmatrix*}[l]%12
 cos(x)=\frac{e^{\jmath \cdot x} + e^{-\jmath \cdot x}}{2}\\
-\end{Bmatrix*}\\
-&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} - \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot cos(\omega \cdot t_{0})\\%13
-&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot (1 - cos(\omega \cdot t_{0}))\\%14
+\end{Bmatrix*}=\\
+&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} - \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot cos(\omega \cdot t_{0})=\\%13
+&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot (1 - cos(\omega \cdot t_{0}))=\\%14
 &=\begin{Bmatrix*}[l]%15
 sin^{2}(x)=\frac{1}{2}-\frac{1}{2}\cdot cos(2 \cdot x)\\
 cos(2 \cdot x)= 1-2\cdot sin^{2}(x)\\
-\end{Bmatrix*}\\
-&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot (1 - 1 + 2\cdot sin^{2}(\frac{\omega \cdot t_{0}}{2}))\\%16
-&= \frac{4 \cdot A}{t_{0} \cdot \omega^{2}} \cdot sin^{2}(\frac{\omega \cdot t_{0}}{2})\\%16
-&= \frac{A \cdot t_{0}}{\frac{t_{0}^{2} \cdot \omega^{2}}{4}} \cdot sin^{2}(\frac{\omega \cdot t_{0}}{2})\\%17
+\end{Bmatrix*}=\\
+&= \frac{2 \cdot A}{t_{0} \cdot \omega^{2}} \cdot (1 - 1 + 2\cdot sin^{2}(\frac{\omega \cdot t_{0}}{2}))=\\%16
+&= \frac{4 \cdot A}{t_{0} \cdot \omega^{2}} \cdot sin^{2}(\frac{\omega \cdot t_{0}}{2})=\\%16
+&= \frac{A \cdot t_{0}}{\frac{t_{0}^{2} \cdot \omega^{2}}{4}} \cdot sin^{2}(\frac{\omega \cdot t_{0}}{2})=\\%17
 &=\begin{Bmatrix*}[l]%18
 \frac{sin(x)}{x}=Sa(x)
-\end{Bmatrix*}\\
-&= A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})\\%17
+\end{Bmatrix*}=\\
+&= A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})%17
 \end{align*}
 
 Transformata sygnału $f(t) = A \cdot \Lambda(\frac{t}{t_{0}})$ to $F(\jmath \omega)=A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})$

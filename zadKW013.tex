@@ -65,44 +65,44 @@ F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot  k \cdot \frac{2\pi}{T} \cdot
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
 \begin{align*}
-F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
+F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
 &=\frac{1}{T}\left(\int_{-\frac{T}{4}}^{0} -A \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt 
 + \int_{0}^{\frac{T}{4}} A \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
-+ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt \right)\\
++ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt \right)=\\
 &=\frac{1}{T}\left(-A \cdot \int_{-\frac{T}{4}}^{0} e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt 
 + A \cdot \int_{0}^{\frac{T}{4}} e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
-+ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot dt \right)\\
++ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot dt \right)=\\
 &=\begin{Bmatrix*}[l]
 z&=-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t \\
 dz&=-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot dt \\
 dt&=\frac{dt}{-\jmath \cdot k \cdot \frac{2\pi}{T}}
-\end{Bmatrix*} \\
+\end{Bmatrix*} =\\
 &=\frac{1}{T}\left(-A \cdot \int_{-\frac{T}{4}}^{0} e^{ z } \cdot \frac{dt}{-\jmath \cdot k \cdot \frac{2\pi}{T}} 
 + A \cdot \int_{0}^{\frac{T}{4}} e^{ z } \cdot \frac{dt}{-\jmath 
  \cdot k \cdot \frac{2\pi}{T}}
-+ 0 \right)\\
++ 0 \right)=\\
 &=\frac{1}{T}\left(-\frac{A}{-\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \int_{-\frac{T}{4}}^{0} e^{ z } \cdot dt 
-+ \frac{A}{-\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} e^{ z } \cdot dt\right)\\
++ \frac{A}{-\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} e^{ z } \cdot dt\right)=\\
 &=\frac{1}{T} \cdot \frac{A}{\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \left( \left. e^{ z } \right|_{-\frac{T}{4}}^{0}
-- \left. e^{ z }\right|_{0}^{\frac{T}{4}} \right)\\
+- \left. e^{ z }\right|_{0}^{\frac{T}{4}} \right)=\\
 &=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left( \left. e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t  } \right|_{-\frac{T}{4}}^{0}
-- \left. e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t  }\right|_{0}^{\frac{T}{4}} \right)\\
+- \left. e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t  }\right|_{0}^{\frac{T}{4}} \right)=\\
 &=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left(\left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0  } - e^{ \jmath \cdot  k \cdot \frac{2\pi}{T} \cdot \frac{T}{4}  } \right)
-- \left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot \frac{T}{4}  } - e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0  }\right) \right)\\
+- \left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot \frac{T}{4}  } - e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0  }\right) \right)=\\
 &=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left(\left( e^{ 0 } - e^{ \jmath \cdot k \cdot \frac{2\pi}{4} } \right)
-- \left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{4} } - e^{ 0 }\right) \right)\\
+- \left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{4} } - e^{ 0 }\right) \right)=\\
 &=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left(\left( 1 - e^{ \jmath \cdot k \cdot \frac{\pi}{2} } \right)
-- \left( e^{-\jmath \cdot k \cdot \frac{\pi}{2} } - 1\right) \right)\\
-&=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left(1 - e^{ \jmath \cdot k \cdot \frac{\pi}{2} } - e^{-\jmath \cdot k \cdot \frac{\pi}{2} } + 1 \right)\\
-&=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left(2 - \left(e^{ \jmath \cdot k \cdot \frac{\pi}{2} } + e^{-\jmath \cdot k \cdot \frac{\pi}{2} } \right) \right)\\
-&=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot 2 \cdot \left(1 - \frac{e^{ \jmath \cdot k \cdot \frac{\pi}{2} } + e^{-\jmath \cdot k \cdot \frac{\pi}{2} } }{2} \right)\\
-&=\frac{A}{\jmath \cdot k \cdot \pi} \cdot \left(1 - \frac{e^{ \jmath \cdot k \cdot \frac{\pi}{2} } + e^{-\jmath \cdot k \cdot \frac{\pi}{2} } }{2} \right)\\
+- \left( e^{-\jmath \cdot k \cdot \frac{\pi}{2} } - 1\right) \right)=\\
+&=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left(1 - e^{ \jmath \cdot k \cdot \frac{\pi}{2} } - e^{-\jmath \cdot k \cdot \frac{\pi}{2} } + 1 \right)=\\
+&=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left(2 - \left(e^{ \jmath \cdot k \cdot \frac{\pi}{2} } + e^{-\jmath \cdot k \cdot \frac{\pi}{2} } \right) \right)=\\
+&=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot 2 \cdot \left(1 - \frac{e^{ \jmath \cdot k \cdot \frac{\pi}{2} } + e^{-\jmath \cdot k \cdot \frac{\pi}{2} } }{2} \right)=\\
+&=\frac{A}{\jmath \cdot k \cdot \pi} \cdot \left(1 - \frac{e^{ \jmath \cdot k \cdot \frac{\pi}{2} } + e^{-\jmath \cdot k \cdot \frac{\pi}{2} } }{2} \right)=\\
 &=\begin{Bmatrix*}[l]
 cos(x)&=\frac{e^{\jmath \cdot x}+e^{-\jmath \cdot x}}{2}
-\end{Bmatrix*}\\
-&=\frac{A}{\jmath \cdot k \cdot \pi} \cdot \left(1 - cos\left( k \cdot \frac{\pi}{2} \right) \right)\\
-&=-\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(1 - cos\left( k \cdot \frac{\pi}{2} \right) \right)\\
-&=\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(cos\left( k \cdot \frac{\pi}{2} \right) - 1\right)\\
+\end{Bmatrix*}=\\
+&=\frac{A}{\jmath \cdot k \cdot \pi} \cdot \left(1 - cos\left( k \cdot \frac{\pi}{2} \right) \right)=\\
+&=-\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(1 - cos\left( k \cdot \frac{\pi}{2} \right) \right)=\\
+&=\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(cos\left( k \cdot \frac{\pi}{2} \right) - 1\right)
 \end{align*}
 
 Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(cos\left( k \cdot \frac{\pi}{2} \right) - 1\right)$

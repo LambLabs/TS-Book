@@ -41,26 +41,26 @@ Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-a_0&=\frac{1}{T}\int_{T}f(t) \cdot dt\\
+a_0&=\frac{1}{T}\int_{T}f(t) \cdot dt=\\
 &=\frac{1}{T}\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot dt 
-+ \frac{1}{T}\int_{\frac{T}{2}}^{T}0 \cdot dt \right)\\
++ \frac{1}{T}\int_{\frac{T}{2}}^{T}0 \cdot dt \right)=\\
 &=\frac{A}{T}\left(\int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot dt 
-+ 0 \right)\\
-&=\frac{A}{T}\int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot dt\\
++ 0 \right)=\\
+&=\frac{A}{T}\int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 z&=\frac{2\pi}{T} \cdot t\\
 dz&=\frac{2\pi}{T} \cdot dt\\
 dt&=\frac{dz}{\frac{2\pi}{T}}
-\end{Bmatrix*}\\
-&=\frac{A}{T}\int_{0}^{\frac{T}{2}}sin\left( z\right) \cdot \frac{dz}{\frac{2\pi}{T}}\\
-&=\frac{A}{T\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}}sin\left( z\right) \cdot dz\\
-&=\frac{A}{2\pi}\cdot \left(\left . -cos\left( z\right) \right|_{0}^{\frac{T}{2}}\right)\\
-&=-\frac{A}{2\pi}\cdot \left(\left . cos\left( \frac{2\pi}{T} \cdot t\right) \right|_{0}^{\frac{T}{2}}\right)\\
-&=-\frac{A}{2\pi}\cdot \left( cos\left( \frac{2\pi}{T} \cdot \frac{T}{2}\right) - cos\left( \frac{2\pi}{T} \cdot 0\right)\right)\\
-&=-\frac{A}{2\pi}\cdot \left( cos\left( \pi\right) - cos\left( 0\right)\right)\\
-&=-\frac{A}{2\pi}\cdot \left( -1 - 1\right)\\
-&=-\frac{A}{2\pi}\cdot \left( -2\right)\\
-&=\frac{A}{\pi}\\
+\end{Bmatrix*}=\\
+&=\frac{A}{T}\int_{0}^{\frac{T}{2}}sin\left( z\right) \cdot \frac{dz}{\frac{2\pi}{T}}=\\
+&=\frac{A}{T\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}}sin\left( z\right) \cdot dz=\\
+&=\frac{A}{2\pi}\cdot \left(\left . -cos\left( z\right) \right|_{0}^{\frac{T}{2}}\right)=\\
+&=-\frac{A}{2\pi}\cdot \left(\left . cos\left( \frac{2\pi}{T} \cdot t\right) \right|_{0}^{\frac{T}{2}}\right)=\\
+&=-\frac{A}{2\pi}\cdot \left( cos\left( \frac{2\pi}{T} \cdot \frac{T}{2}\right) - cos\left( \frac{2\pi}{T} \cdot 0\right)\right)=\\
+&=-\frac{A}{2\pi}\cdot \left( cos\left( \pi\right) - cos\left( 0\right)\right)=\\
+&=-\frac{A}{2\pi}\cdot \left( -1 - 1\right)=\\
+&=-\frac{A}{2\pi}\cdot \left( -2\right)=\\
+&=\frac{A}{\pi}
 \end{align*}
 %\end{aligned}
 %\end{equation}
@@ -78,56 +78,56 @@ Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)\\
+a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)=\\
 &=\begin{Bmatrix*}[l]
 cos\left(x\right)&=\frac{e^{\jmath \cdot x}+e^{-\jmath \cdot x}}{2}\\
 sin\left(x\right)&=\frac{e^{\jmath \cdot x}-e^{-\jmath \cdot x}}{2 \jmath }
-\end{Bmatrix*}\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}}{2} \cdot dt+0\right)\\
-&=\frac{2}{T}\cdot\left(\frac{A}{2\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)\\
+\end{Bmatrix*}=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}}{2} \cdot dt+0\right)=\\
+&=\frac{2}{T}\cdot\left(\frac{A}{2\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)=\\
 &=\frac{2}{T} \cdot \frac{A}{2\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
 &=\frac{A}{T\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
 &=\frac{A}{T\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} \right) \cdot dt=\\
 &=\frac{A}{T\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} \right) \cdot dt=\\
 &=\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}}
-\left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)}}{2\jmath} + \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)}}{2\jmath} \right) \cdot dt\\
+\left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)}}{2\jmath} + \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)}}{2\jmath} \right) \cdot dt=\\
 &=\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}}
-\left( sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) + sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \right) \cdot dt\\
+\left( sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) + sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \right) \cdot dt=\\
 &=\frac{A}{T} \cdot \left( \int_{0}^{\frac{T}{2}}
- sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \cdot dt + \int_{0}^{\frac{T}{2}} sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \cdot dt \right)\\
+ sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \cdot dt + \int_{0}^{\frac{T}{2}} sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \cdot dt \right)=\\
 &=\begin{Bmatrix*}[l]
 z_1&=\frac{2\pi}{T} \cdot t \cdot \left(1+k\right) & z_2&=\frac{2\pi}{T} \cdot t \cdot \left(1-k\right)\\
 dz_1&=\frac{2\pi}{T} \cdot \left(1+k\right) \cdot dt & z_2&=\frac{2\pi}{T} \cdot \left(1-k\right) \cdot dt\\
 dt&=\frac{dz_1}{\frac{2\pi}{T} \cdot \left(1+k\right)} \wedge k \neq -1& dt&=\frac{dz_2}{\frac{2\pi}{T} \cdot \left(1-k\right)} \wedge k \neq 1
-\end{Bmatrix*}\\
-&=\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}} sin\left( z_1 \right)\cdot \frac{dz_1}{\frac{2\pi}{T} \cdot \left(1+k\right)}  + \int_{0}^{\frac{T}{2}} sin\left( z_2\right) \cdot \frac{dz_2}{\frac{2\pi}{T} \cdot \left(1-k\right)}\right)\\
-&=\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \int_{0}^{\frac{T}{2}} sin\left( z_1 \right)\cdot dz_1 + \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \int_{0}^{\frac{T}{2}} sin\left( z_2\right) \cdot dz_2 \right)\\
-&=\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. -cos\left( z_1 \right) \right|_{0}^{\frac{T}{2}} \right) + \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. -cos\left( z_2\right) \right|_{0}^{\frac{T}{2}} \right) \right)\\
-&=\frac{A}{T} \cdot \left(\frac{-1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \right|_{0}^{\frac{T}{2}} \right) + \frac{-1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1-k\right)\right) \right|_{0}^{\frac{T}{2}} \right) \right)\\
-&=\frac{A}{T} \cdot \left(\frac{-1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( cos\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1+k\right) \right) - cos\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1+k\right) \right) \right) \right.\\
-&\left.+ \frac{-1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( cos\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1-k\right)\right) -  cos\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1-k\right)\right) \right) \right)\\
-&=\frac{A}{T} \cdot \left(\frac{-1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( cos\left(\pi \cdot \left(1+k\right) \right) - cos\left( 0 \right) \right) \right.\\
-&\left.+ \frac{-1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( cos\left(\pi \cdot \left(1-k\right)\right) -  cos\left( 0 \right) \right) \right)\\
-&=\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( cos\left( 0 \right) - cos\left(\pi \cdot \left(1+k\right) \right) \right) \right.\\
-&\left.+ \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( cos\left( 0 \right) - cos\left(\pi \cdot \left(1-k\right)\right) \right) \right)\\
-&=\frac{A}{2\pi} \cdot \left(\frac{1}{1+k} \cdot \left( 1 - cos\left(\pi \cdot \left(1+k\right) \right) \right)+ \frac{1}{1-k} \cdot \left( 1 - cos\left(\pi \cdot \left(1-k\right)\right) \right) \right)\\
-&=\frac{A}{2\pi} \cdot \left(\frac{1-k}{\left(1+k\right)\cdot\left(1-k\right)} \cdot \left( 1 - cos\left(\pi \cdot \left(1+k\right) \right) \right)+ \frac{1+k}{\left(1+k\right)\cdot\left(1-k\right)} \cdot \left( 1 - cos\left(\pi \cdot \left(1-k\right)\right) \right) \right)\\
-&=\frac{A}{2\pi} \cdot \left(\frac{1 - cos\left(\pi \cdot \left(1+k\right) \right)- k + k\cdot cos\left(\pi \cdot \left(1+k\right) \right)}{\left(1+k\right)\cdot\left(1-k\right)} + \frac{1 - cos\left(\pi \cdot \left(1-k\right)\right)+ k - k\cdot cos\left(\pi \cdot \left(1-k\right)\right)}{\left(1+k\right)\cdot\left(1-k\right)} \right)\\
-&=\frac{A}{2\pi} \cdot \left(\frac{1 - cos\left(\pi \cdot \left(1+k\right) \right)- k + k\cdot cos\left(\pi \cdot \left(1+k\right) \right) + 1 - cos\left(\pi \cdot \left(1-k\right)\right)+ k - k\cdot cos\left(\pi \cdot \left(1-k\right)\right)}{\left(1+k\right)\cdot\left(1-k\right)} \right)\\
-&=\frac{A}{2\pi} \cdot \frac{2 - cos\left(\pi \cdot \left(1+k\right) \right) + k\cdot cos\left(\pi \cdot \left(1+k\right) \right) - cos\left(\pi \cdot \left(1-k\right)\right) - k\cdot cos\left(\pi \cdot \left(1-k\right)\right)}{1-k^2}\\
+\end{Bmatrix*}=\\
+&=\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}} sin\left( z_1 \right)\cdot \frac{dz_1}{\frac{2\pi}{T} \cdot \left(1+k\right)}  + \int_{0}^{\frac{T}{2}} sin\left( z_2\right) \cdot \frac{dz_2}{\frac{2\pi}{T} \cdot \left(1-k\right)}\right)=\\
+&=\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \int_{0}^{\frac{T}{2}} sin\left( z_1 \right)\cdot dz_1 + \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \int_{0}^{\frac{T}{2}} sin\left( z_2\right) \cdot dz_2 \right)=\\
+&=\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. -cos\left( z_1 \right) \right|_{0}^{\frac{T}{2}} \right) + \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. -cos\left( z_2\right) \right|_{0}^{\frac{T}{2}} \right) \right)=\\
+&=\frac{A}{T} \cdot \left(\frac{-1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \right|_{0}^{\frac{T}{2}} \right) + \frac{-1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1-k\right)\right) \right|_{0}^{\frac{T}{2}} \right) \right)=\\
+&=\frac{A}{T} \cdot \left(\frac{-1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( cos\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1+k\right) \right) - cos\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1+k\right) \right) \right) \right.=\\
+&\left.+ \frac{-1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( cos\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1-k\right)\right) -  cos\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1-k\right)\right) \right) \right)=\\
+&=\frac{A}{T} \cdot \left(\frac{-1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( cos\left(\pi \cdot \left(1+k\right) \right) - cos\left( 0 \right) \right) \right.=\\
+&\left.+ \frac{-1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( cos\left(\pi \cdot \left(1-k\right)\right) -  cos\left( 0 \right) \right) \right)=\\
+&=\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( cos\left( 0 \right) - cos\left(\pi \cdot \left(1+k\right) \right) \right) \right.=\\
+&\left.+ \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( cos\left( 0 \right) - cos\left(\pi \cdot \left(1-k\right)\right) \right) \right)=\\
+&=\frac{A}{2\pi} \cdot \left(\frac{1}{1+k} \cdot \left( 1 - cos\left(\pi \cdot \left(1+k\right) \right) \right)+ \frac{1}{1-k} \cdot \left( 1 - cos\left(\pi \cdot \left(1-k\right)\right) \right) \right)=\\
+&=\frac{A}{2\pi} \cdot \left(\frac{1-k}{\left(1+k\right)\cdot\left(1-k\right)} \cdot \left( 1 - cos\left(\pi \cdot \left(1+k\right) \right) \right)+ \frac{1+k}{\left(1+k\right)\cdot\left(1-k\right)} \cdot \left( 1 - cos\left(\pi \cdot \left(1-k\right)\right) \right) \right)=\\
+&=\frac{A}{2\pi} \cdot \left(\frac{1 - cos\left(\pi \cdot \left(1+k\right) \right)- k + k\cdot cos\left(\pi \cdot \left(1+k\right) \right)}{\left(1+k\right)\cdot\left(1-k\right)} + \frac{1 - cos\left(\pi \cdot \left(1-k\right)\right)+ k - k\cdot cos\left(\pi \cdot \left(1-k\right)\right)}{\left(1+k\right)\cdot\left(1-k\right)} \right)=\\
+&=\frac{A}{2\pi} \cdot \left(\frac{1 - cos\left(\pi \cdot \left(1+k\right) \right)- k + k\cdot cos\left(\pi \cdot \left(1+k\right) \right) + 1 - cos\left(\pi \cdot \left(1-k\right)\right)+ k - k\cdot cos\left(\pi \cdot \left(1-k\right)\right)}{\left(1+k\right)\cdot\left(1-k\right)} \right)=\\
+&=\frac{A}{2\pi} \cdot \frac{2 - cos\left(\pi \cdot \left(1+k\right) \right) + k\cdot cos\left(\pi \cdot \left(1+k\right) \right) - cos\left(\pi \cdot \left(1-k\right)\right) - k\cdot cos\left(\pi \cdot \left(1-k\right)\right)}{1-k^2}=\\
 &=\begin{Bmatrix*}[l]
 cos\left(\pi\cdot\left(1+k\right)\right)=cos\left(\pi+k \cdot\pi\right)=-cos\left(k\cdot\pi\right)\\
 cos\left(\pi\cdot\left(1-k\right)\right)=cos\left(\pi-k \cdot\pi\right)=-cos\left(-k\cdot\pi\right) = -cos\left(k\cdot\pi\right)\\
-\end{Bmatrix*}\\
-&=\frac{A}{2\pi} \cdot \frac{2 + cos\left(k\cdot\pi \right) - k\cdot cos\left(k\cdot\pi \right) + cos\left(k\cdot\pi\right) + k\cdot cos\left(k\cdot\pi\right)}{1-k^2}\\
-&=\frac{A}{2\pi} \cdot \frac{2 + 2\cdot cos\left(k\cdot\pi \right)}{1-k^2}\\
-&=\frac{A}{\pi} \cdot \frac{1 + cos\left(k\cdot\pi \right)}{1-k^2}\\
+\end{Bmatrix*}=\\
+&=\frac{A}{2\pi} \cdot \frac{2 + cos\left(k\cdot\pi \right) - k\cdot cos\left(k\cdot\pi \right) + cos\left(k\cdot\pi\right) + k\cdot cos\left(k\cdot\pi\right)}{1-k^2}=\\
+&=\frac{A}{2\pi} \cdot \frac{2 + 2\cdot cos\left(k\cdot\pi \right)}{1-k^2}=\\
+&=\frac{A}{\pi} \cdot \frac{1 + cos\left(k\cdot\pi \right)}{1-k^2}
 \end{align*}
 %\end{aligned}
 %\end{equation}
@@ -139,44 +139,44 @@ $a_k$ dla $k=1$ musimy wyznaczyć raz jeszcze tak wiec wyznaczmy wprost $a_1$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-a_1&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot cos\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)\\
+a_1&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot cos\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot cos\left( \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)=\\
 &=\begin{Bmatrix*}[l]
 cos\left(x\right)&=\frac{e^{\jmath \cdot x}+e^{-\jmath \cdot x}}{2}\\
 sin\left(x\right)&=\frac{e^{\jmath \cdot x}-e^{-\jmath \cdot x}}{2 \jmath }
-\end{Bmatrix*}\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2} \cdot dt+0\right)\\
-&=\frac{2}{T}\cdot\left(\frac{A}{2\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)\\
+\end{Bmatrix*}=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2} \cdot dt+0\right)=\\
+&=\frac{2}{T}\cdot\left(\frac{A}{2\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}+e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)=\\
 &=\frac{2}{T} \cdot \frac{A}{2\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
 &=\frac{A}{T\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot \frac{2\pi}{T} \cdot t} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
 &=\frac{A}{T\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - 1\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -1\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - 1\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -1\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} \right) \cdot dt=\\
 &=\frac{A}{T\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} \right) \cdot dt=\\
 &=\frac{A}{T\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{0} - e^{0} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{0} - e^{0} \right) \cdot dt=\\
 &=\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}}
-\left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2}}{2\jmath} \right) \cdot dt\\
+\left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2}}{2\jmath} \right) \cdot dt=\\
 &=\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}}
-sin\left( \frac{2\pi}{T} \cdot t \cdot 2 \right) \cdot dt\\
+sin\left( \frac{2\pi}{T} \cdot t \cdot 2 \right) \cdot dt=\\
 &=\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}}
-sin\left( \frac{4\pi}{T} \cdot t \right) \cdot dt\\
+sin\left( \frac{4\pi}{T} \cdot t \right) \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 z&=\frac{4\pi}{T} \cdot t\\
 dz&=\frac{4\pi}{T} \cdot dt\\
 dt&=\frac{dz}{\frac{4\pi}{T}}
-\end{Bmatrix*}\\
-&=\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}} sin\left( z \right) \cdot \frac{dz}{\frac{4\pi}{T}}\\
-&=\frac{A}{T\cdot \frac{4\pi}{T}} \cdot \int_{0}^{\frac{T}{2}} sin\left( z \right) \cdot dz\\
-&=\frac{A}{4\pi} \cdot \left(\left. -cos\left( z \right) \right|_{0}^{\frac{T}{2}} \right)\\
-&=\frac{A}{4\pi} \cdot \left(\left. -cos\left( \frac{4\pi}{T} \cdot t \right) \right|_{0}^{\frac{T}{2}} \right)\\
-&=-\frac{A}{4\pi} \cdot \left(cos\left( \frac{4\pi}{T} \cdot \frac{T}{2} \right) -cos\left( \frac{4\pi}{T} \cdot 0 \right) \right)\\
-&=-\frac{A}{4\pi} \cdot \left(cos\left( 2\pi \right) -cos\left( 0 \right) \right)\\
-&=-\frac{A}{4\pi} \cdot \left(1 -1 \right)\\
-&=-\frac{A}{4\pi} \cdot 0\\
+\end{Bmatrix*}=\\
+&=\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}} sin\left( z \right) \cdot \frac{dz}{\frac{4\pi}{T}}=\\
+&=\frac{A}{T\cdot \frac{4\pi}{T}} \cdot \int_{0}^{\frac{T}{2}} sin\left( z \right) \cdot dz=\\
+&=\frac{A}{4\pi} \cdot \left(\left. -cos\left( z \right) \right|_{0}^{\frac{T}{2}} \right)=\\
+&=\frac{A}{4\pi} \cdot \left(\left. -cos\left( \frac{4\pi}{T} \cdot t \right) \right|_{0}^{\frac{T}{2}} \right)=\\
+&=-\frac{A}{4\pi} \cdot \left(cos\left( \frac{4\pi}{T} \cdot \frac{T}{2} \right) -cos\left( \frac{4\pi}{T} \cdot 0 \right) \right)=\\
+&=-\frac{A}{4\pi} \cdot \left(cos\left( 2\pi \right) -cos\left( 0 \right) \right)=\\
+&=-\frac{A}{4\pi} \cdot \left(1 -1 \right)=\\
+&=-\frac{A}{4\pi} \cdot 0=\\
 &=0
 \end{align*}
 %\end{aligned}
@@ -195,46 +195,46 @@ Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-a_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)\\
+a_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)=\\
 &=\begin{Bmatrix*}[l]
 sin\left(x\right)&=\frac{e^{\jmath \cdot x}-e^{-\jmath \cdot x}}{2 \jmath }
-\end{Bmatrix*}\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot dt+0\right)\\
-&=\frac{2}{T}\cdot\left(\frac{A}{2\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)\\
+\end{Bmatrix*}=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot dt+0\right)=\\
+&=\frac{2}{T}\cdot\left(\frac{A}{2\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)=\\
 &=\frac{2}{T} \cdot \frac{A}{2\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
 &=\frac{A}{T\cdot \jmath \cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
 &=\frac{A}{T\cdot \jmath \cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} \right) \cdot dt=\\
 &=\frac{A}{T\cdot\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} \right) \cdot dt\\
+\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)} \right) \cdot dt=\\
 &=\frac{A}{T\cdot \jmath \cdot \jmath} \cdot \int_{0}^{\frac{T}{2}}
-\left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)}}{2} - \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)}}{2} \right) \cdot dt\\
+\left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+k\right)}}{2} - \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -k\right)}}{2} \right) \cdot dt=\\
 &=-\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}}
-\left( cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) - cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \right) \cdot dt\\
+\left( cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) - cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \right) \cdot dt=\\
 &=-\frac{A}{T} \cdot \left( \int_{0}^{\frac{T}{2}}
-cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \cdot dt - \int_{0}^{\frac{T}{2}} cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \cdot dt \right)\\
+cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \cdot dt - \int_{0}^{\frac{T}{2}} cos\left( \frac{2\pi}{T} \cdot t \cdot \left(1 - k\right)\right) \cdot dt \right)=\\
 &=\begin{Bmatrix*}[l]
 z_1&=\frac{2\pi}{T} \cdot t \cdot \left(1+k\right) & z_2&=\frac{2\pi}{T} \cdot t \cdot \left(1-k\right)\\
 dz_1&=\frac{2\pi}{T} \cdot \left(1+k\right) \cdot dt & z_2&=\frac{2\pi}{T} \cdot \left(1-k\right) \cdot dt\\
 dt&=\frac{dz_1}{\frac{2\pi}{T} \cdot \left(1+k\right)} \wedge k \neq -1& dt&=\frac{dz_2}{\frac{2\pi}{T} \cdot \left(1-k\right)} \wedge k \neq 1
-\end{Bmatrix*}\\
-&=-\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}} cos\left( z_1 \right)\cdot \frac{dz_1}{\frac{2\pi}{T} \cdot \left(1+k\right)}  - \int_{0}^{\frac{T}{2}} cos\left( z_2\right) \cdot \frac{dz_2}{\frac{2\pi}{T} \cdot \left(1-k\right)}\right)\\
-&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \int_{0}^{\frac{T}{2}} cos\left( z_1 \right)\cdot dz_1 - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \int_{0}^{\frac{T}{2}} cos\left( z_2\right) \cdot dz_2 \right)\\
-&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. sin\left( z_1 \right) \right|_{0}^{\frac{T}{2}} \right) - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. sin\left( z_2\right) \right|_{0}^{\frac{T}{2}} \right) \right)\\
-&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \right|_{0}^{\frac{T}{2}} \right) - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1-k\right)\right) \right|_{0}^{\frac{T}{2}} \right) \right)\\
-&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( sin\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1+k\right) \right) - sin\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1+k\right) \right) \right) \right.\\
-&\left.- \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( sin\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1-k\right)\right) -  sin\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1-k\right)\right) \right) \right)\\
-&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( sin\left(\pi \cdot \left(1+k\right) \right) - sin\left( 0 \right) \right) \right.\\
-&\left.- \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( sin\left(\pi \cdot \left(1-k\right)\right) -  sin\left( 0 \right) \right) \right)\\
-&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( 0 - 0 \right) \right.\\
-&\left.- \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( 0 -  0 \right) \right)\\
-&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot 0 - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot 0 \right)\\
-&=-\frac{A}{T} \cdot \left(0 - 0 \right)\\
-&=-\frac{A}{T} \cdot 0\\
+\end{Bmatrix*}=\\
+&=-\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}} cos\left( z_1 \right)\cdot \frac{dz_1}{\frac{2\pi}{T} \cdot \left(1+k\right)}  - \int_{0}^{\frac{T}{2}} cos\left( z_2\right) \cdot \frac{dz_2}{\frac{2\pi}{T} \cdot \left(1-k\right)}\right)=\\
+&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \int_{0}^{\frac{T}{2}} cos\left( z_1 \right)\cdot dz_1 - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \int_{0}^{\frac{T}{2}} cos\left( z_2\right) \cdot dz_2 \right)=\\
+&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. sin\left( z_1 \right) \right|_{0}^{\frac{T}{2}} \right) - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. sin\left( z_2\right) \right|_{0}^{\frac{T}{2}} \right) \right)=\\
+&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( \left. sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1+k\right) \right) \right|_{0}^{\frac{T}{2}} \right) - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left(\left. sin\left( \frac{2\pi}{T} \cdot t \cdot \left(1-k\right)\right) \right|_{0}^{\frac{T}{2}} \right) \right)=\\
+&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( sin\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1+k\right) \right) - sin\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1+k\right) \right) \right) \right.=\\
+&\left.- \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( sin\left( \frac{2\pi}{T} \cdot \frac{T}{2} \cdot \left(1-k\right)\right) -  sin\left( \frac{2\pi}{T} \cdot 0 \cdot \left(1-k\right)\right) \right) \right)=\\
+&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( sin\left(\pi \cdot \left(1+k\right) \right) - sin\left( 0 \right) \right) \right.=\\
+&\left.- \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( sin\left(\pi \cdot \left(1-k\right)\right) -  sin\left( 0 \right) \right) \right)=\\
+&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot \left( 0 - 0 \right) \right.=\\
+&\left.- \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot \left( 0 -  0 \right) \right)=\\
+&=-\frac{A}{T} \cdot \left(\frac{1}{\frac{2\pi}{T}\cdot \left(1+k\right)} \cdot 0 - \frac{1}{\frac{2\pi}{T} \cdot \left(1-k\right)} \cdot 0 \right)=\\
+&=-\frac{A}{T} \cdot \left(0 - 0 \right)=\\
+&=-\frac{A}{T} \cdot 0=\\
 &=0
 \end{align*}
 %\end{aligned}
@@ -247,36 +247,36 @@ $b_k$ dla $k=1$ musimy wyznaczyć raz jeszcze tak wiec wyznaczmy wprost $b_1$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-b_1&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot sin\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)\\
+b_1&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot sin\left( 1 \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\right)=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}}sin\left( \frac{2\pi}{T} \cdot t\right) \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot dt\right)=\\
 &=\begin{Bmatrix*}[l]
 sin\left(x\right)&=\frac{e^{\jmath \cdot x}-e^{-\jmath \cdot x}}{2 \jmath }
-\end{Bmatrix*}\\
-&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot dt+0\right)\\
-&=\frac{2}{T}\cdot\left(\frac{A}{2\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)\\
-&=\frac{2}{T} \cdot \frac{A}{2\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
-&=\frac{A}{T\cdot \jmath \cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt\\
-&=\frac{A}{T\cdot \jmath \cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - 1\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -1\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} \right) \cdot dt\\
-&=\frac{A}{T\cdot\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} \right) \cdot dt\\
-&=\frac{A}{T\cdot\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{0} - e^{0} \right) \cdot dt\\
-&=\frac{A}{T\cdot \jmath \cdot \jmath} \cdot \int_{0}^{\frac{T}{2}} \left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2}}{2} - \frac{1 + 1}{2} \right) \cdot dt\\
-&=-\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}} \left( cos\left( \frac{2\pi}{T} \cdot t \cdot 2 \right) - 1 \right) \cdot dt\\
-&=-\frac{A}{T} \cdot \left( \int_{0}^{\frac{T}{2}} cos\left( \frac{4\pi}{T} \cdot t \right) \cdot dt - \int_{0}^{\frac{T}{2}} dt \right)\\
+\end{Bmatrix*}=\\
+&=\frac{2}{T}\cdot\left(A \cdot \int_{0}^{\frac{T}{2}} \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2\jmath} \cdot dt+0\right)=\\
+&=\frac{2}{T}\cdot\left(\frac{A}{2\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)\cdot \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}-e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right) \cdot dt\right)=\\
+&=\frac{2}{T} \cdot \frac{A}{2\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
+&=\frac{A}{T\cdot \jmath \cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t + \jmath \cdot \frac{2\pi}{T} \cdot t} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t+ \jmath \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} \right) \cdot dt=\\
+&=\frac{A}{T\cdot \jmath \cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 - 1\right)} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1 -1\right)} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot \left(1+1\right)} \right) \cdot dt=\\
+&=\frac{A}{T\cdot\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 0} \right) \cdot dt=\\
+&=\frac{A}{T\cdot\jmath\cdot 2\jmath} \cdot \int_{0}^{\frac{T}{2}} \left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} - e^{0} - e^{0} \right) \cdot dt=\\
+&=\frac{A}{T\cdot \jmath \cdot \jmath} \cdot \int_{0}^{\frac{T}{2}} \left( \frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2}}{2} - \frac{1 + 1}{2} \right) \cdot dt=\\
+&=-\frac{A}{T} \cdot \int_{0}^{\frac{T}{2}} \left( cos\left( \frac{2\pi}{T} \cdot t \cdot 2 \right) - 1 \right) \cdot dt=\\
+&=-\frac{A}{T} \cdot \left( \int_{0}^{\frac{T}{2}} cos\left( \frac{4\pi}{T} \cdot t \right) \cdot dt - \int_{0}^{\frac{T}{2}} dt \right)=\\
 &=\begin{Bmatrix*}[l]
 z&=\frac{4\pi}{T} \cdot t\\ 
 dz&=\frac{4\pi}{T} \cdot dt\\
 dt&=\frac{dz}{\frac{4\pi}{T}}
-\end{Bmatrix*}\\
-&=-\frac{A}{T} \cdot \left( \int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot \frac{dz}{\frac{4\pi}{T}} - \left. t\right|_{0}^{\frac{T}{2}} \right)\\
-&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot dz - \left( \frac{T}{2} - 0\right) \right)\\
-&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left. sin\left( z\right) \right|_{0}^{\frac{T}{2}} - \frac{T}{2} \right)\\
-&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left. sin\left( \frac{4\pi}{T} \cdot t \right) \right|_{0}^{\frac{T}{2}} - \frac{T}{2} \right)\\
-&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left( sin\left( \frac{4\pi}{T} \cdot \frac{T}{2} \right) - sin\left( \frac{4\pi}{T} \cdot 0 \right)\right) - \frac{T}{2} \right)\\
-&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left( sin\left( 2\pi \right) - sin\left( 0 \right)\right) - \frac{T}{2} \right)\\
-&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left( 0 - 0\right) - \frac{T}{2} \right)\\
-&=-\frac{A}{T} \cdot \left(- \frac{T}{2} \right)\\
-&=\frac{A}{2}\\
+\end{Bmatrix*}=\\
+&=-\frac{A}{T} \cdot \left( \int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot \frac{dz}{\frac{4\pi}{T}} - \left. t\right|_{0}^{\frac{T}{2}} \right)=\\
+&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot dz - \left( \frac{T}{2} - 0\right) \right)=\\
+&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left. sin\left( z\right) \right|_{0}^{\frac{T}{2}} - \frac{T}{2} \right)=\\
+&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left. sin\left( \frac{4\pi}{T} \cdot t \right) \right|_{0}^{\frac{T}{2}} - \frac{T}{2} \right)=\\
+&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left( sin\left( \frac{4\pi}{T} \cdot \frac{T}{2} \right) - sin\left( \frac{4\pi}{T} \cdot 0 \right)\right) - \frac{T}{2} \right)=\\
+&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left( sin\left( 2\pi \right) - sin\left( 0 \right)\right) - \frac{T}{2} \right)=\\
+&=-\frac{A}{T} \cdot \left( \frac{1}{\frac{4\pi}{T}} \left( 0 - 0\right) - \frac{T}{2} \right)=\\
+&=-\frac{A}{T} \cdot \left(- \frac{T}{2} \right)=\\
+&=\frac{A}{2}
 \end{align*}
 %\end{aligned}
 %\end{equation}
@@ -285,15 +285,13 @@ A wiec wartość współczynnika $b_1$ wynosi $\frac{A}{2}$
 
 Ostatecznie współczynniki trygonometrycznego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 a_0&=\frac{A}{\pi}\\
 a_1&=0\\
 a_k&=\frac{A}{\pi} \cdot \frac{1 + cos\left(k\cdot\pi \right)}{1-k^2}\\
 b_1&=\frac{A}{2}\\
 b_k&=0\\
-\end{aligned}
-\end{equation}
+\end{align*}
 
 Możemy wyznaczyć kilka wartości współczynników $a_k$ i $b_k$
 

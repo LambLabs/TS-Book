@@ -32,60 +32,56 @@ F(\jmath \omega )=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cd
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=\int_{-\infty}^{0} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
-+\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
++\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=\int_{-\infty}^{0} 0 \cdot dt
-+\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=0 +\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=A\cdot \int_{0}^{\infty} e^{-( a + \jmath \cdot \omega) \cdot t}\cdot dt\\
-&=\lim_{\tau \rightarrow \infty} A\cdot \int_{0}^{\tau} e^{-( a + \jmath \cdot \omega) \cdot t}\cdot dt\\
++\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=0 +\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{0}^{\infty} A \cdot e^{-a \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=A\cdot \int_{0}^{\infty} e^{-( a + \jmath \cdot \omega) \cdot t}\cdot dt=\\
+&=\lim_{\tau \rightarrow \infty} A\cdot \int_{0}^{\tau} e^{-( a + \jmath \cdot \omega) \cdot t}\cdot dt=\\
 &=\begin{Bmatrix}
 z&=-( a + \jmath \cdot \omega) \cdot t\\
 dz&=-( a + \jmath \cdot \omega) \cdot dt\\
 dt&=\frac{1}{-( a + \jmath \cdot \omega)} \cdot dz\\
-\end{Bmatrix}\\
-&=\lim_{\tau \rightarrow \infty} A\cdot \int_{0}^{\tau} e^{z}\cdot \frac{1}{-( a + \jmath \cdot \omega)} \cdot dz\\
-&=A\cdot \frac{1}{-( a + \jmath \cdot \omega)}\cdot \lim_{\tau \rightarrow \infty} \int_{0}^{\tau} e^{z} \cdot dz\\
-&=A\cdot \frac{1}{-( a + \jmath \cdot \omega)}\cdot \lim_{\tau \rightarrow \infty} \left. e^{z} \right|_{0}^{\tau}\\
-&=\frac{A}{-( a + \jmath \cdot \omega)}\cdot \lim_{\tau \rightarrow \infty} \left. e^{-( a + \jmath \cdot \omega) \cdot t} \right|_{0}^{\tau}\\
-%&=A\cdot \left(\left. \frac{e^{-( a + \jmath \cdot \omega) \cdot t}}{-( a + \jmath \cdot \omega)}\right |_{0}^{\infty} \right )\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty} \left(e^{-( a + \jmath \cdot \omega) \cdot \tau} - e^{-( a + \jmath \cdot \omega) \cdot 0}\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty} \left(e^{-( a + \jmath \cdot \omega) \cdot \tau} - e^{0}\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty} \left(e^{-( a + \jmath \cdot \omega) \cdot \tau} - 1\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-( a + \jmath \cdot \omega) \cdot \tau} - 1\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-a \cdot \tau + \jmath \cdot \omega \cdot \tau } - 1\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-a \cdot \tau} \cdot e^{\jmath \cdot \omega \cdot \tau } - 1\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-a \cdot \tau} \cdot \lim_{\tau \rightarrow \infty} e^{\jmath \cdot \omega \cdot \tau } - 1\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty} e^{\jmath \cdot \omega \cdot \tau } - 1\right)\\
-&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(0 - 1\right)\\
+\end{Bmatrix}=\\
+&=\lim_{\tau \rightarrow \infty} A\cdot \int_{0}^{\tau} e^{z}\cdot \frac{1}{-( a + \jmath \cdot \omega)} \cdot dz=\\
+&=A\cdot \frac{1}{-( a + \jmath \cdot \omega)}\cdot \lim_{\tau \rightarrow \infty} \int_{0}^{\tau} e^{z} \cdot dz=\\
+&=A\cdot \frac{1}{-( a + \jmath \cdot \omega)}\cdot \lim_{\tau \rightarrow \infty} \left. e^{z} \right|_{0}^{\tau}=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)}\cdot \lim_{\tau \rightarrow \infty} \left. e^{-( a + \jmath \cdot \omega) \cdot t} \right|_{0}^{\tau}=\\
+%&=A\cdot \left(\left. \frac{e^{-( a + \jmath \cdot \omega) \cdot t}}{-( a + \jmath \cdot \omega)}\right |_{0}^{\infty} \right )=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty} \left(e^{-( a + \jmath \cdot \omega) \cdot \tau} - e^{-( a + \jmath \cdot \omega) \cdot 0}\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty} \left(e^{-( a + \jmath \cdot \omega) \cdot \tau} - e^{0}\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty} \left(e^{-( a + \jmath \cdot \omega) \cdot \tau} - 1\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-( a + \jmath \cdot \omega) \cdot \tau} - 1\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-a \cdot \tau + \jmath \cdot \omega \cdot \tau } - 1\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-a \cdot \tau} \cdot e^{\jmath \cdot \omega \cdot \tau } - 1\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty} e^{-a \cdot \tau} \cdot \lim_{\tau \rightarrow \infty} e^{\jmath \cdot \omega \cdot \tau } - 1\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty} e^{\jmath \cdot \omega \cdot \tau } - 1\right)=\\
+&=\frac{A}{-( a + \jmath \cdot \omega)} \cdot \left(0 - 1\right)=\\
 &=\frac{A}{a + \jmath \cdot \omega}
 \end{align*}
 
 Transformata sygnału $f(t)$ to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$
 
 Wyznaczmy jawnie część rzeczywistą i urojoną transformaty:
-\begin{equation}
-\begin{aligned}
-F(\jmath \omega )&=\frac{A}{( a + \jmath \cdot \omega)}\\
-&=\frac{A}{( a + \jmath \cdot \omega)} \cdot \frac{(a - \jmath \cdot \omega)}{(a - \jmath \cdot \omega)}\\
-&=\frac{A \cdot ( a - \jmath \cdot \omega)}{( a^2 + \omega^2)}\\
+\begin{align*}
+F(\jmath \omega )&=\frac{A}{( a + \jmath \cdot \omega)}=\\
+&=\frac{A}{( a + \jmath \cdot \omega)} \cdot \frac{(a - \jmath \cdot \omega)}{(a - \jmath \cdot \omega)}=\\
+&=\frac{A \cdot ( a - \jmath \cdot \omega)}{( a^2 + \omega^2)}=\\
 &=\frac{A \cdot a}{( a^2 + \omega^2)} - \jmath \cdot \frac{A \cdot \omega}{( a^2 + \omega^2)}
-\end{aligned}
-\end{equation}
+\end{align*}
 
 
 Widmo amplitudowe obliczamy ze wzoru:
-\begin{equation}
-\begin{aligned}
-M(\omega)&=\left| F(j \omega) \right|\\
-&=\sqrt{\left(\frac{A \cdot a}{( a^2 + \omega^2)}\right)^2 + \left(\frac{-A \cdot \omega}{( a^2 + \omega^2)}\right)^2}\\
-&=\sqrt{\frac{A^2 \cdot (a^2+\omega^2)}{(a^2 + \omega^2)^2}}\\
-&=\sqrt{\frac{A^2}{(a^2 + \omega^2)}}\\
+\begin{align*}
+M(\omega)&=\left| F(j \omega) \right|=\\
+&=\sqrt{\left(\frac{A \cdot a}{( a^2 + \omega^2)}\right)^2 + \left(\frac{-A \cdot \omega}{( a^2 + \omega^2)}\right)^2}=\\
+&=\sqrt{\frac{A^2 \cdot (a^2+\omega^2)}{(a^2 + \omega^2)^2}}=\\
+&=\sqrt{\frac{A^2}{(a^2 + \omega^2)}}=\\
 &=\frac{A}{\sqrt{a^2 + \omega^2}}
-\end{aligned}
-\end{equation}
+\end{align*}
 
 \begin{figure}[H]
   \centering
@@ -112,14 +108,12 @@ M(\omega)&=\left| F(j \omega) \right|\\
 \end{figure}
 
 Widmo fazowe obliczamy ze wzoru:
-\begin{equation}
-\begin{aligned}
-\Phi ( \omega )&=arctg(\frac{Im\{F(\jmath \omega )\}}{Re\{F(\jmath \omega )\}})\\
-&=arctg\left(\frac{\left(\frac{-A \cdot \omega}{( a^2 + \omega^2)}\right)}{\left(\frac{A \cdot a}{( a^2 + \omega^2)}\right)}\right)\\
-&=arctg\left(\frac{-A \cdot \omega}{( a^2 + \omega^2)} \cdot \frac{( a^2 + \omega^2)}{A \cdot a}\right)\\
-&=arctg\left(-\frac{\omega}{a}\right)\\
-\end{aligned}
-\end{equation}
+\begin{align*}
+\Phi ( \omega )&=arctg(\frac{Im\{F(\jmath \omega )\}}{Re\{F(\jmath \omega )\}})=\\
+&=arctg\left(\frac{\left(\frac{-A \cdot \omega}{( a^2 + \omega^2)}\right)}{\left(\frac{A \cdot a}{( a^2 + \omega^2)}\right)}\right)=\\
+&=arctg\left(\frac{-A \cdot \omega}{( a^2 + \omega^2)} \cdot \frac{( a^2 + \omega^2)}{A \cdot a}\right)=\\
+&=arctg\left(-\frac{\omega}{a}\right)
+\end{align*}
 
 \begin{figure}[H]
   \centering

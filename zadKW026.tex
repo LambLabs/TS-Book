@@ -20,15 +20,15 @@ Oblicz transformatę Fouriera sygnału $f(t)=sgn(t)$ za pomocą twierdzeń.
 Sygnał $f(t)$ można zapisać jako
 
 \begin{align*}
-f(t) & = sgn(t) \\
-& = \mathbb{1}(t) - \mathbb{1}(-t)\\
+f(t) & = sgn(t) =\\
+& = \mathbb{1}(t) - \mathbb{1}(-t)=\\
 & = f_1(t) - f_2(t)
 \end{align*}
 
 Wyrażnie widac iż funkcja jest złożeniem dwóch skoków jednostkowych
 
 \begin{align*}
-f_1(t)&= \mathbb{1}(t)
+f_1(t)&= \mathbb{1}(t)\\
 f_2(t)&= \mathbb{1}(-t)\\
 \end{align*}
 
@@ -70,13 +70,13 @@ g(t) = f_1'(t) = \delta(t)
 dla której w bardzo łatwy sposób można wyznaczyć transformatę Fouriera.
 
 \begin{align*}
-G(\jmath \omega) &= \int_{-\infty}^{\infty} g(t) \cdot e^{-\jmath \cdot \omega \cdot t}\\
-&=\int_{-\infty}^{\infty} \delta(t) \cdot e^{-\jmath \cdot \omega \cdot t}\\
+G(\jmath \omega) &= \int_{-\infty}^{\infty} g(t) \cdot e^{-\jmath \cdot \omega \cdot t}=\\
+&=\int_{-\infty}^{\infty} \delta(t) \cdot e^{-\jmath \cdot \omega \cdot t}=\\
 &=\begin{Bmatrix}
 \SamplingPropertyOfDelta
-\end{Bmatrix}\\
-&=e^{-\jmath \cdot \omega \cdot 0}\\
-&=e^{0}\\
+\end{Bmatrix}=\\
+&=e^{-\jmath \cdot \omega \cdot 0}=\\
+&=e^{0}=\\
 &=1
 \end{align*}
 
@@ -91,17 +91,17 @@ Korzystając z twierdzenia o całkowaniu można wyznaczyć transformatę funkcji
 Tak wiec mamy
 
 \begin{align*}
-F_1(\jmath \omega)&=\frac{1}{\jmath \cdot \omega } \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)\\
-&=\frac{1}{\jmath \cdot \omega } \cdot 1 + \pi \cdot \delta(\omega) \cdot 1\\
-&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)\\
+F_1(\jmath \omega)&=\frac{1}{\jmath \cdot \omega } \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)=\\
+&=\frac{1}{\jmath \cdot \omega } \cdot 1 + \pi \cdot \delta(\omega) \cdot 1=\\
+&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)
 \end{align*}
 
 A wiec transformata skoku jednostkowego jest $F_1(\jmath \omega)=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$
 
 Funkcję $f_2(t)$ można zapisać jako
 \begin{align*}
-f_2(t)&=\mathbb{1}(-t)\\
-&=\mathbb{1}(-1 \cdot t)\\
+f_2(t)&=\mathbb{1}(-t)=\\
+&=\mathbb{1}(-1 \cdot t)=\\
 &=f_1(-1 \cdot t)
 \end{align*}
 
@@ -112,13 +112,13 @@ A wiec transformatę funkcji $f_2(t)$ można wyznaczyć z twierdzenia o zmianie 
 \end{align*}
 
 \begin{align*}
-F_2(\jmath \omega)&=\frac{1}{\left| a \right|} \cdot F_1(\jmath \frac{\omega}{a})\\
+F_2(\jmath \omega)&=\frac{1}{\left| a \right|} \cdot F_1(\jmath \frac{\omega}{a})=\\
 &=\begin{Bmatrix}
 a=-1
-\end{Bmatrix}\\
-&=\frac{1}{\left| -1 \right|} \cdot \frac{1}{\jmath \cdot \frac{\omega}{-1} } + \pi \cdot \delta(\frac{\omega}{-1})\\
-&=\frac{1}{1} \cdot \frac{1}{-\jmath \cdot \omega } + \pi \cdot \delta(-\omega)\\
-&=- \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)\\
+\end{Bmatrix}=\\
+&=\frac{1}{\left| -1 \right|} \cdot \frac{1}{\jmath \cdot \frac{\omega}{-1} } + \pi \cdot \delta(\frac{\omega}{-1})=\\
+&=\frac{1}{1} \cdot \frac{1}{-\jmath \cdot \omega } + \pi \cdot \delta(-\omega)=\\
+&=- \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)
 \end{align*}
 
 A więc transformata funkcji $f_2(t)$ jest równa $F_2(\jmath \omega)- \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$
@@ -131,10 +131,10 @@ Transformatę funkcji $f(t)$ możemy wyznaczyć z twierdzenia o jednorodności
 
 
 \begin{align*}
-F(\jmath \omega)&=F_1(\jmath \omega) - F_2(\jmath \omega)\\
-&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega) - \left(-\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)\right)\\
-&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega) +\frac{1}{\jmath \cdot \omega } - \pi \cdot \delta(\omega)\\
-&=\frac{2}{\jmath \cdot \omega }\\
+F(\jmath \omega)&=F_1(\jmath \omega) - F_2(\jmath \omega)=\\
+&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega) - \left(-\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)\right)=\\
+&=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega) +\frac{1}{\jmath \cdot \omega } - \pi \cdot \delta(\omega)=\\
+&=\frac{2}{\jmath \cdot \omega }
 \end{align*}
 
 Ostatecznie transformata funkcji $f(t)$ jest równa $F(\jmath \omega)=\frac{2}{\jmath \cdot \omega }$.

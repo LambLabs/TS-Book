@@ -30,56 +30,56 @@ Podstawiamy do wzoru na enargie wzór naszej funkcji
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-E&=\lim_{\tau \rightarrow \infty}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(t)\right|^2 \cdot dt\\
+E&=\lim_{\tau \rightarrow \infty}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(t)\right|^2 \cdot dt=\\
  &=\lim_{\tau \rightarrow \infty} \left( 
    \int_{-\frac{\tau}{2}}^{0}\left| -A \cdot e^{a\cdot t} \right|^2 \cdot dt 
- + \int_{0}^{\frac{\tau}{2}}\left| A \cdot e^{-a\cdot t} \right|^2 \cdot dt \right)\\
+ + \int_{0}^{\frac{\tau}{2}}\left| A \cdot e^{-a\cdot t} \right|^2 \cdot dt \right)=\\
  &=\lim_{\tau \rightarrow \infty} \left( 
    \int_{-\frac{\tau}{2}}^{0}\left( -A \cdot e^{a\cdot t} \right)^2 \cdot dt 
- + \int_{0}^{\frac{\tau}{2}}\left( A \cdot e^{-a\cdot t} \right)^2 \cdot dt \right)\\
+ + \int_{0}^{\frac{\tau}{2}}\left( A \cdot e^{-a\cdot t} \right)^2 \cdot dt \right)=\\
  &=\lim_{\tau \rightarrow \infty} \left( 
    \int_{-\frac{\tau}{2}}^{0}\left( -A\right)^2 \cdot \left(e^{a\cdot t} \right)^2 \cdot dt 
- + \int_{0}^{\frac{\tau}{2}}\left( A \right)^2 \cdot \left(e^{-a\cdot t} \right)^2 \cdot dt \right)\\
+ + \int_{0}^{\frac{\tau}{2}}\left( A \right)^2 \cdot \left(e^{-a\cdot t} \right)^2 \cdot dt \right)=\\
  &=\lim_{\tau \rightarrow \infty} \left( 
    \int_{-\frac{\tau}{2}}^{0} A^2 \cdot e^{2\cdot a\cdot t} \cdot dt 
- + \int_{0}^{\frac{\tau}{2}} A^2 \cdot e^{-2 \cdot a\cdot t} \cdot dt \right)\\
+ + \int_{0}^{\frac{\tau}{2}} A^2 \cdot e^{-2 \cdot a\cdot t} \cdot dt \right)=\\
  &=\lim_{\tau \rightarrow \infty} \left( 
     A^2 \cdot \int_{-\frac{\tau}{2}}^{0}  e^{2\cdot a\cdot t} \cdot dt 
- +  A^2 \cdot \int_{0}^{\frac{\tau}{2}} e^{-2 \cdot a\cdot t} \cdot dt \right)\\
+ +  A^2 \cdot \int_{0}^{\frac{\tau}{2}} e^{-2 \cdot a\cdot t} \cdot dt \right)=\\
  &=\lim_{\tau \rightarrow \infty} A^2 \cdot \left( 
    \int_{-\frac{\tau}{2}}^{0}  e^{2\cdot a\cdot t} \cdot dt 
- + \int_{0}^{\frac{\tau}{2}} e^{-2 \cdot a\cdot t} \cdot dt \right)\\
+ + \int_{0}^{\frac{\tau}{2}} e^{-2 \cdot a\cdot t} \cdot dt \right)=\\
  &=\begin{Bmatrix*}[l]
    z=2\cdot a \cdot t & w=-2 \cdot a \cdot t\\
    dz = 2 \cdot a \cdot dt & dw=-2 \cdot a \cdot dt\\
    dt = \frac{dz}{2\cdot a} & dt = \frac{dw}{-2 \cdot a}
-   \end{Bmatrix*}\\
+   \end{Bmatrix*}=\\
  &=\lim_{\tau \rightarrow \infty} A^2 \cdot \left( 
     \int_{-\frac{\tau}{2}}^{0}  e^{z} \cdot \frac{dz}{2\cdot a} 
- +  \int_{0}^{\frac{\tau}{2}} e^{w} \cdot \frac{dw}{-2\cdot a} \right)\\
+ +  \int_{0}^{\frac{\tau}{2}} e^{w} \cdot \frac{dw}{-2\cdot a} \right)=\\
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
     \int_{-\frac{\tau}{2}}^{0}  e^{z} \cdot dz 
- -  \int_{0}^{\frac{\tau}{2}} e^{w} \cdot dw \right)\\
+ -  \int_{0}^{\frac{\tau}{2}} e^{w} \cdot dw \right)=\\
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
     \left. e^{z} \right|_{-\frac{\tau}{2}}^{0} 
- -  \left. e^{w} \right|_{0}^{\frac{\tau}{2}} \right)\\ 
+ -  \left. e^{w} \right|_{0}^{\frac{\tau}{2}} \right)=\\ 
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
     \left. e^{2\cdot a \cdot t} \right|_{-\frac{\tau}{2}}^{0} 
- -  \left. e^{-2 \cdot a \cdot dt} \right|_{0}^{\frac{\tau}{2}} \right)\\ 
+ -  \left. e^{-2 \cdot a \cdot dt} \right|_{0}^{\frac{\tau}{2}} \right)=\\ 
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
     \left(e^{2\cdot a \cdot 0} -e^{-2\cdot a \cdot \frac{\tau}{2}} \right)
- -  \left(e^{-2 \cdot a \cdot \frac{\tau}{2}}-e^{-2 \cdot a \cdot 0} \right) \right)\\ 
+ -  \left(e^{-2 \cdot a \cdot \frac{\tau}{2}}-e^{-2 \cdot a \cdot 0} \right) \right)=\\ 
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
     \left(e^{0} -e^{-a \cdot \tau} \right)
- -  \left(e^{-a \cdot \tau}-e^{0} \right)\right)\\
+ -  \left(e^{-a \cdot \tau}-e^{0} \right)\right)=\\
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
-    1 -e^{-a \cdot \tau} -  e^{-a \cdot \tau}+1 \right)\\
+    1 -e^{-a \cdot \tau} -  e^{-a \cdot \tau}+1 \right)=\\
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
-    2 - 2\cdot e^{-a \cdot \tau} \right)\\
+    2 - 2\cdot e^{-a \cdot \tau} \right)=\\
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot 2 \cdot \left( 
-    1 - e^{-a \cdot \tau} \right)\\
+    1 - e^{-a \cdot \tau} \right)=\\
  &=\lim_{\tau \rightarrow \infty} \frac{A^2}{a} \cdot \left( 
- 1 - e^{-a \cdot \tau} \right)\\
+ 1 - e^{-a \cdot \tau} \right)=\\
  &= \frac{A^2}{a}\\
 \end{align*}
 %\end{aligned}

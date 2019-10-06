@@ -161,7 +161,7 @@ Dla wartości $t$ spełniających warunek $t<0$ otrzymujemy:
 
 
 \begin{align*}
-y(t)&=\int_{-\infty}^{\infty} 0 \cdot d\tau\\
+y(t)&=\int_{-\infty}^{\infty} 0 \cdot d\tau=\\
 &=0
 \end{align*}
 
@@ -219,17 +219,17 @@ A \cdot e^{-a \cdot (t-\tau)} & \tau \in \left(0; t\right)\\
 Wartość splotu $y(t)$ wyznaczamy ze wzoru:
 
 \begin{align*}
-y(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau\\
-&=\int_{-\infty}^{0} 0 \cdot d\tau + \int_{0}^{t}\left(A \cdot e^{-a \cdot (t-\tau)}\right)\cdot d\tau +\int_{t}^{\infty} 0 \cdot d\tau\\
-&=0 + A \cdot \int_{0}^{t}\left(e^{-a \cdot t}\cdot e^{a \cdot \tau}\right)\cdot d\tau +0\\
-&=A \cdot e^{-a \cdot t} \cdot \int_{0}^{t}\left(e^{a \cdot \tau}\right)\cdot d\tau\\
-&=A \cdot e^{-a \cdot t} \cdot \frac{1}{a} \cdot \left.e^{a \cdot \tau}\right|_{0}^{t}\\
-&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot t} - e^{a \cdot 0} \right)\\
-&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot t} - 1 \right)\\
-&=\frac{A}{a} \cdot \left(e^{a \cdot t} \cdot e^{-a \cdot t} - 1 \cdot e^{-a \cdot t}\right)\\
-&=\frac{A}{a} \cdot \left(e^{a \cdot t -a \cdot t} - e^{-a \cdot t}\right)\\
-&=\frac{A}{a} \cdot \left(e^{0} - e^{-a \cdot t}\right)\\
-&=\frac{A}{a} \cdot \left(1 - e^{-a \cdot t}\right)\\
+y(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau=\\
+&=\int_{-\infty}^{0} 0 \cdot d\tau + \int_{0}^{t}\left(A \cdot e^{-a \cdot (t-\tau)}\right)\cdot d\tau +\int_{t}^{\infty} 0 \cdot d\tau=\\
+&=0 + A \cdot \int_{0}^{t}\left(e^{-a \cdot t}\cdot e^{a \cdot \tau}\right)\cdot d\tau +0=\\
+&=A \cdot e^{-a \cdot t} \cdot \int_{0}^{t}\left(e^{a \cdot \tau}\right)\cdot d\tau=\\
+&=A \cdot e^{-a \cdot t} \cdot \frac{1}{a} \cdot \left.e^{a \cdot \tau}\right|_{0}^{t}=\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot t} - e^{a \cdot 0} \right)=\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot t} - 1 \right)=\\
+&=\frac{A}{a} \cdot \left(e^{a \cdot t} \cdot e^{-a \cdot t} - 1 \cdot e^{-a \cdot t}\right)=\\
+&=\frac{A}{a} \cdot \left(e^{a \cdot t -a \cdot t} - e^{-a \cdot t}\right)=\\
+&=\frac{A}{a} \cdot \left(e^{0} - e^{-a \cdot t}\right)=\\
+&=\frac{A}{a} \cdot \left(1 - e^{-a \cdot t}\right)
 \end{align*}
 
 \paragraph{Przedział 3}
@@ -286,13 +286,13 @@ A \cdot e^{-a \cdot (t-\tau)} & \tau \in \left(0; T\right)\\
 Wartość splotu $y(t)$ wyznaczamy ze wzoru:
 
 \begin{align*}
-y(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau\\
-&=\int_{-\infty}^{0} 0 \cdot d\tau + \int_{0}^{T}\left(A \cdot e^{-a \cdot (t-\tau)}\right)\cdot d\tau +\int_{T}^{\infty} 0 \cdot d\tau\\
-&=0 + A \cdot \int_{0}^{T}\left(e^{-a \cdot t}\cdot e^{a \cdot \tau}\right)\cdot d\tau +0\\
-&=A \cdot e^{-a \cdot t} \cdot \int_{0}^{T}\left(e^{a \cdot \tau}\right)\cdot d\tau\\
-&=A \cdot e^{-a \cdot t} \cdot \frac{1}{a} \cdot \left.e^{a \cdot \tau}\right|_{0}^{T}\\
-&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - e^{a \cdot 0} \right)\\
-&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - 1 \right)\\
+y(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot h(t-\tau) \cdot d\tau=\\
+&=\int_{-\infty}^{0} 0 \cdot d\tau + \int_{0}^{T}\left(A \cdot e^{-a \cdot (t-\tau)}\right)\cdot d\tau +\int_{T}^{\infty} 0 \cdot d\tau=\\
+&=0 + A \cdot \int_{0}^{T}\left(e^{-a \cdot t}\cdot e^{a \cdot \tau}\right)\cdot d\tau +0=\\
+&=A \cdot e^{-a \cdot t} \cdot \int_{0}^{T}\left(e^{a \cdot \tau}\right)\cdot d\tau=\\
+&=A \cdot e^{-a \cdot t} \cdot \frac{1}{a} \cdot \left.e^{a \cdot \tau}\right|_{0}^{T}=\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - e^{a \cdot 0} \right)=\\
+&=\frac{A}{a} \cdot e^{-a \cdot t} \cdot \left(e^{a \cdot T} - 1 \right)
 \end{align*}
 
 Podsumowując:

@@ -29,31 +29,31 @@ F(\jmath \omega )=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cd
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{\infty} A\cdot\Pi(\frac{t}{\tau})  \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{-\frac{\tau}{2}} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{\frac{\tau}{2} }^{\infty} 0\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{-\frac{\tau}{2}} 0 \cdot dt + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{\frac{\tau}{2} }^{\infty} 0 \cdot dt\\
-&=0 + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + 0\\
-&=A\cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty} A\cdot\Pi(\frac{t}{\tau})  \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{-\frac{\tau}{2}} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{\frac{\tau}{2} }^{\infty} 0\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{-\frac{\tau}{2}} 0 \cdot dt + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{\frac{\tau}{2} }^{\infty} 0 \cdot dt=\\
+&=0 + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + 0=\\
+&=A\cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=\begin{Bmatrix}
 z&=-\jmath \cdot \omega \cdot t\\
 dz&=-\jmath \cdot \omega \cdot dt\\
 dt&=\frac{1}{-\jmath \cdot \omega} \cdot dz\\
-\end{Bmatrix}\\
-&=A\cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{z}\cdot \frac{1}{-\jmath \cdot \omega} \cdot dz\\
-&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{z}\cdot dz\\
-&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \left. e^{z}\right|_{-\frac{\tau}{2} }^{\frac{\tau}{2}}\\
-&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \left. e^{-\jmath \cdot \omega \cdot t}\right|_{-\frac{\tau}{2} }^{\frac{\tau}{2}}\\
-%&=A\cdot \left(\left. \frac{e^{-\jmath \cdot \omega \cdot t}}{-\jmath \cdot \omega}\right |_{-\frac{\tau}{2}}^{\frac{\tau}{2}} \right )\\
-&=\frac{A}{-\jmath \cdot \omega} \cdot \left(e^{-\jmath \cdot \omega \cdot \frac{\tau}{2}} - e^{-\jmath \cdot \omega \cdot (-\frac{\tau}{2})}\right)\\
-&=\frac{A}{\jmath \cdot \omega} \cdot \left(e^{\jmath \cdot \omega \cdot \frac{\tau}{2}} - e^{-\jmath \cdot \omega \cdot \frac{\tau}{2}}\right)\\
+\end{Bmatrix}=\\
+&=A\cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{z}\cdot \frac{1}{-\jmath \cdot \omega} \cdot dz=\\
+&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{z}\cdot dz=\\
+&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \left. e^{z}\right|_{-\frac{\tau}{2} }^{\frac{\tau}{2}}=\\
+&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \left. e^{-\jmath \cdot \omega \cdot t}\right|_{-\frac{\tau}{2} }^{\frac{\tau}{2}}=\\
+%&=A\cdot \left(\left. \frac{e^{-\jmath \cdot \omega \cdot t}}{-\jmath \cdot \omega}\right |_{-\frac{\tau}{2}}^{\frac{\tau}{2}} \right )=\\
+&=\frac{A}{-\jmath \cdot \omega} \cdot \left(e^{-\jmath \cdot \omega \cdot \frac{\tau}{2}} - e^{-\jmath \cdot \omega \cdot (-\frac{\tau}{2})}\right)=\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left(e^{\jmath \cdot \omega \cdot \frac{\tau}{2}} - e^{-\jmath \cdot \omega \cdot \frac{\tau}{2}}\right)=\\
 &=\begin{Bmatrix*}[l]
 sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}
-\end{Bmatrix*}\\
-&=\frac{2 \cdot A}{\omega} \cdot sin\left(\omega \cdot \frac{\tau}{2}\right)\\
+\end{Bmatrix*}=\\
+&=\frac{2 \cdot A}{\omega} \cdot sin\left(\omega \cdot \frac{\tau}{2}\right)=\\
 &=\begin{Bmatrix*}[l]
 \frac{sin(x)}{x}=Sa(x)
-\end{Bmatrix*}\\
+\end{Bmatrix*}=\\
 &=A\cdot \tau \cdot Sa\left(\omega \cdot \frac{\tau}{2}\right)
 \end{align*}
 

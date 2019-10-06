@@ -31,17 +31,17 @@ f(t) = Sa^2\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)
 W pierwszej kolejności można funkcję $f(t)$ rozpisać następująco
 
 \begin{align*}
-f(t) &= Sa^2\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)\\
+f(t) &= Sa^2\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)=\\
 &=\begin{Bmatrix}
 \EulerCos
-\end{Bmatrix}\\
-&= Sa^2\left(\omega_0 \cdot t\right) \cdot \frac{e^{\jmath \cdot \omega_0 \cdot t} + e^{-\jmath \cdot \omega_0 \cdot t}}{2}\\
-&= \frac{1}{2} \cdot \left( Sa^2\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t} + Sa^2\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t} \right)\\
+\end{Bmatrix}=\\
+&= Sa^2\left(\omega_0 \cdot t\right) \cdot \frac{e^{\jmath \cdot \omega_0 \cdot t} + e^{-\jmath \cdot \omega_0 \cdot t}}{2}=\\
+&= \frac{1}{2} \cdot \left( Sa^2\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t} + Sa^2\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t} \right)=\\
 &=\begin{Bmatrix}
 f_1(t) &= Sa^2\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t} \\
 f_2(t) &= Sa^2\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t}
-\end{Bmatrix}\\
-&=\frac{1}{2} \cdot \left(f_1(t) + f_2(t) \right)\\
+\end{Bmatrix}=\\
+&=\frac{1}{2} \cdot \left(f_1(t) + f_2(t) \right)
 \end{align*}
 
 Należy zauważyć iż funkcja $f_1(t)$ i $f_2(t)$ jest złożeniem funkcji $Sa^2$ i funkcji wykładniczych.
@@ -74,15 +74,15 @@ G_1(\jmath \omega) = 2\pi \cdot h(- \jmath \omega) = \pi \cdot  \Lambda\left(-\o
 Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $g(t)$ 
 
 \begin{align*}
-g(t)&=Sa^2\left(\omega_0 \cdot t\right)\\
-&=Sa^2\left(\omega_0 \cdot t \cdot \frac{2}{2}\right)\\
-&=Sa^2\left(2\cdot \omega_0 \cdot \frac{t}{2}\right)\\
-&=Sa^2\left(\frac{2\cdot \omega_0 \cdot t}{2}\right)\\
+g(t)&=Sa^2\left(\omega_0 \cdot t\right)=\\
+&=Sa^2\left(\omega_0 \cdot t \cdot \frac{2}{2}\right)=\\
+&=Sa^2\left(2\cdot \omega_0 \cdot \frac{t}{2}\right)=\\
+&=Sa^2\left(\frac{2\cdot \omega_0 \cdot t}{2}\right)=\\
 &=\begin{Bmatrix}
 a = 2\cdot \omega_0
-\end{Bmatrix}\\
-&=Sa^2\left(\frac{a\cdot t}{2}\right)\\
-&=g_1(a\cdot t) \\
+\end{Bmatrix}=\\
+&=Sa^2\left(\frac{a\cdot t}{2}\right)=\\
+&=g_1(a\cdot t) 
 \end{align*}
 
 Znając transformatę funkcji $g_1(t)$ możemy wyznaczyć transformatę funkcji $g(t)=g_1(a \cdot t)$ za pomocą twierdzenia o zmianie skali.
@@ -94,16 +94,16 @@ Znając transformatę funkcji $g_1(t)$ możemy wyznaczyć transformatę funkcji 
 Podstawiając wyznaczoną transformatę $G_1(\jmath \omega)$
 
 \begin{align*}
-G(\jmath \omega) &= \frac{1}{\left|\alpha \right|} \cdot G_1(\jmath \frac{\omega}{\alpha})\\
+G(\jmath \omega) &= \frac{1}{\left|\alpha \right|} \cdot G_1(\jmath \frac{\omega}{\alpha})=\\
 &=\begin{Bmatrix}
 \alpha = 2\cdot \omega_0
-\end{Bmatrix}\\
-&=\frac{1}{\left| 2\cdot \omega_0 \right|} \cdot G_1( \frac{\omega}{2\cdot \omega_0})\\
+\end{Bmatrix}=\\
+&=\frac{1}{\left| 2\cdot \omega_0 \right|} \cdot G_1( \frac{\omega}{2\cdot \omega_0})=\\
 &=\begin{Bmatrix}
 G_1(\jmath \omega) = 2\pi \cdot \Lambda\left(\omega\right)
-\end{Bmatrix}\\
-&=\frac{1}{ 2\cdot \omega_0 } \cdot 2\pi \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)\\
-&=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)\\
+\end{Bmatrix}=\\
+&=\frac{1}{ 2\cdot \omega_0 } \cdot 2\pi \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)=\\
+&=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)
 \end{align*}
 
 Tak wiec transformata sygnału $g(t)=Sa\left(\omega_0 \cdot t\right)$ jest równa $G(\jmath \omega)=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega}{2\cdot \omega_0}\right)$
@@ -124,12 +124,12 @@ Korzystając z twierdzenie o przesunięciu w dziedzinie częstotliwości
 otrzymujemy wprost
 
 \begin{align*}
-F_1(\jmath \omega)&=G\left(\jmath \left(\omega -\omega_0\right)\right)\\
+F_1(\jmath \omega)&=G\left(\jmath \left(\omega -\omega_0\right)\right)=\\
 &=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right)
 \end{align*}
 
 \begin{align*}
-F_2(\jmath \omega)&=G\left(\jmath \left(\omega +\omega_0\right)\right)\\
+F_2(\jmath \omega)&=G\left(\jmath \left(\omega +\omega_0\right)\right)=\\
 &=\frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right)
 \end{align*}
 
@@ -142,7 +142,7 @@ Ostatecznie korzystając z liniowości transformaty Fouriera
 otrzymujemy
 
 \begin{align*}
-F(\jmath \omega)&=F_1(\jmath \omega)-F_2(\jmath \omega)\\
+F(\jmath \omega)&=F_1(\jmath \omega)-F_2(\jmath \omega)=\\
 &=\frac{1}{2} \cdot \left( \frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right) + \frac{\pi}{ \omega_0 } \cdot \Lambda\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right) \right)
 \end{align*}
 

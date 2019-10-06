@@ -55,38 +55,34 @@ F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{ k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
-&=\frac{1}{T}\int_{0}^{\frac{T}{2}}A \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
-&=\frac{A}{T}\int_{0}^{\frac{T}{2}} e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
+\begin{align*}
+F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
+&=\frac{1}{T}\int_{0}^{\frac{T}{2}}A \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
+&=\frac{A}{T}\int_{0}^{\frac{T}{2}} e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 z&=-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot t\\
 dz&=-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot dt\\
 dt&=\frac{dz}{-\jmath \cdot k\cdot \frac{2\pi}{T}}
-\end{Bmatrix*}\\
-&=\frac{A}{T}\int_{0}^{\frac{T}{2}} e^{z} \cdot \frac{dz}{-\jmath \cdot k\cdot \frac{2\pi}{T}}\\
-&=-\frac{A}{T \cdot \jmath \cdot k\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}} e^{z} \cdot dz\\
-&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left. e^{z} \right|_{0}^{\frac{T}{2}}\\
-&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left. e^{-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{\frac{T}{2}}\\
-&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left( e^{-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot \frac{T}{2}} - e^{-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot 0}\right)\\
-&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left( e^{ -\jmath \cdot k\cdot \pi } - e^{ 0}\right)\\
-&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left( e^{ -\jmath \cdot k\cdot \pi } - 1\right)\\
-&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)\\
-\end{aligned}
-\end{equation}
+\end{Bmatrix*}=\\
+&=\frac{A}{T}\int_{0}^{\frac{T}{2}} e^{z} \cdot \frac{dz}{-\jmath \cdot k\cdot \frac{2\pi}{T}}=\\
+&=-\frac{A}{T \cdot \jmath \cdot k\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}} e^{z} \cdot dz=\\
+&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left. e^{z} \right|_{0}^{\frac{T}{2}}=\\
+&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left. e^{-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{\frac{T}{2}}=\\
+&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left( e^{-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot \frac{T}{2}} - e^{-\jmath \cdot k\cdot \frac{2\pi}{T} \cdot 0}\right)=\\
+&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left( e^{ -\jmath \cdot k\cdot \pi } - e^{ 0}\right)=\\
+&=-\frac{A}{\jmath \cdot k\cdot 2 \pi}\left( e^{ -\jmath \cdot k\cdot \pi } - 1\right)=\\
+&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)
+\end{align*}
 
 Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)$
 
 
 Współczynniki zespolonego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 F_0&=\frac{A}{2}\\
 F_k&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)\\
-\end{aligned}
-\end{equation}
+\end{align*}
 
 Możemy wyznaczyć kilka wartości współczynników $F_k$
 

@@ -34,32 +34,32 @@ Podstawiamy do wzoru wzór naszej funkcji
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt\\
- &=\frac{1}{T} \cdot \int_{0}^{T}\left|A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) \right|^2 \cdot dt\\ 
- &=\frac{1}{T} \cdot \int_{0}^{T}\left(A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) \right)^2 \cdot dt\\ 
- &=\frac{1}{T} \cdot \int_{0}^{T}\left(A^2 + 2\cdot A \cdot B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) + B^2 \cdot sin^2\left(\frac{2\pi}{T}\cdot t \right) \right) \cdot dt\\
- &=\frac{1}{T} \cdot \left( \int_{0}^{T}A^2 \cdot dt + \int_{0}^{T} 2\cdot A \cdot B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt + \int_{0}^{T} B^2 \cdot sin^2\left(\frac{2\pi}{T}\cdot t \right)  \cdot dt \right)\\
- &=\frac{A^2}{T} \cdot \int_{0}^{T} dt + \frac{2\cdot A \cdot B}{T} \cdot \int_{0}^{T} sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt + \frac{B^2}{T} \cdot \int_{0}^{T}  sin^2\left(\frac{2\pi}{T}\cdot t \right)  \cdot dt\\
+P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
+ &=\frac{1}{T} \cdot \int_{0}^{T}\left|A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) \right|^2 \cdot dt=\\ 
+ &=\frac{1}{T} \cdot \int_{0}^{T}\left(A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) \right)^2 \cdot dt=\\ 
+ &=\frac{1}{T} \cdot \int_{0}^{T}\left(A^2 + 2\cdot A \cdot B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) + B^2 \cdot sin^2\left(\frac{2\pi}{T}\cdot t \right) \right) \cdot dt=\\
+ &=\frac{1}{T} \cdot \left( \int_{0}^{T}A^2 \cdot dt + \int_{0}^{T} 2\cdot A \cdot B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt + \int_{0}^{T} B^2 \cdot sin^2\left(\frac{2\pi}{T}\cdot t \right)  \cdot dt \right)=\\
+ &=\frac{A^2}{T} \cdot \int_{0}^{T} dt + \frac{2\cdot A \cdot B}{T} \cdot \int_{0}^{T} sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt + \frac{B^2}{T} \cdot \int_{0}^{T}  sin^2\left(\frac{2\pi}{T}\cdot t \right)  \cdot dt=\\
  &=\begin{Bmatrix*}[l]
  z=\frac{2\pi}{T} \cdot t\\
  dz = \frac{2\pi}{T} \cdot dt & dt = \frac{dz}{\frac{2\pi}{T}} =\frac{T}{2\pi} \cdot dz 
- \end{Bmatrix*}\\
- &=\frac{A^2}{T} \cdot \left. t \right|_{0}^{T} + \frac{2\cdot A \cdot B}{T} \cdot \int_{0}^{T} sin\left(z \right) \cdot \frac{T}{2\pi} \cdot dz + \frac{B^2}{T} \cdot \int_{0}^{T} \frac{1}{2} \cdot \left(1 - cos\left(2 \cdot \frac{2\pi}{T}\cdot t \right) \right)  \cdot dt\\
- &=\frac{A^2}{T} \cdot \left( T - 0 \right) + \frac{2\cdot A \cdot B}{T} \cdot \frac{T}{2\pi} \cdot \int_{0}^{T} sin\left(z \right) \cdot dz + \frac{B^2}{T} \cdot \frac{1}{2} \cdot \int_{0}^{T} \left(1 - cos\left(2 \cdot \frac{2\pi}{T}\cdot t \right) \right)  \cdot dt\\
- &=\frac{A^2}{T} \cdot T + \frac{A \cdot B}{\pi} \cdot \left( \left.-cos\left(z \right)\right|_{0}^{T}  \right) + \frac{B^2}{2 \cdot T} \cdot \left( \int_{0}^{T} 1 \cdot dt - \int_{0}^{T} cos\left(2 \cdot \frac{2\pi}{T}\cdot t \right)  \cdot dt \right)\\
+ \end{Bmatrix*}=\\
+ &=\frac{A^2}{T} \cdot \left. t \right|_{0}^{T} + \frac{2\cdot A \cdot B}{T} \cdot \int_{0}^{T} sin\left(z \right) \cdot \frac{T}{2\pi} \cdot dz + \frac{B^2}{T} \cdot \int_{0}^{T} \frac{1}{2} \cdot \left(1 - cos\left(2 \cdot \frac{2\pi}{T}\cdot t \right) \right)  \cdot dt=\\
+ &=\frac{A^2}{T} \cdot \left( T - 0 \right) + \frac{2\cdot A \cdot B}{T} \cdot \frac{T}{2\pi} \cdot \int_{0}^{T} sin\left(z \right) \cdot dz + \frac{B^2}{T} \cdot \frac{1}{2} \cdot \int_{0}^{T} \left(1 - cos\left(2 \cdot \frac{2\pi}{T}\cdot t \right) \right)  \cdot dt=\\
+ &=\frac{A^2}{T} \cdot T + \frac{A \cdot B}{\pi} \cdot \left( \left.-cos\left(z \right)\right|_{0}^{T}  \right) + \frac{B^2}{2 \cdot T} \cdot \left( \int_{0}^{T} 1 \cdot dt - \int_{0}^{T} cos\left(2 \cdot \frac{2\pi}{T}\cdot t \right)  \cdot dt \right)=\\
  &=\begin{Bmatrix*}[l]
  w=2\cdot \frac{2\pi}{T} \cdot t\\
  dw = 2\cdot \frac{2\pi}{T} \cdot dt & dt = \frac{dw}{\frac{4\pi}{T}} =\frac{T}{4\pi} \cdot dw 
- \end{Bmatrix*}\\
- &=A^2 + \frac{A \cdot B}{\pi} \cdot \left( \left.-cos\left(\frac{2\pi}{T} \cdot t \right)\right|_{0}^{T}  \right) + \frac{B^2}{2 \cdot T} \cdot \left( \left. t \right|_{0}^{T} - \int_{0}^{T} cos\left(w \right)  \cdot \frac{T}{4\pi} \cdot dw \right)\\
- &=A^2 + \frac{A \cdot B}{\pi} \cdot  \left(-cos\left(\frac{2\pi}{T} \cdot T \right)+cos\left(\frac{2\pi}{T} \cdot 0 \right)\right) + \frac{B^2}{2 \cdot T}  \cdot \left( \left(T - 0 \right) - \frac{T}{4\pi} \cdot \int_{0}^{T} cos\left(w \right)  \cdot dw \right)\\
- &=A^2 + \frac{A \cdot B}{\pi} \cdot  \left(-cos\left(2\pi \right)+cos\left(0 \right)\right) + \frac{B^2}{2 \cdot T}  \cdot \left( T - \frac{T}{4\pi} \cdot \left. -sin\left(w \right)  \right|_{0}^{T} \right)\\
- &=A^2 + \frac{A \cdot B}{\pi} \cdot  \left(-1+1\right) + \frac{B^2}{2 \cdot T}  \cdot \left( T + \frac{T}{4\pi} \cdot \left. sin\left(2\cdot \frac{2\pi}{T}\cdot t \right)  \right|_{0}^{T} \right)\\
- &=A^2 + \frac{A \cdot B}{\pi}\cdot 0 + \frac{B^2}{2 \cdot T} \cdot \left( T + \frac{T}{4\pi} \cdot \left( sin\left(2\cdot \frac{2\pi}{T}\cdot T \right) - sin\left(2\cdot \frac{2\pi}{T}\cdot 0 \right) \right) \right)\\
- &=A^2 + \frac{B^2}{2 \cdot T}  \cdot \left( T + \frac{T}{4\pi} \cdot \left( sin\left(4\pi \right) - sin\left( 0 \right) \right) \right)\\
- &=A^2 + \frac{B^2}{2 \cdot T}  \cdot \left( T + \frac{T}{4\pi} \cdot \left( 0 - 0 \right) \right)\\
- &=A^2 + \frac{B^2}{2 \cdot T}  \cdot \left( T \right)\\
- &=A^2 + \frac{B^2}{2}\\
+ \end{Bmatrix*}=\\
+ &=A^2 + \frac{A \cdot B}{\pi} \cdot \left( \left.-cos\left(\frac{2\pi}{T} \cdot t \right)\right|_{0}^{T}  \right) + \frac{B^2}{2 \cdot T} \cdot \left( \left. t \right|_{0}^{T} - \int_{0}^{T} cos\left(w \right)  \cdot \frac{T}{4\pi} \cdot dw \right)=\\
+ &=A^2 + \frac{A \cdot B}{\pi} \cdot  \left(-cos\left(\frac{2\pi}{T} \cdot T \right)+cos\left(\frac{2\pi}{T} \cdot 0 \right)\right) + \frac{B^2}{2 \cdot T}  \cdot \left( \left(T - 0 \right) - \frac{T}{4\pi} \cdot \int_{0}^{T} cos\left(w \right)  \cdot dw \right)=\\
+ &=A^2 + \frac{A \cdot B}{\pi} \cdot  \left(-cos\left(2\pi \right)+cos\left(0 \right)\right) + \frac{B^2}{2 \cdot T}  \cdot \left( T - \frac{T}{4\pi} \cdot \left. -sin\left(w \right)  \right|_{0}^{T} \right)=\\
+ &=A^2 + \frac{A \cdot B}{\pi} \cdot  \left(-1+1\right) + \frac{B^2}{2 \cdot T}  \cdot \left( T + \frac{T}{4\pi} \cdot \left. sin\left(2\cdot \frac{2\pi}{T}\cdot t \right)  \right|_{0}^{T} \right)=\\
+ &=A^2 + \frac{A \cdot B}{\pi}\cdot 0 + \frac{B^2}{2 \cdot T} \cdot \left( T + \frac{T}{4\pi} \cdot \left( sin\left(2\cdot \frac{2\pi}{T}\cdot T \right) - sin\left(2\cdot \frac{2\pi}{T}\cdot 0 \right) \right) \right)=\\
+ &=A^2 + \frac{B^2}{2 \cdot T}  \cdot \left( T + \frac{T}{4\pi} \cdot \left( sin\left(4\pi \right) - sin\left( 0 \right) \right) \right)=\\
+ &=A^2 + \frac{B^2}{2 \cdot T}  \cdot \left( T + \frac{T}{4\pi} \cdot \left( 0 - 0 \right) \right)=\\
+ &=A^2 + \frac{B^2}{2 \cdot T}  \cdot \left( T \right)=\\
+ &=A^2 + \frac{B^2}{2}
 \end{align*}
 %\end{aligned}
 %\end{equation}

@@ -17,13 +17,13 @@ E= \int_{-\infty }^{\infty}\left|f(t)\right| ^2 \cdot dt
 
 Podstawiając dany sygnał $f(t)$ do wzoru na energie otrzymujemy:
 \begin{align*}
-E &= \int_{-\infty }^{\infty}\left|f(t)\right| ^2 \cdot dt\\
-&= \int_{-\infty }^{\infty}\left|Sa\left(\omega_0 \cdot t\right)\right| ^2 \cdot dt\\
+E &= \int_{-\infty }^{\infty}\left|f(t)\right| ^2 \cdot dt=\\
+&= \int_{-\infty }^{\infty}\left|Sa\left(\omega_0 \cdot t\right)\right| ^2 \cdot dt=\\
 &=\begin{Bmatrix}
 &\SaDef
-\end{Bmatrix}\\
-&= \int_{-\infty }^{\infty}\left|\frac{sin\left(\omega_0 \cdot t\right)}{\left(\omega_0 \cdot t\right)}\right| ^2 \cdot dt\\
-&= \int_{-\infty }^{\infty}\frac{sin^2\left(\omega_0 \cdot t\right)}{\left(\omega_0 \cdot t\right)^2} \cdot dt\\
+\end{Bmatrix}=\\
+&= \int_{-\infty }^{\infty}\left|\frac{sin\left(\omega_0 \cdot t\right)}{\left(\omega_0 \cdot t\right)}\right| ^2 \cdot dt=\\
+&= \int_{-\infty }^{\infty}\frac{sin^2\left(\omega_0 \cdot t\right)}{\left(\omega_0 \cdot t\right)^2} \cdot dt=\\
 &=....
 \end{align*}
 
@@ -107,13 +107,13 @@ to wyznaczmy $\left|F(\jmath \omega)\right|^2$:
 \end{align*}
 
 \begin{align*}
-E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^2 \cdot d\omega\\
-&=\frac{1}{2\pi} \cdot \left(\int_{-\infty}^{-\omega_0} 0 \cdot d\omega + \int_{-\omega_0}^{\omega_0} \left(\frac{\pi}{\omega_0}\right)^2 \cdot d\omega + \int_{\omega_0}^{\infty} 0 \cdot d\omega\right)\\
-&=\frac{1}{2\pi} \cdot \left(0 + \left(\frac{\pi}{\omega_0}\right)^2 \cdot \int_{-\omega_0}^{\omega_0} d\omega + 0\right)\\
-&=\frac{1}{2\pi} \cdot \left(\frac{\pi}{\omega_0}\right)^2 \cdot \left( \left.\omega \right|_{-\omega_0}^{\omega_0}\right)\\
-&=\frac{\pi}{2 \cdot \omega_0^2} \cdot \left(\omega_0 -(-\omega_0)\right)\\
-&=\frac{\pi}{2 \cdot \omega_0^2} \cdot \left(2 \cdot \omega_0\right)\\
-&=\frac{\pi}{\omega_0}\\
+E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^2 \cdot d\omega=\\
+&=\frac{1}{2\pi} \cdot \left(\int_{-\infty}^{-\omega_0} 0 \cdot d\omega + \int_{-\omega_0}^{\omega_0} \left(\frac{\pi}{\omega_0}\right)^2 \cdot d\omega + \int_{\omega_0}^{\infty} 0 \cdot d\omega\right)=\\
+&=\frac{1}{2\pi} \cdot \left(0 + \left(\frac{\pi}{\omega_0}\right)^2 \cdot \int_{-\omega_0}^{\omega_0} d\omega + 0\right)=\\
+&=\frac{1}{2\pi} \cdot \left(\frac{\pi}{\omega_0}\right)^2 \cdot \left( \left.\omega \right|_{-\omega_0}^{\omega_0}\right)=\\
+&=\frac{\pi}{2 \cdot \omega_0^2} \cdot \left(\omega_0 -(-\omega_0)\right)=\\
+&=\frac{\pi}{2 \cdot \omega_0^2} \cdot \left(2 \cdot \omega_0\right)=\\
+&=\frac{\pi}{\omega_0}
 \end{align*}
 
 Energia sygnału $f(t)=Sa\left(\omega_0 \cdot t\right)$ równa się $E=\frac{\pi}{\omega_0}$.

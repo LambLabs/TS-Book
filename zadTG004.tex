@@ -40,85 +40,85 @@ F(\jmath \omega )=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cd
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=\int_{-\infty}^{0} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
-+\int_{0}^{\infty} e^{-a \cdot t} \cdot sin(\omega_{0} \cdot t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
++\int_{0}^{\infty} e^{-a \cdot t} \cdot sin(\omega_{0} \cdot t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=\begin{Bmatrix*}[l]%12
 sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}\\
-\end{Bmatrix*}\\
-&=\int_{-\infty}^{0} 0 \cdot dt +\int_{0}^{\infty} e^{-a \cdot t} \cdot \left(\frac{e^{\jmath \cdot \omega_{0} \cdot t} - e^{-\jmath \cdot  \omega_{0} \cdot t}}{2 \cdot \jmath} \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+\end{Bmatrix*}=\\
+&=\int_{-\infty}^{0} 0 \cdot dt +\int_{0}^{\infty} e^{-a \cdot t} \cdot \left(\frac{e^{\jmath \cdot \omega_{0} \cdot t} - e^{-\jmath \cdot  \omega_{0} \cdot t}}{2 \cdot \jmath} \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=0 + \lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}\left(
 \int_{0}^{\tau} e^{-a\cdot t}\cdot e^{\jmath \cdot \omega_{0} \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt
--\int_{0}^{\tau} e^{-a\cdot t}\cdot e^{-\jmath \cdot \omega_{0} \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt \right)\\
+-\int_{0}^{\tau} e^{-a\cdot t}\cdot e^{-\jmath \cdot \omega_{0} \cdot t} \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt \right)=\\
 &=\lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}\left(
 \int_{0}^{\tau} e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t} \cdot dt
--\int_{0}^{\tau} e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t} \cdot dt \right)\\
+-\int_{0}^{\tau} e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t} \cdot dt \right)=\\
 &=\begin{Bmatrix}
 z&=&(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t&w&=&(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t\\
 dz&=&(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot dt&dw&=&(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot dt\\
 dt&=&\frac{1}{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot dz&dt&=&\frac{1}{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot dw\\
-\end{Bmatrix}\\
+\end{Bmatrix}=\\
 &=\lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}
 \int_{0}^{\tau} e^{z} \cdot \frac{dz}{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}
 -\lim_{\tau \rightarrow \infty }\frac{1}{2 \cdot \jmath}
-\int_{0}^{\tau} e^{w} \cdot \frac{dw}{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}\\
+\int_{0}^{\tau} e^{w} \cdot \frac{dw}{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}=\\
 &=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
 \int_{0}^{\tau} e^{z} \cdot dz
 -\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
-\int_{0}^{\tau} e^{w} \cdot dw\\
+\int_{0}^{\tau} e^{w} \cdot dw=\\
 &=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
 \left. e^{z}\right|_{0}^{\tau}
 -\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
-\left. e^{w}\right|_{0}^{\tau}\\
+\left. e^{w}\right|_{0}^{\tau}=\\
 &=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
-\left. e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t}\right|_{0}^{\tau}\\
+\left. e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t}\right|_{0}^{\tau}+\\
 &-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
 \left. e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot t}\right|_{0}^{\tau}\\
 &=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
-\left( e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 0} \right)\\
+\left( e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-e^{(-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 0} \right)+\\
 &-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \lim_{\tau \rightarrow \infty }
-\left( e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 0} \right)\\
+\left( e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-e^{(-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 0} \right)=\\
 &=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
-\left( e^{-a \cdot \tau} \cdot e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau} \right)-\lim_{\tau \rightarrow \infty }1\right)\\
+\left( e^{-a \cdot \tau} \cdot e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau} \right)-\lim_{\tau \rightarrow \infty }1\right)+\\
 &-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
-\left( e^{-a \cdot \tau} \cdot e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau} \right)-\lim_{\tau \rightarrow \infty }1\right)\\
+\left( e^{-a \cdot \tau} \cdot e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau} \right)-\lim_{\tau \rightarrow \infty }1\right)=\\
 &=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
-( e^{-a \cdot \tau})\cdot \lim_{\tau \rightarrow \infty } e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
+( e^{-a \cdot \tau})\cdot \lim_{\tau \rightarrow \infty } e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)+\\
 &-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(\lim_{\tau \rightarrow \infty }
-( e^{-a \cdot \tau})\cdot \lim_{\tau \rightarrow \infty } e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
-&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty } e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
-&-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty } e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)\\
-&=\frac{-1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}+\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}\\
-&=\frac{-(2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega))+2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}\\
+( e^{-a \cdot \tau})\cdot \lim_{\tau \rightarrow \infty } e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)=\\
+&=\frac{1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty } e^{(\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)+\\
+&-\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)} \cdot \left(0 \cdot \lim_{\tau \rightarrow \infty } e^{(-\jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot \tau}-1\right)=\\
+&=\frac{-1}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}+\frac{1}{2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}=\\
+&=\frac{-(2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega))+2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega)}{2 \cdot \jmath \cdot (-a + \jmath \cdot \omega_{0} -\jmath \cdot \omega) \cdot 2 \cdot \jmath \cdot (-a - \jmath \cdot \omega_{0} -\jmath \cdot \omega)}=\\
 &=\frac{2 \cdot \jmath \cdot a + 2 \cdot \jmath^{2} \cdot \omega_{0} + 2 \cdot \jmath^{2} \cdot \omega - 2 \cdot \jmath \cdot a + 2 \cdot \jmath^{2} \cdot \omega_{0} - 2 \cdot \jmath^{2} \cdot \omega}
 {4 \cdot \jmath^{2} \cdot 
 	(a^{2}+ a \cdot \jmath \cdot \omega_{0}+ a \cdot \jmath \cdot \omega
 -a \cdot \jmath \cdot \omega_{0}- \jmath^{2} \cdot \omega_{0}^{2}- \jmath^{2} \cdot \omega_{0} \cdot \omega
-+a \cdot \jmath \cdot \omega+ \jmath^{2} \cdot \omega_{0} \cdot \omega + \jmath^{2} \cdot \omega^{2})}\\
++a \cdot \jmath \cdot \omega+ \jmath^{2} \cdot \omega_{0} \cdot \omega + \jmath^{2} \cdot \omega^{2})}=\\
 &=\frac{4 \cdot \jmath^{2} \cdot \omega_{0}}
-{4 \cdot \jmath^{2} \cdot (a^{2} + 2 \cdot a \cdot \jmath \cdot \omega - \jmath^{2} \cdot \omega_{0}^{2} + \jmath^{2} \cdot \omega^{2})}\\
-&=\frac{\omega_{0}}{a^{2} + 2 \cdot a \cdot \jmath \cdot \omega + \omega_{0}^{2} - \omega^{2}}\\
-&=\frac{\omega_{0}}{\omega_{0}^{2} + (a^{2} + 2 \cdot a \cdot \jmath \cdot \omega - \omega^{2})}\\
-&=\frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}}\\
+{4 \cdot \jmath^{2} \cdot (a^{2} + 2 \cdot a \cdot \jmath \cdot \omega - \jmath^{2} \cdot \omega_{0}^{2} + \jmath^{2} \cdot \omega^{2})}=\\
+&=\frac{\omega_{0}}{a^{2} + 2 \cdot a \cdot \jmath \cdot \omega + \omega_{0}^{2} - \omega^{2}}=\\
+&=\frac{\omega_{0}}{\omega_{0}^{2} + (a^{2} + 2 \cdot a \cdot \jmath \cdot \omega - \omega^{2})}=\\
+&=\frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}}
 \end{align*}
 
 Transformata sygnału $f(t)$ to $F(\jmath \omega)=\frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}}\\$
 
 Widmo amplitudowe obliczamy ze wzoru:
 \begin{align*}
-M(\omega)&=\left| F(j \omega) \right|\\
-&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}} \right|\\
-&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega + \left(\jmath \cdot \omega\right)^{2}}\right|\\
-&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega - \omega^{2}}\right|\\
-&=\left| \frac{\omega_{0}}{\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega }\right|\\
+M(\omega)&=\left| F(j \omega) \right|=\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}} \right|=\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega + \left(\jmath \cdot \omega\right)^{2}}\right|=\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega - \omega^{2}}\right|=\\
+&=\left| \frac{\omega_{0}}{\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega }\right|=\\
 &=\begin{Bmatrix}
 \left|\frac{z_1}{z_2}\right| = \frac{\left|z_1\right|}{\left|z_2\right|}
-\end{Bmatrix}\\
-&=\frac{\left|\omega_{0}\right|}{\left|\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega \right|}\\
+\end{Bmatrix}=\\
+&=\frac{\left|\omega_{0}\right|}{\left|\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega \right|}=\\
 &=\begin{Bmatrix}
 \left|a+\jmath \cdot b\right| = \sqrt{a^2+b^2}
-\end{Bmatrix}\\
-&=\frac{\omega_{0}}{\sqrt{\left(\omega_{0}^{2}- \omega^{2} + a^2 \right)^2+ \left( 2\cdot a \cdot \omega \right)^2}}\\
+\end{Bmatrix}=\\
+&=\frac{\omega_{0}}{\sqrt{\left(\omega_{0}^{2}- \omega^{2} + a^2 \right)^2+ \left( 2\cdot a \cdot \omega \right)^2}}
 \end{align*}
 
 \begin{figure}[H]
@@ -151,21 +151,21 @@ M(\omega)&=\left| F(j \omega) \right|\\
 
 Widmo fazowe obliczamy ze wzoru:
 \begin{align*}
-\Phi ( \omega )&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}} \right)\\
-&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega + \left(\jmath \cdot \omega\right)^{2}}\right)\\
-&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega - \omega^{2}}\right)\\
-&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega }\right)\\
+\Phi ( \omega )&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + (a + \jmath \cdot \omega)^{2}} \right)=\\
+&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega + \left(\jmath \cdot \omega\right)^{2}}\right)=\\
+&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2} + a^2 + 2\cdot a \cdot \jmath \cdot \omega - \omega^{2}}\right)=\\
+&=arg\left( \frac{\omega_{0}}{\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega }\right)=\\
 &=\begin{Bmatrix}
 arg\left(\frac{z_1}{z_2}\right) = arg\left(z_1\right) -arg\left(z_2\right)
-\end{Bmatrix}\\
-&=arg\left( \omega_{0}\right) - arg\left(\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega \right)\\
+\end{Bmatrix}=\\
+&=arg\left( \omega_{0}\right) - arg\left(\omega_{0}^{2}- \omega^{2} + a^2 + \jmath \cdot 2\cdot a \cdot \omega \right)=\\
 &=\begin{Bmatrix}
 arg\left(a + \jmath \cdot b\right) = arctg(\frac{b}{a})\\
-\end{Bmatrix}\\
-&=arctg\left(\frac{0}{\omega_0}\right) - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
-&=arctg\left(0\right) - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
-&=0 - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
-&=- arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)\\
+\end{Bmatrix}=\\
+&=arctg\left(\frac{0}{\omega_0}\right) - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)=\\
+&=arctg\left(0\right) - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)=\\
+&=0 - arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)=\\
+&=- arctg\left(\frac{2\cdot a \cdot \omega}{\omega_0^2-\omega^2+a^2}\right)
 \end{align*}
 
 \begin{figure}[H]

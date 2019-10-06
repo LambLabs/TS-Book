@@ -64,13 +64,13 @@ Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-F_0&=\frac{1}{T}\int_{T}f(t) \cdot dt\\
-&=\frac{1}{T}\int_{0}^{T} \frac{A}{T}\cdot t \cdot dt\\
-&=\frac{A}{T^2}\int_{0}^{T} t \cdot dt\\
-&=\frac{A}{T^2}\cdot \left. \frac{1}{2}\cdot t^2 \right|_{0}^{T}\\
-&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot \left( T^2 -0^2 \right)\\
-&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot T^2\\
-&=\frac{A}{2}\\
+F_0&=\frac{1}{T}\int_{T}f(t) \cdot dt=\\
+&=\frac{1}{T}\int_{0}^{T} \frac{A}{T}\cdot t \cdot dt=\\
+&=\frac{A}{T^2}\int_{0}^{T} t \cdot dt=\\
+&=\frac{A}{T^2}\cdot \left. \frac{1}{2}\cdot t^2 \right|_{0}^{T}=\\
+&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot \left( T^2 -0^2 \right)=\\
+&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot T^2=\\
+&=\frac{A}{2}
 \end{align*}
 %\end{aligned}
 %\end{equation}
@@ -86,34 +86,32 @@ F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
 \begin{align*}
-F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
-&=\frac{1}{T}\int_{0}^{T} \frac{A}{T} \cdot t \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
-&=\frac{1\cdot A}{T^2}\int_{0}^{T} t \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
+F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
+&=\frac{1}{T}\int_{0}^{T} \frac{A}{T} \cdot t \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
+&=\frac{1\cdot A}{T^2}\int_{0}^{T} t \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 u&=t & dv&=e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt \\
 du&=dt & v&=\frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
-\end{Bmatrix*}\\
-&=\frac{A}{T^2}\cdot \left( \left. t \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{T} - \int_{0}^{T}  \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt \right)\\
-&=\frac{A}{T^2}\cdot \left( \left( T \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} - 0 \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0} \right) + \left.  \frac{T^2}{\left(-\jmath \cdot k\cdot 2\pi\right)^2}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{T} \right)\\
-&=\frac{A}{T^2}\cdot \left(\frac{T^2}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} + \frac{T^2}{- \left(k\cdot 2\pi\right)^2}\cdot \left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} - e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0} \right) \right)\\
-&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(e^{ -\jmath \cdot k \cdot 2\pi} -e^{ 0} \right) \right)\\
-&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( 1 - 1 \right) \right)\\
-&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)\\
-&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - 0\right)\\
-&=\frac{A}{-\jmath \cdot k\cdot 2\pi}\\
-&=\jmath \cdot \frac{A}{k\cdot 2\pi}\\
+\end{Bmatrix*}=\\
+&=\frac{A}{T^2}\cdot \left( \left. t \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{T} - \int_{0}^{T}  \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt \right)=\\
+&=\frac{A}{T^2}\cdot \left( \left( T \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} - 0 \cdot \frac{T}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0} \right) + \left.  \frac{T^2}{\left(-\jmath \cdot k\cdot 2\pi\right)^2}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{T} \right)=\\
+&=\frac{A}{T^2}\cdot \left(\frac{T^2}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} + \frac{T^2}{- \left(k\cdot 2\pi\right)^2}\cdot \left( e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot T} - e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot 0} \right) \right)=\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi}\cdot e^{ -\jmath \cdot k \cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(e^{ -\jmath \cdot k \cdot 2\pi} -e^{ 0} \right) \right)=\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( 1 - 1 \right) \right)=\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)=\\
+&=A\cdot \left(\frac{1}{-\jmath \cdot k\cdot 2\pi} - 0\right)=\\
+&=\frac{A}{-\jmath \cdot k\cdot 2\pi}=\\
+&=\jmath \cdot \frac{A}{k\cdot 2\pi}
 \end{align*}
 
 Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2\pi}$
 
 Ostatecznie współczynniki zespolonego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 F_0&=\frac{A}{2}\\
 F_k&=\jmath \cdot \frac{A}{k\cdot 2\pi}\\
-\end{aligned}
-\end{equation}
+\end{align*}
 
 Możemy wyznaczyć kilka wartości współczynników $F_k$
 

@@ -33,12 +33,12 @@ P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
 
 Podstawiając wartości sygnału $f(t)$ do wzoru na moc otrzymujemy:
 \begin{align*}
-P &=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt\\
-&=\frac{1}{T} \cdot \left( \int_{0}^{\frac{T}{2}} \left|A\right|^2 \cdot dt + \int_{\frac{T}{2}}^{T} \left|-A\right|^2 \cdot dt \right )\\
-&=\frac{1}{T} \cdot \left( A^2 \cdot \int_{0}^{\frac{T}{2}} dt + A^2 \cdot \int_{\frac{T}{2}}^{T} dt  \right )\\
-&=\frac{A^2}{T} \cdot \left( \left. t\right |_{0}^{\frac{T}{2}} + \left. t\right |_{\frac{T}{2}}^{T} \right )\\
-&=\frac{A^2}{T} \cdot \left( \frac{T}{2} - 0 + T - \frac{T}{2}\right )\\
-&=\frac{A^2}{T} \cdot \left( T \right )\\
+P &=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt=\\
+&=\frac{1}{T} \cdot \left( \int_{0}^{\frac{T}{2}} \left|A\right|^2 \cdot dt + \int_{\frac{T}{2}}^{T} \left|-A\right|^2 \cdot dt \right )=\\
+&=\frac{1}{T} \cdot \left( A^2 \cdot \int_{0}^{\frac{T}{2}} dt + A^2 \cdot \int_{\frac{T}{2}}^{T} dt  \right )=\\
+&=\frac{A^2}{T} \cdot \left( \left. t\right |_{0}^{\frac{T}{2}} + \left. t\right |_{\frac{T}{2}}^{T} \right )=\\
+&=\frac{A^2}{T} \cdot \left( \frac{T}{2} - 0 + T - \frac{T}{2}\right )=\\
+&=\frac{A^2}{T} \cdot \left( T \right )=\\
 &=A^2 
 \end{align*}
 
@@ -65,39 +65,39 @@ F_1=\frac{1}{T} \cdot \int_{T}f(t) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t
 
 Podstawiając wartości sygnału $f(t)$ do wzoru na $F_1$ otrzymujemy:
 \begin{align*}
-F_1&=\frac{1}{T} \cdot \int_{T}f(t) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt\\
-&=\frac{1}{T} \cdot \left(\int_{0}^{\frac{T}{2}}A \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt + \int_{\frac{T}{2}}^{T}-A \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt\right)\\
-&=\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}}e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt - \int_{\frac{T}{2}}^{T}e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt\right)\\
+F_1&=\frac{1}{T} \cdot \int_{T}f(t) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
+&=\frac{1}{T} \cdot \left(\int_{0}^{\frac{T}{2}}A \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt + \int_{\frac{T}{2}}^{T}-A \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt\right)=\\
+&=\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}}e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt - \int_{\frac{T}{2}}^{T}e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt\right)=\\
 &=\begin{Bmatrix*}[l]
 z&=-\jmath \cdot \frac{2\pi}{T} \cdot t\\
 dz&=-\jmath \cdot \frac{2\pi}{T} \cdot dt\\
 dt&=\frac{dz}{-\jmath \cdot \frac{2\pi}{T}}\\
-\end{Bmatrix*}\\
-&=\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}} e^{z} \cdot \frac{dz}{-\jmath \cdot \frac{2\pi}{T}}-\int_{\frac{T}{2}}^{T} e^{z} \cdot \frac{dz}{-\jmath \cdot \frac{2\pi}{T}}\right)\\
-&=-\frac{A}{T \cdot \jmath \cdot \frac{2\pi}{T}} \cdot \left(\int_{0}^{\frac{T}{2}} e^{z} \cdot dz - \int_{\frac{T}{2}}^{T} e^{z} \cdot dz\right)\\
-&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left(\left. e^{z} \right|_{0}^{\frac{T}{2}} - \left. e^{z} \right|_{\frac{T}{2}}^{T}\right)\\
-&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left(\left. e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{\frac{T}{2}} - \left. e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right|_{\frac{T}{2}}^{T}\right)\\
-&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( e^{-\jmath \cdot \frac{2\pi}{T} \cdot \frac{T}{2}} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot 0} -e^{-\jmath \cdot \frac{2\pi}{T} \cdot T} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot \frac{T}{2}}\right)\\
-&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( e^{ -\jmath \cdot \pi } - e^{ 0} - e^{ -\jmath \cdot 2 \cdot \pi}+e^{ -\jmath \cdot \pi }\right)\\
+\end{Bmatrix*}=\\
+&=\frac{A}{T} \cdot \left(\int_{0}^{\frac{T}{2}} e^{z} \cdot \frac{dz}{-\jmath \cdot \frac{2\pi}{T}}-\int_{\frac{T}{2}}^{T} e^{z} \cdot \frac{dz}{-\jmath \cdot \frac{2\pi}{T}}\right)=\\
+&=-\frac{A}{T \cdot \jmath \cdot \frac{2\pi}{T}} \cdot \left(\int_{0}^{\frac{T}{2}} e^{z} \cdot dz - \int_{\frac{T}{2}}^{T} e^{z} \cdot dz\right)=\\
+&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left(\left. e^{z} \right|_{0}^{\frac{T}{2}} - \left. e^{z} \right|_{\frac{T}{2}}^{T}\right)=\\
+&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left(\left. e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right|_{0}^{\frac{T}{2}} - \left. e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \right|_{\frac{T}{2}}^{T}\right)=\\
+&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( e^{-\jmath \cdot \frac{2\pi}{T} \cdot \frac{T}{2}} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot 0} -e^{-\jmath \cdot \frac{2\pi}{T} \cdot T} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot \frac{T}{2}}\right)=\\
+&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( e^{ -\jmath \cdot \pi } - e^{ 0} - e^{ -\jmath \cdot 2 \cdot \pi}+e^{ -\jmath \cdot \pi }\right)=\\
 &=\begin{Bmatrix}
 e^{ -\jmath \cdot 2\cdot \pi }&=cos(2\pi)-\jmath \cdot sin(2\pi)=1\\
 e^{ -\jmath \cdot \pi }&=cos(\pi)-\jmath \cdot sin(\pi)=-1\\
-\end{Bmatrix}\\
-&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( -1 - 1 - 1 -1\right)\\
-&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( -4\right)\\
-&=\frac{2 \cdot A}{\jmath \cdot \pi}\\
-&=-\jmath \cdot \frac{2 \cdot A}{\pi}\\
+\end{Bmatrix}=\\
+&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( -1 - 1 - 1 -1\right)=\\
+&=-\frac{A}{\jmath \cdot 2 \pi} \cdot \left( -4\right)=\\
+&=\frac{2 \cdot A}{\jmath \cdot \pi}=\\
+&=-\jmath \cdot \frac{2 \cdot A}{\pi}
 \end{align*}
 
 Wartość współczynnika $F_1$ to $-\jmath \cdot \frac{2 \cdot A}{\pi}$
 
 Podstawiając wartość współczynnika $F_1$ do wzoru na moc podstawowej harmonicznej otrzymujemy:
 \begin{align*}
-P_1&=2 \cdot \left|F_{1}\right|^2\\
-&=2 \cdot \left|-\jmath \cdot \frac{2 \cdot A}{\pi}\right|^2\\
-&=2 \cdot \left(\frac{2 \cdot A}{\pi}\right)^2\\
-&=2 \cdot \frac{4 \cdot A^2}{\pi^2}\\
-&=\frac{8 \cdot A^2}{\pi^2}\\
+P_1&=2 \cdot \left|F_{1}\right|^2=\\
+&=2 \cdot \left|-\jmath \cdot \frac{2 \cdot A}{\pi}\right|^2=\\
+&=2 \cdot \left(\frac{2 \cdot A}{\pi}\right)^2=\\
+&=2 \cdot \frac{4 \cdot A^2}{\pi^2}=\\
+&=\frac{8 \cdot A^2}{\pi^2}
 \end{align*}
 
 Moc podstawowej harmonicznej równa się $P_1=\frac{8 \cdot A^2}{\pi^2}$.

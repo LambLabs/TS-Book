@@ -24,15 +24,15 @@ W tym podejściu musimy obliczyć transformatę Fouriera sygnału $f(t)$, czyli 
 
 Ponieważ możemy korzystać tylko ze znanych twierdzeń oraz wiedzy o transformacie sygnału $\Pi(t)$, to spróbujmy przekształcić sygnał $f(t)$ do postaci, w której wprost możemy zastosować twierdzenia. Zauważmy, że:
 \begin{align*}
-f(t) &= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)\\
+f(t) &= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)=\\
 &=\begin{Bmatrix}
 \EulerCos
-\end{Bmatrix}\\
-&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{e^{2 \cdot \jmath \cdot \omega_0 \cdot t}+e^{-2 \cdot \jmath \cdot \omega_0 \cdot t}}{2}\right)^2\\
-&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{(e^{2 \cdot \jmath \cdot \omega_0 \cdot t})^2+ 2 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t} \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot t}+(e^{-2 \cdot \jmath \cdot \omega_0 \cdot t})^2}{4}\right)\\
-&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot t}+ 2 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t -2 \cdot \jmath \cdot \omega_0 \cdot t}+e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}}{4}\right)\\
-&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot t}+ 2 \cdot e^{0}+e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}}{4}\right)\\
-&= \frac{A}{4} \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot e^{4 \cdot \jmath \cdot \omega_0 \cdot t} + \frac{A}{2} \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) +\frac{A}{4} \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}\\
+\end{Bmatrix}=\\
+&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{e^{2 \cdot \jmath \cdot \omega_0 \cdot t}+e^{-2 \cdot \jmath \cdot \omega_0 \cdot t}}{2}\right)^2=\\
+&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{(e^{2 \cdot \jmath \cdot \omega_0 \cdot t})^2+ 2 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t} \cdot e^{-2 \cdot \jmath \cdot \omega_0 \cdot t}+(e^{-2 \cdot \jmath \cdot \omega_0 \cdot t})^2}{4}\right)=\\
+&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot t}+ 2 \cdot e^{2 \cdot \jmath \cdot \omega_0 \cdot t -2 \cdot \jmath \cdot \omega_0 \cdot t}+e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}}{4}\right)=\\
+&= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot \left(\frac{e^{4 \cdot \jmath \cdot \omega_0 \cdot t}+ 2 \cdot e^{0}+e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}}{4}\right)=\\
+&= \frac{A}{4} \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot e^{4 \cdot \jmath \cdot \omega_0 \cdot t} + \frac{A}{2} \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) +\frac{A}{4} \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}=\\
 &= f_1(t)+f_2(t)+f_3(t)
 \end{align*}
 
@@ -100,7 +100,7 @@ Podsumowując, transformata sygnału $f_3(t)$ to $F_3(\jmath \omega)= \frac{A \c
 
 Teraz możemy podać transformatę sygnału $f(t) = f_1(t)+f_2(t)+f_3(t)$,
 \begin{align*}
-F(\jmath \omega)&=F_1(\jmath \omega)+F_2(\jmath \omega)+F_3(\jmath \omega)\\
+F(\jmath \omega)&=F_1(\jmath \omega)+F_2(\jmath \omega)+F_3(\jmath \omega)=\\
 &=\frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega - 4 \cdot \omega_0}{4 \cdot \omega_0}\right) + \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right) + \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega + 4 \cdot \omega_0}{4 \cdot \omega_0}\right)
 \end{align*}
 
@@ -182,17 +182,17 @@ to wyznaczmy $\left|F(\jmath \omega)\right|^2$:
 \end{align*}
 
 \begin{align*}
-E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^2 \cdot d\omega\\
-&=\frac{1}{2\pi} \cdot \left(\int_{-\infty}^{-6 \cdot \omega_0} 0 \cdot d\omega + \int_{-6 \cdot \omega_0}^{-2 \cdot \omega_0} \left(\frac{A \cdot \pi}{8 \cdot \omega_0}\right)^2 \cdot d\omega + \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left(\frac{A \cdot \pi}{4 \cdot \omega_0}\right)^2 \cdot d\omega + \int_{2 \cdot \omega_0}^{6 \cdot \omega_0} \left(\frac{A \cdot \pi}{8 \cdot \omega_0}\right)^2 \cdot d\omega + \int_{6 \cdot \omega_0}^{\infty} 0 \cdot d\omega\right)\\
-&=\frac{1}{2\pi} \cdot \left( 0 + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \int_{-6 \cdot \omega_0}^{-2 \cdot \omega_0} d\omega + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} d\omega + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \int_{2 \cdot \omega_0}^{6 \cdot \omega_0} d\omega + 0\right)\\
-&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \left.\omega \right|_{-6 \cdot \omega_0}^{-2 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \left.\omega \right|_{-2 \cdot \omega_0}^{2 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \left.\omega \right|_{2 \cdot \omega_0}^{6 \cdot \omega_0}\right)\\
-&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot (-2 \cdot \omega_0-(-6 \cdot \omega_0)) + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot (2 \cdot \omega_0 -(-2 \cdot \omega_0)) + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot (6 \cdot \omega_0 - 2 \cdot \omega_0)\right)\\
-&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot 4 \cdot \omega_0 + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot 4 \cdot \omega_0  + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot 4 \cdot \omega_0\right)\\
-&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{16 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{4 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0}\right)\\
-&=\frac{1}{2\pi} \cdot \frac{A^2 \cdot \pi^2}{4 \cdot \omega_0} \cdot \left(\frac{1}{4} + 1 + \frac{1}{4}\right)\\
-&=\frac{A^2 \cdot \pi}{8 \cdot \omega_0} \cdot \left(\frac{2}{4} + 1\right)\\
-&=\frac{A^2 \cdot \pi}{8 \cdot \omega_0} \cdot \left(\frac{3}{2}\right)\\
-&=\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}\\
+E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^2 \cdot d\omega=\\
+&=\frac{1}{2\pi} \cdot \left(\int_{-\infty}^{-6 \cdot \omega_0} 0 \cdot d\omega + \int_{-6 \cdot \omega_0}^{-2 \cdot \omega_0} \left(\frac{A \cdot \pi}{8 \cdot \omega_0}\right)^2 \cdot d\omega + \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left(\frac{A \cdot \pi}{4 \cdot \omega_0}\right)^2 \cdot d\omega + \int_{2 \cdot \omega_0}^{6 \cdot \omega_0} \left(\frac{A \cdot \pi}{8 \cdot \omega_0}\right)^2 \cdot d\omega + \int_{6 \cdot \omega_0}^{\infty} 0 \cdot d\omega\right)=\\
+&=\frac{1}{2\pi} \cdot \left( 0 + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \int_{-6 \cdot \omega_0}^{-2 \cdot \omega_0} d\omega + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} d\omega + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \int_{2 \cdot \omega_0}^{6 \cdot \omega_0} d\omega + 0\right)=\\
+&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \left.\omega \right|_{-6 \cdot \omega_0}^{-2 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot \left.\omega \right|_{-2 \cdot \omega_0}^{2 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot \left.\omega \right|_{2 \cdot \omega_0}^{6 \cdot \omega_0}\right)=\\
+&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot (-2 \cdot \omega_0-(-6 \cdot \omega_0)) + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot (2 \cdot \omega_0 -(-2 \cdot \omega_0)) + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot (6 \cdot \omega_0 - 2 \cdot \omega_0)\right)=\\
+&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot 4 \cdot \omega_0 + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2} \cdot 4 \cdot \omega_0  + \frac{A^2 \cdot \pi^2}{64 \cdot \omega_0^2} \cdot 4 \cdot \omega_0\right)=\\
+&=\frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{16 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{4 \cdot \omega_0} + \frac{A^2 \cdot \pi^2}{16 \cdot \omega_0}\right)=\\
+&=\frac{1}{2\pi} \cdot \frac{A^2 \cdot \pi^2}{4 \cdot \omega_0} \cdot \left(\frac{1}{4} + 1 + \frac{1}{4}\right)=\\
+&=\frac{A^2 \cdot \pi}{8 \cdot \omega_0} \cdot \left(\frac{2}{4} + 1\right)=\\
+&=\frac{A^2 \cdot \pi}{8 \cdot \omega_0} \cdot \left(\frac{3}{2}\right)=\\
+&=\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}
 \end{align*}
 
 Energia sygnału $f(t)=A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)$ równa się $E=\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}$.
@@ -204,14 +204,14 @@ E_{\left| \omega \right| < 2 \cdot \omega_0} = \frac{1}{2\pi} \cdot \int_{-2 \cd
 
 Podstawiając dane dla naszego sygnału otrzymamy:
 \begin{align*}
-E_{\left| \omega \right| < 2 \cdot \omega_0} &= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left|F(\jmath \omega)\right|^2 \cdot d\omega\\
-&= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left|\frac{A \cdot \pi}{4 \cdot \omega_0}\right|^2 \cdot d\omega\\
-&= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left(\frac{A \cdot \pi}{4 \cdot \omega_0}\right)^2 \cdot d\omega\\
-&= \frac{1}{2\pi} \cdot \left(\frac{A \cdot \pi}{4 \cdot \omega_0}\right)^2 \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} d\omega\\
-&= \frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2}\right) \cdot \left.\omega\right|_{-2 \cdot \omega_0}^{2 \cdot \omega_0}\\
-&= \frac{A^2 \cdot \pi}{32 \cdot \omega_0^2} \cdot (2 \cdot \omega_0 - (-2 \cdot \omega_0))\\
-&= \frac{A^2 \cdot \pi}{32 \cdot \omega_0^2} \cdot (4 \cdot \omega_0)\\
-&= \frac{A^2 \cdot \pi}{8 \cdot \omega_0}\\
+E_{\left| \omega \right| < 2 \cdot \omega_0} &= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left|F(\jmath \omega)\right|^2 \cdot d\omega=\\
+&= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left|\frac{A \cdot \pi}{4 \cdot \omega_0}\right|^2 \cdot d\omega=\\
+&= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left(\frac{A \cdot \pi}{4 \cdot \omega_0}\right)^2 \cdot d\omega=\\
+&= \frac{1}{2\pi} \cdot \left(\frac{A \cdot \pi}{4 \cdot \omega_0}\right)^2 \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} d\omega=\\
+&= \frac{1}{2\pi} \cdot \left(\frac{A^2 \cdot \pi^2}{16 \cdot \omega_0^2}\right) \cdot \left.\omega\right|_{-2 \cdot \omega_0}^{2 \cdot \omega_0}=\\
+&= \frac{A^2 \cdot \pi}{32 \cdot \omega_0^2} \cdot (2 \cdot \omega_0 - (-2 \cdot \omega_0))=\\
+&= \frac{A^2 \cdot \pi}{32 \cdot \omega_0^2} \cdot (4 \cdot \omega_0)=\\
+&= \frac{A^2 \cdot \pi}{8 \cdot \omega_0}
 \end{align*}
 
 Podsumowując $ E_{\left| \omega \right| < \omega_0} = \frac{A^2 \cdot \pi}{8 \cdot \omega_0}$.

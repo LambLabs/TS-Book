@@ -32,8 +32,7 @@ a_0=\frac{1}{T}\int_{T}f(t) \cdot dt
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 a_0 &=\frac{1}{T}\int_{T}f(t) \cdot dt =\\
 &=\frac{1}{T} \left( \int_{-\frac{T}{4}}^{0} -A \cdot dt + 
 \int_{0}^{\frac{T}{4}} A \cdot dt +
@@ -50,8 +49,7 @@ A \cdot \left( \frac{T}{4} - 0 \right)\right ) = \\
 A \cdot \frac{T}{4}\right ) = \\
 &=\frac{1}{T} \left( 0 \right ) = \\
 &=0
-\end{aligned}
-\end{equation}
+\end{align*}
 
 Wartość współczynnika $a_0$ wynosi $0$
 
@@ -64,43 +62,41 @@ a_k=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
+\begin{align*}
+a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
 &=\frac{2}{T}\left(\int_{-\frac{T}{4}}^{0} -A \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt 
 + \int_{0}^{\frac{T}{4}} A \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt
-+ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)\\
++ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)=\\
 &=\frac{2}{T}\left(-A \cdot \int_{-\frac{T}{4}}^{0} cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt 
 + A \cdot \int_{0}^{\frac{T}{4}} cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt
-+ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot dt \right)\\
++ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot dt \right)=\\
 &=\begin{Bmatrix*}[l]
 z&=k \cdot \frac{2\pi}{T} \cdot t \\
 dz&=k \cdot \frac{2\pi}{T} \cdot dt \\
 dt&=\frac{dt}{k \cdot \frac{2\pi}{T}}
-\end{Bmatrix*} \\
+\end{Bmatrix*} =\\
 &=\frac{2}{T}\left(-A \cdot \int_{-\frac{T}{4}}^{0} cos\left( z \right) \cdot \frac{dt}{k \cdot \frac{2\pi}{T}} 
 + A \cdot \int_{0}^{\frac{T}{4}} cos\left( z \right) \cdot \frac{dt}{k \cdot \frac{2\pi}{T}}
-+ 0 \right)\\
++ 0 \right)=\\
 &=\frac{2}{T}\left(-\frac{A}{k \cdot \frac{2\pi}{T}} \cdot \int_{-\frac{T}{4}}^{0} cos\left( z \right) \cdot dt 
-+ \frac{A}{k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} cos\left( z \right) \cdot dt\right)\\
++ \frac{A}{k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} cos\left( z \right) \cdot dt\right)=\\
 &=\frac{2}{T} \cdot \frac{A}{k \cdot \frac{2\pi}{T}} \cdot \left(- \left. sin\left( z \right) \right|_{-\frac{T}{4}}^{0}
-+ \left. sin\left( z \right)\right|_{0}^{\frac{T}{4}} \right)\\
++ \left. sin\left( z \right)\right|_{0}^{\frac{T}{4}} \right)=\\
 &=\frac{2 \cdot A}{k \cdot 2\pi} \cdot \left(- \left. sin\left( k \cdot \frac{2\pi}{T} \cdot t  \right) \right|_{-\frac{T}{4}}^{0}
-+ \left. sin\left( k \cdot \frac{2\pi}{T} \cdot t  \right)\right|_{0}^{\frac{T}{4}} \right)\\
++ \left. sin\left( k \cdot \frac{2\pi}{T} \cdot t  \right)\right|_{0}^{\frac{T}{4}} \right)=\\
 &=\frac{2 \cdot A}{k \cdot 2\pi} \cdot \left(- \left( sin\left( k \cdot \frac{2\pi}{T} \cdot 0  \right) - sin\left( - k \cdot \frac{2\pi}{T} \cdot \frac{T}{4}  \right) \right)
-+ \left( sin\left( k \cdot \frac{2\pi}{T} \cdot \frac{T}{4}  \right) - sin\left( k \cdot \frac{2\pi}{T} \cdot 0  \right)\right) \right)\\
++ \left( sin\left( k \cdot \frac{2\pi}{T} \cdot \frac{T}{4}  \right) - sin\left( k \cdot \frac{2\pi}{T} \cdot 0  \right)\right) \right)=\\
 &=\frac{A}{k \cdot \pi} \cdot \left(- \left( sin\left( 0 \right) - sin\left( - k \cdot \frac{2\pi}{4} \right) \right)
-+ \left( sin\left( k \cdot \frac{2\pi}{4} \right) - sin\left( 0 \right)\right) \right)\\
++ \left( sin\left( k \cdot \frac{2\pi}{4} \right) - sin\left( 0 \right)\right) \right)=\\
 &=\frac{A}{k \cdot \pi} \cdot \left(- \left( 0 - sin\left( - k \cdot \frac{\pi}{2} \right) \right)
-+ \left( sin\left( k \cdot \frac{\pi}{2} \right) - 0\right) \right)\\
++ \left( sin\left( k \cdot \frac{\pi}{2} \right) - 0\right) \right)=\\
 &=\frac{A}{k \cdot \pi} \cdot \left(sin\left( - k \cdot \frac{\pi}{2} \right)
-+ sin\left( k \cdot \frac{\pi}{2} \right) \right)\\
++ sin\left( k \cdot \frac{\pi}{2} \right) \right)=\\
 &=\frac{A}{k \cdot \pi} \cdot \left(- sin\left( k \cdot \frac{\pi}{2} \right)
-+ sin\left( k \cdot \frac{\pi}{2} \right) \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left(0 \right)\\
++ sin\left( k \cdot \frac{\pi}{2} \right) \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left(0 \right)=\\
 &=0
-\end{aligned}
-\end{equation}
+\end{align*}
 
 Wartość współczynnika $a_k$ wynosi $0$
 
@@ -113,50 +109,46 @@ b_k=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-b_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
+\begin{align*}
+b_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
 &=\frac{2}{T} \left(\int_{-\frac{T}{4}}^{0}-A \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt 
 + \int_{0}^{\frac{T}{4}} A \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt 
-+ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)\\
++ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)=\\
 &=\frac{2}{T} \left(-A \cdot \int_{-\frac{T}{4}}^{0} sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt 
 +  A \cdot \int_{0}^{\frac{T}{4}} sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt 
-+ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot dt \right)\\
++ \int_{\frac{T}{4}}^{\frac{3\cdot T}{4}} 0 \cdot dt \right)=\\
 &=\begin{Bmatrix*}[l]
 z&=k \cdot \frac{2\pi}{T} \cdot t \\
 dz&=k \cdot \frac{2\pi}{T} \cdot dt \\
 dt&=\frac{dz}{k \cdot \frac{2\pi}{T}} \\
-\end{Bmatrix*}\\
+\end{Bmatrix*}=\\
 &=\frac{2}{T} \left(-A \cdot \int_{-\frac{T}{4}}^{0} sin\left( z \right) \cdot \frac{dz}{k \cdot \frac{2\pi}{T}}  
 +  A \cdot \int_{0}^{\frac{T}{4}} sin\left( z \right) \cdot \frac{dz}{k \cdot \frac{2\pi}{T}}  
-+ 0 \right)\\
++ 0 \right)=\\
 &=\frac{2}{T} \left(-\frac{A}{k \cdot \frac{2\pi}{T}} \cdot \int_{-\frac{T}{4}}^{0} sin\left( z \right) \cdot dz  
-+  \frac{A}{k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} sin\left( z \right) \cdot dz \right)\\
++  \frac{A}{k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} sin\left( z \right) \cdot dz \right)=\\
 &=\frac{2}{T} \cdot \frac{A}{k \cdot \frac{2\pi}{T}} \cdot \left(- \int_{-\frac{T}{4}}^{0} sin\left( z \right) \cdot dz  
-+  \int_{0}^{\frac{T}{4}} sin\left( z \right) \cdot dz \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left(\left. cos\left( z \right) \right|_{-\frac{T}{4}}^{0} - \left. cos\left( z \right) \right|_{0}^{\frac{T}{4}} \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left(\left. cos\left( k \cdot \frac{2\pi}{T} \cdot t \right) \right|_{-\frac{T}{4}}^{0} - \left. cos\left( k \cdot \frac{2\pi}{T} \cdot t \right) \right|_{0}^{\frac{T}{4}} \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left(\left( cos\left( k \cdot \frac{2\pi}{T} \cdot 0 \right) - cos\left(- k \cdot \frac{2\pi}{T} \cdot \frac{T}{4} \right) \right) - \left( cos\left( k \cdot \frac{2\pi}{T} \cdot \frac{T}{4} \right) - cos\left( k \cdot \frac{2\pi}{T} \cdot 0 \right) \right) \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left(\left( cos\left(0 \right) - cos\left(- k \cdot \frac{\pi}{2} \right) \right) - \left( cos\left( k \cdot \frac{\pi}{2} \right) - cos\left( 0 \right) \right) \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left( cos\left(0 \right) - cos\left(- k \cdot \frac{\pi}{2} \right) - cos\left( k \cdot \frac{\pi}{2} \right) + cos\left( 0 \right) \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left( 1 - cos\left( k \cdot \frac{\pi}{2} \right) - cos\left( k \cdot \frac{\pi}{2} \right) + 1 \right)\\
-&=\frac{A}{k \cdot \pi} \cdot \left( 2 - 2 \cdot cos\left(k \cdot \frac{\pi}{2} \right) \right)\\
-&=\frac{2 \cdot A}{k \cdot \pi} \cdot \left( 1 - cos\left(k \cdot \frac{\pi}{2} \right) \right)\\
-\end{aligned}
-\end{equation}
++  \int_{0}^{\frac{T}{4}} sin\left( z \right) \cdot dz \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left(\left. cos\left( z \right) \right|_{-\frac{T}{4}}^{0} - \left. cos\left( z \right) \right|_{0}^{\frac{T}{4}} \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left(\left. cos\left( k \cdot \frac{2\pi}{T} \cdot t \right) \right|_{-\frac{T}{4}}^{0} - \left. cos\left( k \cdot \frac{2\pi}{T} \cdot t \right) \right|_{0}^{\frac{T}{4}} \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left(\left( cos\left( k \cdot \frac{2\pi}{T} \cdot 0 \right) - cos\left(- k \cdot \frac{2\pi}{T} \cdot \frac{T}{4} \right) \right) - \left( cos\left( k \cdot \frac{2\pi}{T} \cdot \frac{T}{4} \right) - cos\left( k \cdot \frac{2\pi}{T} \cdot 0 \right) \right) \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left(\left( cos\left(0 \right) - cos\left(- k \cdot \frac{\pi}{2} \right) \right) - \left( cos\left( k \cdot \frac{\pi}{2} \right) - cos\left( 0 \right) \right) \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left( cos\left(0 \right) - cos\left(- k \cdot \frac{\pi}{2} \right) - cos\left( k \cdot \frac{\pi}{2} \right) + cos\left( 0 \right) \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left( 1 - cos\left( k \cdot \frac{\pi}{2} \right) - cos\left( k \cdot \frac{\pi}{2} \right) + 1 \right)=\\
+&=\frac{A}{k \cdot \pi} \cdot \left( 2 - 2 \cdot cos\left(k \cdot \frac{\pi}{2} \right) \right)=\\
+&=\frac{2 \cdot A}{k \cdot \pi} \cdot \left( 1 - cos\left(k \cdot \frac{\pi}{2} \right) \right)
+\end{align*}
 
 Wartość współczynnika $b_k$ wynosi $\frac{2 \cdot A}{k \cdot \pi} \cdot \left( 1 - cos\left(k \cdot \frac{\pi}{2} \right) \right)$
 
 
 Ostatecznie współczynniki trygonometrycznego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 a_0&=0\\
 a_k&=0\\
 b_k&=\frac{2 \cdot A}{k \cdot \pi} \cdot \left( 1 - cos\left(k \cdot \frac{\pi}{2} \right) \right)\\
-\end{aligned}
-\end{equation}
+\end{align*}
 
 Możemy wyznaczyć kilka wartości współczynników $a_k$ i $b_k$
 
@@ -175,11 +167,9 @@ Możemy wyznaczyć kilka wartości współczynników $a_k$ i $b_k$
 
 Podstawiając to wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 f(t) &= a_0 + \sum_{k=1}^{\infty} \left[ a_k \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) + b_k \cdot sin\left(k \cdot \frac{2\pi}{T} \cdot t\right)\right]
-\end{aligned}
-\end{equation}
+\end{align*}
 
 W przypadku sumowania do $k_{max}=1$ otrzymujemy 
 

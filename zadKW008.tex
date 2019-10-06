@@ -55,28 +55,26 @@ a_k=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\int_{0}^{\frac{T}{2}}A \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
+\begin{align*}
+a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\int_{0}^{\frac{T}{2}}A \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 z&=k\cdot \frac{2\pi}{T} \cdot t\\
 dz&=k\cdot \frac{2\pi}{T} \cdot dt\\
 dt&=\frac{dz}{k\cdot \frac{2\pi}{T}}
-\end{Bmatrix*}\\
-&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot \frac{dz}{k\cdot \frac{2\pi}{T}}\\
-&=\frac{2\cdot A}{T \cdot k\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot dz\\
-&=\frac{A}{k\cdot \pi}\left. sin\left( z\right) \right|_{0}^{\frac{T}{2}}\\
-&=\frac{A}{k\cdot \pi}\left. sin\left( k\cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{\frac{T}{2}}\\
-&=\frac{A}{k\cdot \pi}\left( sin\left( k\cdot \frac{2\pi}{T} \cdot \frac{T}{2}\right) - sin\left( k\cdot \frac{2\pi}{T} \cdot 0\right)\right)\\
-&=\frac{A}{k\cdot \pi}\left( sin\left( k\cdot \pi \right) - sin\left( 0\right)\right)\\
-&=\frac{A}{k\cdot \pi}\left( sin\left( k\cdot \pi \right) - 0\right)\\
-&=\frac{A}{k\cdot \pi}\cdot sin\left( k\cdot \pi \right)\\
-&=\frac{A}{k\cdot \pi}\cdot 0\\
-&=0\\
-\end{aligned}
-\end{equation}
+\end{Bmatrix*}=\\
+&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot \frac{dz}{k\cdot \frac{2\pi}{T}}=\\
+&=\frac{2\cdot A}{T \cdot k\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}} cos\left( z\right) \cdot dz=\\
+&=\frac{A}{k\cdot \pi}\left. sin\left( z\right) \right|_{0}^{\frac{T}{2}}=\\
+&=\frac{A}{k\cdot \pi}\left. sin\left( k\cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{\frac{T}{2}}=\\
+&=\frac{A}{k\cdot \pi}\left( sin\left( k\cdot \frac{2\pi}{T} \cdot \frac{T}{2}\right) - sin\left( k\cdot \frac{2\pi}{T} \cdot 0\right)\right)=\\
+&=\frac{A}{k\cdot \pi}\left( sin\left( k\cdot \pi \right) - sin\left( 0\right)\right)=\\
+&=\frac{A}{k\cdot \pi}\left( sin\left( k\cdot \pi \right) - 0\right)=\\
+&=\frac{A}{k\cdot \pi}\cdot sin\left( k\cdot \pi \right)=\\
+&=\frac{A}{k\cdot \pi}\cdot 0=\\
+&=0
+\end{align*}
 
 Wartość współczynnika $a_k$ wynosi $0$
 
@@ -89,26 +87,24 @@ b_k=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-b_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\int_{0}^{\frac{T}{2}}A \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
+\begin{align*}
+b_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\int_{0}^{\frac{T}{2}}A \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 z&=k\cdot \frac{2\pi}{T} \cdot t\\
 dz&=k\cdot \frac{2\pi}{T} \cdot dt\\
 dt&=\frac{dz}{k\cdot \frac{2\pi}{T}}
-\end{Bmatrix*}\\
-&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} sin\left( z\right) \cdot \frac{dz}{k\cdot \frac{2\pi}{T}}\\
-&=\frac{2\cdot A}{T \cdot k\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}} sin\left( z\right) \cdot dz\\
-&=-\frac{A}{k\cdot \pi}\left. cos\left( z\right) \right|_{0}^{\frac{T}{2}}\\
-&=-\frac{A}{k\cdot \pi}\left. cos\left( k\cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{\frac{T}{2}}\\
-&=-\frac{A}{k\cdot \pi}\left( cos\left( k\cdot \frac{2\pi}{T} \cdot \frac{T}{2}\right) - cos\left( k\cdot \frac{2\pi}{T} \cdot 0\right)\right)\\
-&=-\frac{A}{k\cdot \pi}\left( cos\left( k\cdot \pi \right) - cos\left( 0\right)\right)\\
-&=-\frac{A}{k\cdot \pi}\left( cos\left( k\cdot \pi \right) - 1\right)\\
-&=\frac{A}{k\cdot \pi}\left(1 - cos\left( k\cdot \pi \right)\right)\\
-\end{aligned}
-\end{equation}
+\end{Bmatrix*}=\\
+&=\frac{2\cdot A}{T}\int_{0}^{\frac{T}{2}} sin\left( z\right) \cdot \frac{dz}{k\cdot \frac{2\pi}{T}}=\\
+&=\frac{2\cdot A}{T \cdot k\cdot \frac{2\pi}{T}}\int_{0}^{\frac{T}{2}} sin\left( z\right) \cdot dz=\\
+&=-\frac{A}{k\cdot \pi}\left. cos\left( z\right) \right|_{0}^{\frac{T}{2}}=\\
+&=-\frac{A}{k\cdot \pi}\left. cos\left( k\cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{\frac{T}{2}}=\\
+&=-\frac{A}{k\cdot \pi}\left( cos\left( k\cdot \frac{2\pi}{T} \cdot \frac{T}{2}\right) - cos\left( k\cdot \frac{2\pi}{T} \cdot 0\right)\right)=\\
+&=-\frac{A}{k\cdot \pi}\left( cos\left( k\cdot \pi \right) - cos\left( 0\right)\right)=\\
+&=-\frac{A}{k\cdot \pi}\left( cos\left( k\cdot \pi \right) - 1\right)=\\
+&=\frac{A}{k\cdot \pi}\left(1 - cos\left( k\cdot \pi \right)\right)
+\end{align*}
 
 Wartość współczynnika $b_k$ wynosi $\frac{A}{k\cdot \pi}\left(1 - cos\left( k\cdot \pi \right)\right)$
 

@@ -166,13 +166,13 @@ G_2(\jmath \omega )=\int_{-\infty }^{\infty}g_2(t) \cdot e^{-\jmath \cdot \omega
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-G_2(\jmath \omega )&=\int_{-\infty }^{\infty}g_2(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{\infty}\left( -A \cdot \delta(t-t_0) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=-A \cdot \int_{-\infty }^{\infty} \delta(t-t_0) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
+G_2(\jmath \omega )&=\int_{-\infty }^{\infty}g_2(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty}\left( -A \cdot \delta(t-t_0) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=-A \cdot \int_{-\infty }^{\infty} \delta(t-t_0) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
 &=\begin{Bmatrix}
 \SamplingPropertyOfDelta
-\end{Bmatrix}\\
-&= -A \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
+\end{Bmatrix}=\\
+&= -A \cdot e^{-\jmath \cdot \omega \cdot t_0}
 \end{align*}
 
 Transformata sygnału $g_2(t)$ to $G_2(\jmath \omega)=-A \cdot e^{-\jmath \cdot \omega \cdot t_0}$
@@ -218,24 +218,24 @@ H(\jmath \omega )=\int_{-\infty }^{\infty}h(t) \cdot e^{-\jmath \cdot \omega \cd
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-H(\jmath \omega )&=\int_{-\infty }^{\infty}h(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{\infty}\left( \frac{A}{2\cdot t_0} \cdot \delta(t+t_0) - \frac{A}{2\cdot t_0} \cdot \delta(t-t_0) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{\infty}\left( \frac{A}{2\cdot t_0} \cdot \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t} - \frac{A}{2\cdot t_0} \cdot \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \right) \cdot dt\\
-&=\int_{-\infty }^{\infty} \frac{A}{2\cdot t_0} \cdot \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt - \int_{-\infty }^{\infty} \frac{A}{2\cdot t_0} \cdot \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt\\
-&= \frac{A}{2\cdot t_0} \cdot \int_{-\infty }^{\infty} \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt - \frac{A}{2\cdot t_0} \cdot \int_{-\infty }^{\infty}  \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt\\
+H(\jmath \omega )&=\int_{-\infty }^{\infty}h(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty}\left( \frac{A}{2\cdot t_0} \cdot \delta(t+t_0) - \frac{A}{2\cdot t_0} \cdot \delta(t-t_0) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty}\left( \frac{A}{2\cdot t_0} \cdot \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t} - \frac{A}{2\cdot t_0} \cdot \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \right) \cdot dt=\\
+&=\int_{-\infty }^{\infty} \frac{A}{2\cdot t_0} \cdot \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt - \int_{-\infty }^{\infty} \frac{A}{2\cdot t_0} \cdot \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt=\\
+&= \frac{A}{2\cdot t_0} \cdot \int_{-\infty }^{\infty} \delta(t+t_0)\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt - \frac{A}{2\cdot t_0} \cdot \int_{-\infty }^{\infty}  \delta(t-t_0)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt=\\
 &=\begin{Bmatrix}
 \SamplingPropertyOfDelta
-\end{Bmatrix}\\
-&= \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot (-t_0)} - \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
-&= \frac{A}{2\cdot t_0} \cdot e^{\jmath \cdot \omega \cdot t_0} - \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
-&= \frac{A}{2\cdot t_0} \cdot \left(e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}\right)\\
-&= \frac{A}{2\cdot t_0} \cdot \left(e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}\right) \cdot \frac{\jmath}{\jmath}\\
-&= \frac{A}{t_0} \cdot \jmath \cdot \frac{e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}}{2\cdot \jmath}\\
+\end{Bmatrix}=\\
+&= \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot (-t_0)} - \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot t_0}=\\
+&= \frac{A}{2\cdot t_0} \cdot e^{\jmath \cdot \omega \cdot t_0} - \frac{A}{2\cdot t_0} \cdot e^{-\jmath \cdot \omega \cdot t_0}=\\
+&= \frac{A}{2\cdot t_0} \cdot \left(e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}\right)=\\
+&= \frac{A}{2\cdot t_0} \cdot \left(e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}\right) \cdot \frac{\jmath}{\jmath}=\\
+&= \frac{A}{t_0} \cdot \jmath \cdot \frac{e^{\jmath \cdot \omega \cdot t_0} - e^{-\jmath \cdot \omega \cdot t_0}}{2\cdot \jmath}=\\
 &=\begin{Bmatrix}
 \EulerSin
-\end{Bmatrix}\\
-&= \frac{A}{t_0} \cdot \jmath \cdot sin\left( \omega \cdot t_0\right)\\
-&= \jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right)\\
+\end{Bmatrix}=\\
+&= \frac{A}{t_0} \cdot \jmath \cdot sin\left( \omega \cdot t_0\right)=\\
+&= \jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right)
 \end{align*}
 
 Transformata sygnału $h(t)$ to $H(\jmath \omega)=\jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right)$
@@ -249,15 +249,15 @@ Następnie możemy wykorzystać twierdzenie o całkowaniu aby wyznaczyć transfo
 Podstawiając obliczona wcześniej transformatę $H(\jmath \omega)$ sygnału $h(t)$ otrzymujemy transformatę $G_1(\jmath \omega)$ sygnału $g_1(t)$
 
 \begin{align*}
-G_1(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot H(\jmath \omega) + \pi \cdot \delta(0) \cdot H(0)\\
-&=\frac{1}{\jmath \cdot \omega} \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right) + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( 0 \cdot t_0\right)\\
-&=\frac{1}{\omega} \cdot \frac{A}{t_0}\cdot sin\left( \omega \cdot t_0\right) + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( 0\right)\\
-&= A \cdot \frac{sin\left( \omega \cdot t_0\right)}{\omega \cdot t_0} + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot 0\\
-&= A \cdot \frac{sin\left( \omega \cdot t_0\right)}{\omega \cdot t_0} + 0\\
+G_1(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot H(\jmath \omega) + \pi \cdot \delta(0) \cdot H(0)=\\
+&=\frac{1}{\jmath \cdot \omega} \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( \omega \cdot t_0\right) + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( 0 \cdot t_0\right)=\\
+&=\frac{1}{\omega} \cdot \frac{A}{t_0}\cdot sin\left( \omega \cdot t_0\right) + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot sin\left( 0\right)=\\
+&= A \cdot \frac{sin\left( \omega \cdot t_0\right)}{\omega \cdot t_0} + \pi \cdot \delta(0) \cdot \jmath \cdot \frac{A}{t_0} \cdot 0=\\
+&= A \cdot \frac{sin\left( \omega \cdot t_0\right)}{\omega \cdot t_0} + 0=\\
 &=\begin{Bmatrix}
 \SaDef
-\end{Bmatrix}\\
-&=A \cdot Sa\left( \omega \cdot t_0\right)\\
+\end{Bmatrix}=\\
+&=A \cdot Sa\left( \omega \cdot t_0\right)
 \end{align*}
 
 Ostatecznie transformata sygnału $g_1(t)$ jest równa $G_1(\jmath \omega)=A \cdot Sa\left( \omega \cdot t_0\right)$.
@@ -271,9 +271,9 @@ Korzystając z jednorodności transformaty Fouriera
 można wyznaczyć transformatę Fouriera $G(\jmath \omega)$ funkcji $g(t)$
 
 \begin{align*}
-G(\jmath \omega) &= G_1(\jmath \omega)+G_2(\jmath \omega)\\
-&= A \cdot Sa\left( \omega \cdot t_0\right) -A \cdot e^{-\jmath \cdot \omega \cdot t_0}\\
-&= A \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right)\\
+G(\jmath \omega) &= G_1(\jmath \omega)+G_2(\jmath \omega)=\\
+&= A \cdot Sa\left( \omega \cdot t_0\right) -A \cdot e^{-\jmath \cdot \omega \cdot t_0}=\\
+&= A \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right)
 \end{align*}
 
 Znając transformatę $G(\jmath \omega)$ i korzystając z twierdzenia o całkowaniu można wyznaczyć transformatę $F(\jmath \omega)$ funkcji $f(t)$
@@ -285,13 +285,13 @@ Znając transformatę $G(\jmath \omega)$ i korzystając z twierdzenia o całkowa
  Podstawiając otrzymujemy
  
 \begin{align*}
-F(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(0) \cdot G(0)\\
-&=\frac{1}{\jmath \cdot \omega} \cdot A \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( Sa\left( 0 \cdot t_0\right) - e^{-\jmath \cdot 0 \cdot t_0} \right)\\
-&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( Sa\left( 0 \right) - e^{0} \right)\\
-&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( 1 - 1 \right)\\
-&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot 0\\
-&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + 0\\
-&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right)\\
+F(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(0) \cdot G(0)=\\
+&=\frac{1}{\jmath \cdot \omega} \cdot A \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( Sa\left( 0 \cdot t_0\right) - e^{-\jmath \cdot 0 \cdot t_0} \right)=\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( Sa\left( 0 \right) - e^{0} \right)=\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot \left( 1 - 1 \right)=\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + \pi \cdot \delta(0) \cdot A \cdot 0=\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right) + 0=\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left( Sa\left( \omega \cdot t_0\right) - e^{-\jmath \cdot \omega \cdot t_0} \right)
 \end{align*}
 
 

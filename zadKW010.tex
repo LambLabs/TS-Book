@@ -64,13 +64,13 @@ Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 %\begin{equation}
 %\begin{aligned}
 \begin{align*}
-a_0&=\frac{1}{T}\int_{T}f(t) \cdot dt\\
-&=\frac{1}{T}\int_{0}^{T} \frac{A}{T}\cdot t \cdot dt\\
-&=\frac{A}{T^2}\int_{0}^{T} t \cdot dt\\
-&=\frac{A}{T^2}\cdot \left. \frac{1}{2}\cdot t^2 \right|_{0}^{T}\\
-&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot \left( T^2 -0^2 \right)\\
-&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot T^2\\
-&=\frac{A}{2}\\
+a_0&=\frac{1}{T}\int_{T}f(t) \cdot dt=\\
+&=\frac{1}{T}\int_{0}^{T} \frac{A}{T}\cdot t \cdot dt=\\
+&=\frac{A}{T^2}\int_{0}^{T} t \cdot dt=\\
+&=\frac{A}{T^2}\cdot \left. \frac{1}{2}\cdot t^2 \right|_{0}^{T}=\\
+&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot \left( T^2 -0^2 \right)=\\
+&=\frac{A}{T^2}\cdot \frac{1}{2}\cdot T^2=\\
+&=\frac{A}{2}
 \end{align*}
 %\end{aligned}
 %\end{equation}
@@ -85,25 +85,23 @@ a_k=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\int_{0}^{T} \frac{A}{T} \cdot t \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2\cdot A}{T^2}\int_{0}^{T} t \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
+\begin{align*}
+a_k&=\frac{2}{T}\int_{T}f(t) \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\int_{0}^{T} \frac{A}{T} \cdot t \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2\cdot A}{T^2}\int_{0}^{T} t \cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 u&=t & dv&=cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \\
 du&=dt & v&=\frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right)
-\end{Bmatrix*}\\
-&=\frac{2\cdot A}{T^2}\cdot \left( \left. t \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} - \int_{0}^{T}  \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left( \left( T \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) - 0 \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot 0\right) \right) + \left.  \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left(\frac{T^2}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) + \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot \left( cos\left( k \cdot \frac{2\pi}{T} \cdot T\right) - cos\left( k \cdot \frac{2\pi}{T} \cdot 0\right) \right) \right)\\
-&=2\cdot A\cdot \left(\frac{1}{k\cdot 2\pi}\cdot sin\left( k \cdot 2\pi\right) + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( cos\left( k \cdot 2\pi\right) - cos\left( 0\right) \right) \right)\\
-&=2\cdot A\cdot \left(\frac{1}{k\cdot 2\pi}\cdot 0 + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( 1 - 1 \right) \right)\\
-&=2\cdot A\cdot \left(0 + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)\\
-&=2\cdot A\cdot 0\\
+\end{Bmatrix*}=\\
+&=\frac{2\cdot A}{T^2}\cdot \left( \left. t \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} - \int_{0}^{T}  \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)=\\
+&=\frac{2\cdot A}{T^2}\cdot \left( \left( T \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) - 0 \cdot \frac{T}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot 0\right) \right) + \left.  \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} \right)=\\
+&=\frac{2\cdot A}{T^2}\cdot \left(\frac{T^2}{k\cdot 2\pi}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) + \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot \left( cos\left( k \cdot \frac{2\pi}{T} \cdot T\right) - cos\left( k \cdot \frac{2\pi}{T} \cdot 0\right) \right) \right)=\\
+&=2\cdot A\cdot \left(\frac{1}{k\cdot 2\pi}\cdot sin\left( k \cdot 2\pi\right) + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( cos\left( k \cdot 2\pi\right) - cos\left( 0\right) \right) \right)=\\
+&=2\cdot A\cdot \left(\frac{1}{k\cdot 2\pi}\cdot 0 + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left( 1 - 1 \right) \right)=\\
+&=2\cdot A\cdot \left(0 + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)=\\
+&=2\cdot A\cdot 0=\\
 &=0
-\end{aligned}
-\end{equation}
+\end{align*}
 
 Wartość współczynnika $a_k$ wynosi $0$
 
@@ -116,38 +114,34 @@ b_k=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right
 
 Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
 
-\begin{equation}
-\begin{aligned}
-b_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2}{T}\int_{0}^{T}\frac{A}{T}\cdot t \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
-&=\frac{2\cdot A}{T^2}\int_{0}^{T} t \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt\\
+\begin{align*}
+b_k&=\frac{2}{T}\int_{T}f(t) \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2}{T}\int_{0}^{T}\frac{A}{T}\cdot t \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
+&=\frac{2\cdot A}{T^2}\int_{0}^{T} t \cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt=\\
 &=\begin{Bmatrix*}[l]
 u&=t & dv&=sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \\
 du&=dt & v&=-\frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right)
-\end{Bmatrix*}\\
-&=\frac{2\cdot A}{T^2}\cdot \left(- \left.t \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right)\right|_{0}^{T} + \int_{0}^{T} \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left(- \left(T \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot T\right) - 0 \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot 0\right)\right) + \left. \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} \right)\\
-&=\frac{2\cdot A}{T^2}\cdot \left(- \left(\frac{T^2}{k\cdot 2\pi}\cdot cos\left( k \cdot 2\pi\right) \right) + \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot \left(sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) - sin\left( k \cdot \frac{2\pi}{T} \cdot 0\right)\right) \right)\\
-&=2\cdot A \cdot \left(- \left(\frac{1}{k\cdot 2\pi}\cdot 1 \right) + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(sin\left( k \cdot 2\pi\right) - sin\left( 0\right)\right) \right)\\
-&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi} + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(0 - 0\right) \right)\\
-&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi} + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)\\
-&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi}\right)\\
-&=-\frac{2 \cdot A}{k\cdot 2\pi}\\
-&=-\frac{A}{k\cdot \pi}\\
-\end{aligned}
-\end{equation}
+\end{Bmatrix*}=\\
+&=\frac{2\cdot A}{T^2}\cdot \left(- \left.t \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right)\right|_{0}^{T} + \int_{0}^{T} \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot t\right) \cdot dt \right)=\\
+&=\frac{2\cdot A}{T^2}\cdot \left(- \left(T \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot T\right) - 0 \cdot \frac{T}{k\cdot 2\pi}\cdot cos\left( k \cdot \frac{2\pi}{T} \cdot 0\right)\right) + \left. \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot sin\left( k \cdot \frac{2\pi}{T} \cdot t\right) \right|_{0}^{T} \right)=\\
+&=\frac{2\cdot A}{T^2}\cdot \left(- \left(\frac{T^2}{k\cdot 2\pi}\cdot cos\left( k \cdot 2\pi\right) \right) + \frac{T^2}{\left(k\cdot 2\pi\right)^2}\cdot \left(sin\left( k \cdot \frac{2\pi}{T} \cdot T\right) - sin\left( k \cdot \frac{2\pi}{T} \cdot 0\right)\right) \right)=\\
+&=2\cdot A \cdot \left(- \left(\frac{1}{k\cdot 2\pi}\cdot 1 \right) + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(sin\left( k \cdot 2\pi\right) - sin\left( 0\right)\right) \right)=\\
+&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi} + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot \left(0 - 0\right) \right)=\\
+&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi} + \frac{1}{\left(k\cdot 2\pi\right)^2}\cdot 0 \right)=\\
+&=2\cdot A \cdot \left(- \frac{1}{k\cdot 2\pi}\right)=\\
+&=-\frac{2 \cdot A}{k\cdot 2\pi}=\\
+&=-\frac{A}{k\cdot \pi}
+\end{align*}
 
 Wartość współczynnika $b_k$ wynosi $-\frac{A}{k\cdot \pi}$
 
 Ostatecznie współczynniki trygonometrycznego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 a_0&=\frac{A}{2}\\
 a_k&=0\\
 b_k&=-\frac{A}{k\cdot \pi}\\
-\end{aligned}
-\end{equation}
+\end{aligne*}
 
 Możemy wyznaczyć kilka wartości współczynników $a_k$ i $b_k$
 

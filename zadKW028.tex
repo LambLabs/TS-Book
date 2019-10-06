@@ -276,21 +276,21 @@ f(\tau) \cdot g(t-\tau)&=\begin{cases}
 wartość splotu wyznaczamy z ze wzoru
 
 \begin{align*}
-h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
-&=\int_{-\infty}^{\frac{T}{2}} 0 \cdot d\tau + \int_{-\frac{T}{2}}^{t+T}\left( -\frac{1}{T}\cdot \tau - \frac{-t-T}{T} \right)\cdot d\tau +\int_{t+T}^{\infty} 0 \cdot d\tau\\
-&=0 - \int_{-\frac{T}{2}}^{t+T} \frac{1}{T}\cdot \tau d\tau + \int_{-\frac{T}{2}}^{t+T} \frac{t+T}{T} \cdot d\tau +0\\
-&=- \frac{1}{T}\cdot \int_{-\frac{T}{2}}^{t+T} \tau \cdot d\tau + \frac{t+T}{T} \cdot \int_{-\frac{T}{2}}^{t+T} d\tau\\
-&=- \frac{1}{T}\cdot \left( \frac{1}{2} \cdot \tau^2 \right)_{-\frac{T}{2}}^{t+T} + \frac{t+T}{T} \cdot \left(\tau \right)_{-\frac{T}{2}}^{t+T}\\
-&=- \frac{1}{T}\cdot \frac{1}{2} \cdot \left(  \left(t+T\right)^2 -\left(-\frac{T}{2}\right)^2 \right) + \frac{t+T}{T} \cdot \left(t+T - \left(-\frac{T}{2}\right) \right)\\
-&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + T^2 -\frac{T^2}{4} \right) + \frac{t+T}{T} \cdot \left(t+T + \frac{T}{2} \right)\\
-&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{t+T}{T} \cdot \left(t+\frac{3}{2}\cdot T\right)\\
-&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{1}{T} \cdot \left(t^2 + \frac{3}{2} \cdot t \cdot T + t\cdot T +\frac{3}{2}\cdot T^2\right)\\
-&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{2}{2\cdot T} \cdot \left(t^2 + \frac{5}{2} \cdot t \cdot T+\frac{3}{2}\cdot T^2\right)\\
-&=\frac{1}{2\cdot T} \cdot \left(  -t^2-2\cdot t\cdot T - \frac{3}{4}\cdot T^2 \right) + \frac{1}{2\cdot T} \cdot \left(2\cdot t^2 + 5 \cdot t \cdot T+3\cdot T^2\right)\\
-&=\frac{1}{2\cdot T} \cdot \left(  -t^2-2\cdot t\cdot T - \frac{3}{4}\cdot T^2 + 2\cdot t^2 + 5 \cdot t \cdot T+3\cdot T^2\right)\\
-&=\frac{1}{2\cdot T} \cdot \left( t^2 + 3 \cdot t \cdot T+2 \frac{1}{4} \cdot  T^2\right)\\
-&=\frac{1}{2\cdot T} \cdot t^2 + \frac{1}{2 \cdot T} \cdot 3 \cdot t \cdot T+\frac{1}{2\cdot T} \cdot \frac{9}{4} \cdot  T^2\\
-&=\frac{1}{2\cdot T} \cdot t^2 + \frac{3}{2} \cdot t+\frac{9}{8} \cdot  T\\
+h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau=\\
+&=\int_{-\infty}^{\frac{T}{2}} 0 \cdot d\tau + \int_{-\frac{T}{2}}^{t+T}\left( -\frac{1}{T}\cdot \tau - \frac{-t-T}{T} \right)\cdot d\tau +\int_{t+T}^{\infty} 0 \cdot d\tau=\\
+&=0 - \int_{-\frac{T}{2}}^{t+T} \frac{1}{T}\cdot \tau d\tau + \int_{-\frac{T}{2}}^{t+T} \frac{t+T}{T} \cdot d\tau +0=\\
+&=- \frac{1}{T}\cdot \int_{-\frac{T}{2}}^{t+T} \tau \cdot d\tau + \frac{t+T}{T} \cdot \int_{-\frac{T}{2}}^{t+T} d\tau=\\
+&=- \frac{1}{T}\cdot \left( \frac{1}{2} \cdot \tau^2 \right)_{-\frac{T}{2}}^{t+T} + \frac{t+T}{T} \cdot \left(\tau \right)_{-\frac{T}{2}}^{t+T}=\\
+&=- \frac{1}{T}\cdot \frac{1}{2} \cdot \left(  \left(t+T\right)^2 -\left(-\frac{T}{2}\right)^2 \right) + \frac{t+T}{T} \cdot \left(t+T - \left(-\frac{T}{2}\right) \right)=\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + T^2 -\frac{T^2}{4} \right) + \frac{t+T}{T} \cdot \left(t+T + \frac{T}{2} \right)=\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{t+T}{T} \cdot \left(t+\frac{3}{2}\cdot T\right)=\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{1}{T} \cdot \left(t^2 + \frac{3}{2} \cdot t \cdot T + t\cdot T +\frac{3}{2}\cdot T^2\right)=\\
+&=- \frac{1}{2\cdot T} \cdot \left(  t^2+2\cdot t\cdot T + \frac{3}{4}\cdot T^2 \right) + \frac{2}{2\cdot T} \cdot \left(t^2 + \frac{5}{2} \cdot t \cdot T+\frac{3}{2}\cdot T^2\right)=\\
+&=\frac{1}{2\cdot T} \cdot \left(  -t^2-2\cdot t\cdot T - \frac{3}{4}\cdot T^2 \right) + \frac{1}{2\cdot T} \cdot \left(2\cdot t^2 + 5 \cdot t \cdot T+3\cdot T^2\right)=\\
+&=\frac{1}{2\cdot T} \cdot \left(  -t^2-2\cdot t\cdot T - \frac{3}{4}\cdot T^2 + 2\cdot t^2 + 5 \cdot t \cdot T+3\cdot T^2\right)=\\
+&=\frac{1}{2\cdot T} \cdot \left( t^2 + 3 \cdot t \cdot T+2 \frac{1}{4} \cdot  T^2\right)=\\
+&=\frac{1}{2\cdot T} \cdot t^2 + \frac{1}{2 \cdot T} \cdot 3 \cdot t \cdot T+\frac{1}{2\cdot T} \cdot \frac{9}{4} \cdot  T^2=\\
+&=\frac{1}{2\cdot T} \cdot t^2 + \frac{3}{2} \cdot t+\frac{9}{8} \cdot  T
 \end{align*}
 
 \paragraph{Przedział 3}.
@@ -364,28 +364,30 @@ f(\tau) \cdot g(t-\tau)&=\begin{cases}
 wartość splotu wyznaczamy z ze wzoru
 
 \begin{align*}
-h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
+h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau=\\
 &=\int_{-\infty}^{-\frac{T}{2}} 0 \cdot d\tau 
 + \int_{-\frac{T}{2}}^{t}\left( \frac{1}{T}\cdot \tau - \frac{t-T}{T} \right)\cdot d\tau 
 + \int_{t}^{\frac{T}{2}}\left( -\frac{1}{T}\cdot \tau - \frac{-t-T}{T} \right)\cdot d\tau 
-+\int_{\frac{T}{2}}^{\infty} 0 \cdot d\tau\\
++\int_{\frac{T}{2}}^{\infty} 0 \cdot d\tau=\\
 &=0 
 + \int_{-\frac{T}{2}}^{t} \frac{1}{T}\cdot \tau \cdot d\tau -  \int_{-\frac{T}{2}}^{t} \frac{t-T}{T} \cdot d\tau 
 + \int_{t}^{\frac{T}{2}}\left( -\frac{1}{T}\cdot \tau\right) \cdot d\tau - \int_{t}^{\frac{T}{2}} \frac{-t-T}{T} \cdot d\tau 
-+0\\
++0=\\
 &=\frac{1}{T}\cdot \int_{-\frac{T}{2}}^{t} \tau \cdot d\tau -  \frac{t-T}{T} \cdot \int_{-\frac{T}{2}}^{t} d\tau 
--\frac{1}{T}\cdot \int_{t}^{\frac{T}{2}} \tau \cdot d\tau +  \frac{t+T}{T} \cdot \int_{t}^{\frac{T}{2}} d\tau\\
+-\frac{1}{T}\cdot \int_{t}^{\frac{T}{2}} \tau \cdot d\tau +  \frac{t+T}{T} \cdot \int_{t}^{\frac{T}{2}} d\tau=\\
 &=\frac{1}{T}\cdot \left. \frac{1}{2} \cdot \tau^2\right|_{-\frac{T}{2}}^{t} -  \frac{t-T}{T} \cdot \left. \tau 
-\right|_{-\frac{T}{2}}^{t} - \frac{1}{T}\cdot \left. \frac{1}{2} \cdot \tau^2 \right|_{t}^{\frac{T}{2}} +  \frac{t+T}{T} \cdot \left. \tau \right|_{t}^{\frac{T}{2}}\\
-&=\frac{1}{2 \cdot T}\cdot \left( t^2 - \left(-\frac{T}{2}\right)^2\right) -  \frac{t-T}{T} \cdot \left( t - \left(-\frac{T}{2}\right) \right) - \frac{1}{2\cdot T}\cdot \left( \left(\frac{T}{2}\right)^2 - t^2\right) +  \frac{t+T}{T} \cdot \left( \frac{T}{2} - t \right)\\
-&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{t-T}{T} \cdot \left( t + \frac{T}{2} \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{t+T}{T} \cdot \left( \frac{T}{2} - t \right)\\
-&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{2}{2\cdot T} \cdot \left(t-T\right) \cdot \left( t + \frac{T}{2} \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{2}{2 \cdot T} \cdot \left(t+T\right) \cdot \left( \frac{T}{2} - t \right)\\
-&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{2}{2\cdot T} \cdot \left(t^2 + \frac{1}{2} \cdot t \cdot T - t \cdot T - \frac{1}{2} \cdot T^2 \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{2}{2 \cdot T} \cdot \left(\frac{1}{2}\cdot t \cdot T - t^2 + \frac{1}{2} \cdot T^2 - t \cdot T \right)\\
-&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) +  \frac{1}{2\cdot T} \cdot \left(-2 \cdot t^2 - t \cdot T + 2\cdot t \cdot T + T^2 \right) + \frac{1}{2\cdot T}\cdot \left( -\frac{1}{4}\cdot T^2 + t^2\right) +  \frac{1}{2 \cdot T} \cdot \left( t \cdot T - 2 \cdot t^2 + T^2 - 2 \cdot t \cdot T \right)\\
-&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2 -2 \cdot t^2 - t \cdot T + 2\cdot t \cdot T + T^2 -\frac{1}{4}\cdot T^2 + t^2 + t \cdot T - 2 \cdot t^2 + T^2 - 2 \cdot t \cdot T \right)\\
-&=\frac{1}{2 \cdot T}\cdot \left( - 2 \cdot t^2 + 2 \cdot T^2  \right)\\
-&=\frac{1}{T}\cdot \left( - t^2 + T^2  \right)\\
-&=- \frac{1}{T}\cdot t^2 + T \\
+\right|_{-\frac{T}{2}}^{t} - \frac{1}{T}\cdot \left. \frac{1}{2} \cdot \tau^2 \right|_{t}^{\frac{T}{2}} +  \frac{t+T}{T} \cdot \left. \tau \right|_{t}^{\frac{T}{2}}=\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 - \left(-\frac{T}{2}\right)^2\right) -  \frac{t-T}{T} \cdot \left( t - \left(-\frac{T}{2}\right) \right) - \frac{1}{2\cdot T}\cdot \left( \left(\frac{T}{2}\right)^2 - t^2\right) +  \frac{t+T}{T} \cdot \left( \frac{T}{2} - t \right)=\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{t-T}{T} \cdot \left( t + \frac{T}{2} \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{t+T}{T} \cdot \left( \frac{T}{2} - t \right)=\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{2}{2\cdot T} \cdot \left(t-T\right) \cdot \left( t + \frac{T}{2} \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) +  \frac{2}{2 \cdot T} \cdot \left(t+T\right) \cdot \left( \frac{T}{2} - t \right)=\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) -  \frac{2}{2\cdot T} \cdot \left(t^2 + \frac{1}{2} \cdot t \cdot T - t \cdot T - \frac{1}{2} \cdot T^2 \right) - \frac{1}{2\cdot T}\cdot \left( \frac{1}{4}\cdot T^2 - t^2\right) + \\
+&+\frac{2}{2 \cdot T} \cdot \left(\frac{1}{2}\cdot t \cdot T - t^2 + \frac{1}{2} \cdot T^2 - t \cdot T \right)=\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2\right) +  \frac{1}{2\cdot T} \cdot \left(-2 \cdot t^2 - t \cdot T + 2\cdot t \cdot T + T^2 \right) + \frac{1}{2\cdot T}\cdot \left( -\frac{1}{4}\cdot T^2 + t^2\right) + \\
+&+ \frac{1}{2 \cdot T} \cdot \left( t \cdot T - 2 \cdot t^2 + T^2 - 2 \cdot t \cdot T \right)=\\
+&=\frac{1}{2 \cdot T}\cdot \left( t^2 + \frac{1}{4} \cdot T^2 -2 \cdot t^2 - t \cdot T + 2\cdot t \cdot T + T^2 -\frac{1}{4}\cdot T^2 + t^2 + t \cdot T - 2 \cdot t^2 + T^2 - 2 \cdot t \cdot T \right)=\\
+&=\frac{1}{2 \cdot T}\cdot \left( - 2 \cdot t^2 + 2 \cdot T^2  \right)=\\
+&=\frac{1}{T}\cdot \left( - t^2 + T^2  \right)=\\
+&=- \frac{1}{T}\cdot t^2 + T 
 \end{align*}
 
 
@@ -461,24 +463,24 @@ f(\tau) \cdot g(t-\tau)&=\begin{cases}
 wartość splotu wyznaczamy z ze wzoru
 
 \begin{align*}
-h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
+h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau=\\
 &=\int_{-\infty}^{t-T} 0 \cdot d\tau 
 + \int_{t-T}^{\frac{T}{2}}\left( \frac{1}{T}\cdot \tau - \frac{t-T}{T} \right)\cdot d\tau 
-+\int_{\frac{T}{2}}^{\infty} 0 \cdot d\tau\\
++\int_{\frac{T}{2}}^{\infty} 0 \cdot d\tau=\\
 &=0
 + \int_{t-T}^{\frac{T}{2}} frac{1}{T}\cdot \tau \cdot d\tau - \int_{t-T}^{\frac{T}{2}} \frac{t-T}{T} \cdot d\tau 
-+0\\
-&=\frac{1}{T}\cdot \int_{t-T}^{\frac{T}{2}}  \tau \cdot d\tau - \frac{t-T}{T} \cdot \int_{t-T}^{\frac{T}{2}}  d\tau\\
-&=\frac{1}{T}\cdot \left. \frac{1}{2} \cdot \tau^2 \right|_{t-T}^{\frac{T}{2}} - \frac{t-T}{T} \cdot \left.  \tau \right|_{t-T}^{\frac{T}{2}}\\
-&=\frac{1}{T}\cdot \frac{1}{2} \cdot \left(  \left(\frac{T}{2}\right)^2 - \left(t-T\right)^2\right) - \frac{t-T}{T} \cdot \left(  \frac{T}{2} - \left(t-T\right)\right)\\
-&=\frac{1}{2 \cdot T} \cdot \left(  \frac{1}{4}\cdot T^2 - \left(t^2 -2\cdot t \cdot T + T^2 \right)\right) - \frac{t-T}{T} \cdot \left(  \frac{T}{2} - t+T\right)\\
-&=\frac{1}{2 \cdot T} \cdot \left(  \frac{1}{4}\cdot T^2 -t^2 +2\cdot t \cdot T - T^2 \right) - \frac{1}{T} \cdot \left(t-T\right)\cdot \left(  \frac{3}{2}\cdot T - t\right)\\
-&=\frac{1}{2 \cdot T} \cdot \left(  -\frac{3}{4}\cdot T^2 -t^2 +2\cdot t \cdot T \right) - \frac{2}{2\cdot T} \cdot \left(\frac{3}{2} \cdot t \cdot T - t^2 - \frac{3}{2}\cdot T^2 + t \cdot T\right)\\
-&=\frac{1}{2 \cdot T} \cdot \left(  -\frac{3}{4}\cdot T^2 -t^2 +2\cdot t \cdot T \right) - \frac{1}{2 \cdot T} \cdot \left(\frac{6}{2} \cdot t \cdot T - 2\cdot t^2 - \frac{6}{2}\cdot T^2 + 2\cdot t \cdot T\right)\\
-&=\frac{1}{2 \cdot T} \cdot \left(  -\frac{3}{4}\cdot T^2 -t^2 +2\cdot t \cdot T  - \frac{6}{2} \cdot t \cdot T + 2\cdot t^2 + \frac{6}{2}\cdot T^2 - 2\cdot t \cdot T\right)\\
-&=\frac{1}{2 \cdot T} \cdot \left(  \frac{9}{4}\cdot T^2 -3\cdot t \cdot T  +  t^2 \right)\\
-&=\frac{1}{2 \cdot T} \cdot  \frac{9}{4}\cdot T^2 - \frac{1}{2 \cdot T} \cdot 3\cdot t \cdot T  +  \frac{1}{2 \cdot T} \cdot t^2\\
-&=\frac{9}{8}\cdot T - \frac{3}{2} \cdot t  +  \frac{1}{2 \cdot T} \cdot t^2\\
++0=\\
+&=\frac{1}{T}\cdot \int_{t-T}^{\frac{T}{2}}  \tau \cdot d\tau - \frac{t-T}{T} \cdot \int_{t-T}^{\frac{T}{2}}  d\tau=\\
+&=\frac{1}{T}\cdot \left. \frac{1}{2} \cdot \tau^2 \right|_{t-T}^{\frac{T}{2}} - \frac{t-T}{T} \cdot \left.  \tau \right|_{t-T}^{\frac{T}{2}}=\\
+&=\frac{1}{T}\cdot \frac{1}{2} \cdot \left(  \left(\frac{T}{2}\right)^2 - \left(t-T\right)^2\right) - \frac{t-T}{T} \cdot \left(  \frac{T}{2} - \left(t-T\right)\right)=\\
+&=\frac{1}{2 \cdot T} \cdot \left(  \frac{1}{4}\cdot T^2 - \left(t^2 -2\cdot t \cdot T + T^2 \right)\right) - \frac{t-T}{T} \cdot \left(  \frac{T}{2} - t+T\right)=\\
+&=\frac{1}{2 \cdot T} \cdot \left(  \frac{1}{4}\cdot T^2 -t^2 +2\cdot t \cdot T - T^2 \right) - \frac{1}{T} \cdot \left(t-T\right)\cdot \left(  \frac{3}{2}\cdot T - t\right)=\\
+&=\frac{1}{2 \cdot T} \cdot \left(  -\frac{3}{4}\cdot T^2 -t^2 +2\cdot t \cdot T \right) - \frac{2}{2\cdot T} \cdot \left(\frac{3}{2} \cdot t \cdot T - t^2 - \frac{3}{2}\cdot T^2 + t \cdot T\right)=\\
+&=\frac{1}{2 \cdot T} \cdot \left(  -\frac{3}{4}\cdot T^2 -t^2 +2\cdot t \cdot T \right) - \frac{1}{2 \cdot T} \cdot \left(\frac{6}{2} \cdot t \cdot T - 2\cdot t^2 - \frac{6}{2}\cdot T^2 + 2\cdot t \cdot T\right)=\\
+&=\frac{1}{2 \cdot T} \cdot \left(  -\frac{3}{4}\cdot T^2 -t^2 +2\cdot t \cdot T  - \frac{6}{2} \cdot t \cdot T + 2\cdot t^2 + \frac{6}{2}\cdot T^2 - 2\cdot t \cdot T\right)=\\
+&=\frac{1}{2 \cdot T} \cdot \left(  \frac{9}{4}\cdot T^2 -3\cdot t \cdot T  +  t^2 \right)=\\
+&=\frac{1}{2 \cdot T} \cdot  \frac{9}{4}\cdot T^2 - \frac{1}{2 \cdot T} \cdot 3\cdot t \cdot T  +  \frac{1}{2 \cdot T} \cdot t^2=\\
+&=\frac{9}{8}\cdot T - \frac{3}{2} \cdot t  +  \frac{1}{2 \cdot T} \cdot t^2
 \end{align*}
 
 \paragraph{Przedział 5}.
@@ -549,8 +551,8 @@ f(\tau) \cdot g(t-\tau)&=0
 a więc wartość splotu wyznaczona ze wzoru
 
 \begin{align*}
-h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
-&=\int_{-\infty}^{\infty} 0 \cdot d\tau \\
+h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau=\\
+&=\int_{-\infty}^{\infty} 0 \cdot d\tau =\\
 &=0
 \end{align*}
 
@@ -559,7 +561,7 @@ h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
 Zbierająć wyniki, wynik splotu wyrażony jest jako funkcja o pięciu przedziałach
 
 \begin{align*}
-h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau\\
+h(t)&=\int_{-\infty}^{\infty} f(\tau) \cdot g(t-\tau) \cdot d\tau=\\
 &=\begin{cases}
 0 & \tau \in \left(-\infty; -\frac{3}{2}\cdot T\right);\\
 \frac{1}{2\cdot T} \cdot t^2 + \frac{3}{2} \cdot t+\frac{9}{8} \cdot  T & \tau \in \left( -\frac{3}{2}\cdot T; -\frac{1}{2} \cdot T\right);\\

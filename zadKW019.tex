@@ -33,24 +33,24 @@ F(\jmath \omega )=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cd
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{\infty} \left( A \cdot \delta(t-t_0) - A \cdot \delta(t+t_0) \right)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt\\
-&=\int_{-\infty }^{\infty} A \cdot \delta(t-t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt - \int_{-\infty }^{\infty} A \cdot \delta(t+t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt\\
-&= A \cdot \int_{-\infty }^{\infty} \delta(t-t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt -  A \cdot \int_{-\infty }^{\infty} \delta(t+t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt\\
+F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty} \left( A \cdot \delta(t-t_0) - A \cdot \delta(t+t_0) \right)\cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt=\\
+&=\int_{-\infty }^{\infty} A \cdot \delta(t-t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt - \int_{-\infty }^{\infty} A \cdot \delta(t+t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt=\\
+&= A \cdot \int_{-\infty }^{\infty} \delta(t-t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt -  A \cdot \int_{-\infty }^{\infty} \delta(t+t_0) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt=\\
 &=\begin{Bmatrix}
 \int_{-\infty }^{\infty} \delta(t-t_0) \cdot f(t) \cdot dt = f(t_0)
-\end{Bmatrix}\\
-&= A \cdot e^{-\jmath \cdot \omega \cdot t_0} -  A \cdot e^{-\jmath \cdot \omega \cdot (-t_0)}\\
-&= A \cdot e^{-\jmath \cdot \omega \cdot t_0} -  A \cdot e^{\jmath \cdot \omega \cdot t_0}\\
-&= A \cdot \left(e^{-\jmath \cdot \omega \cdot t_0} -  e^{\jmath \cdot \omega \cdot t_0}\right)\\
-&= A \cdot \left(-  e^{\jmath \cdot \omega \cdot t_0} +  e^{-\jmath \cdot \omega \cdot t_0}\right)\\
-&= -A \cdot \left(e^{\jmath \cdot \omega \cdot t_0} -  e^{-\jmath \cdot \omega \cdot t_0}\right)\\
-&= -A \cdot \left(e^{\jmath \cdot \omega \cdot t_0} -  e^{-\jmath \cdot \omega \cdot t_0}\right)\cdot \frac{2\cdot \jmath}{2\cdot \jmath}\\
-&= -2 \cdot \jmath \cdot A \cdot \frac{e^{\jmath \cdot \omega \cdot t_0} -  e^{-\jmath \cdot \omega \cdot t_0}}{2\cdot \jmath}\\
+\end{Bmatrix}=\\
+&= A \cdot e^{-\jmath \cdot \omega \cdot t_0} -  A \cdot e^{-\jmath \cdot \omega \cdot (-t_0)}=\\
+&= A \cdot e^{-\jmath \cdot \omega \cdot t_0} -  A \cdot e^{\jmath \cdot \omega \cdot t_0}=\\
+&= A \cdot \left(e^{-\jmath \cdot \omega \cdot t_0} -  e^{\jmath \cdot \omega \cdot t_0}\right)=\\
+&= A \cdot \left(-  e^{\jmath \cdot \omega \cdot t_0} +  e^{-\jmath \cdot \omega \cdot t_0}\right)=\\
+&= -A \cdot \left(e^{\jmath \cdot \omega \cdot t_0} -  e^{-\jmath \cdot \omega \cdot t_0}\right)=\\
+&= -A \cdot \left(e^{\jmath \cdot \omega \cdot t_0} -  e^{-\jmath \cdot \omega \cdot t_0}\right)\cdot \frac{2\cdot \jmath}{2\cdot \jmath}=\\
+&= -2 \cdot \jmath \cdot A \cdot \frac{e^{\jmath \cdot \omega \cdot t_0} -  e^{-\jmath \cdot \omega \cdot t_0}}{2\cdot \jmath}=\\
 &=\begin{Bmatrix}
 sin(x) = \frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2\cdot \jmath}
-\end{Bmatrix}\\
-&= -2 \cdot \jmath \cdot A \cdot sin(\omega \cdot t_0)\\
+\end{Bmatrix}=\\
+&= -2 \cdot \jmath \cdot A \cdot sin(\omega \cdot t_0)
 \end{align*}
 
 Transformata sygnału $f(t)=A \cdot \delta(t-t_0) - A \cdot \delta(t+t_0)$ to $F(\jmath \omega)=-2 \cdot \jmath \cdot A \cdot sin(\omega \cdot t_0)$

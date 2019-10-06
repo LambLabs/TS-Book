@@ -167,21 +167,21 @@ H_2(\jmath \omega )=\int_{-\infty }^{\infty}h_2(t) \cdot e^{-\jmath \cdot \omega
 Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 \begin{align*}
-H_2(\jmath \omega )&=\int_{-\infty }^{\infty}h_2(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{\infty}\left( 2 \cdot \delta(t+1) + 2 \cdot \delta(t-1)\right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=2 \cdot \int_{-\infty }^{\infty} \left( \delta(t+1) + \delta(t-1) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=2 \cdot \left( \int_{-\infty }^{\infty} \delta(t+1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{-\infty }^{\infty} \delta(t-1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt \right)\\
+H_2(\jmath \omega )&=\int_{-\infty }^{\infty}h_2(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty}\left( 2 \cdot \delta(t+1) + 2 \cdot \delta(t-1)\right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=2 \cdot \int_{-\infty }^{\infty} \left( \delta(t+1) + \delta(t-1) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=2 \cdot \left( \int_{-\infty }^{\infty} \delta(t+1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{-\infty }^{\infty} \delta(t-1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt \right)=\\
 &=\begin{Bmatrix}
 \SamplingPropertyOfDelta
-\end{Bmatrix}\\
-&= 2 \cdot \left( e^{-\jmath \cdot \omega \cdot (-1)} + e^{-\jmath \cdot \omega \cdot 1} \right)\\
-&= 2 \cdot \left( e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} \right)\\
-&= 2 \cdot \left( e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} \right) \cdot \frac{2}{2}\\
-&= 4 \cdot \frac{ e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} }{2} \\
+\end{Bmatrix}=\\
+&= 2 \cdot \left( e^{-\jmath \cdot \omega \cdot (-1)} + e^{-\jmath \cdot \omega \cdot 1} \right)=\\
+&= 2 \cdot \left( e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} \right)=\\
+&= 2 \cdot \left( e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} \right) \cdot \frac{2}{2}=\\
+&= 4 \cdot \frac{ e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} }{2} =\\
 &=\begin{Bmatrix}
 \EulerCos
-\end{Bmatrix}\\
-&= 4 \cdot cos\left( \omega\right) \\
+\end{Bmatrix}=\\
+&= 4 \cdot cos\left( \omega\right) 
 \end{align*}
 
 Transformata sygnału $h_2(t)$ to $G_2(\jmath \omega)=4 \cdot cos\left( \omega\right)$
@@ -229,21 +229,21 @@ Podstawiamy do wzoru na transformatę wzór naszej funkcji
 
 
 \begin{align*}
-I(\jmath \omega )&=\int_{-\infty }^{\infty}i(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=\int_{-\infty }^{\infty}\left( -2 \cdot \delta(t+1) + 2 \cdot \delta(t-1)\right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=2 \cdot \int_{-\infty }^{\infty} \left( -\delta(t+1) + \delta(t-1) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt\\
-&=2 \cdot \left( \int_{-\infty }^{\infty} -\delta(t+1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{-\infty }^{\infty} \delta(t-1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt \right)\\
+I(\jmath \omega )&=\int_{-\infty }^{\infty}i(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty}\left( -2 \cdot \delta(t+1) + 2 \cdot \delta(t-1)\right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=2 \cdot \int_{-\infty }^{\infty} \left( -\delta(t+1) + \delta(t-1) \right) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=2 \cdot \left( \int_{-\infty }^{\infty} -\delta(t+1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{-\infty }^{\infty} \delta(t-1) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt \right)=\\
 &=\begin{Bmatrix}
 \SamplingPropertyOfDelta
-\end{Bmatrix}\\
-&= 2 \cdot \left( -e^{-\jmath \cdot \omega \cdot (-1)} + e^{-\jmath \cdot \omega \cdot 1} \right)\\
-&= 2 \cdot \left( -e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} \right)\\
-&= -2 \cdot \left( e^{\jmath \cdot \omega} - e^{-\jmath \cdot \omega} \right) \cdot \frac{2 \cdot \jmath}{2 \cdot \jmath}\\
-&= -4 \cdot \jmath \cdot \frac{ e^{\jmath \cdot \omega} - e^{-\jmath \cdot \omega} }{2 \cdot \jmath} \\
+\end{Bmatrix}=\\
+&= 2 \cdot \left( -e^{-\jmath \cdot \omega \cdot (-1)} + e^{-\jmath \cdot \omega \cdot 1} \right)=\\
+&= 2 \cdot \left( -e^{\jmath \cdot \omega} + e^{-\jmath \cdot \omega} \right)=\\
+&= -2 \cdot \left( e^{\jmath \cdot \omega} - e^{-\jmath \cdot \omega} \right) \cdot \frac{2 \cdot \jmath}{2 \cdot \jmath}=\\
+&= -4 \cdot \jmath \cdot \frac{ e^{\jmath \cdot \omega} - e^{-\jmath \cdot \omega} }{2 \cdot \jmath} =\\
 &=\begin{Bmatrix}
 \EulerSin
-\end{Bmatrix}\\
-&= -4 \cdot \jmath \cdot sin\left( \omega\right) \\
+\end{Bmatrix}=\\
+&= -4 \cdot \jmath \cdot sin\left( \omega\right) 
 \end{align*}
 
 Transformata sygnału $i(t)$ to $I(\jmath \omega)=-4 \cdot \jmath \cdot sin\left( \omega\right)$
@@ -257,18 +257,18 @@ Następnie możemy wykorzystać twierdzenie o całkowaniu, aby wyznaczyć transf
 Podstawiając obliczoną wcześniej transformatę $I(\jmath \omega)$ sygnału $i(t)$ otrzymujemy transformatę $H_1(\jmath \omega)$ sygnału $h_1(t)$
 
 \begin{align*}
-H_1(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot I(\jmath \omega) + \pi \cdot \delta(\omega) \cdot I(0)\\
-&\begin{Bmatrix*}[l]
+H_1(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot I(\jmath \omega) + \pi \cdot \delta(\omega) \cdot I(0)=\\
+&=\begin{Bmatrix*}[l]
 I(0)=-4 \cdot \jmath \cdot sin\left( 0 \right)\\
 I(0)=-4 \cdot \jmath \cdot 0\\
 I(0)=0\\
-\end{Bmatrix*}\\
-&=\frac{1}{\jmath \cdot \omega} \cdot \left(-4 \cdot \jmath \cdot sin\left( \omega \right)\right) + 0\\
-&=-4\cdot \frac{sin\left( \omega \right)}{\omega}\\
+\end{Bmatrix*}=\\
+&=\frac{1}{\jmath \cdot \omega} \cdot \left(-4 \cdot \jmath \cdot sin\left( \omega \right)\right) + 0=\\
+&=-4\cdot \frac{sin\left( \omega \right)}{\omega}=\\
 &=\begin{Bmatrix}
 \SaDef
-\end{Bmatrix}\\
-&=-4\cdot Sa\left( \omega\right)\\
+\end{Bmatrix}=\\
+&=-4\cdot Sa\left( \omega\right)
 \end{align*}
 
 Ostatecznie transformata sygnału $h_1(t)$ jest równa $H_1(\jmath \omega)=- 4 \cdot Sa\left( \omega\right)$.
@@ -280,8 +280,8 @@ Korzystając z liniowości transformacji Fouriera
 
 można wyznaczyć transformatę Fouriera $H(\jmath \omega)$ funkcji $h(t)$
 \begin{align*}
-H(\jmath \omega) &= H_1(\jmath \omega)+H_2(\jmath \omega)\\
-&= -4\cdot Sa\left( \omega\right) + 4 \cdot cos\left( \omega \right)\\
+H(\jmath \omega) &= H_1(\jmath \omega)+H_2(\jmath \omega)=\\
+&= -4\cdot Sa\left( \omega\right) + 4 \cdot cos\left( \omega \right)=\\
 &= 4\cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right)
 \end{align*}
 
@@ -292,14 +292,14 @@ Znając transformatę $H(\jmath \omega)$ i korzystając z twierdzenia o całkowa
  
 Podstawiając odpowiednie dane otrzymujemy:
  \begin{align*}
-G(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot H(\jmath \omega) + \pi \cdot \delta(\omega) \cdot H(0)\\
-&\begin{Bmatrix*}[l]
+G(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot H(\jmath \omega) + \pi \cdot \delta(\omega) \cdot H(0)=\\
+&=\begin{Bmatrix*}[l]
 H(0)=4\cdot \left(cos\left( 0\right) - Sa\left( 0\right)\right)\\
 H(0)=4\cdot \left(1 -1 \right)\\
 H(0)=4\cdot 0\\
 H(0)=0\\
-\end{Bmatrix*}\\
-&=\frac{1}{\jmath \cdot \omega} \cdot \left( 4\cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right) \right) + 0\\
+\end{Bmatrix*}=\\
+&=\frac{1}{\jmath \cdot \omega} \cdot \left( 4\cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right) \right) + 0=\\
 &=\frac{4}{\jmath \cdot \omega} \cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right)
 \end{align*}
 
@@ -312,17 +312,17 @@ Znając transformatę $G(\jmath \omega)$ i kolejny raz korzystając z twierdzeni
 
 Podstawiając odpowiednie dane otrzymujemy:
 \begin{align*}
-F(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)\\
-&\begin{Bmatrix*}[l]
+F(\jmath \omega) &= \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)=\\
+&=\begin{Bmatrix*}[l]
 G(0)=\frac{4}{\jmath \cdot 0} \cdot \left(cos\left( 0\right) - Sa\left(0\right)\right)\\
 G(0)=\frac{0}{0}!!!\\
 G(0)=\int_{-\infty}^{\infty} g(t) \cdot dt=\int_{-1}^{1} (-2) \cdot t \cdot dt = \left. (-2)\cdot \frac{t^2}{2} \right|_{-1}^{1}\\
 G(0)=(-2) \cdot \left(\frac{1}{2} - \frac{1}{2}\right)= (-2) \cdot 0\\
 G(0)=0\\
-\end{Bmatrix*}\\
-&=\frac{1}{\jmath \cdot \omega} \cdot \frac{4}{\jmath \cdot \omega} \cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right) + 0\\
-&=\frac{4}{\jmath^2 \cdot \omega^2} \cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right)\\
-&=\frac{4}{(-1) \cdot \omega^2} \cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right)\\
+\end{Bmatrix*}=\\
+&=\frac{1}{\jmath \cdot \omega} \cdot \frac{4}{\jmath \cdot \omega} \cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right) + 0=\\
+&=\frac{4}{\jmath^2 \cdot \omega^2} \cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right)=\\
+&=\frac{4}{(-1) \cdot \omega^2} \cdot \left(cos\left( \omega\right) - Sa\left( \omega\right)\right)=\\
 &=\frac{4}{\omega^2} \cdot \left(Sa\left( \omega\right) - cos\left( \omega\right)\right)
 \end{align*}
 
