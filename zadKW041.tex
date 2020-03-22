@@ -1,0 +1,147 @@
+\begin{task}
+Oblicz moc sygnału $f(t)=A\cdot sin\left(k \cdot t\right)+B \cdot cos\left(n \cdot t\right)$.
+\\\\
+Pierwszym krokiem jest ustalenie czy sygnał $f(t)$ jest sygnałem okresowym czy nie. Nasz sygnał jest sumą dwóch funkcji okresowych $f_{1}(t)=A\cdot sin\left(k\cdot t\right)$ i $f_{2}(t)=B\cdot cos\left(n\cdot t\right)$.
+\\\\
+Suma funkcji okresowych jest funkcją okresową, wtedy i tylko wtedy gdy stosunek okresów funkcji składowych jest liczbą wymierną 
+\begin{align*}
+\frac{T_{1}}{T_{2}} \in \mathcal{W}
+\end{align*}
+W naszym przypadku 
+\begin{align*}
+T_{1} &= \frac{2\pi}{k}\\
+T_{2} &= \frac{2\pi}{n}\\
+\frac{T_{1}}{T_{2}} &= \frac{\frac{2\pi}{k}}{\frac{2\pi}{n}} = \frac{n}{k}
+\end{align*}
+W ogólności liczby $n$ i $k$ mogą być dowolnymi liczbami rzeczywistymi $n, k \in \mathcal{R}$.
+Załóżmy jednak iż ułamek $\frac{n}{k}$ jest pewną liczba wymierna $\frac{a}{b}$ gdzie $a,b \in \mathcal{Z}$ są liczbami całkowitymi. 
+\begin{align*}
+\frac{T_{1}}{T_{2}} &= \frac{\frac{2\pi}{k}}{\frac{2\pi}{n}} = \frac{n}{k} = \frac{a}{b} \;\; a,b \in \mathcal{Z}
+\end{align*}
+
+W takim przypadku okres naszego sygnału jest Najmniejszą Wspólną Wielokrotnością okresów funkcji składowych. Stwórzmy więc tabelę z kolejnymi wielokrotnościami okresów funkcji $f_{1}(t)$ i $f_{2}(t)$.
+%\renewcommand{\arraystretch}{1.5} % Zmiana wysokości wierszy
+\begin{table}[h]
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+  \rule{0pt}{1pt} &&&&&&&& \\[-1em]
+  Wielokrotność okresu  & $1$ & $2$ & $3$ & $\cdots$ & $a$ & $\cdots$ & $b$ & $\cdots$  \\
+  \rule{0pt}{1pt} &&&&&&&& \\[-1em] \hline
+  &&&&&&&& \\[-1em]
+  $T_1$ & $\frac{2\pi}{k}$ & $2 \cdot \frac{2\pi}{k}$ & $3 \cdot \frac{2\pi}{k}$ & $\cdots$ & $a \cdot \frac{2\pi}{k}$ & $\cdots$ & {\setlength{\fboxrule}{0.8pt}\fcolorbox{red}{white}{$b \cdot \frac{2\pi}{k}$}} & $\cdots$ \\ 
+  &&&&&&&& \\[-1em] \hline
+  \rule{0pt}{1pt} &&&&&&&& \\[-1em] 
+  $T_2$ & $\frac{2\pi}{n}$ & $2 \cdot \frac{2\pi}{n}$ & $3 \cdot \frac{2\pi}{n}$ & $\cdots$ & {\setlength{\fboxrule}{0.8pt}\fcolorbox{red}{white}{$a \cdot \frac{2\pi}{n}$}} & $\cdots$ & $b \cdot \frac{2\pi}{n}$ & $\cdots$ \\ [0.75em]
+  %\rule{0pt}{1pt} &&&&&&&& 
+  \end{tabular}
+\end{table}
+%\renewcommand{\arraystretch}{1}
+Zgodnie z przyjętym przez nas założeniem 
+\begin{align*}
+\frac{T_{1}}{T_{2}} &= \frac{a}{b} \Rightarrow b \cdot T_{1}= a \cdot T_{2}
+\end{align*}
+a więc $a$-ta wielokrotność okresu pierwszej funkcji jest równa $b$-tej wielokrotności okresu drugiej funkcji, a wiec jest ona poszukiwaną przez nas Najmniejszą Wspólną Wielokrotnością. Związku z tym okresem naszego sygnału jest $T=b \cdot T_{1}= a \cdot T_{2}$. Aby obliczyć moc należy wybrać przedział o długości jednego okresu. Przedział może być dowolnie położony, przyjmijmy więc przedział $t \in \left(0; T\right)$
+
+Moc sygnału okresowego wyznaczamy ze wzoru
+\begin{equation}
+P=\frac{1}{T}\int_{0}^{T}\left| f(t) \right|^2 \cdot dt
+\end{equation}
+Podstawiamy do wzoru na moc wzór naszej funkcji
+\begin{align*}
+P&=\frac{1}{T}\int_{0}^{T}\left|f(t)\right|^2 \cdot dt=\\
+ &=\frac{1}{T}\int_{0}^{T}\left| A\cdot sin\left(k \cdot t\right)+B \cdot cos\left(n \cdot t\right) \right|^2 \cdot dt=
+\end{align*}
+Ponieważ mamy doczynienia z sygnałem o wartościach rzeczywistych możemy pominąć obliczenie modułu.
+\begin{align*}
+P &=\frac{1}{T}\int_{0}^{T}\left( A\cdot sin\left(k \cdot t\right)+B \cdot cos\left(n \cdot t\right) \right)^2 \cdot dt=\\
+&=\frac{1}{T}\int_{0}^{T}\left( \left(A\cdot sin\left(k \cdot t\right) \right)^2 +2 \cdot A\cdot sin\left(k \cdot t\right) \cdot B \cdot cos\left(n \cdot t\right) + \left(B \cdot cos\left(n \cdot t\right) \right)^2\right) \cdot dt=\\
+&=\frac{1}{T}\int_{0}^{T}\left( A^2\cdot sin^2\left(k \cdot t\right) +2 \cdot A\cdot B \cdot  sin\left(k \cdot t\right) \cdot cos\left(n \cdot t\right) + B^2 \cdot cos^2\left(n \cdot t\right) \right) \cdot dt=\\
+&=\frac{1}{T} \cdot \left( \int_{0}^{T} A^2\cdot sin^2\left(k \cdot t\right)\cdot dt + \int_{0}^{T} 2 \cdot A\cdot B \cdot  sin\left(k \cdot t\right) \cdot cos\left(n \cdot t\right)\cdot dt + \int_{0}^{T} B^2 \cdot cos^2\left(n \cdot t\right) \cdot dt \right)=\\
+&=\frac{1}{T} \cdot \left( A^2\cdot \int_{0}^{T} sin^2\left(k \cdot t\right)\cdot dt + 2 \cdot A\cdot B \cdot \int_{0}^{T} sin\left(k \cdot t\right) \cdot cos\left(n \cdot t\right)\cdot dt + B^2 \cdot \int_{0}^{T} cos^2\left(n \cdot t\right) \cdot dt \right)=\\
+&=\left\{\begin{array}{ll}
+\EulerSin & \EulerCos
+\end{array}\right\}=\\
+&=\frac{1}{T} \cdot \left( A^2\cdot \int_{0}^{T} \left(\frac{e^{\jmath \cdot k \cdot t}-e^{-\jmath \cdot k \cdot t}}{2\cdot \jmath}\right)^2\cdot dt \,+\right. \\
+&+ \left. 2 \cdot A\cdot B \cdot \int_{0}^{T} \frac{e^{\jmath \cdot k \cdot t}-e^{-\jmath \cdot k \cdot t}}{2\cdot \jmath} \cdot \frac{e^{\jmath \cdot n \cdot t}+e^{-\jmath \cdot n \cdot t}}{2} \cdot dt\,+\right.\\
+&+ \left. B^2 \cdot \int_{0}^{T} \left(\frac{e^{\jmath \cdot n \cdot t}+e^{-\jmath \cdot n \cdot t}}{2}\right)^2 \cdot dt \right)=\\
+&=\frac{1}{T} \cdot \left( A^2\cdot \int_{0}^{T} \frac{\left(e^{\jmath \cdot k \cdot t}\right)^2-2\cdot e^{\jmath \cdot k \cdot t} \cdot e^{-\jmath \cdot k \cdot t} +\left(e^{-\jmath \cdot k \cdot t}\right)^2}{\left(2\cdot \jmath\right)^2}\cdot dt \,+\right. \\
+&+ \left. 2 \cdot A\cdot B \cdot \int_{0}^{T} \frac{e^{\jmath \cdot k \cdot t} \cdot e^{\jmath \cdot n \cdot t} + e^{\jmath \cdot k \cdot t} \cdot e^{-\jmath \cdot n \cdot t} - e^{-\jmath \cdot k \cdot t}\cdot e^{\jmath \cdot n \cdot t} - e^{-\jmath \cdot k \cdot t}\cdot e^{-\jmath \cdot n \cdot t}}{2\cdot \jmath \cdot 2} \cdot dt\,+\right.\\
+&+ \left. B^2 \cdot \int_{0}^{T} \frac{\left(e^{\jmath \cdot n \cdot t}\right)^2+2\cdot e^{\jmath \cdot n \cdot t} \cdot e^{-\jmath \cdot n \cdot t} +\left(e^{-\jmath \cdot n \cdot t}\right)^2}{2^2} \cdot dt \right)=\\
+&=\frac{1}{T} \cdot \left( A^2\cdot \int_{0}^{T} \frac{e^{2\cdot \jmath \cdot k \cdot t}-2\cdot e^{\jmath \cdot k \cdot t-\jmath \cdot k \cdot t} +e^{-2\cdot \jmath \cdot k \cdot t}}{-4}\cdot dt \,+\right. \\
+&+ \left. 2 \cdot A\cdot B \cdot \int_{0}^{T} \frac{e^{\jmath \cdot k \cdot t+\jmath \cdot n \cdot t} + e^{\jmath \cdot k \cdot t -\jmath \cdot n \cdot t} - e^{-\jmath \cdot k \cdot t+\jmath \cdot n \cdot t} - e^{-\jmath \cdot k \cdot t-\jmath \cdot n \cdot t}}{4\cdot \jmath} \cdot dt\,+\right.\\
+&+ \left. B^2 \cdot \int_{0}^{T} \frac{e^{2\cdot \jmath \cdot n \cdot t}+2\cdot e^{\jmath \cdot n \cdot t -\jmath \cdot n \cdot t} +e^{-2\cdot \jmath \cdot n \cdot t}}{4} \cdot dt \right)=\\
+&=\frac{1}{T} \cdot \left( A^2\cdot \int_{0}^{T} \frac{e^{2\cdot \jmath \cdot k \cdot t}-2\cdot e^{0} +e^{-2\cdot \jmath \cdot k \cdot t}}{-4}\cdot dt \,+\right. \\
+&+ \left. 2 \cdot A\cdot B \cdot \int_{0}^{T} \frac{e^{\jmath \cdot \left(k+n\right) \cdot t} + e^{\jmath \cdot \left(k-n\right) \cdot t} - e^{-\jmath \cdot \left(k-n\right) \cdot t} - e^{-\jmath \cdot \left(k+n\right) \cdot t}}{4\cdot \jmath} \cdot dt\,+\right.\\
+&+ \left. B^2 \cdot \int_{0}^{T} \frac{e^{2\cdot \jmath \cdot n \cdot t}+2\cdot e^{0} +e^{-2\cdot \jmath \cdot n \cdot t}}{4} \cdot dt \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \int_{0}^{T} \left(e^{2\cdot \jmath \cdot k \cdot t}-2\cdot 1 +e^{-2\cdot \jmath \cdot k \cdot t}\right) \cdot dt \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \int_{0}^{T} \left( e^{\jmath \cdot \left(k+n\right) \cdot t} + e^{\jmath \cdot \left(k-n\right) \cdot t} - e^{-\jmath \cdot \left(k-n\right) \cdot t} - e^{-\jmath \cdot \left(k+n\right) \cdot t}\right) \cdot dt\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \int_{0}^{T} \left( e^{2\cdot \jmath \cdot n \cdot t}+2\cdot 1 +e^{-2\cdot \jmath \cdot n \cdot t}\right) \cdot dt \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \int_{0}^{T} e^{2\cdot \jmath \cdot k \cdot t}\cdot dt-\int_{0}^{T} 2 \cdot dt +\int_{0}^{T} e^{-2\cdot \jmath \cdot k \cdot t} \cdot dt \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \int_{0}^{T} e^{\jmath \cdot \left(k+n\right) \cdot t}\cdot dt + \int_{0}^{T} e^{\jmath \cdot \left(k-n\right) \cdot t}\cdot dt - \int_{0}^{T} e^{-\jmath \cdot \left(k-n\right) \cdot t}\cdot dt - \int_{0}^{T} e^{-\jmath \cdot \left(k+n\right) \cdot t} \cdot dt \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \int_{0}^{T} e^{2\cdot \jmath \cdot n \cdot t}\cdot dt+\int_{0}^{T}2\cdot dt +\int_{0}^{T} e^{-2\cdot \jmath \cdot n \cdot t} \cdot dt\right) \right)=\\
+&=\left\{\begin{array}{llll}
+z_1=2\cdot \jmath \cdot k \cdot t & z_2=-2\cdot \jmath \cdot k \cdot t & z_3=2\cdot \jmath \cdot n \cdot t & z_4=-2\cdot \jmath \cdot n \cdot t \\
+dz_1=2\cdot \jmath \cdot k \cdot dt & dz_2=-2\cdot \jmath \cdot k \cdot dt & dz_3=2\cdot \jmath \cdot n \cdot dt & dz_4=-2\cdot \jmath \cdot n \cdot dt \\
+dt=\frac{dz_1}{2\cdot \jmath \cdot k} & dt =\frac{dz_2}{-2\cdot \jmath \cdot k} & dt=\frac{dz_3}{2\cdot \jmath \cdot n} & dt =\frac{dz_4}{-2\cdot \jmath \cdot n} \\
+z_5=2\cdot \jmath \cdot \left(k+n\right) \cdot t & z_6=-2\cdot \jmath \cdot \left(k+n\right) \cdot t & z_7=2\cdot \jmath \cdot \left(k-n\right) \cdot t & z_8=-2\cdot \jmath \cdot \left(k-n\right) \cdot t \\
+dz_5=\jmath \cdot \left(k+n\right) \cdot dt & dz_6=-\jmath \cdot \left(k+n\right) \cdot dt & dz_7=\jmath \cdot \left(k-n\right) \cdot dt & dz_8=-\jmath \cdot \left(k-n\right) \cdot dt \\
+dt=\frac{dz_5}{\jmath \cdot \left(k+n\right)} & dt=\frac{dz_6}{-\jmath \cdot \left(k+n\right) } & dt=\frac{dz_7}{\jmath \cdot \left(k-n\right) } & dt=\frac{dz_8}{-\jmath \cdot \left(k-n\right)} 
+\end{array}\right\}=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \int_{0}^{T} e^{z_1} \cdot \frac{dz_1}{2\cdot \jmath \cdot k}-2 \cdot \int_{0}^{T} dt +\int_{0}^{T} e^{z_2} \cdot \frac{dz_2}{-2\cdot \jmath \cdot k} \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \int_{0}^{T} e^{z_5}\cdot \frac{dz_5}{\jmath \cdot \left(k+n\right)} + \int_{0}^{T} e^{z_7}\cdot \frac{dz_7}{\jmath \cdot \left(k-n\right) } \,+\right.\right.\\
+&- \left.\left. \int_{0}^{T} e^{z_8}\cdot \frac{dz_8}{-\jmath \cdot \left(k-n\right)} - \int_{0}^{T} e^{z_6} \cdot \frac{dz_6}{-\jmath \cdot \left(k+n\right) } \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \int_{0}^{T} e^{z_3}\cdot \frac{dz_3}{2\cdot \jmath \cdot n}+2\cdot \int_{0}^{T} dt +\int_{0}^{T} e^{z_4} \cdot \frac{dz_4}{-2\cdot \jmath \cdot n}\right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \int_{0}^{T} e^{z_1} \cdot dz_1 -2 \cdot \int_{0}^{T} dt + \frac{1}{-2\cdot \jmath \cdot k}\cdot \int_{0}^{T} e^{z_2} \cdot dz_2 \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \int_{0}^{T} e^{z_5}\cdot dz_5 + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \int_{0}^{T} e^{z_7}\cdot dz_7 \,+\right.\right.\\
+&- \left.\left.  \frac{1}{-\jmath \cdot \left(k-n\right)} \cdot \int_{0}^{T} e^{z_8}\cdot dz_8 - \frac{1}{-\jmath \cdot \left(k+n\right) } \cdot \int_{0}^{T} e^{z_6} \cdot dz_6 \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \int_{0}^{T} e^{z_3}\cdot dz_3+2\cdot \int_{0}^{T} dt + \frac{1}{-2\cdot \jmath \cdot n}\cdot \int_{0}^{T} e^{z_4} \cdot dz_4 \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \left. e^{z_1} \right|_{0}^{T} -2 \cdot \left. t\right|_{0}^{T} - \frac{1}{2\cdot \jmath \cdot k}\cdot \left. e^{z_2} \right|_{0}^{T} \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \left. e^{z_5}\right|_{0}^{T} + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \left. e^{z_7}\right|_{0}^{T} \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot \left. e^{z_8}\right|_{0}^{T} + \frac{1}{\jmath \cdot \left(k+n\right) } \cdot \left. e^{z_6} \right|_{0}^{T} \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \left. e^{z_3}\right|_{0}^{T}+2\cdot \left. t\right|_{0}^{T} - \frac{1}{2\cdot \jmath \cdot n}\cdot \left. e^{z_4} \right|_{0}^{T} \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \left. e^{2\cdot \jmath \cdot k \cdot t} \right|_{0}^{T} -2 \cdot \left. t\right|_{0}^{T} - \frac{1}{2\cdot \jmath \cdot k}\cdot \left. e^{-2\cdot \jmath \cdot k \cdot t} \right|_{0}^{T} \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \left. e^{\jmath \cdot \left(k+n\right) \cdot t}\right|_{0}^{T} + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \left. e^{\jmath \cdot \left(k-n\right) \cdot t}\right|_{0}^{T} \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot \left. e^{-\jmath \cdot \left(k-n\right) \cdot t}\right|_{0}^{T} + \frac{1}{\jmath \cdot \left(k+n\right) } \cdot \left. e^{-\jmath \cdot \left(k+n\right) \cdot t} \right|_{0}^{T} \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \left. e^{2\cdot \jmath \cdot n \cdot t}\right|_{0}^{T}+2\cdot \left. t\right|_{0}^{T} - \frac{1}{2\cdot \jmath \cdot n}\cdot \left. e^{-2\cdot \jmath \cdot n \cdot t} \right|_{0}^{T} \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \left( e^{2\cdot \jmath \cdot k \cdot T} -  e^{2\cdot \jmath \cdot k \cdot 0} \right) -2 \cdot \left(T - 0\right) - \frac{1}{2\cdot \jmath \cdot k}\cdot \left(e^{-2\cdot \jmath \cdot k \cdot T} - e^{-2\cdot \jmath \cdot k \cdot 0} \right) \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \left( e^{\jmath \cdot \left(k+n\right) \cdot T}-e^{\jmath \cdot \left(k+n\right) \cdot 0}\right) + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \left( e^{\jmath \cdot \left(k-n\right) \cdot T} - e^{\jmath \cdot \left(k-n\right) \cdot 0}\right) \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot \left( e^{-\jmath \cdot \left(k-n\right) \cdot T} - e^{-\jmath \cdot \left(k-n\right) \cdot 0}\right) + \frac{1}{ \jmath \cdot \left(k+n\right) } \cdot \left( e^{-\jmath \cdot \left(k+n\right) \cdot T} - e^{-\jmath \cdot \left(k+n\right) \cdot 0} \right) \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \left( e^{2\cdot \jmath \cdot n \cdot T} - e^{2\cdot \jmath \cdot n \cdot 0}\right)+2\cdot \left( T-0\right) - \frac{1}{2\cdot \jmath \cdot n}\cdot \left( e^{-2\cdot \jmath \cdot n \cdot T} - e^{-2\cdot \jmath \cdot n \cdot 0} \right) \right) \right)=\\
+&=\left\{\begin{array}{l}
+T=b \cdot T_{1}= a \cdot T_{2}\\
+T=b \cdot \frac{2\pi}{k} = a \cdot \frac{2\pi}{n}
+\end{array}\right\}=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \left( e^{2\cdot \jmath \cdot k \cdot b \cdot \frac{2\pi}{k}} -  e^{0} \right) -2 \cdot T - \frac{1}{2\cdot \jmath \cdot k}\cdot \left(e^{-2\cdot \jmath \cdot k \cdot b \cdot \frac{2\pi}{k}} - e^{0} \right) \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \left( e^{\jmath \cdot k \cdot T}\cdot e^{\jmath \cdot n \cdot T}-e^{0}\right) + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \left( e^{\jmath \cdot k \cdot T} \cdot e^{-\jmath \cdot n \cdot T}- e^{0}\right) \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot \left( e^{-\jmath \cdot k \cdot T} \cdot e^{\jmath \cdot n \cdot T}- e^{0}\right) + \frac{1}{\jmath \cdot \left(k+n\right) } \cdot \left( e^{-\jmath \cdot k \cdot T} \cdot e^{-\jmath \cdot n \cdot T}- e^{0} \right) \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \left( e^{2\cdot \jmath \cdot n \cdot a \cdot \frac{2\pi}{n}} - e^{0}\right)+2\cdot T - \frac{1}{2\cdot \jmath \cdot n}\cdot \left( e^{-2\cdot \jmath \cdot n \cdot a \cdot \frac{2\pi}{n}} - e^{0} \right) \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \left( e^{2\cdot \jmath \cdot b \cdot 2\pi} -  1 \right) -2 \cdot T - \frac{1}{2\cdot \jmath \cdot k}\cdot \left(e^{-2\cdot \jmath \cdot b \cdot 2\pi} - 1 \right) \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \left( e^{\jmath \cdot k \cdot b \cdot \frac{2\pi}{k}}\cdot e^{\jmath \cdot n \cdot a \cdot \frac{2\pi}{n}}-1\right) + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \left( e^{\jmath \cdot k \cdot b \cdot \frac{2\pi}{k}} \cdot e^{-\jmath \cdot n \cdot a \cdot \frac{2\pi}{n}}- 1\right) \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot \left( e^{-\jmath \cdot k \cdot b \cdot \frac{2\pi}{k}} \cdot e^{\jmath \cdot n \cdot a \cdot \frac{2\pi}{n}}- 1\right) + \frac{1}{\jmath \cdot \left(k+n\right) } \cdot \left( e^{-\jmath \cdot k \cdot b \cdot \frac{2\pi}{k}} \cdot e^{-\jmath \cdot n \cdot a \cdot \frac{2\pi}{n}}- 1 \right) \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \left( e^{2\cdot \jmath \cdot a \cdot 2\pi} - 1\right)+2\cdot T - \frac{1}{2\cdot \jmath \cdot n}\cdot \left( e^{-2\cdot \jmath \cdot a \cdot 2\pi} - 1 \right) \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \left( e^{2\cdot \jmath \cdot b \cdot 2\pi} -  1 \right) -2 \cdot T - \frac{1}{2\cdot \jmath \cdot k}\cdot \left(e^{-2\cdot \jmath \cdot b \cdot 2\pi} - 1 \right) \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \left( e^{\jmath \cdot b \cdot 2\pi}\cdot e^{\jmath \cdot a \cdot 2\pi}-1\right) + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \left( e^{\jmath \cdot b \cdot 2\pi} \cdot e^{-\jmath \cdot a \cdot 2\pi}- 1\right) \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot \left( e^{-\jmath \cdot b \cdot 2\pi} \cdot e^{\jmath \cdot a \cdot 2\pi}- 1\right) + \frac{1}{\jmath \cdot \left(k+n\right) } \cdot \left( e^{-\jmath \cdot b \cdot 2\pi} \cdot e^{-\jmath \cdot a \cdot 2\pi}- 1 \right) \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \left( e^{2\cdot \jmath \cdot a \cdot 2\pi} - 1\right)+2\cdot T - \frac{1}{2\cdot \jmath \cdot n}\cdot \left( e^{-2\cdot \jmath \cdot a \cdot 2\pi} - 1 \right) \right) \right)=\\
+&=\left\{\begin{array}{ll}
+\underset{a \in \mathcal{Z}}{\forall} e^{\jmath \cdot a \cdot 2\pi} = 1 & \underset{a \in \mathcal{Z}}{\forall} e^{2\cdot \jmath \cdot a \cdot 2\pi} = 1\\
+\underset{a \in \mathcal{Z}}{\forall} e^{-\jmath \cdot a \cdot 2\pi} = 1 & \underset{a \in \mathcal{Z}}{\forall} e^{-2\cdot \jmath \cdot a \cdot 2\pi} = 1\\
+\underset{b \in \mathcal{Z}}{\forall} e^{\jmath \cdot b \cdot 2\pi} = 1 & \underset{b \in \mathcal{Z}}{\forall} e^{2\cdot \jmath \cdot b \cdot 2\pi} = 1\\
+\underset{b \in \mathcal{Z}}{\forall} e^{-\jmath \cdot b \cdot 2\pi} = 1 & \underset{b \in \mathcal{Z}}{\forall} e^{-2\cdot \jmath \cdot b \cdot 2\pi} = 1\\
+\end{array}\right\}=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot \left( 1 -  1 \right) -2 \cdot T - \frac{1}{2\cdot \jmath \cdot k}\cdot \left(1 - 1 \right) \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot \left( 1\cdot 1 -1\right) + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot \left( 1 \cdot 1- 1\right) \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot \left( 1 \cdot 1- 1\right) + \frac{1}{\jmath \cdot \left(k+n\right) } \cdot \left( 1 \cdot 1- 1 \right) \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot \left( 1 - 1\right)+2\cdot T - \frac{1}{2\cdot \jmath \cdot n}\cdot \left( 1 - 1 \right) \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( \frac{1}{2\cdot \jmath \cdot k} \cdot 0 -2 \cdot T - \frac{1}{2\cdot \jmath \cdot k}\cdot 0 \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( \frac{1}{\jmath \cdot \left(k+n\right)} \cdot 0 + \frac{1}{\jmath \cdot \left(k-n\right) } \cdot 0 \,+\right.\right.\\
+&+ \left.\left.  \frac{1}{\jmath \cdot \left(k-n\right)} \cdot 0 + \frac{1}{\jmath \cdot \left(k+n\right) } \cdot 0 \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( \frac{1}{2\cdot \jmath \cdot n} \cdot 0+2\cdot T - \frac{1}{2\cdot \jmath \cdot n}\cdot 0 \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left( 0 -2 \cdot T - 0 \right) \,+\right. \\
+&+ \left. \frac{2 \cdot A\cdot B}{4 \cdot \jmath} \cdot \left( 0 +  0 + 0 + 0 \right)\,+\right.\\
+&+ \left. \frac{B^2}{4} \cdot \left( 0+2\cdot T - 0 \right) \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{-4}\cdot \left(-2 \cdot T\right) + \frac{B^2}{4} \cdot 2\cdot T \right)=\\
+&=\frac{1}{T} \cdot \left( \frac{A^2}{2}\cdot T + \frac{B^2}{2} \cdot T \right)=\\
+&=\frac{A^2}{2} + \frac{B^2}{2}
+\end{align*}
+Ostatecznie moc sygnału wynosi $\frac{A^2}{2} + \frac{B^2}{2}$
+\end{task}
