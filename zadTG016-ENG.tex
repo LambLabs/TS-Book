@@ -1,0 +1,145 @@
+\begin{task}
+Calculate the average power and the effective value (RMS) for the periodic signal given below
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (4.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$f(t)$};
+  \draw[-,red, thick] (-2.0,0.0) -- (-1.0,1.5)--(-1.0,0.0) -- (0.0,-1.5) -- (0.0,+0.0) -- (+1.0,+1.5) -- (+1.0,+0.0) -- (+2.0,-1.5) -- (+2.0,+0.0) -- (2.5,0.75);
+  \draw[-,red, dashed] (-1.5,1.5) -- (2.5,1.5);
+  \draw[-,red, dashed] (-1.5,-1.5) -- (2.5,-1.5);
+
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-6$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-3$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$3$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$6$};
+  \draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, left] {$A$};
+  \draw[-] (-0.1,-1.5-0.1)--(+0.1,-1.5+0.1) node[midway, left] {$A$};
+
+\end{tikzpicture}
+\end{figure}
+
+First of all, the definition of $f(t)$ signal has to be derived.
+This is periodic piecewise function, piecewise linear function to be precise.
+The simplest form of linear function is:
+
+\begin{equation}
+f(t) = m \cdot t + b
+\end{equation}
+
+In the first interval of the first period (e.g. $t \in (0; 3)$), linear function crosses two points: $(0,0)$ and $(3,A)$. So, in order to derive $m$ and $b$, the following system of the equations has to be solved.  
+
+\begin{align*}
+&\left\{\begin{matrix*}[l]
+0 = m\cdot 0 +b\\ 
+A = m\cdot 3 +b
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+0 = b\\ 
+A = m \cdot a\cdot T +b
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+0 = b\\ 
+A = m \cdot 3 +0
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+0 = b\\ 
+\frac{A}{3} = m
+\end{matrix*}\right.
+\end{align*}
+
+As a result we get:
+\begin{align*}
+f(t) = \frac{A}{3}\cdot t
+\end{align*}
+
+In the second interval of the first period (e.g. $t \in (3; 6)$), linear function crosses other two points:: $(3,0)$ oraz $(6,-A)$. So, in order to derive $m$ i $b$, the following system of the equations has to be solved.
+
+\begin{align*}
+&\left\{\begin{matrix*}[l]
+0 = m\cdot 3 +b\\ 
+-A = m\cdot 6 +b
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+-3 \cdot m = b\\ 
+-A = 6 \cdot m -3 \cdot m
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+-3 \cdot m = b\\ 
+-A = 3 \cdot m
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+-3 \cdot m = b\\  
+-\frac{A}{3} = m
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+-3 \cdot (-\frac{A}{3}) = b\\
+-\frac{A}{3} = m
+\end{matrix*}\right. \\
+&\left\{\begin{matrix*}[l]
+A = b\\
+-\frac{A}{3} = m
+\end{matrix*}\right.
+\end{align*}
+
+As a result, second interval of the first period is described by:
+\begin{align*}
+f(t) = -\frac{A}{3}\cdot t + A
+\end{align*}
+
+
+As a result the piecewise linear function in the first period is given by:
+\begin{align*}
+f(t) = \left\{\begin{matrix*}[l]
+\frac{A}{3}\cdot t & for &t \in (0;3)\\ 
+-\frac{A}{3}\cdot t + A & for & t \in (3; 6)
+\end{matrix*}\right.
+\end{align*}
+
+For the whole periodic signal $f(t)$ we get:
+\begin{align*}
+f(t) = \left\{\begin{matrix*}[l]
+\frac{A}{3}\cdot \left( t - k\cdot 6 \right) & for &t \in (0 + k\cdot 6; 3 + k\cdot 6)\\ 
+-\frac{A}{3}\cdot \left( t - k\cdot 6 \right) + A & for & t \in (3 + k \cdot 6; 6+ k\cdot 6)
+\end{matrix*}\right. \wedge k \in I
+\end{align*}
+
+The average power for periodic signals is defined by:
+\begin{equation}
+P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
+\end{equation}
+
+In our case we get:
+%\begin{equation}
+%\begin{aligned}
+\begin{align*}
+P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
+ &=\frac{1}{6} \cdot \left( \int_{0}^{3}\left|\frac{A}{3}\cdot t \right|^2 \cdot dt
+  +\int_{3}^{6}\left|-\frac{A}{3}\cdot t + A\right|^2 \cdot dt \right)=\\ 
+ &=\frac{1}{6} \cdot \int_{0}^{3}\left(\frac{A}{3}\cdot t \right)^2 \cdot dt
+  +\frac{1}{6} \cdot \int_{3}^{6}\left(-\frac{A}{3}\cdot t + A\right)^2 \cdot dt=\\ 
+ &=\frac{1}{6} \cdot \int_{0}^{3}\frac{A^2}{9}\cdot t^2 \cdot dt
+ +\frac{1}{6} \cdot \int_{3}^{6}\left(\left(-\frac{A}{3}\cdot t\right)^2 - 2\cdot \frac{A}{3}\cdot t \cdot  A + A^2 \right) \cdot dt=\\ 
+ &=\frac{A^2}{54}\cdot \int_{0}^{3} t^2 \cdot dt
+ +\frac{1}{6} \cdot \int_{3}^{6}\frac{A^2}{9}\cdot t^2 \cdot dt - \frac{1}{6} \cdot \int_{3}^{6} \frac{2 \cdot A^2}{3}\cdot t \cdot dt + \frac{1}{6} \cdot \int_{3}^{6} A^2 \cdot dt=\\
+ &=\frac{A^2}{54}\cdot \left. \frac{t^3}{3} \right|_{0}^{3}
+ +\frac{A^2}{54}\cdot \int_{3}^{6} t^2 \cdot dt - \frac{2 \cdot A^2}{18}\cdot \int_{3}^{6} t^2 \cdot dt +\frac{A^2}{6}\cdot \int_{3}^{6} dt=\\
+ &=\frac{A^2}{162}\cdot \left(3^3 - 0^3\right) + \frac{A^2}{54}\cdot \left. \frac{t^3}{3} \right|_{3}^{6} - \frac{2 \cdot A^2}{18}\cdot \left. \frac{t^2}{2} \right|_{3}^{6} + \frac{A^2}{6}\cdot \left. t \right|_{3}^{6}=\\
+ &=\frac{A^2}{162}\cdot 27 + \frac{A^2}{162}\cdot \left(6^3 - 3^3\right) - \frac{2 \cdot A^2}{36}\cdot \left(6^2 - 3^2\right) + \frac{A^2}{6}\cdot (6-3)=\\
+ &=\frac{A^2}{6} + \frac{A^2}{162}\cdot 189 - \frac{2 \cdot A^2}{36}\cdot 27 + \frac{A^2}{6}\cdot 3=\\
+ &=\frac{A^2}{6} + \frac{7 \cdot A^2}{6} - \frac{9 \cdot A^2}{6} + \frac{3 \cdot A^2}{6}=\\
+ &=\frac{2 \cdot A^2}{6}=\\
+ &=\frac{A^2}{3}
+\end{align*}
+
+The average power equals to $\frac{A^2}{3}$.
+
+The effective value (RMS) is defined by:
+\begin{equation}
+RMS=\sqrt P
+\end{equation}
+
+Therefore, effective value (RMS) equals to $\frac{A}{\sqrt 3}$.
+\end{task}
