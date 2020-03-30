@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz moc sygnału okresowego $f(t)=A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right )$ przedstawionego na rysunku 
+\TT{Oblicz moc sygnału okresowego $f(t)=A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right )$ przedstawionego na rysunku:}{Compute the average power for the following periodic signal $f(t)=A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right )$ given below:}
 
 \begin{figure}[H]
 \centering
@@ -23,16 +23,14 @@ Oblicz moc sygnału okresowego $f(t)=A + B \cdot sin\left(\frac{2\pi}{T}\cdot t 
 \end{tikzpicture}
 \end{figure}
 
-Moc sygnału okresowego wyznaczamy z wzoru:
+\TT{Moc sygnału okresowego wyznaczamy ze wzoru:}{The average power for periodic signals is defined by:}
 
 \begin{equation}
 P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru wzór naszej funkcji
+\TT{Podstawiamy do wzoru na moc wzór naszej funkcji :}{In our case we get:}
 
-%\begin{equation}
-%\begin{aligned}
 \begin{align*}
 P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
  &=\frac{1}{T} \cdot \int_{0}^{T}\left|A + B \cdot sin\left(\frac{2\pi}{T}\cdot t \right) \right|^2 \cdot dt=\\ 
@@ -61,8 +59,6 @@ P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
  &=A^2 + \frac{B^2}{2 \cdot T}  \cdot \left( T \right)=\\
  &=A^2 + \frac{B^2}{2}
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Moc sygnału wynosi $A^2 + \frac{B^2}{2}$
+\TT{Moc sygnału wynosi $A^2 + \frac{B^2}{2}$.}{The average power equals to $A^2 + \frac{B^2}{2}$.}
 \end{task}
