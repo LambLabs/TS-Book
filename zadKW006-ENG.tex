@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz energię sygnału $f(t)$ przedstawionego na rysunku 
+\TT{Oblicz energię sygnału $f(t)$ przedstawionego na rysunku:}{Compute energy of $f(t)$ signal given below:} 
 
 \begin{figure}[H]
 \centering
@@ -22,13 +22,15 @@ f(t) = \left\{\begin{matrix*}[l]
 A \cdot e^{-a\cdot t} & dla & t \in \left(0; \infty\right)
 \end{matrix*}\right.
 \end{equation}
-Energię sygnału nieokresowego wyznaczamy z wzoru
+
+\TT{Energię sygnału nieokresowego wyznaczamy ze wzoru:}{Total energy of a non-periodic signal (or in short - signal energy) is defined by:}
+
 \begin{equation}
 E=\lim_{\tau \rightarrow \infty}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(t)\right|^2 \cdot dt
 \end{equation}
-Podstawiamy do wzoru na enargie wzór naszej funkcji
-%\begin{equation}
-%\begin{aligned}
+
+\TT{Podstawiamy do wzoru na enargie wzór naszej funkcji}{For the given signal we get}
+
 \begin{align*}
 E&=\lim_{\tau \rightarrow \infty}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(t)\right|^2 \cdot dt=\\
  &=\lim_{\tau \rightarrow \infty} \left( 
@@ -82,8 +84,6 @@ E&=\lim_{\tau \rightarrow \infty}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(
  1 - e^{-a \cdot \tau} \right)=\\
  &= \frac{A^2}{a}\\
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Energia sygnału wynosi $\frac{A^2}{a}$
+\TT{Energia sygnału wynosi $\frac{A^2}{a}$.}{Energy equals to $\frac{A^2}{a}$.}
 \end{task}
