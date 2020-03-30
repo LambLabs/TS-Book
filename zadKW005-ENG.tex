@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz moc sygnału okresowego $f(t)$ przedstawionego na rysunku 
+\TT{Oblicz moc sygnału okresowego $f(t)$ przedstawionego na rysunku: }{Calculate the average power for the periodic signal $f(t)$ given below:}
 
 \begin{figure}[H]
 \centering
@@ -20,15 +20,13 @@ Oblicz moc sygnału okresowego $f(t)$ przedstawionego na rysunku
 \end{tikzpicture}
 \end{figure}
 
-W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku.
-Jest to funkcja odcinkowa. W pierwszym okresie możemy ją opisać za pomocą dwóch prostych.
-Ogólne równanie prostej:
+\TT{W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku. Jest to funkcja przedziałowa. W pierwszym okresie możemy ją opisać za pomocą dwóch prostych. Ogólne równanie prostej to:}{First of all, the definition of $f(t)$ signal has to be derived. This is periodic piecewise function, piecewise linear function to be precise. The simplest form of linear function is:}
 
 \begin{equation}
 f(t) = m \cdot t + b
-\end{equation}
+\end{equation} 
 
-W pierwszym okresie, w pierwszej części, wykres funkcji jest prostą przechodzącą przez dwa punkty: $(0,0)$ oraz $(a\cdot T,A)$. Możemy więc napisać układ, równań rozwiązać go i znaleźć nieznane parametry $m$ i $b$.  
+\TT{W pierwszym okresie, w pierwszej części, wykres funkcji jest prostą przechodzącą przez dwa punkty: $(0,0)$ oraz $(a\cdot T,A)$. Możemy więc napisać układ równań, rozwiązać go i znaleźć nieznane parametry $m$ i $b$: }{In the first interval of the first period (e.g. $t \in (0; a\cdot T)$), linear function crosses two points: $(0,0)$ and $(a\cdot T,A)$. So, in order to derive $m$ and $b$, the following system of the equations has to be solved:} 
 
 \begin{align*}
 &\left\{\begin{matrix*}[l]
@@ -48,12 +46,14 @@ A = m \cdot a\cdot T +0
 \frac{A}{a\cdot T} = m
 \end{matrix*}\right.
 \end{align*}
-Podsumowując, pierwszy odcinek funkcji przedstawionej na rysunku, w pierwszym okresie można opisać wzorem:
+
+\TT{Podsumowując, pierwszy odcinek funkcji przedstawionej na rysunku, w pierwszym okresie można opisać wzorem:}{As a result we get:}
+
 \begin{align*}
 f(t) = \frac{A}{a \cdot T}\cdot t
 \end{align*}
 
-Drugi odcinek funkcji jest prostą przechodzącą przez następujące dwa punkty: $(a \cdot T,0)$ oraz $(T,-B)$. Możemy więc napisać układ równań rozwiązać go i znaleźć nie znane parametry $m$ i $b$.
+\TT{Drugi odcinek funkcji jest prostą przechodzącą przez następujące dwa punkty: $(a \cdot T,0)$ oraz $(T,-B)$. Możemy więc napisać układ równań, rozwiązać go i znaleźć nieznane parametry $m$ i $b$:}{In the second interval of the first period (e.g. $t \in (a \cdot T;T)$), linear function crosses other two points: $(a \cdot T,0)$ and $(T,-B)$. So, in order to derive $m$ and $b$, the following system of the equations has to be solved:}
 
 \begin{align*}
 &\left\{\begin{matrix*}[l]
@@ -81,32 +81,39 @@ Drugi odcinek funkcji jest prostą przechodzącą przez następujące dwa punkty
 -\frac{B}{T - a \cdot T} = m
 \end{matrix*}\right.
 \end{align*}
-A więc drugi odcinek funkcji przedstawionej na rysunku w pierwszym okresie, można opisać wzorem:
+
+\TT{A więc drugi odcinek funkcji przedstawionej na rysunku w pierwszym okresie, można opisać wzorem:}{As a result, second interval of the first period is described by:}
+
 \begin{align*}
 f(t) = -\frac{B}{T - a \cdot T}\cdot t + \frac{B}{1 - a} \cdot a
 \end{align*}
-W związku z tym całą funkcję w pierwszym okresie można zapisać jako funkcje przedziałową:
+
+\TT{W związku z tym, całą funkcję w pierwszym okresie można zapisać jako funkcje przedziałową:}{As a result the piecewise linear function in the first period is given by:}
+
 \begin{align*}
 f(t) = \left\{\begin{matrix*}[l]
 \frac{A}{a \cdot T}\cdot t & dla &t \in (0; a \cdot T)\\ 
 -\frac{B}{T - a \cdot T}\cdot t + \frac{B}{1 - a} \cdot a & dla & t \in (a \cdot T; T)
 \end{matrix*}\right.
 \end{align*}
-I ogólniej całą funkcję można wyrazić następującym wzorem:
+
+\TT{I ogólniej, całą funkcję można wyrazić następującym wzorem:}{For the whole periodic signal $f(t)$ we get:}
+
 \begin{align*}
 f(t) = \left\{\begin{matrix*}[l]
 \frac{A}{a \cdot T}\cdot \left( t - k\cdot T \right) & dla &t \in (0 + k\cdot T; a \cdot T + k\cdot T)\\ 
 -\frac{B}{T - a \cdot T}\cdot \left( t - k\cdot T \right) + \frac{B}{1 - a} \cdot a & dla & t \in (a \cdot T+ k\cdot T; T+ k\cdot T)
-\end{matrix*}\right. \wedge k \in C
+\end{matrix*}\right. \wedge k \in \TT{C}{Z}
 \end{align*}
 
-Moc sygnału okresowego wyznaczamy ze wzoru:
+\TT{Moc sygnału okresowego wyznaczamy ze wzoru:}{The average power for periodic signals is defined by:}
+
 \begin{equation}
 P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
 \end{equation}
-Podstawiamy do wzoru na moc wzór naszej funkcji
-%\begin{equation}
-%\begin{aligned}
+
+\TT{Podstawiamy do wzoru na moc wzór naszej funkcji:}{In our case we get:}
+
 \begin{align*}
 P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
  &=\frac{1}{T} \cdot \left( \int_{0}^{a \cdot T}\left|\frac{A}{a \cdot T}\cdot t \right|^2 \cdot dt
@@ -166,8 +173,7 @@ P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
  &=\frac{A^2}{3}\cdot a +\frac{B^2}{1 - a} \cdot \frac{1}{3} \cdot \left( 1 - a \right)^2=\\
  &=\frac{A^2}{3}\cdot a + \frac{B^2}{3} \cdot \left( 1 - a \right)
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Moc sygnału wynosi $\frac{A^2}{3}\cdot a + \frac{B^2}{3} \cdot \left( 1 - a \right)$
+\TT{Moc sygnału równa się $\frac{A^2}{3}\cdot a + \frac{B^2}{3} \cdot \left( 1 - a \right)$.}{The average power equals to $\frac{A^2}{3}\cdot a + \frac{B^2}{3} \cdot \left( 1 - a \right)$.}
+
 \end{task}

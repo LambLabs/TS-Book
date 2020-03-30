@@ -1,5 +1,5 @@
 \begin{task}
-\TT{Oblicz moc i wartość skuteczną sygnału okresowego $f(t)$ przedstawionego na rysunku }{Calculate the average power and the effective value (RMS) for the periodic signal given below}
+\TT{Oblicz moc i wartość skuteczną sygnału okresowego $f(t)$ przedstawionego na rysunku: }{Calculate the average power and the effective value (RMS) for the periodic signal $f(t)$ given below:}
 
 \begin{figure}[H]
 \centering
@@ -54,7 +54,7 @@ A = m \cdot 3 +0
 f(t) = \frac{A}{3}\cdot t
 \end{align*}
 
-\TT{Drugi odcinek funkcji jest prostą przechodzącą przez następujące dwa punkty: $(3,0)$ oraz $(6,-A)$. Możemy więc napisać układ równań, rozwiązać go i znaleźć nieznane parametry $m$ i $b$.}{In the second interval of the first period (e.g. $t \in (3; 6)$), linear function crosses other two points:: $(3,0)$ oraz $(6,-A)$. So, in order to derive $m$ i $b$, the following system of the equations has to be solved.}
+\TT{Drugi odcinek funkcji jest prostą przechodzącą przez następujące dwa punkty: $(3,0)$ oraz $(6,-A)$. Możemy więc napisać układ równań, rozwiązać go i znaleźć nieznane parametry $m$ i $b$.}{In the second interval of the first period (e.g. $t \in (3; 6)$), linear function crosses other two points:: $(3,0)$ and $(6,-A)$. So, in order to derive $m$ and $b$, the following system of the equations has to be solved.}
 
 \begin{align*}
 &\left\{\begin{matrix*}[l]
@@ -84,12 +84,13 @@ A = b\\
 \end{align*}
 
 \TT{A więc drugi odcinek funkcji przedstawionej na rysunku w pierwszym okresie, można opisać wzorem:}{As a result, second interval of the first period is described by:}
+
 \begin{align*}
 f(t) = -\frac{A}{3}\cdot t + A
 \end{align*}
 
-
 \TT{W związku z tym, całą funkcję w pierwszym okresie można zapisać jako funkcje przedziałową:}{As a result the piecewise linear function in the first period is given by:}
+
 \begin{align*}
 f(t) = \left\{\begin{matrix*}[l]
 \frac{A}{3}\cdot t & for &t \in (0;3)\\ 
@@ -98,6 +99,7 @@ f(t) = \left\{\begin{matrix*}[l]
 \end{align*}
 
 \TT{I ogólniej, całą funkcję można wyrazić następującym wzorem:}{For the whole periodic signal $f(t)$ we get:}
+
 \begin{align*}
 f(t) = \left\{\begin{matrix*}[l]
 \frac{A}{3}\cdot \left( t - k\cdot 6 \right) & for &t \in (0 + k\cdot 6; 3 + k\cdot 6)\\ 
@@ -106,11 +108,13 @@ f(t) = \left\{\begin{matrix*}[l]
 \end{align*}
 
 \TT{Moc sygnału okresowego wyznaczamy ze wzoru:}{The average power for periodic signals is defined by:}
+
 \begin{equation}
 P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
 \end{equation}
 
 \TT{Podstawiamy do wzoru na moc wzór naszej funkcji:}{In our case we get:}
+
 \begin{align*}
 P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
  &=\frac{1}{6} \cdot \left( \int_{0}^{3}\left|\frac{A}{3}\cdot t \right|^2 \cdot dt
