@@ -1,5 +1,6 @@
 \begin{task}
-Oblicz wartość średnią sygnału $f(t)=\mathbf{1}(t)\cdot e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right )$ przedstawionego na rysunku 
+
+\TT{Oblicz wartość średnią sygnału $f(t)=\mathbf{1}(t)\cdot e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right )$ przedstawionego na rysunku :}{Calculate the mean value of the signal $f(t)=\mathbf{1}(t)\cdot e^{-a\cdot t}\cdot sin \left( \frac{2\pi}{T} \cdot t \right)$ given below:}
 
 \begin{figure}[H]
 \centering
@@ -19,16 +20,14 @@ Oblicz wartość średnią sygnału $f(t)=\mathbf{1}(t)\cdot e^{-a\cdot t}\cdot 
 \end{tikzpicture}
 \end{figure}
 
-Wartość średnią sygnału wyznaczamy z wzoru
+\TT{Wartość średnią sygnału wyznaczamy ze wzoru:}{The mean value for non-periodic signals is defined by:}
 
 \begin{equation}
 \bar{f}=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}f(t) \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru wzór naszej funkcji
+\TT{Podstawiamy do wzoru na wartość średnią wzór naszej funkcji:}{Compute mean value:}
 
-%\begin{equation}
-%\begin{aligned}
 \begin{align*}
 \bar{f} &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}f(t) \cdot dt=\\
  &=\lim_{\tau \rightarrow \infty }\frac{1}{\tau}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}} \mathbf{1}(t)\cdot e^{-a\cdot t}\cdot sin\left(\frac{2\pi}{T}\cdot t \right) \cdot dt=\\
@@ -122,8 +121,6 @@ Podstawiamy do wzoru wzór naszej funkcji
  {\left(1 - \frac{1}{a^2}\cdot \frac{T^2}{4\pi^2}\right)} \right)=\\
  &=0
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Średnia wartość sygnału wynosi $0$
+\TT{Średnia wartość sygnału wynosi $0$.}{The mean value equals to $0$.}
 \end{task}

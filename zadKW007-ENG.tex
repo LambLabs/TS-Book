@@ -1,5 +1,6 @@
 \begin{task}
-Oblicz wartość średnią sygnału $f(t)=A\cdot cos^4\left(\omega_0 \cdot t\right)$ okresowego przedstawionego na rysunku 
+
+\TT{Oblicz wartość średnią okresowego sygnału $f(t)=A\cdot cos^4\left(\omega_0 \cdot t\right)$ przedstawionego na rysunku:}{Calculate the mean value of the following periodic signal $f(t)=A\cdot cos^4\left(\omega_0 \cdot t\right)$:}
 
 \begin{figure}[H]
 \centering
@@ -19,16 +20,16 @@ Oblicz wartość średnią sygnału $f(t)=A\cdot cos^4\left(\omega_0 \cdot t\rig
 \end{tikzpicture}
 \end{figure}
 
-Wartość średnią sygnału okresowego wyznaczamy z wzoru
+\TT{Wartość średnią sygnału okresowego wyznaczamy ze wzoru:}{The mean value for periodic signals is defined by:}
+
 \begin{equation}
 \bar{f}=\frac{1}{T}\int_{T}^{} f(t) \cdot dt
 \end{equation}
 
-Pierwszym krokiem jest ustalenie okresu funkcji. W naszym przypadku $T=\frac{\pi}{\omega_0}$.
+\TT{Pierwszym krokiem jest ustalenie okresu funkcji. W naszym przypadku: }{The period of the given signal has to be identified. In our case: }$T=\frac{\pi}{\omega_0}$.
 
-Podstawiamy do wzoru na wartość średnią wzór naszej funkcji
-%\begin{equation}
-%\begin{aligned}
+\TT{Podstawiamy do wzoru na wartość średnią wzór naszej funkcji dla zakresu $t \in \left( -\frac{\pi}{2\cdot\omega_0}; \frac{\pi}{2\cdot\omega_0}\right)$:}{Compute mean value for period $t \in \left( -\frac{\pi}{2\cdot\omega_0}; \frac{\pi}{2\cdot\omega_0}\right)$:}
+
 \begin{align*}
 \bar{f} &=\frac{1}{T}\int_{T}^{} f(t) \cdot dt=\\
 &=\frac{1}{\frac{\pi}{\omega_0}}\int_{-\frac{\pi}{2\cdot\omega_0}}^{\frac{\pi}{2\cdot\omega_0}} A \cdot cos\left(\omega_0 \cdot t\right)^4 \cdot dt=\\
@@ -76,8 +77,6 @@ dt=\frac{dz_1}{\jmath \cdot 4 \cdot \omega_0} & dt=\frac{dz_2}{- \jmath \cdot 4 
 &= \frac{A}{8} \cdot 3=\\
 &= \frac{3}{8} \cdot A\\
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Wartość średnią sygnału wynosi $\frac{3}{8} \cdot A$
+\TT{Średnia wartość sygnału wynosi $\frac{3}{8} \cdot A$.}{The mean value equals to $\frac{3}{8} \cdot A$.}
 \end{task}
