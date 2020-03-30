@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz moc sygnału okresowego $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$ przedstawionego na rysunku 
+\TT{Oblicz moc sygnału okresowego $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$ przedstawionego na rysunku.}{Calculate the average power for the periodic signal $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$ given below.}
 
 \begin{figure}[H]
 \centering
@@ -19,14 +19,12 @@ Oblicz moc sygnału okresowego $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$ 
 \end{tikzpicture}
 \end{figure}
 
-Moc sygnału okresowego wyznaczamy ze wzoru
+\TT{Moc sygnału okresowego wyznaczamy ze wzoru:}{The average power for periodic signals is defined by:}
 \begin{equation}
 P=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru na moc wzór naszej funkcji dla pierwszego okresu $k=0$
-%\begin{equation}
-%\begin{aligned}
+\TT{Podstawiamy do wzoru na moc wzór naszej funkcji :}{In our case we get:}
 \begin{align*}
 P&=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt =\\
 &=\frac{1}{T} \cdot \int_{0}^{T}\left| A\cdot sin^2\left(\omega_0 \cdot t\right) \right|^2 \cdot dt =\\
@@ -190,8 +188,6 @@ sin\left(8 \pi\right)
 &=\frac{A^2 \cdot \omega_0}{32 \pi} \cdot \frac{12\pi}{\omega_0}=\\
 &=\frac{3 \cdot A^2}{8}
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Moc sygnału wynosi $\frac{3 \cdot A^2}{8}$
+\TT{Moc sygnału równa się $\frac{3 \cdot A^2}{8}$.}{The average power equals to $\frac{3 \cdot A^2}{8}$.}
 \end{task}
