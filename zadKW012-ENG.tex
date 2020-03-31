@@ -1,5 +1,5 @@
 \begin{task}
-Wyznacz współczynniki zespolonego szeregu fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku 
+\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series.} 
 
 \begin{figure}[H]
 \centering
@@ -16,19 +16,19 @@ Wyznacz współczynniki zespolonego szeregu fouriera dla okresowego sygnału $f(
 \end{tikzpicture}
 \end{figure}
 
-W pierwszej kolejności należy opisać sygnał za pomocą wzoru.
+\TT{W pierwszej kolejności należy opisać sygnał za pomocą wzoru.}{Periodic signal $f(t)$, as a piecewise linear function, is given by:}
 
 \begin{equation}
-   f(x)=\begin{cases}A & t \in \left (  0+k \cdot T; \frac{T}{2}+k \cdot T \right ) \\0 & t \in \left ( \frac{T}{2}+k \cdot T; T +k \cdot T\right )\end{cases} \wedge k \in C %\mathbb{C}
+   f(x)=\begin{cases}A & t \in \left (  0+k \cdot T; \frac{T}{2}+k \cdot T \right ) \\0 & t \in \left ( \frac{T}{2}+k \cdot T; T +k \cdot T\right )\end{cases} \wedge k \in \TT{C}{Z}
 \end{equation}
 
-Współczynnik $F_0$ wyznaczamy ze wzoru
+\TT{Współczynnik $F_0$ wyznaczamy ze wzoru:}{The $F_0$ coefficient is defined as:}
 
 \begin{equation}
 F_0=\frac{1}{T}\int_{T}f(t) \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
+\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, e.g. $k=0$, we get:}
 
 \begin{equation}
 \begin{aligned}
@@ -44,16 +44,16 @@ F_0 &=\frac{1}{T}\int_{T}f(t) \cdot dt =\\
 \end{aligned}
 \end{equation}
 
-Wartość współczynnika $F_0$ wynosi $\frac{A}{2}$
+\TT{Wartość współczynnika $F_0$ wynosi $\frac{A}{2}$.}{The $F_0$ coefficient equals $\frac{A}{2}$.}
 
 
-Współczynnik $F_k$ wyznaczamy ze wzoru
+\TT{Współczynniki $F_k$ wyznaczamy ze wzoru}{The $F_k$ coefficients are defined as:}
 
 \begin{equation}
 F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{ k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
+\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, e.g. $k=0$, we get:}
 
 \begin{align*}
 F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
@@ -74,17 +74,16 @@ dt&=\frac{dz}{-\jmath \cdot k\cdot \frac{2\pi}{T}}
 &=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)
 \end{align*}
 
-Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)$
+\TT{Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)$}{The $F_k$ coefficients equal to $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)$.}
 
-
-Współczynniki zespolonego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
+\TT{Ostatecznie współczynniki zespolonego szeregu Fouriera dla funkcji przedstawionej na rysunku przyjmują wartości.}{To sum up, coefficients for the expansion into a complex exponential Fourier series are given by:}
 
 \begin{align*}
 F_0&=\frac{A}{2}\\
 F_k&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)\\
 \end{align*}
 
-Możemy wyznaczyć kilka wartości współczynników $F_k$
+\TT{Możemy wyznaczyć kilka wartości współczynników $F_k$}{The first several coefficients are equal to:}
 
 \begin{table}[H]
 \centering  
@@ -92,24 +91,25 @@ Możemy wyznaczyć kilka wartości współczynników $F_k$
   \hline 
   $k$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$\\ 
   \hline 
-  $F_k$ & $\jmath \cdot \frac{A}{5 \pi}$ & $0$ & $\jmath \cdot \frac{A}{3 \pi}$ & $0$ & $\jmath \cdot \frac{A}{\pi}$ & $0$ & $-\jmath \cdot \frac{A}{\pi}$ & $0$ & $-\jmath \cdot \frac{A}{3 \pi}$ & $0$ & $-\jmath \cdot \frac{A}{5 \pi}$\\ 
+  $F_k$ & $\jmath \cdot \frac{A}{5 \pi}$ & $0$ & $\jmath \cdot \frac{A}{3 \pi}$ & $0$ & $\jmath \cdot \frac{A}{\pi}$ & $\frac{A}{2}$ & $-\jmath \cdot \frac{A}{\pi}$ & $0$ & $-\jmath \cdot \frac{A}{3 \pi}$ & $0$ & $-\jmath \cdot \frac{A}{5 \pi}$\\ 
   \hline 
-  $\left| F_k \right|$ & $\frac{A}{5 \pi}$ & $0$ & $\frac{A}{3 \pi}$ & $0$ & $\frac{A}{\pi}$ & $0$ & $\frac{A}{\pi}$ & $0$ & $\frac{A}{3 \pi}$ & $0$ & $\frac{A}{5 \pi}$\\
+  $\left| F_k \right|$ & $\frac{A}{5 \pi}$ & $0$ & $\frac{A}{3 \pi}$ & $0$ & $\frac{A}{\pi}$ & $\frac{A}{2}$ & $\frac{A}{\pi}$ & $0$ & $\frac{A}{3 \pi}$ & $0$ & $\frac{A}{5 \pi}$\\
   \hline
   $Arg\left\{ F_k \right\}$ & $\pi$ & $0$ & $\pi$ & $0$ & $\pi$ & $0$ & $-\pi$ & $0$ & $-\pi$ & $0$ & $-\pi$\\
   \hline
 \end{tabular} 
 \end{table}
 
-Podstawiając to wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako
+\TT{Podstawiając to wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
 
 \begin{equation}
 \begin{aligned}
-f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
+f(t) &= \frac{A}{2}+\sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( e^{-\jmath \cdot k\cdot \pi } -1 \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
 \end{aligned}
 \end{equation}
 
-W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-1$ to $k_{max}=1$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -128,7 +128,7 @@ W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-3$ do $k_{max}=3$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-3$ do $k_{max}=3$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-3$ to $k_{max}=3$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -147,7 +147,7 @@ W przypadku sumowania od $k_{min}=-3$ do $k_{max}=3$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-5$ do $k_{max}=5$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-5$ do $k_{max}=5$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-5$ to $k_{max}=5$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -166,7 +166,7 @@ W przypadku sumowania od $k_{min}=-5$ do $k_{max}=5$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-11$ do $k_{max}=11$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-11$ do $k_{max}=11$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-11$ to $k_{max}=11$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -185,7 +185,7 @@ W przypadku sumowania od $k_{min}=-11$ do $k_{max}=11$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-21$ do $k_{max}=21$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-21$ do $k_{max}=21$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-21$ to $k_{max}=21$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -204,6 +204,7 @@ W przypadku sumowania od $k_{min}=-21$ do $k_{max}=21$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.
+
+\TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=\infty$ to $k_{max}=\infty$ results in oryginal signal.}
 
 \end{task}
