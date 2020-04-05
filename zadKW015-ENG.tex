@@ -1,5 +1,6 @@
 \begin{task}
-Wyznacz współczynniki zespolonego szeregu fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku
+    
+\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series.}
 
 \begin{figure}[H]
 \centering
@@ -23,23 +24,21 @@ Wyznacz współczynniki zespolonego szeregu fouriera dla okresowego sygnału $f(
 \end{tikzpicture}
 \end{figure}
 
-W pierwszej kolejności należy opisać sygnał za pomocą wzoru:
+\TT{W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku. Jest to funkcja przedziałowa, którą możemy opisać w następujący sposób:}{First of all, the definition of $f(t)$ signal has to be derived. This is periodic piecewise function, which may be describe as:}
 
 \begin{equation}
 f(x)=\begin{cases}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) & t \in \left ( 0+k \cdot T; \frac{T}{2}+k \cdot T \right ) \\
-0 & t \in \left ( \frac{T}{2}+k \cdot T; T+k \cdot T \right )\end{cases} \wedge k \in C %\mathbb{C}
+0 & t \in \left ( \frac{T}{2}+k \cdot T; T+k \cdot T \right )\end{cases} \wedge k \in \TT{C}{Z}
 \end{equation}
 
-Współczynnik $F_0$ wyznaczamy ze wzoru
+\TT{Współczynnik $F_0$ wyznaczamy ze wzoru:}{The $F_0$ coefficient is defined as:}
 
 \begin{equation}
 F_0=\frac{1}{T}\int_{T}f(t) \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
+\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, i.e. $k=0$, we get:}
 
-%\begin{equation}
-%\begin{aligned}
 \begin{align*}
 F_0&=\frac{1}{T}\int_{T}f(t) \cdot dt=\\
 &=\frac{1}{T}\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot dt 
@@ -62,21 +61,17 @@ dt&=\frac{dz}{\frac{2\pi}{T}}
 &=-\frac{A}{2\pi}\cdot \left( -2\right)=\\
 &=\frac{A}{\pi}
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Wartość współczynnika $F_0$ wynosi $\frac{A}{\pi}$
+\TT{Wartość współczynnika $F_0$ wynosi $\frac{A}{\pi}$.}{The $F_0$ coefficient equals $\frac{A}{\pi}$.}
 
-Współczynnik $F_k$ wyznaczamy ze wzoru
+\TT{Współczynniki $F_k$ wyznaczamy ze wzoru}{The $F_k$ coefficients are defined as:}
 
 \begin{equation}
 F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
 \end{equation}
 
-Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$
+\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, i.e. $k=0$, we get:}
 
-%\begin{equation}
-%\begin{aligned}
 \begin{align*}
 F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
 &=\frac{1}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt\right)=\\
@@ -129,15 +124,11 @@ e^{\jmath \cdot \pi \cdot \left(1 - k\right)} - 1 \right) + \frac{1-k}{\left(1 -
 &=\frac{A}{4 \cdot \pi} \cdot 2 \cdot \left(\frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2} \right)=\\
 &=\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-Wartość współczynnika $F_k$ wynosi $\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}$ dla $k \neq 1 \wedge k \neq -1$ 
+\TT{Wartość współczynnika $F_k$ wynosi $\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}$ dla $k \neq 1 \wedge k \neq -1$.}{The $F_k$ coefficients equal to $\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}$ for $k \neq 1 \wedge k \neq -1$.}
 
-$F_k$ dla $k=1$ musimy wyznaczyć wspołczynnik raz jeszcze tak wiec wyznaczmy wprost $F_1$
+\TT{Współczynnik $F_k$ dla $k=1$ musimy wyznaczyć raz jeszcze, tak więc wyznaczmy go wprost z definicji $F_1$:}{We have to calculate $F_k$ for $k=1$ directly by definition:}
 
-%\begin{equation}
-%\begin{aligned}
 \begin{align*}
 F_1&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
 &=\frac{1}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot e^{-\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot e^{-\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} \cdot dt\right)=\\
@@ -181,15 +172,11 @@ dt - \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot \int_{0}^{\frac{T}{2}} e^{z} \
 &=\frac{A}{4 \jmath} =\\
 &=-\jmath \cdot \frac{A}{4}
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-A wiec wartość współczynnika $F_1$ wynosi $-\jmath \cdot \frac{A}{4}$
+\TT{Wartość współczynnika $F_1$ wynosi $-\jmath \cdot \frac{A}{4}$.}{The $F_1$ coefficients equal to $-\jmath \cdot \frac{A}{4}$.}
 
-$F_k$ dla $k=-1$ musimy wyznaczyć wspołczynnik raz jeszcze tak wiec wyznaczmy wprost $F_{-1}$
+\TT{Współczynnik $F_k$ dla $k=-1$ musimy wyznaczyć raz jeszcze, tak więc wyznaczmy go wprost z definicji $F_{-1}$:}{We have to calculate $F_k$ for $k=-1$ directly by definition:}
 
-%\begin{equation}
-%\begin{aligned}
 \begin{align*}
 F_{-1}&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
 &=\frac{1}{T}\cdot\left(\int_{0}^{\frac{T}{2}}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \cdot e^{-\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} \cdot dt+\int_{\frac{T}{2}}^{T} 0 \cdot e^{-\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} \cdot dt\right)=\\
@@ -233,13 +220,10 @@ dt \right)=\\
 &=-\frac{A}{4 \jmath} =\\
 &=\jmath \cdot \frac{A}{4} 
 \end{align*}
-%\end{aligned}
-%\end{equation}
 
-A wiec wartość współczynnika $F_{-1}$ wynosi $\jmath \cdot \frac{A}{4}$
+\TT{Wartość współczynnika $F_{-1}$ wynosi $\jmath \cdot \frac{A}{4}$.}{The $F_{-1}$ coefficients equal to $\jmath \cdot \frac{A}{4}$.}
 
-
-Ostatecznie współczynniki zespolonego szeregu fouriera dla funkcji przedstawionej na rysunku przyjmują wartości
+\TT{Ostatecznie współczynniki zespolonego szeregu Fouriera dla funkcji przedstawionej na rysunku przyjmują wartości.}{To sum up, coefficients for the expansion into a complex exponential Fourier series are given by:}
 
 \begin{align*}
 F_0&=\frac{A}{\pi}\\
@@ -248,7 +232,7 @@ F_{-1}&=\jmath \cdot \frac{A}{4}\\
 F_{1}&=-\jmath \cdot \frac{A}{4}\\
 \end{align*}
 
-Możemy wyznaczyć kilka wartości współczynników $F_k$
+\TT{Możemy wyznaczyć kilka wartości współczynników $F_k$}{The first several coefficients are equal to:}
 
 \begin{table}[H]
   \centering  
@@ -263,15 +247,16 @@ Możemy wyznaczyć kilka wartości współczynników $F_k$
   \end{tabular} 
 \end{table}
 
-Podstawiając to wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako
+\TT{Podstawiając to wzoru aproksymacyjnego funkcję $f(t)$ możemy wyrazić jako}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
 
 \begin{equation}
 \begin{aligned}
-f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
+f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} - \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
 \end{aligned}
 \end{equation}
 
-W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-1$ to $k_{max}=1$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -290,7 +275,7 @@ W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-2$  do $k_{max}=2$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-2$ do $k_{max}=2$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-2$ to $k_{max}=2$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -309,7 +294,7 @@ W przypadku sumowania od $k_{min}=-2$  do $k_{max}=2$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-4$ do $k_{max}=4$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-4$ do $k_{max}=4$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-4$ to $k_{max}=4$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -328,7 +313,7 @@ W przypadku sumowania od $k_{min}=-4$ do $k_{max}=4$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-6$ do $k_{max}=6$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-6$ do $k_{max}=6$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-6$ to $k_{max}=6$ results in:}
 
 \begin{figure}[H]
   \centering
@@ -347,7 +332,7 @@ W przypadku sumowania od $k_{min}=-6$ do $k_{max}=6$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W przypadku sumowania od $k_{min}=-12$ do $k_{max}=12$ otrzymujemy 
+\TT{W przypadku sumowania od $k_{min}=-12$ do $k_{max}=12$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-12$ to $k_{max}=12$ results in:} 
 
 \begin{figure}[H]
   \centering
@@ -366,6 +351,6 @@ W przypadku sumowania od $k_{min}=-12$ do $k_{max}=12$ otrzymujemy
   \end{tikzpicture}
 \end{figure}
 
-W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.
+\TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
 
 \end{task}

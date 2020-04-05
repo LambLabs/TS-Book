@@ -25,7 +25,7 @@
 f(t) = a \cdot t + b
 \end{equation}
 
-\TT{W pierwszym okresie wykres funkcji jest prostą przechodzącą przez dwa punkty: $(0,0)$ oraz $(T,A)$. Możemy wiec napisać układ równań rozwiązać go i znaleźć nie znane parametry $a$ i $b$.}{In the first period (e.g. $t \in (0; T)$), linear function crosses two points: $(0,0)$ and $(T,A)$. So, in order to derive $a$ and $b$, the following system of the equations has to be solved.}
+\TT{W pierwszym okresie wykres funkcji jest prostą przechodzącą przez dwa punkty: $(0,0)$ oraz $(T,A)$. Możemy wiec napisać układ równań rozwiązać go i znaleźć nie znane parametry $a$ i $b$.}{In the first period (i.e. $t \in (0; T)$), linear function crosses two points: $(0,0)$ and $(T,A)$. So, in order to derive $a$ and $b$, the following system of the equations has to be solved.}
 
 \begin{align*}
 &\left\{\begin{matrix}
@@ -45,13 +45,17 @@ A = a\cdot T +0
 \frac{A}{T} = a
 \end{matrix}\right.
 \end{align*}
+
 \TT{A więc funkcję przedstawioną na rysunku, w pierwszym okresie można opisać wzorem:}{As a result the piecewise linear function in the first period is given by:}
+
 \begin{align*}
 f(t) = \frac{A}{T}\cdot t
 \end{align*}
+
 \TT{I ogólniej całą funkcję można wyrazić następującym wzorem}{For the whole periodic signal $f(t)$ we get:}
+
 \begin{align*}
-f(t) = \frac{A}{T}\cdot \left(t-k\cdot T\right) \wedge k \in C
+f(t) = \begin{matrix}\frac{A}{T}\cdot \left(t-k\cdot T\right) & t \in \left ( 0+k \cdot T; T + k \cdot T \right )\wedge k \in \TT{C}{Z}\end{matrix}
 \end{align*}
 
 \TT{Współczynnik $F_0$ wyznaczamy ze wzoru:}{The $F_0$ coefficient is defined as:}
@@ -60,7 +64,7 @@ f(t) = \frac{A}{T}\cdot \left(t-k\cdot T\right) \wedge k \in C
 F_0=\frac{1}{T}\int_{T}f(t) \cdot dt
 \end{equation}
 
-\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, e.g. $k=0$, we get:}
+\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, i.e. $k=0$, we get:}
 
 \begin{align*}
 F_0&=\frac{1}{T}\int_{T}f(t) \cdot dt=\\
@@ -80,7 +84,7 @@ F_0&=\frac{1}{T}\int_{T}f(t) \cdot dt=\\
 F_k=\frac{1}{T}\int_{T}f(t) \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt
 \end{equation}
 
-\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, e.g. $k=0$, we get:}
+\TT{Podstawiamy do wzoru wzór naszej funkcji w pierwszym okresie $k=0$}{For the period $t \in (0; T)$, i.e. $k=0$, we get:}
 
 \begin{align*}
 F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t} \cdot dt=\\
@@ -231,6 +235,6 @@ f(t) &= \frac{A}{2} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallm
   \end{tikzpicture}
 \end{figure}
 
-\TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=\infty$ to $k_{max}=\infty$ results in oryginal signal.}
+\TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
 
 \end{task}
