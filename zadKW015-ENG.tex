@@ -1,6 +1,6 @@
 \begin{task}
     
-\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series.}
+\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku. Narysuj widmo amplitudowe i fazowe sygnału.}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series. Draw magnitude and phase spectra.}
 
 \begin{figure}[H]
 \centering
@@ -122,10 +122,11 @@ e^{\jmath \cdot \pi \cdot \left(1 - k\right)} - 1 \right) + \frac{1-k}{\left(1 -
 &=\frac{A}{-4 \cdot \pi} \cdot \left( \frac{-2\cdot e^{-\jmath \cdot \pi \cdot k} - 2 }{1-k^2} \right)=\\
 &=\frac{A}{4 \cdot \pi} \cdot \left( \frac{2 \cdot e^{-\jmath \cdot \pi \cdot k} +2}{1-k^2} \right)=\\
 &=\frac{A}{4 \cdot \pi} \cdot 2 \cdot \left(\frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2} \right)=\\
-&=\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}
+&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}\right)\\
+&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)
 \end{align*}
 
-\TT{Wartość współczynnika $F_k$ wynosi $\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}$ dla $k \neq 1 \wedge k \neq -1$.}{The $F_k$ coefficients equal to $\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}$ for $k \neq 1 \wedge k \neq -1$.}
+\TT{Wartość współczynnika $F_k$ wynosi $\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)$ dla $k \neq 1 \wedge k \neq -1$.}{The $F_k$ coefficients equal to $\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)$ for $k \neq 1 \wedge k \neq -1$.}
 
 \TT{Współczynnik $F_k$ dla $k=1$ musimy wyznaczyć raz jeszcze, tak więc wyznaczmy go wprost z definicji $F_1$:}{We have to calculate $F_k$ for $k=1$ directly by definition:}
 
@@ -227,9 +228,9 @@ dt \right)=\\
 
 \begin{align*}
 F_0&=\frac{A}{\pi}\\
-F_k&=\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}\\
 F_{-1}&=\jmath \cdot \frac{A}{4}\\
 F_{1}&=-\jmath \cdot \frac{A}{4}\\
+F_k&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\\
 \end{align*}
 
 \TT{Możemy wyznaczyć kilka wartości współczynników $F_k$}{The first several coefficients are equal to:}
@@ -240,9 +241,11 @@ F_{1}&=-\jmath \cdot \frac{A}{4}\\
     \hline 
     $F_k$ & $-6$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & $0$& $1$& $2$& $3$& $4$& $5$ & $6$\\ 
     \hline 
-    $F_k$ & $-\frac{A}{35\pi}$ & $0$ & $-\frac{A}{15\pi}$ & $0$ & $-\frac{A}{3\pi}$ & $-\jmath \cdot \frac{A}{4}$ & $\frac{A}{\pi}$ & $\jmath \cdot \frac{A}{4}$ & $\frac{A}{3\pi}$ & $0$ & $\frac{A}{15\pi}$ & $0$ & $\frac{A}{35\pi}$\\ 
+    $F_k$ & $-\frac{A}{35\pi}$ & $0$ & $-\frac{A}{15\pi}$ & $0$ & $-\frac{A}{3\pi}$ & $\jmath \cdot \frac{A}{4}$ & $\frac{A}{\pi}$ & $-\jmath \cdot \frac{A}{4}$ & $-\frac{A}{3\pi}$ & $0$ & $-\frac{A}{15\pi}$ & $0$ & $-\frac{A}{35\pi}$\\ 
     \hline 
-    $\left|F_k\right|$ & $\frac{A}{35\pi}$ & $0$ & $\frac{A}{15\pi}$ & $0$ & $-\frac{A}{3\pi}$ & $\frac{A}{4}$ & $\frac{A}{\pi}$ & $\frac{A}{4}$ & $\frac{A}{3\pi}$ & $0$ & $\frac{A}{15\pi}$ & $0$ & $\frac{A}{35\pi}$\\ 
+    $\left|F_k\right|$ & $\frac{A}{35\pi}$ & $0$ & $\frac{A}{15\pi}$ & $0$ & $\frac{A}{3\pi}$ & $\frac{A}{4}$ & $\frac{A}{\pi}$ & $\frac{A}{4}$ & $\frac{A}{3\pi}$ & $0$ & $\frac{A}{15\pi}$ & $0$ & $\frac{A}{35\pi}$\\ 
+    \hline
+    $Arg\left\{ F_k \right\}$ & $-\pi$ & $0$ & $-\pi$ & $0$ & $-\pi$ & $\frac{\pi}{2}$ & $0$ & -$\frac{\pi}{2}$ & $\pi$ & $0$ & $\pi$ & $0$ & $\pi$\\
     \hline 
   \end{tabular} 
 \end{table}
@@ -252,7 +255,7 @@ F_{1}&=-\jmath \cdot \frac{A}{4}\\
 \begin{equation}
 \begin{aligned}
 f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
-f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} - \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\frac{A}{2 \cdot \pi} \cdot \frac{e^{-\jmath \cdot \pi \cdot k}+1}{1-k^2}\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
+f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} - \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
 \end{aligned}
 \end{equation}
 
@@ -353,7 +356,7 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
 
 \TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
 
-\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo aplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot}
+\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo amplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot magnitude spectrum $\left|F_k\right|$ of the $f(t)$ signal.}
 
 \begin{figure}[H]
   \centering
@@ -379,7 +382,8 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
           }
           else
           {
-            return abs(\A/(2*3.141592)*(sqrt((cos(\k*180)+1.0)^2+(sin(-\k*180))^2) )/(1-(\k)^2));
+            %return abs(\A/(2*3.141592)*(sqrt((cos(\k*180)+1.0)^2+(sin(-\k*180))^2) )/(1-(\k)^2));
+            return abs(\A/(2*3.141592)*(((-1)^\k) + 1)/(1-(\k)^2));
           };
         };        
       };
@@ -406,9 +410,9 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
   \end{tikzpicture}
 \end{figure}
 
-\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{}
+\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
 
-\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot}
+\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot phase spectrum $\mathtt{arg}\left\{F_k\right\}$ of the $f(t)$ signal.}
 
 \begin{figure}[H]
   \centering
@@ -424,17 +428,24 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
       {
         if(\k==1) then 
         {
-          return -3.141592;
+          return -3.141592/2;
         }
         else
         {
           if(\k==-1) then
           {
-            return 3.141592;
+            return 3.141592/2;
           }
           else
           {
-            return 0;
+            if(mod(abs(\k),2))==1) then
+            {
+                return 0; % odd
+            }
+            else
+            {
+                return 3.141592*sign(\k); %even * sign
+            };
           };
         };
       };
@@ -446,6 +457,8 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
   \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$\mathtt{arg}\left\{F_k\right\}$};
   \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\pi$};
   \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-\pi$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$\frac{\pi}{2}$};
+  \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, left] {$-\frac{\pi}{2}$};
   
   \foreach \k in {-8,-7,...,8 }{
     \pgfmathsetmacro{\x}{\k/1.5};
@@ -454,7 +467,7 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
   
   \foreach \k in {-8,-7,...,8 }{
     \pgfmathsetmacro{\x}{\k/1.5};
-    \pgfmathsetmacro{\y}{aFk(\k,4)/3.141592*2.0};
+    \pgfmathsetmacro{\y}{aFk(\k,4)*2.0/3.141592};
     \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
     \draw[-, red] (\x,0) -- (\x,\y);
   };
@@ -462,7 +475,7 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
   \end{tikzpicture}
 \end{figure}
 
-\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{}
+\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
 
 
 \end{task}
