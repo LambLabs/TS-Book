@@ -353,4 +353,116 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
 
 \TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
 
+\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo aplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  
+  \tikzmath{
+    function mFk(\k,\A) {
+      if(\k==0) then
+      {
+        return \A/3.141592;
+      }
+      else
+      {
+        if(\k==1) then 
+        {
+          return \A/4;
+        }
+        else
+        {
+          if(\k==-1) then
+          {
+            return \A/4;
+          }
+          else
+          {
+            return abs(\A/(2*3.141592)*(sqrt((cos(\k*180)+1.0)^2+(sin(-\k*180))^2) )/(1-(\k)^2));
+          };
+        };        
+      };
+    };
+  }
+  
+  %\draw (0,0) circle (1in);
+  \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+  \draw[->] (+0.0,-0.0) -- (+0.0,+2.5) node[above] {$\left|F_k\right|$};
+  \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$A/\pi$};
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+  };
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \pgfmathsetmacro{\y}{mFk(\k,4)*3.141592/2.0};
+    \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+    \draw[-, red] (\x,0) -- (\x,\y);
+  };
+  
+  \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{}
+
+\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  
+  \tikzmath{
+    function aFk(\k,\A) {
+      if(\k==0) then
+      {
+        return 0;
+      }
+      else
+      {
+        if(\k==1) then 
+        {
+          return -3.141592;
+        }
+        else
+        {
+          if(\k==-1) then
+          {
+            return 3.141592;
+          }
+          else
+          {
+            return 0;
+          };
+        };
+      };
+    };
+  }
+  
+  %\draw (0,0) circle (1in);
+  \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+  \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$\mathtt{arg}\left\{F_k\right\}$};
+  \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\pi$};
+  \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-\pi$};
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+  };
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \pgfmathsetmacro{\y}{aFk(\k,4)/3.141592*2.0};
+    \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+    \draw[-, red] (\x,0) -- (\x,\y);
+  };
+  
+  \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{}
+
+
 \end{task}
