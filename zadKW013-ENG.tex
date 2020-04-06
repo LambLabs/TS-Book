@@ -1,5 +1,5 @@
 \begin{task}
-\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series.} 
+\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $f(t)$ przedstawionego na rysunku. Narysuj widmo amplitudowe i fazowe sygnału.}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series. Draw magnitude and phase spectra.} 
 
 \begin{figure}[H]
 \centering
@@ -75,14 +75,14 @@ F_k&=\frac{1}{T}\int_{T}f(t) \cdot e^{-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot
 &=\begin{Bmatrix*}[l]
 z&=-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t \\
 dz&=-\jmath \cdot k \cdot \frac{2\pi}{T} \cdot dt \\
-dt&=\frac{dt}{-\jmath \cdot k \cdot \frac{2\pi}{T}}
+dt&=\frac{dz}{-\jmath \cdot k \cdot \frac{2\pi}{T}}
 \end{Bmatrix*} =\\
-&=\frac{1}{T}\left(-A \cdot \int_{-\frac{T}{4}}^{0} e^{ z } \cdot \frac{dt}{-\jmath \cdot k \cdot \frac{2\pi}{T}} 
-+ A \cdot \int_{0}^{\frac{T}{4}} e^{ z } \cdot \frac{dt}{-\jmath 
+&=\frac{1}{T}\left(-A \cdot \int_{-\frac{T}{4}}^{0} e^{ z } \cdot \frac{dz}{-\jmath \cdot k \cdot \frac{2\pi}{T}} 
++ A \cdot \int_{0}^{\frac{T}{4}} e^{ z } \cdot \frac{dz}{-\jmath 
  \cdot k \cdot \frac{2\pi}{T}}
 + 0 \right)=\\
-&=\frac{1}{T}\left(-\frac{A}{-\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \int_{-\frac{T}{4}}^{0} e^{ z } \cdot dt 
-+ \frac{A}{-\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} e^{ z } \cdot dt\right)=\\
+&=\frac{1}{T}\left(-\frac{A}{-\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \int_{-\frac{T}{4}}^{0} e^{ z } \cdot dz 
++ \frac{A}{-\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \int_{0}^{\frac{T}{4}} e^{ z } \cdot dz\right)=\\
 &=\frac{1}{T} \cdot \frac{A}{\jmath \cdot k \cdot \frac{2\pi}{T}} \cdot \left( \left. e^{ z } \right|_{-\frac{T}{4}}^{0}
 - \left. e^{ z }\right|_{0}^{\frac{T}{4}} \right)=\\
 &=\frac{A}{\jmath \cdot k \cdot 2\pi} \cdot \left( \left. e^{ -\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t  } \right|_{-\frac{T}{4}}^{0}
@@ -112,7 +112,7 @@ cos(x)&=\frac{e^{\jmath \cdot x}+e^{-\jmath \cdot x}}{2}
 \begin{equation}
 \begin{aligned}
 F_0&=0\\
-F_k&=\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(sin\left( k \cdot \frac{\pi}{2} \right) - 1\right)\\
+F_k&=\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(cos\left( k \cdot \frac{\pi}{2} \right) - 1\right)\\
 \end{aligned}
 \end{equation}
 
@@ -124,9 +124,11 @@ F_k&=\jmath \cdot \frac{A}{k \cdot \pi} \cdot \left(sin\left( k \cdot \frac{\pi}
   \hline 
   $k$ & $-6$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\ 
   \hline 
-  $F_k$ & $-\jmath \cdot \frac{A}{3\pi}$ & $\jmath \cdot \frac{A}{5\pi}$ & $0$ & $\jmath \cdot \frac{A}{3\pi}$ & $\jmath \cdot \frac{A}{\pi}$ & $\jmath \cdot \frac{A}{\pi}$ & $0$ & $-\jmath \cdot \frac{A}{\pi}$ & $-\jmath \cdot \frac{A}{\pi}$ & $-\jmath \cdot \frac{A}{3\pi}$ & $0$ & $-\jmath \cdot \frac{A}{5\pi}$ & $\jmath \cdot \frac{A}{3\pi}$\\
+  $F_k$ & $\jmath \cdot \frac{A}{3\pi}$ & $\jmath \cdot \frac{A}{5\pi}$ & $0$ & $\jmath \cdot \frac{A}{3\pi}$ & $\jmath \cdot \frac{A}{\pi}$ & $\jmath \cdot \frac{A}{\pi}$ & $0$ & $-\jmath \cdot \frac{A}{\pi}$ & $-\jmath \cdot \frac{A}{\pi}$ & $-\jmath \cdot \frac{A}{3\pi}$ & $0$ & $-\jmath \cdot \frac{A}{5\pi}$ & $-\jmath \cdot \frac{A}{3\pi}$\\
   \hline 
-  $\left|F_k\right|$ & $\frac{A}{3\pi}$ & $\frac{A}{5\pi}$ & $0$ & $\frac{A}{3\pi}$ & $\frac{A}{\pi}$ & $\frac{A}{\pi}$ & $0$ & $\frac{A}{\pi}$ & $\frac{A}{\pi}$ & $\frac{A}{3\pi}$ & $0$ & $\frac{A}{5\pi}$ & $\frac{A}{3\pi}$\\ 
+  $\left|F_k\right|$ & $\frac{A}{3\pi}$ & $\frac{A}{5\pi}$ & $0$ & $\frac{A}{3\pi}$ & $\frac{A}{\pi}$ & $\frac{A}{\pi}$ & $0$ & $\frac{A}{\pi}$ & $\frac{A}{\pi}$ & $\frac{A}{3\pi}$ & $0$ & $\frac{A}{5\pi}$ & $\frac{A}{3\pi}$\\
+  \hline
+  $Arg\left\{ F_k \right\}$ & $\frac{\pi}{2}$ & $\frac{\pi}{2}$ & $0$ & $\frac{\pi}{2}$ & $\frac{\pi}{2}$ & $\frac{\pi}{2}$ & $0$ & $-\frac{\pi}{2}$ & $-\frac{\pi}{2}$ & $-\frac{\pi}{2}$ & $0$ & $-\frac{\pi}{2}$ & $-\frac{\pi}{2}$\\
   \hline 
   
 \end{tabular} 
@@ -275,5 +277,99 @@ f(t) &= \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallmatrix}}^{\inft
 \end{figure}
 
 \TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
+
+
+\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo amplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot magnitude spectrum $\left|F_k\right|$ of the $f(t)$ signal.}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    
+    \tikzmath{
+        function mFk(\k,\A) {
+            if(\k==0) then
+            {
+                return 0;
+            }
+            else
+            {
+                return abs(\A/(\k*3.141592)*(sqrt((cos(\k*90)-1.0)^2)));       
+            };
+        };
+    }
+    
+    %\draw (0,0) circle (1in);
+    \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+    \draw[->] (+0.0,-0.0) -- (+0.0,+2.5) node[above] {$\left|F_k\right|$};
+    \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\frac{A}{\pi}$};
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+    };
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \pgfmathsetmacro{\y}{mFk(\k,4)*3.141592/2.0};
+        \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+        \draw[-, red] (\x,0) -- (\x,\y);
+    };
+    
+    \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
+
+\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot phase spectrum $\mathtt{arg}\left\{F_k\right\}$ of the $f(t)$ signal.}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    
+    \tikzmath{
+        function aFk(\k,\A) {
+            if(mod(\k,4)==0) then
+            {
+                return 0;
+            }
+            else
+            {
+                if(\k<0) then 
+                {
+                    return 3.141592/2;
+                }
+                else
+                {
+                    return -3.141592/2;                    
+                };
+            };
+        };
+    }
+    
+    %\draw (0,0) circle (1in);
+    \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+    \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$\mathtt{arg}\left\{F_k\right\}$};
+    \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\pi$};
+    \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-\pi$};
+    \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$\frac{\pi}{2}$};
+    \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, left] {$-\frac{\pi}{2}$};
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+    };
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \pgfmathsetmacro{\y}{aFk(\k,4)*2.0/3.141592};
+        \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+        \draw[-, red] (\x,0) -- (\x,\y);
+    };
+    
+    \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
+
 
 \end{task}
