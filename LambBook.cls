@@ -103,8 +103,8 @@
   \ifthenelse{\equal{#1}{\bookcompilation}}{\input{#2}}{}
 }
 %====================================================
-\newcommand{\setPL}{\def\booklanguage{PL}}
-\newcommand{\setENG}{\def\booklanguage{ENG}}
+\newcommand{\setPL}{\def\booklanguage{PL}\def\booklanguageh{1}}
+\newcommand{\setENG}{\def\booklanguage{ENG}\def\booklanguageh{2}}
 \newcommand{\TT}[2]{%
 \ifthenelse{\equal{PL}{\booklanguage}}{{#1}}{}%
 \ifthenelse{\equal{ENG}{\booklanguage}}{{#2}}{}%
@@ -113,7 +113,7 @@
 %Nowe  środowisko dla zadań
 \newcounter{tasknumber}[section]
 \newenvironment{task}[1][]{\refstepcounter{tasknumber}\par\medskip
-  \noindent \textbf{Zadanie~\thetasknumber. #1} \rmfamily}{\newpage}%\medskip
+  \noindent \textbf{\TT{Zadanie}{Task}~\thetasknumber. #1} \rmfamily}{\newpage}%\medskip
 
 %\newpage
 
