@@ -107,10 +107,10 @@ dt=\frac{1}{\jmath \cdot \frac{2\pi}{T} \cdot \left(1 -k\right)} \cdot dz_1 & dt
 &=\frac{A}{\jmath \cdot 4\pi} \cdot \left( \frac{- \cdot e^{-\jmath \cdot k \cdot \pi}  -1 - k \cdot e^{-\jmath \cdot k \cdot \pi}  -k + e^{-\jmath \cdot k \cdot \pi } + 1 -k \cdot e^{-\jmath \cdot k \cdot \pi } -k }{1 -k^2} \right)=\\
 &=\frac{A}{\jmath \cdot 4\pi} \cdot \left( \frac{ - 2\cdot k \cdot e^{-\jmath \cdot k \cdot \pi}  -2\cdot k}{1 -k^2} \right)=\\
 &=-\frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ e^{-\jmath \cdot k \cdot \pi}  + 1}{1 -k^2} \right)\\
-&=\jmath \cdot \frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)
+&=\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)
 \end{align*}
 
-\TT{Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)$.}{The $F_k$ coefficients equal to $\jmath \cdot \frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)$.}
+\TT{Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)$.}{The $F_k$ coefficients equal to $\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)$.}
 
 \TT{Współczynnik $F_k$ dla $k=1$ musimy wyznaczyć raz jeszcze, tak więc wyznaczmy go wprost z definicji $F_1$:}{We have to calculate $F_k$ for $k=1$ directly by definition:}
 
@@ -192,7 +192,7 @@ dt=\frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot dz \\
 F_0&=0\\
 F_1&=\frac{A}{4}\\
 F_{-1}&=\frac{A}{4}\\
-F_k&=\jmath \cdot \frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\\
+F_k&=\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\\
 \end{align*}
 
 \TT{Możemy wyznaczyć kilka wartości współczynników $F_k$:}{The first several coefficients are equal to:}
@@ -217,8 +217,8 @@ F_k&=\jmath \cdot \frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ (-1)^{
 \begin{equation}
 \begin{aligned}
 f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
-f(t) &= \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} + \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
-f(t) &= \frac{A}{2} \cdot cos\left(\frac{2\pi}{T} \cdot t\right) + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A \cdot k}{\jmath \cdot 2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
+f(t) &= \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} + \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
+f(t) &= \frac{A}{2} \cdot cos\left(\frac{2\pi}{T} \cdot t\right) + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
 \end{aligned}
 \end{equation}
 
