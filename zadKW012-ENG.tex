@@ -74,7 +74,7 @@ dt&=\frac{dz}{-\jmath \cdot k\cdot \frac{2\pi}{T}}
 &=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)
 \end{align*}
 
-\TT{Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{The $F_k$ coefficients equal to $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)$.}
+\TT{Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)$}{The $F_k$ coefficients equal to $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)$.}
 
 \TT{Ostatecznie współczynniki zespolonego szeregu Fouriera dla funkcji przedstawionej na rysunku przyjmują wartości.}{To sum up, coefficients for the expansion into a complex exponential Fourier series are given by:}
 
@@ -100,14 +100,128 @@ F_k&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\\
 \end{tabular} 
 \end{table}
 
+%Zaminienić miejscami wyznaczanie Widnma z Rekonsutkcją
+\TT{Moduł liczby zespolonej wyznaczamy ze wzoru:}{Module of the complex number we can obtain via:}
+
+\begin{align*}
+\left|F_k\right| = \sqrt{\mathtt{Re}\left(F_k\right)^2+\mathtt{Im}\left(F_k\right)^2}
+\end{align*}
+
+\TT{Natomiast argument liczby zespolonej wyznaczamy ze wzoru:}{and xxx of the complex number we can obtain via:}
+
+\begin{align*}
+\mathtt{Arg}\left\{F_k\right\} = arctan\left(\frac{\mathtt{Im}\left(F_k\right)}{\mathtt{Re}\left(F_k\right)}\right)
+\end{align*}
+
+\TT{W tym celu musimy wydzielić jawnie część rzeczywista i część urojoną wartości współczynnika $F_k$.}{}
+
+\begin{align*}
+F_k = \jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right) \Rightarrow \left\{\begin{array}{l}
+\mathtt{Re}\left(F_k\right) = 0\\
+\mathtt{Im}\left(F_k\right) = \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\\
+\end{array}\right.\\
+\end{align*}
+
+\TT{A wiec moduł wartości współczynników $F_k$ wynosi}{}
+
+\begin{align*}
+\left|F_k\right| &= \sqrt{\mathtt{Re}\left(F_k\right)^2+\mathtt{Im}\left(F_k\right)^2}=\\
+&=\sqrt{0^2+\left(\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\right)^2}=\\
+&=\sqrt{\left(\frac{A}{k\cdot 2 \pi}\right)^2 \cdot \left( (-1)^{k} -1 \right)^2}=\\
+&=\sqrt{\frac{A^2}{\left(k\cdot 2 \pi\right)^2} \cdot \left( (-1)^{k} -1 \right)^2}=\\
+&=\sqrt{\frac{A^2}{k^2\cdot \left(2 \pi\right)^2} \cdot \left( (-1)^{k} -1 \right)^2}=\\
+&=\sqrt{\frac{A^2}{k^2\cdot \left(2 \pi\right)^2}} \cdot \sqrt{\left( (-1)^{k} -1 \right)^2}=\\
+&=\frac{\sqrt{A^2}}{\sqrt{k^2\cdot \left(2 \pi\right)^2}} \cdot \sqrt{\left( (-1)^{k} -1 \right)^2}=\\
+&=\frac{A}{\sqrt{k^2}\cdot \sqrt{\left(2 \pi\right)^2}} \cdot \left|(-1)^{k} -1 \right|=\\
+&=\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{k} -1 \right|=\\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{k} -1 \right| & dla & k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{k} -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{2\cdot n} -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{2 \cdot n +1 } -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left((-1)^{2}\right)^n -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{2 \cdot n}\cdot \left(-1\right)^{1} -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left(1\right)^n -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left((-1)^{2}\right) ^n \cdot \left(-1\right) -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|1 -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left(1\right) ^n \cdot \left(-1\right) -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|0 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|1 \cdot \left(-1\right) -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot 0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|-1 -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|-2 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot 2 & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot \pi} & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+\end{align*}
+
+\TT{Podobnie argument wartości współczynników $F_k$ wynosi}{}
+
+\begin{align*}
+\mathtt{Arg}\left\{F_k\right\} &= arctan\left(\frac{\mathtt{Im}\left(F_k\right)}{\mathtt{Re}\left(F_k\right)}\right) =\\
+&=arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{0}\right) =\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{2 \cdot n} -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{2 \cdot n + +1} -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left((-1)^{2}\right) ^n -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left((-1)^{2}\right)^n \cdot \left(-1\right)^1 -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left(1\right) ^n -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left(1\right)^n \cdot \left(-1\right)^1 -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( 1 -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( 1 \cdot \left(-1\right) -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( 0 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( -1 -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{0}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{-\frac{A}{k\cdot \pi}}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+-\frac{\pi}{2} sign\left(k\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+\end{align*}
+
+%Rekonstrukcja
 \TT{Podstawiając wyznaczone wartości współczynników $F_k$ do wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
 
-\begin{equation}
-\begin{aligned}
+\begin{align*}
 f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
 f(t) &= \frac{A}{2}+\sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
-\end{aligned}
-\end{equation}
+\end{align*}
 
 \TT{W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-1$ to $k_{max}=1$ results in:}
 
