@@ -195,6 +195,16 @@ F_{-1}&=\frac{-A}{4}\\
 F_k&=-\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\\
 \end{align*}
 
+\TT{Podstawiając wyznaczone współczynniki do wzoru aproksymacyjnego, funkcję $f(t)$ możemy wyrazić jako:}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
+
+\begin{equation}
+\begin{aligned}
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
+f(t) &= -\frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} - \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[-\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
+f(t) &= -\frac{A}{2} \cdot cos\left(\frac{2\pi}{T} \cdot t\right) + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[-\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
+\end{aligned}
+\end{equation}
+
 \TT{Możemy wyznaczyć kilka wartości współczynników $F_k$:}{The first several coefficients are equal to:}
 
 \begin{table}[H]
@@ -211,103 +221,6 @@ F_k&=-\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -
     \hline
   \end{tabular} 
 \end{table}
-
-\TT{Podstawiając wyznaczone współczynniki do wzoru aproksymacyjnego, funkcję $f(t)$ możemy wyrazić jako:}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
-
-\begin{equation}
-\begin{aligned}
-f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
-f(t) &= -\frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} - \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[-\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
-f(t) &= -\frac{A}{2} \cdot cos\left(\frac{2\pi}{T} \cdot t\right) + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[-\jmath \cdot \frac{A \cdot k}{2\pi} \cdot \left( \frac{ (-1)^{k}  + 1}{1 -k^2} \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
-\end{aligned}
-\end{equation}
-
-\TT{W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-1$ to $k_{max}=1$ results in:}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
-  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
-  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
-  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
-  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
-  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
-  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
-  
-  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)});
-  \end{tikzpicture}
-\end{figure}
-
-\TT{W przypadku sumowania od $k_{min}=-2$ do $k_{max}=2$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-2$ to $k_{max}=2$ results in:}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
-  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
-  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
-  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
-  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
-  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
-  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
-  
-  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)});
-  \end{tikzpicture}
-\end{figure}
-
-\TT{W przypadku sumowania od $k_{min}=-4$ do $k_{max}=4$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-4$ to $k_{max}=4$ results in:}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
-  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
-  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
-  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
-  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
-  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
-  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
-  
-  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)-8.0/(15*3.141592)*sin(\x*180.0/3.141592*4*3.141592/1.0)});
-  \end{tikzpicture}
-\end{figure}
-
-\TT{W przypadku sumowania od $k_{min}=-10$ do $k_{max}=10$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-10$ to $k_{max}=10$ results in:} 
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
-  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
-  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
-  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
-  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
-  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
-  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
-  
-  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)-8.0/(15*3.141592)*sin(\x*180.0/3.141592*4*3.141592/1.0)-12.0/(35*3.141592)*sin(\x*180.0/3.141592*6*3.141592/1.0)-16.0/(63*3.141592)*sin(\x*180.0/3.141592*8*3.141592/1.0)});
-  \end{tikzpicture}
-\end{figure}
-
-\TT{W przypadku sumowania od $k_{min}=-20$ do $k_{max}=20$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-20$ to $k_{max}=20$ results in:} 
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
-  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
-  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
-  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
-  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
-  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
-  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
-  
-  \draw[scale=1.0,domain=-4:4.0,samples=300,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)-8.0/(15*3.141592)*sin(\x*180.0/3.141592*4*3.141592/1.0)-12.0/(35*3.141592)*sin(\x*180.0/3.141592*6*3.141592/1.0)-16.0/(63*3.141592)*sin(\x*180.0/3.141592*8*3.141592/1.0)-20.0/(99*3.141592)*sin(\x*180.0/3.141592*10*3.141592/1.0)-24.0/(143*3.141592)*sin(\x*180.0/3.141592*12*3.141592/1.0)-28.0/(195*3.141592)*sin(\x*180.0/3.141592*14*3.141592/1.0)-32.0/(255*3.141592)*sin(\x*180.0/3.141592*16*3.141592/1.0)-36.0/(323*3.141592)*sin(\x*180.0/3.141592*18*3.141592/1.0)});
-  \end{tikzpicture}
-\end{figure}
-
-\TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
 
 \TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo amplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot magnitude spectrum $\left|F_k\right|$ of the $f(t)$ signal.}
 
@@ -430,5 +343,91 @@ f(t) &= -\frac{A}{2} \cdot cos\left(\frac{2\pi}{T} \cdot t\right) + \sum_{\begin
 
 \TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
 
+\TT{W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-1$ to $k_{max}=1$ results in:}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+  
+  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)});
+  \end{tikzpicture}
+\end{figure}
+
+\TT{W przypadku sumowania od $k_{min}=-2$ do $k_{max}=2$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-2$ to $k_{max}=2$ results in:}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+  
+  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)});
+  \end{tikzpicture}
+\end{figure}
+
+\TT{W przypadku sumowania od $k_{min}=-4$ do $k_{max}=4$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-4$ to $k_{max}=4$ results in:}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+  
+  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)-8.0/(15*3.141592)*sin(\x*180.0/3.141592*4*3.141592/1.0)});
+  \end{tikzpicture}
+\end{figure}
+
+\TT{W przypadku sumowania od $k_{min}=-10$ do $k_{max}=10$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-10$ to $k_{max}=10$ results in:} 
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+  
+  \draw[scale=1.0,domain=-4:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)-8.0/(15*3.141592)*sin(\x*180.0/3.141592*4*3.141592/1.0)-12.0/(35*3.141592)*sin(\x*180.0/3.141592*6*3.141592/1.0)-16.0/(63*3.141592)*sin(\x*180.0/3.141592*8*3.141592/1.0)});
+  \end{tikzpicture}
+\end{figure}
+
+\TT{W przypadku sumowania od $k_{min}=-20$ do $k_{max}=20$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-20$ to $k_{max}=20$ results in:} 
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+  
+  \draw[scale=1.0,domain=-4:4.0,samples=300,smooth,variable=\x,red,thick] plot ({\x},{0.0-2.0/4*cos(\x*180.0/3.141592*1*3.141592/1.0)-4.0/(3*3.141592)*sin(\x*180.0/3.141592*2*3.141592/1.0)-8.0/(15*3.141592)*sin(\x*180.0/3.141592*4*3.141592/1.0)-12.0/(35*3.141592)*sin(\x*180.0/3.141592*6*3.141592/1.0)-16.0/(63*3.141592)*sin(\x*180.0/3.141592*8*3.141592/1.0)-20.0/(99*3.141592)*sin(\x*180.0/3.141592*10*3.141592/1.0)-24.0/(143*3.141592)*sin(\x*180.0/3.141592*12*3.141592/1.0)-28.0/(195*3.141592)*sin(\x*180.0/3.141592*14*3.141592/1.0)-32.0/(255*3.141592)*sin(\x*180.0/3.141592*16*3.141592/1.0)-36.0/(323*3.141592)*sin(\x*180.0/3.141592*18*3.141592/1.0)});
+  \end{tikzpicture}
+\end{figure}
+
+\TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
 
 \end{task}
