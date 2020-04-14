@@ -74,7 +74,7 @@ dt&=\frac{dz}{-\jmath \cdot k\cdot \frac{2\pi}{T}}
 &=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)
 \end{align*}
 
-\TT{Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{The $F_k$ coefficients equal to $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)$.}
+\TT{Wartość współczynnika $F_k$ wynosi $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)$}{The $F_k$ coefficients equal to $\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)$.}
 
 \TT{Ostatecznie współczynniki zespolonego szeregu Fouriera dla funkcji przedstawionej na rysunku przyjmują wartości.}{To sum up, coefficients for the expansion into a complex exponential Fourier series are given by:}
 
@@ -82,15 +82,6 @@ dt&=\frac{dz}{-\jmath \cdot k\cdot \frac{2\pi}{T}}
 F_0&=\frac{A}{2}\\
 F_k&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\\
 \end{align*}
-
-\TT{Podstawiając wyznaczone wartości współczynników $F_k$ do wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
-
-\begin{equation}
-\begin{aligned}
-f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
-f(t) &= \frac{A}{2}+\sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
-\end{aligned}
-\end{equation}
 
 \TT{Możemy wyznaczyć kilka wartości współczynników $F_k$}{The first several coefficients are equal to:}
 
@@ -109,89 +100,128 @@ f(t) &= \frac{A}{2}+\sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallmat
 \end{tabular} 
 \end{table}
 
-\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo amplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot magnitude spectrum $\left|F_k\right|$ of the $f(t)$ signal.}
+%Zaminienić miejscami wyznaczanie Widnma z Rekonsutkcją
+\TT{Moduł liczby zespolonej wyznaczamy ze wzoru:}{Module of the complex number we can obtain via:}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}
-    
-    \tikzmath{
-        function mFk(\k,\A) {
-            if(\k==0) then
-            {
-                return \A/2;
-            }
-            else
-            {
-                %return abs(\A/(\k*2*3.141592)*(sqrt((cos(\k*180)-1.0)^2+(sin(-\k*180))^2) ));
-                return abs(\A/(\k*2*3.141592)*(((-1)^\k)-1));
-            };
-        };
-    }
-    
-    %\draw (0,0) circle (1in);
-    \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
-    \draw[->] (+0.0,-0.0) -- (+0.0,+2.5) node[above] {$\left|F_k\right|$};
-    \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$A/2$};
-    
-    \foreach \k in {-8,-7,...,8 }{
-        \pgfmathsetmacro{\x}{\k/1.5};
-        \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
-    };
-    
-    \foreach \k in {-8,-7,...,8 }{
-        \pgfmathsetmacro{\x}{\k/1.5};
-        \pgfmathsetmacro{\y}{mFk(\k,4)};
-        \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
-        \draw[-, red] (\x,0) -- (\x,\y);
-    };
-    
-    \end{tikzpicture}
-\end{figure}
+\begin{align*}
+\left|F_k\right| = \sqrt{\mathtt{Re}\left(F_k\right)^2+\mathtt{Im}\left(F_k\right)^2}
+\end{align*}
 
-\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
+\TT{Natomiast argument liczby zespolonej wyznaczamy ze wzoru:}{and xxx of the complex number we can obtain via:}
 
-\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot phase spectrum $\mathtt{arg}\left\{F_k\right\}$ of the $f(t)$ signal.}
+\begin{align*}
+\mathtt{Arg}\left\{F_k\right\} = arctan\left(\frac{\mathtt{Im}\left(F_k\right)}{\mathtt{Re}\left(F_k\right)}\right)
+\end{align*}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}
-    
-    \tikzmath{
-        function aFk(\k,\A) {
-            if(\k==0) then
-            {
-                return 0;
-            }
-            else
-            {
-                return -1.0*mod(\k,2);
-            };
-        };
-    }
-    
-    %\draw (0,0) circle (1in);
-    \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
-    \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$\mathtt{arg}\left\{F_k\right\}$};
-    \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\frac{\pi}{2}$};
-    \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-\frac{\pi}{2}$};
-    
-    \foreach \k in {-8,-7,...,8 }{
-        \pgfmathsetmacro{\x}{\k/1.5};
-        \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
-    };
-    
-    \foreach \k in {-8,-7,...,8 }{
-        \pgfmathsetmacro{\x}{\k/1.5};
-        \pgfmathsetmacro{\y}{aFk(\k,4)*2.0};
-        \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
-        \draw[-, red] (\x,0) -- (\x,\y);
-    };
-    
-    \end{tikzpicture}
-\end{figure}
+\TT{W tym celu musimy wydzielić jawnie część rzeczywista i część urojoną wartości współczynnika $F_k$.}{}
 
-\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
+\begin{align*}
+F_k = \jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right) \Rightarrow \left\{\begin{array}{l}
+\mathtt{Re}\left(F_k\right) = 0\\
+\mathtt{Im}\left(F_k\right) = \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\\
+\end{array}\right.\\
+\end{align*}
+
+\TT{A wiec moduł wartości współczynników $F_k$ wynosi}{}
+
+\begin{align*}
+\left|F_k\right| &= \sqrt{\mathtt{Re}\left(F_k\right)^2+\mathtt{Im}\left(F_k\right)^2}=\\
+&=\sqrt{0^2+\left(\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\right)^2}=\\
+&=\sqrt{\left(\frac{A}{k\cdot 2 \pi}\right)^2 \cdot \left( (-1)^{k} -1 \right)^2}=\\
+&=\sqrt{\frac{A^2}{\left(k\cdot 2 \pi\right)^2} \cdot \left( (-1)^{k} -1 \right)^2}=\\
+&=\sqrt{\frac{A^2}{k^2\cdot \left(2 \pi\right)^2} \cdot \left( (-1)^{k} -1 \right)^2}=\\
+&=\sqrt{\frac{A^2}{k^2\cdot \left(2 \pi\right)^2}} \cdot \sqrt{\left( (-1)^{k} -1 \right)^2}=\\
+&=\frac{\sqrt{A^2}}{\sqrt{k^2\cdot \left(2 \pi\right)^2}} \cdot \sqrt{\left( (-1)^{k} -1 \right)^2}=\\
+&=\frac{A}{\sqrt{k^2}\cdot \sqrt{\left(2 \pi\right)^2}} \cdot \left|(-1)^{k} -1 \right|=\\
+&=\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{k} -1 \right|=\\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{k} -1 \right| & dla & k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{k} -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{2\cdot n} -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{2 \cdot n +1 } -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left((-1)^{2}\right)^n -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|(-1)^{2 \cdot n}\cdot \left(-1\right)^{1} -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left(1\right)^n -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left((-1)^{2}\right) ^n \cdot \left(-1\right) -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|1 -1 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|\left(1\right) ^n \cdot \left(-1\right) -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|0 \right| & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|1 \cdot \left(-1\right) -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot 0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|-1 -1 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot \left|-2 \right| & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot 2 \pi} \cdot 2 & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right. = \\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+\frac{A}{\left|k\right|\cdot \pi} & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+\end{align*}
+
+\TT{Podobnie argument wartości współczynników $F_k$ wynosi}{}
+
+\begin{align*}
+\mathtt{Arg}\left\{F_k\right\} &= arctan\left(\frac{\mathtt{Im}\left(F_k\right)}{\mathtt{Re}\left(F_k\right)}\right) =\\
+&=arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{0}\right) =\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{2 \cdot n} -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{2 \cdot n + +1} -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left((-1)^{2}\right) ^n -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left((-1)^{2}\right)^n \cdot \left(-1\right)^1 -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left(1\right) ^n -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( \left(1\right)^n \cdot \left(-1\right)^1 -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( 1 -1 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( 1 \cdot \left(-1\right) -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( 0 \right)}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{\frac{A}{k\cdot 2 \pi}\cdot \left( -1 -1 \right)}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+arctan\left(\frac{0}{0}\right) & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+arctan\left(\frac{-\frac{A}{k\cdot \pi}}{0}\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+&=\left\{\begin{array}{lll}
+0 & dla &k = 2 \cdot n \wedge n \in \mathcal{Z}\\
+-\frac{\pi}{2} sign\left(k\right) & dla & k = 2 \cdot n + 1 \wedge n \in \mathcal{Z}\\
+\end{array}\right.\\
+\end{align*}
+
+%Rekonstrukcja
+\TT{Podstawiając wyznaczone wartości współczynników $F_k$ do wzoru aproksymacyjnego funkcje $f(t)$ możemy wyrazić jako}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
+
+\begin{align*}
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
+f(t) &= \frac{A}{2}+\sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallmatrix}}^{\infty} \left[\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
+\end{align*}
 
 \TT{W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-1$ to $k_{max}=1$ results in:}
 
@@ -290,5 +320,89 @@ f(t) &= \frac{A}{2}+\sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \end{smallmat
 
 
 \TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
+
+\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo amplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot magnitude spectrum $\left|F_k\right|$ of the $f(t)$ signal.}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  
+  \tikzmath{
+    function mFk(\k,\A) {
+      if(\k==0) then
+      {
+        return \A/2;
+      }
+      else
+      {
+        %return abs(\A/(\k*2*3.141592)*(sqrt((cos(\k*180)-1.0)^2+(sin(-\k*180))^2) ));
+        return abs(\A/(\k*2*3.141592)*(((-1)^\k)-1));
+      };
+    };
+  }
+  
+  %\draw (0,0) circle (1in);
+  \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+  \draw[->] (+0.0,-0.0) -- (+0.0,+2.5) node[above] {$\left|F_k\right|$};
+  \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$A/2$};
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+  };
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \pgfmathsetmacro{\y}{mFk(\k,4)};
+    \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+    \draw[-, red] (\x,0) -- (\x,\y);
+  };
+  
+  \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
+
+\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot phase spectrum $\mathtt{arg}\left\{F_k\right\}$ of the $f(t)$ signal.}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+  
+  \tikzmath{
+    function aFk(\k,\A) {
+      if(\k==0) then
+      {
+        return 0;
+      }
+      else
+      {
+        return -1.0*mod(\k,2);
+      };
+    };
+  }
+  
+  %\draw (0,0) circle (1in);
+  \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+  \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$\mathtt{arg}\left\{F_k\right\}$};
+  \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\frac{\pi}{2}$};
+  \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-\frac{\pi}{2}$};
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+  };
+  
+  \foreach \k in {-8,-7,...,8 }{
+    \pgfmathsetmacro{\x}{\k/1.5};
+    \pgfmathsetmacro{\y}{aFk(\k,4)*2.0};
+    \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+    \draw[-, red] (\x,0) -- (\x,\y);
+  };
+  
+  \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
 
 \end{task}

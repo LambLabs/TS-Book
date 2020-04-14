@@ -233,6 +233,15 @@ F_{1}&=-\jmath \cdot \frac{A}{4}\\
 F_k&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\\
 \end{align*}
 
+\TT{Podstawiając to wzoru aproksymacyjnego funkcję $f(t)$ możemy wyrazić jako}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
+
+\begin{equation}
+\begin{aligned}
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
+f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} - \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
+\end{aligned}
+\end{equation}
+
 \TT{Możemy wyznaczyć kilka wartości współczynników $F_k$}{The first several coefficients are equal to:}
 
 \begin{table}[H]
@@ -250,14 +259,126 @@ F_k&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\\
   \end{tabular} 
 \end{table}
 
-\TT{Podstawiając to wzoru aproksymacyjnego funkcję $f(t)$ możemy wyrazić jako}{Hence, the signal $f(t)$ may be expressed as the sum of the harmonic series}
+\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo amplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot magnitude spectrum $\left|F_k\right|$ of the $f(t)$ signal.}
 
-\begin{equation}
-\begin{aligned}
-f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}\\
-f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdot \frac{2\pi}{T} \cdot t} - \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot 1 \cdot \frac{2\pi}{T} \cdot t} + \sum_{\begin{smallmatrix}k=-\infty \\ k \neq 0 \\ k \neq -1 \wedge k \neq 1 \end{smallmatrix}}^{\infty} \left[\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\right] \cdot e^{\jmath \cdot k \cdot \frac{2\pi}{T} \cdot t}
-\end{aligned}
-\end{equation}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    
+    \tikzmath{
+        function mFk(\k,\A) {
+            if(\k==0) then
+            {
+                return \A/3.141592;
+            }
+            else
+            {
+                if(\k==1) then 
+                {
+                    return \A/4;
+                }
+                else
+                {
+                    if(\k==-1) then
+                    {
+                        return \A/4;
+                    }
+                    else
+                    {
+                        %return abs(\A/(2*3.141592)*(sqrt((cos(\k*180)+1.0)^2+(sin(-\k*180))^2) )/(1-(\k)^2));
+                        return abs(\A/(2*3.141592)*(((-1)^\k) + 1)/(1-(\k)^2));
+                    };
+                };        
+            };
+        };
+    }
+    
+    %\draw (0,0) circle (1in);
+    \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+    \draw[->] (+0.0,-0.0) -- (+0.0,+2.5) node[above] {$\left|F_k\right|$};
+    \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$A/\pi$};
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+    };
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \pgfmathsetmacro{\y}{mFk(\k,4)*3.141592/2.0};
+        \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+        \draw[-, red] (\x,0) -- (\x,\y);
+    };
+    
+    \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
+
+\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot phase spectrum $\mathtt{arg}\left\{F_k\right\}$ of the $f(t)$ signal.}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    
+    \tikzmath{
+        function aFk(\k,\A) {
+            if(\k==0) then
+            {
+                return 0;
+            }
+            else
+            {
+                if(\k==1) then 
+                {
+                    return -3.141592/2;
+                }
+                else
+                {
+                    if(\k==-1) then
+                    {
+                        return 3.141592/2;
+                    }
+                    else
+                    {
+                        if(mod(abs(\k),2))==1) then
+                        {
+                            return 0; % odd
+                        }
+                        else
+                        {
+                            return 3.141592*sign(\k); %even * sign
+                        };
+                    };
+                };
+            };
+        };
+    }
+    
+    %\draw (0,0) circle (1in);
+    \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
+    \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$\mathtt{arg}\left\{F_k\right\}$};
+    \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\pi$};
+    \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-\pi$};
+    \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$\frac{\pi}{2}$};
+    \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, left] {$-\frac{\pi}{2}$};
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
+    };
+    
+    \foreach \k in {-8,-7,...,8 }{
+        \pgfmathsetmacro{\x}{\k/1.5};
+        \pgfmathsetmacro{\y}{aFk(\k,4)*2.0/3.141592};
+        \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
+        \draw[-, red] (\x,0) -- (\x,\y);
+    };
+    
+    \end{tikzpicture}
+\end{figure}
+
+\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
 
 \TT{W przypadku sumowania od $k_{min}=-1$ do $k_{max}=1$ otrzymujemy:}{A partial approximation of the $f(t)$ signal from $k_{min}=-1$ to $k_{max}=1$ results in:}
 
@@ -355,127 +476,5 @@ f(t) &= \frac{A}{\pi} + \jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot (-1) \cdo
 \end{figure}
 
 \TT{W granicy sumowania od $k_{min}=-\infty$ do $k_{max}=\infty$ otrzymujemy oryginalny sygnał.}{Approximation of the $f(t)$ signal for from $k_{min}=-\infty$ to $k_{max}=\infty$ results in oryginal signal.}
-
-\TT{Na podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo amplitudowe $\left|F_k\right|$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot magnitude spectrum $\left|F_k\right|$ of the $f(t)$ signal.}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-  
-  \tikzmath{
-    function mFk(\k,\A) {
-      if(\k==0) then
-      {
-        return \A/3.141592;
-      }
-      else
-      {
-        if(\k==1) then 
-        {
-          return \A/4;
-        }
-        else
-        {
-          if(\k==-1) then
-          {
-            return \A/4;
-          }
-          else
-          {
-            %return abs(\A/(2*3.141592)*(sqrt((cos(\k*180)+1.0)^2+(sin(-\k*180))^2) )/(1-(\k)^2));
-            return abs(\A/(2*3.141592)*(((-1)^\k) + 1)/(1-(\k)^2));
-          };
-        };        
-      };
-    };
-  }
-  
-  %\draw (0,0) circle (1in);
-  \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
-  \draw[->] (+0.0,-0.0) -- (+0.0,+2.5) node[above] {$\left|F_k\right|$};
-  \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$A/\pi$};
-  
-  \foreach \k in {-8,-7,...,8 }{
-    \pgfmathsetmacro{\x}{\k/1.5};
-    \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
-  };
-  
-  \foreach \k in {-8,-7,...,8 }{
-    \pgfmathsetmacro{\x}{\k/1.5};
-    \pgfmathsetmacro{\y}{mFk(\k,4)*3.141592/2.0};
-    \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
-    \draw[-, red] (\x,0) -- (\x,\y);
-  };
-  
-  \end{tikzpicture}
-\end{figure}
-
-\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
-
-\TT{Podobnie n podstawie wyznaczonych współczynników $F_k$ możemy narysować widmo fazowe $\mathtt{arg}\left\{F_k\right\}$ sygnału $f(t)$.}{Based on coefficents $F_k$ we can plot phase spectrum $\mathtt{arg}\left\{F_k\right\}$ of the $f(t)$ signal.}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-  
-  \tikzmath{
-    function aFk(\k,\A) {
-      if(\k==0) then
-      {
-        return 0;
-      }
-      else
-      {
-        if(\k==1) then 
-        {
-          return -3.141592/2;
-        }
-        else
-        {
-          if(\k==-1) then
-          {
-            return 3.141592/2;
-          }
-          else
-          {
-            if(mod(abs(\k),2))==1) then
-            {
-                return 0; % odd
-            }
-            else
-            {
-                return 3.141592*sign(\k); %even * sign
-            };
-          };
-        };
-      };
-    };
-  }
-  
-  %\draw (0,0) circle (1in);
-  \draw[->] (-6.0,+0.0) -- (+6.0,+0.0) node[right] {$k$};
-  \draw[->] (+0.0,-2.5) -- (+0.0,+2.5) node[above] {$\mathtt{arg}\left\{F_k\right\}$};
-  \draw[-] (-0.1,2.0-0.1)--(+0.1,2.0+0.1) node[midway, left] {$\pi$};
-  \draw[-] (-0.1,-2.0-0.1)--(+0.1,-2.0+0.1) node[midway, left] {$-\pi$};
-  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$\frac{\pi}{2}$};
-  \draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, left] {$-\frac{\pi}{2}$};
-  
-  \foreach \k in {-8,-7,...,8 }{
-    \pgfmathsetmacro{\x}{\k/1.5};
-    \draw[-] ({\x-0.1},-0.1)--({\x+0.1},0.1) node[midway, below, outer sep=5pt] {${\k}$};    
-  };
-  
-  \foreach \k in {-8,-7,...,8 }{
-    \pgfmathsetmacro{\x}{\k/1.5};
-    \pgfmathsetmacro{\y}{aFk(\k,4)*2.0/3.141592};
-    \node[circle,red,fill=red,scale=0.5] (\x\y) at (\x,\y) {};
-    \draw[-, red] (\x,0) -- (\x,\y);
-  };
-  
-  \end{tikzpicture}
-\end{figure}
-
-\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
-
 
 \end{task}
