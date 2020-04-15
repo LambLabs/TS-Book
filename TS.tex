@@ -2,8 +2,8 @@
 
 \setdebug
 %\setrelease
-\setPL
-%\setENG
+%\setPL
+\setENG
 
 %\IfFileExists{eforms.sty}{\def\x{T}}{\def\x{F}}
 %\def\booklanguageh{1}
@@ -251,14 +251,13 @@
 %	Linearity of Fourier series
 %	The influence of signal symmetries on the coefficients of complex exponential Fourier series
 %	The effect of signal shift in time on the complex exponential Fourier series
+\inputTask{zadKW045-ENG.tex} %jako pierwsze, gdyż tylko przesunięcie
 \inputTask{zadTG019-ENG.tex}
-\inputTask{zadKW045-ENG.tex}
-\inputTask{zadKW046.tex}
-\inputTask[Debug]{zadKW047.tex} % do rozwiązania jeszcze
-\inputTask[Debug]{zadKW048.tex} % do rozwiązania jeszcze
-
-%\inputTask[Debug]{zadTG020-ENG.tex}
+\inputTask[Debug]{zadTG020-ENG.tex}
 %	Spectrum of a product of two signals
+\inputTask{zadKW046.tex} % mnożenie dwóch sygnałów
+\inputTask{zadKW047.tex} % do rozwiązania jeszcze
+\inputTask{zadKW048.tex} % do rozwiązania jeszcze
 %	Computing the power of a signal – the Parseval theorem
 \TT{\section{Obliczenia mocy sygnałów - twierdzenie Parsevala}}{\section{Computing the power of a signal – the Parseval's theorem}}
 \inputTask{zadTG014.tex}
