@@ -1,0 +1,74 @@
+\begin{task}
+\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $g(t)$ przedstawionego na rysunku. Wykorzystaj własności szeregu Fouriera oraz współczynniki zespolonego szeregu Fouriera wyznaczone w zadaniu \ref{TaskKW012}}{Calculate coefficients of the periodic signal $g(t)$ shown below for the expansion into a complex exponential Fourier series. Use properties of the complex series and coefficients calculated in task \ref{TaskKW012}.}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$g(t)$};
+  \draw[-,red, thick] (-2.0,+0.0) -- (-1.5,+0.0) -- (-1.5,+1.0) -- (-0.5,+1.0) -- (-0.5,+0.0)--(+0.5,+0.0) -- (+0.5,+1.0) -- (+1.5,+1.0) -- (+1.5,+0.0) -- (+2.5,+0.0) -- (+2.5,+1.0) -- (3.5,1.0) -- (3.5,0.0) -- (4.0,0.0);
+  %\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=10pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (-0.5-0.1,-0.1)--(-0.5+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{1}{4}T$};
+  \draw[-] (+0.5-0.1,-0.1)--(+0.5+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{1}{4}T$};
+  \draw[-] (+1.5-0.1,-0.1)--(+1.5+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{3}{4}T$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+\end{tikzpicture}
+\end{figure}
+
+\TT{W pierwszej kolejności należy opisać sygnał za pomocą wzoru.}{Periodic signal $g(t)$, as a piecewise linear function, is given by:}
+
+\begin{equation}
+   g(x)=\begin{cases}
+   0 & t \in \left (  0+k \cdot T; \frac{1}{4}T+k \cdot T \right ) \\
+   A & t \in \left (  \frac{1}{4}T+k \cdot T; \frac{3}{4}T+k \cdot T \right ) \\
+   0 & t \in \left ( \frac{3}{4}T+k \cdot T; T +k \cdot T\right )
+   \end{cases} \wedge k \in \TT{C}{Z}
+\end{equation}
+
+\TT{Można zauważyć iż sygnał $g(t)$ jest przesuniętą o $\frac{1}{4}T$ w czasie wersją sygnału $f(t)$ z zadania \ref{TaskKW012}}{}
+\begin{align*}
+  g(t) = f\left(t-\frac{1}{4}T\right)
+\end{align*}
+
+\TT{Współczynniki zespolonego szeregu Fouriera $F_k$ dla sygnału $f(t)$ wyznaczone w zadaniu \ref{TaskKW012} wynoszą:}{}
+\begin{align*}
+F_0&=\frac{A}{2}\\
+F_k&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)\\
+\end{align*}
+\TT{Korzystając z twierdzenia o przesunięciu w dziedzinie czasu można wyznaczyć współczynniki $G_k$ na podstawie współczynników $F_k$ sygnału $f(t)$ przesunętego w czasie o $t_0$ jako:}{}
+\begin{align*}
+g(t) &= f(t-t_0)\\
+G_k &= F_k \cdot e^{-\jmath \cdot \frac{2\pi}{T}\cdot k\cdot t_0}
+\end{align*}
+\TT{Wstawiajać wartości współczynników $F_k$ otrzymujemy}{}
+\begin{align*}
+G_k &= F_k \cdot e^{-\jmath \cdot \frac{2\pi}{T}\cdot k\cdot t_0} = \\
+&=\left\{\begin{array}{ll}
+t_0= \frac{1}{4}T
+\end{array}\right\}=\\
+&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right) \cdot e^{-\jmath \cdot \frac{2\pi}{T}\cdot k\cdot \frac{1}{4}T} \\
+&=\jmath \cdot \frac{A}{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right) \cdot e^{-\jmath \cdot \pi \cdot k\cdot \frac{1}{2}} \\
+&=\jmath \cdot \frac{A\cdot e^{-\jmath \cdot \frac{\pi }{2} \cdot k} }{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right) 
+\end{align*}
+
+\TT{Podobnie dla $G_0$ podstawiając $F_0$ otrzymujemy}{}
+\begin{align*}
+G_0 &= F_0 \cdot e^{-\jmath \cdot \frac{2\pi}{T}\cdot 0\cdot t_0} = \\
+&=F_0 \cdot e^{0} = \\
+&=F_0 \cdot 1 = \\
+&=F_0 = \\
+&=\frac{A}{2}
+\end{align*}
+
+\TT{Wartość współczynnika jak $k=0$ nie ulega zmianie w wyniku przesunięcia sygnału w czasie $G_0=F_0$. Warto zauważyć iż wartość współczynnika dla $k=0$ jest utożsamiana z wartością średnią sygnału, a ta nie ulega zmianie w wyniku przesunięcia w dziedzinie czasu. }
+\\
+
+\TT{Ostatecznie współczynniki zespolonego szeregu Fouriera dla funkcji przedstawionej na rysunku przyjmują wartości.}{To sum up, coefficients for the expansion into a complex exponential Fourier series are given by:}
+\begin{align*}
+G_0&=\frac{A}{2}\\
+G_k&=\jmath \cdot \frac{A\cdot e^{-\jmath \cdot \frac{\pi }{2} \cdot k} }{k\cdot 2 \pi}\cdot \left( (-1)^{k} -1 \right)
+\end{align*}
+
+\end{task}
