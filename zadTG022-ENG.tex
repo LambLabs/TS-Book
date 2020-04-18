@@ -1,0 +1,69 @@
+\begin{task}
+\TT{Współczynniki rozwinięcia w zespolony szereg Fouriera pewnego rzeczywistego sygnału okresowego wynoszą:}{For a certain real-valued periodic signal, its coefficients of expansion to a complex exponential Fourier series are:} 
+
+\begin{equation}
+F_k=\frac{A}{\jmath \cdot k^2 \cdot 4 \cdot \pi^2} \wedge  k>0
+\end{equation}
+
+\TT{Wyznacz wartość średnią sygnału ($\bar{f}$) wiedząc, że wartość skuteczna $U=\frac{A\sqrt{6}}{60}$. W trakcie onliczeń wykorzystaj wiedzę, że:}{Compute the mean value ($\bar{f}$), knowing that the effective (RMS) value is $U=\frac{A\sqrt{6}}{60}$. During calculation use:} 
+
+\begin{equation}
+\sum_{k=1}^{\infty} \frac{1}{k^4}=\frac{\pi^4}{90}
+\end{equation}
+
+\TT{Z teorii wiemy, że:}{From the theoretical considerations we know that:}
+\begin{align*}
+F_0 &= \bar{f}\\
+U &= \sqrt{P}
+\end{align*}
+
+\TT{Dlatego, aby wyznaczyć wartość średnią $\bar{f}$ musimy obliczyć wartość współczynnika $F_0$. Niestety znamy wartości $F_k$ ale tylko dla $k>0$.}{In order to calculate $\bar{f}$ we have to calculate $F_0$. But we know values of $F_k$ for $k>0$ only.}
+
+\TT{Jednakże, z twierdzenia Parsevala wiemy, że moc sygnału to:}{However, based on Parseval theorem, power of the signal is defined as:}
+
+\begin{equation}
+P=\sum_{k=-\infty}^{\infty} \left|F_k\right|^2
+\end{equation}
+
+\TT{Powyższe równanie można przepisać jako:}{This equation may be rewritten as:}
+
+\begin{align*}
+P&=\sum_{k=-\infty}^{\infty} \left|F_k\right|^2\\
+P&=\sum_{k=-\infty}^{-1} \left|F_k\right|^2 + \left|F_0\right|^2 + \sum_{k=1}^{\infty} \left|F_k\right|^2\\
+\left|F_0\right|^2 &= P - \sum_{k=-\infty}^{-1} \left|F_k\right|^2 - \sum_{k=1}^{\infty} \left|F_k\right|^2\\
+\left|F_0\right|^2 &= P - \sum_{k=1}^{\infty} \left|F_{-k}\right|^2 - \sum_{k=1}^{\infty} \left|F_k\right|^2
+\end{align*}
+
+\TT{Ponieważ sygnał $f(t)$ jest sygnałem rzeczywistym, to $\left|F_{k}\right|=\left|F_{-k}\right|$, dlatego:}{Because the $f(t) \in R$, thus $\left|F_{k}\right|=\left|F_{-k}\right|$ and we may write:}
+
+\begin{align*}
+\left|F_0\right|^2 &= P - \sum_{k=1}^{\infty} \left|F_{-k}\right|^2 - \sum_{k=1}^{\infty} \left|F_k\right|^2\\
+\left|F_0\right|^2 &= P - \sum_{k=1}^{\infty} \left|F_k\right|^2 - \sum_{k=1}^{\infty} \left|F_k\right|^2\\
+\left|F_0\right|^2 &= P - 2 \cdot \sum_{k=1}^{\infty} \left|F_k\right|^2
+\end{align*}
+
+\TT{Teraz możemy już wyliczyć $F_0$:}{Now, we can calculate $F_0$:}
+
+\begin{align*}
+\left|F_0\right|^2 &= P - 2 \cdot \sum_{k=1}^{\infty} \left|F_k\right|^2\\
+\left|F_0\right|^2 &= U^2 - 2 \cdot \sum_{k=1}^{\infty} \left|F_k\right|^2\\
+\left|F_0\right|^2 &= \left(\frac{A\sqrt{6}}{60}\right)^2 - 2 \cdot \sum_{k=1}^{\infty} \left|\frac{A}{\jmath \cdot k^2 \cdot 4 \cdot pi^2}\right|^2\\
+\left|F_0\right|^2 &= \frac{A^2 \cdot 6}{3600} - 2 \cdot \sum_{k=1}^{\infty} \left|\frac{A}{\jmath \cdot k^2 \cdot 4 \cdot \pi^2}\right|^2\\
+\left|F_0\right|^2 &= \frac{A^2}{600} - 2 \cdot \sum_{k=1}^{\infty} \left(\frac{A}{k^2 \cdot 4 \cdot \pi^2}\right)^2\\
+\left|F_0\right|^2 &= \frac{A^2}{600} - 2 \cdot \sum_{k=1}^{\infty} \frac{A^2}{k^4 \cdot 16 \cdot \pi^4}\\
+\left|F_0\right|^2 &= \frac{A^2 }{600} - 2 \cdot \frac{A^2}{16 \cdot \pi^4} \cdot \sum_{k=1}^{\infty} \frac{1}{k^4}\\
+\left|F_0\right|^2 &= \frac{A^2}{600} - \frac{A^2}{8 \cdot \pi^4} \cdot \frac{\pi^4}{90}\\
+\left|F_0\right|^2 &= \frac{A^2}{600} - \frac{A^2}{720}\\
+\left|F_0\right|^2 &= \frac{720 \cdot A^2}{600 \cdot 720} - \frac{600 \cdot A^2}{600 \cdot 720}\\
+\left|F_0\right|^2 &= \frac{720 \cdot A^2 - 600 \cdot A^2}{600 \cdot 720}\\
+\left|F_0\right|^2 &= \frac{120 \cdot A^2}{600 \cdot 720}\\
+\left|F_0\right|^2 &= \frac{A^2}{5 \cdot 720}\\
+\left|F_0\right|^2 &= \frac{A^2}{3600}\\
+\left|F_0\right| &= \sqrt{\frac{A^2}{3600}}\\
+\left|F_0\right| &= \frac{A}{60}\\
+F_0 &= \pm \frac{A}{60}\\
+\end{align*}
+
+\TT{Wartość średnia wynosi $\bar{f}=\pm \frac{A}{60}$.}{The mean value is equal to $\bar{f}=\pm \frac{A}{60}$.} 
+
+\end{task}
