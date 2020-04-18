@@ -22,7 +22,7 @@
 \TT{W pierwszej kolejności należy opisać sygnał za pomocą wzoru:}{First of all, the definition of $f(t)$ signal has to be derived. This is periodic piecewise linear function, which may be describe as:}
 
 \begin{equation}
-   f(x)=\begin{cases}A & t \in \left (  0+k \cdot T; \frac{T}{2}+k \cdot T \right ) \\
+   f(t)=\begin{cases}A & t \in \left (  0+k \cdot T; \frac{T}{2}+k \cdot T \right ) \\
    -A & t \in \left ( \frac{T}{2}+k \cdot T; T +k \cdot T\right )\end{cases} \wedge k \in \TT{C}{Z}
 \end{equation}
 
@@ -36,11 +36,11 @@ P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
 
 \begin{align*}
 P &=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt=\\
-&=\frac{1}{T} \cdot \left( \int_{0}^{\frac{T}{2}} \left|A\right|^2 \cdot dt + \int_{\frac{T}{2}}^{T} \left|-A\right|^2 \cdot dt \right )=\\
-&=\frac{1}{T} \cdot \left( A^2 \cdot \int_{0}^{\frac{T}{2}} dt + A^2 \cdot \int_{\frac{T}{2}}^{T} dt  \right )=\\
-&=\frac{A^2}{T} \cdot \left( \left. t\right |_{0}^{\frac{T}{2}} + \left. t\right |_{\frac{T}{2}}^{T} \right )=\\
-&=\frac{A^2}{T} \cdot \left( \frac{T}{2} - 0 + T - \frac{T}{2}\right )=\\
-&=\frac{A^2}{T} \cdot \left( T \right )=\\
+&=\frac{1}{T} \cdot \left( \int_{0}^{\frac{T}{2}} \left|A\right|^2 \cdot dt + \int_{\frac{T}{2}}^{T} \left|-A\right|^2 \cdot dt \right)=\\
+&=\frac{1}{T} \cdot \left( A^2 \cdot \int_{0}^{\frac{T}{2}} dt + A^2 \cdot \int_{\frac{T}{2}}^{T} dt  \right)=\\
+&=\frac{A^2}{T} \cdot \left( \left. t\right |_{0}^{\frac{T}{2}} + \left. t\right|_{\frac{T}{2}}^{T} \right)=\\
+&=\frac{A^2}{T} \cdot \left( \frac{T}{2} - 0 + T - \frac{T}{2}\right)=\\
+&=\frac{A^2}{T} \cdot \left( T \right)=\\
 &=A^2 
 \end{align*}
 
@@ -52,13 +52,13 @@ P &=\frac{1}{T} \cdot \int_{T}\left|f(t)\right|^2 \cdot dt=\\
 P_1=\left|F_{1}\right|^2+\left|F_{-1}\right|^2
 \end{equation}
 
-\TT{Ponieważ sygnał $f(t)$ jest sygnałem rzeczywistym, to $\left|F_{1}\right|=\left|F_{-1}\right|$, czyli moc podstawowej harmonicznej:}{Because the $f(t) \in R$, thus the power of the fundamental harmonic may be calculated as}
+\TT{Ponieważ sygnał $f(t)$ jest sygnałem rzeczywistym, to $\left|F_{1}\right|=\left|F_{-1}\right|$, czyli moc podstawowej harmonicznej:}{Because the $f(t) \in R$, thus $\left|F_{1}\right|=\left|F_{-1}\right|$ and the power of the fundamental harmonic may be calculated as}
  
 \begin{equation}
 P_1=2 \cdot \left|F_{1}\right|^2
 \end{equation}
 
-\TT{W związku z tym, należy obliczyć wartość współczynnika $F_1$. Można to zrobić bezpośrednio ze wzoru na $F_k$ podstawiając $k=1$:}{In order to calculate $P_1$, the $F_1$ coefficient has to be calculated:}
+\TT{W związku z tym, należy obliczyć wartość współczynnika $F_1$. Można to zrobić bezpośrednio ze wzoru na $F_k$ podstawiając $k=1$:}{In order to calculate the $P_1$, the $F_1$ coefficient has to be calculated:}
 
 \begin{equation}
 F_1=\frac{1}{T} \cdot \int_{T}f(t) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot dt
@@ -93,7 +93,7 @@ e^{ -\jmath \cdot \pi }&=cos(\pi)-\jmath \cdot sin(\pi)=-1\\
 
 \TT{Wartość współczynnika $F_1$ to $-\jmath \cdot \frac{2 \cdot A}{\pi}$}{The $F_1$ coefficient equals $-\jmath \cdot \frac{2 \cdot A}{\pi}$.}
 
-\TT{Podstawiając wartość współczynnika $F_1$ do wzoru na moc podstawowej harmonicznej otrzymujemy:}{Thus, $P_1$ may be calculated:}
+\TT{Podstawiając wartość współczynnika $F_1$ do wzoru na moc podstawowej harmonicznej otrzymujemy:}{Thus, the $P_1$ may be calculated:}
 
 \begin{align*}
 P_1&=2 \cdot \left|F_{1}\right|^2=\\
