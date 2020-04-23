@@ -19,10 +19,10 @@
 \TT{W pierwszej kolejności należy opisać sygnał za pomocą wzoru.}{The signal $f(t)$, as a piecewise function, is given by:}
 
 \begin{equation}
-f(t) = \left\{\begin{matrix*}[l]
-0 & dla & t \in \left(-\infty; 0\right)\\
-A \cdot e^{-a\cdot t} & dla & t \in \left(0; \infty\right)
-\end{matrix*}\right.
+f(t) = \begin{cases}
+0 & \TT{\text{ dla }}{\text{ if }} t \in \left(-\infty; 0\right)\\
+A \cdot e^{-a\cdot t} & \TT{\text{ dla }}{\text{ if }} t \in \left(0; \infty\right)
+\end{cases}
 \end{equation}
 
 \TT{Transformatę Fouriera obliczamy ze wzoru:}{The Fourier transform is defined as:}
@@ -64,7 +64,7 @@ dt&=\frac{1}{-( a + \jmath \cdot \omega)} \cdot dz\\
 &=\frac{A}{a + \jmath \cdot \omega}
 \end{align*}
 
-\TT{Transformata sygnału $f(t)=A\cdot\Pi(\frac{t}{\tau})$ to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}{The Fourier transform of the $f(t)=A\cdot\Pi(\frac{t}{\tau})$ is equal to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}
+\TT{Transformata sygnału $f(t)$ to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}{The Fourier transform of the $f(t)=A\cdot\Pi(\frac{t}{\tau})$ is equal to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}
 
 \TT{Wyznaczmy jawnie część rzeczywistą i urojoną transformaty:}{Let's explicitly determine the real and imaginary part:}
 

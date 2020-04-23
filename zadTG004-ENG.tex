@@ -26,10 +26,10 @@
 \TT{Sygnał $f(t)$ możemy opisać jako funkcję przedziałową:}{The $f(t)$ signal, as a piecewise function is given by:}
 
 \begin{equation}
-f(t) = \left\{\begin{matrix*}[l]
-0 & dla & t \in \left(-\infty; 0\right)\\
-e^{-a\cdot t} \cdot sin(\omega_{0} \cdot t) & dla & t \in \left(0; \infty\right)
-\end{matrix*}\right.
+f(t) = \begin{cases}
+0 & \TT{\text{ dla }}{\text{ if }} t \in \left(-\infty; 0\right)\\
+e^{-a\cdot t} \cdot sin(\omega_{0} \cdot t) & \TT{\text{ dla }}{\text{ if }} t \in \left(0; \infty\right)
+\end{cases}
 \end{equation}
 
 \TT{Transformatę Fouriera obliczamy ze wzoru:}{The Fourier transform is defined as:}
