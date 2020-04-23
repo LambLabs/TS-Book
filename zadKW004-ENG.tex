@@ -1,0 +1,83 @@
+\begin{task}
+
+\TT{Oblicz moc sygnału okresowego $f(t)$ przedstawionego na rysunku:}{Calculate the average power for the periodic signal $f(t)$ given below:}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$f(t)$};
+  \draw[-,red, thick] (-1.5,0.5) -- (-1.0,1.0) -- (-1.0,0.0) -- (0.0,1.0) -- (0.0,+0.0) -- (+1.0,+1.0) -- (1.0,+1.0) -- (+1.0,+0.0) -- (1.0,+0.0) -- (+2.0,+1.0) -- (+2.0,+0.0) -- (2.5,0.5);
+  \draw[-,red, dashed] (-1.5,1.0) -- (2.5,1.0);
+  %\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=10pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-T$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$2 \cdot T$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, left] {$A$};
+
+\end{tikzpicture}
+\end{figure}
+
+\TT{W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku. Jest to funkcja przedziałowa. W pierwszym okresie możemy ją opisać ogólnym równaniem prostej:}{First of all, the definition of $f(t)$ signal has to be derived. This is periodic piecewise function, piecewise linear function to be precise. The simplest form of linear function is:}
+
+\begin{equation}
+f(t) = a \cdot t + b
+\end{equation} 
+
+\TT{W pierwszym okresie, wykres funkcji jest prostą przechodzącą przez dwa punkty: $(0,0)$ oraz $(T,A)$. Możemy więc napisać układ równań, rozwiązać go i znaleźć nieznane parametry $a$ i $b$:}{In the first period (i.e. $t \in (0; T)$), linear function crosses two points: $(0,0)$ and $(T,A)$. So, in order to derive $a$ and $b$, the following system of the equations has to be solved:}  
+
+\begin{align*}
+&\left\{\begin{matrix}
+0 = a\cdot 0 +b\\ 
+A = a\cdot T +b
+\end{matrix}\right. \\
+&\left\{\begin{matrix}
+0 = b\\ 
+A = a\cdot T +b
+\end{matrix}\right. \\
+&\left\{\begin{matrix}
+0 = b\\ 
+A = a\cdot T +0
+\end{matrix}\right. \\
+&\left\{\begin{matrix}
+0 = b\\ 
+\frac{A}{T} = a
+\end{matrix}\right.
+\end{align*}
+
+\TT{A więc funkcję przedstawioną na rysunku, w pierwszym okresie można opisać wzorem:}{As a result the piecewise linear function in the first period is given by:}
+
+\begin{align*}
+f(t) = \frac{A}{T}\cdot t
+\end{align*}
+
+\TT{I ogólniej, całą funkcję można wyrazić następującym wzorem:}{For the whole periodic signal $f(t)$ we get:}
+
+\begin{align*}
+f(t) = \frac{A}{T}\cdot \left(t-k\cdot T\right) \wedge k \in C
+\end{align*}
+
+\TT{Moc sygnału okresowego wyznaczamy ze wzoru:}{The average power for periodic signals is defined by:}
+
+\begin{equation}
+P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
+\end{equation}
+
+\TT{Podstawiamy do wzoru na moc wzór naszej funkcji:}{In our case we get:}
+
+\begin{align*}
+P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
+ &=\frac{1}{T} \cdot \int_{0}^{T}\left|\frac{A}{T}\cdot t \right|^2 \cdot dt=\\ 
+ &=\frac{1}{T} \cdot \int_{0}^{T}\left(\frac{A}{T}\cdot t \right)^2 \cdot dt=\\ 
+ &=\frac{1}{T} \cdot \int_{0}^{T}\frac{A^2}{T^2}\cdot t^2 \cdot dt=\\ 
+ &=\frac{1}{T} \cdot \frac{A^2}{T^2}\cdot \int_{0}^{T} t^2 \cdot dt=\\ 
+ &=\frac{A^2}{T^3}\cdot \left(\left. \frac{1}{3}\cdot t^3 \right|_{0}^{T}\right)=\\ 
+ &=\frac{A^2}{T^3}\cdot \left(\frac{1}{3}\cdot T^3  - \frac{1}{3}\cdot 0^3 \right)=\\
+ &=\frac{A^2}{T^3}\cdot \left(\frac{1}{3}\cdot T^3  - 0 \right)=\\
+ &=\frac{A^2}{T^3}\cdot \frac{1}{3}\cdot T^3=\\
+ &=\frac{A^2}{3}
+\end{align*}
+
+\TT{Moc sygnału równa się $\frac{A^2}{3}$.}{The average power equals to $\frac{A^2}{3}$.}
+\end{task}

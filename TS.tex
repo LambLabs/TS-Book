@@ -1,7 +1,26 @@
 \documentclass[a4paper,11pt]{LambBook} %6 inch 800x600
 
+%\setdebug
+\setrelease
+\setPL
+%\setENG
+
+%\IfFileExists{eforms.sty}{\def\x{T}}{\def\x{F}}
+%\def\booklanguageh{1}
+%\if T\x%
+
 \usepackage[T1]{fontenc}
-\usepackage[polish]{babel}
+%\usepackage[polish]{babel}
+%\usepackage[english]{babel}
+
+\if 1\booklanguageh%
+ \usepackage[polish]{babel}
+\fi
+\if 2\booklanguageh%
+ \usepackage[english]{babel}
+\fi
+
+%\TT{\usepackage[polish]{babel}}{\usepackage[english]{babel}}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{mathtools}
@@ -11,20 +30,35 @@
 \usepackage{array}
 \usepackage{float} %Wymuszenie wstawienia obrazka w miejscu wstawienia
 %\usepackage[europeancurrents, europeanvoltages, europeanresistors, americaninductors, europeanports]{circuitikz} %Do rysowania obwodów elektrycznych
-\usepackage[ISBN=978-83-939620-1-3,SC2]{ean13isbn} %Drukowanie numeru ISBN
+\if 1\booklanguageh%
+  \usepackage[ISBN=978-83-939620-1-3,SC2]{ean13isbn}%Drukowanie numeru ISBN
+\fi
+\if 2\booklanguageh%
+  \usepackage[ISBN=978-83-939620-3-7,SC2]{ean13isbn}%Drukowanie numeru ISBN
+\fi
 \usepackage{tikz}
 \usepackage{ifthen}
 \usepackage{ bbold }
 \usepackage{animate}
 
 
-\selectlanguage{polish}
+\if 1\booklanguageh%
+  \selectlanguage{polish}
+\fi
+\if 2\booklanguageh%
+  \selectlanguage{english}
+\fi
 
 \allowdisplaybreaks
 %https://www.codecogs.com/latex/eqneditor.php
 %http://www.sciweavers.org/free-online-latex-equation-editor
 
-\def\booktitle{Teoria Sygnałów w zadaniach}
+\if 1\booklanguageh%
+ \def\booktitle{Teoria Sygnałów w zadaniach}
+\fi
+\if 2\booklanguageh%
+  \def\booktitle{Signals Theory in practice}
+\fi
 \def\bookauthors{Tomasz Grajek, Krzysztof Wegner}
 
 \usepackage[pdftex,
@@ -121,10 +155,6 @@
  E = \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|#1(\jmath \omega)\right|^2 \cdot d\omega
 }
 
-%\setdebug
-\setrelease
-%\setPL
-\setENG
 %====================================================
 \begin{document}
 %====================================================
@@ -156,7 +186,7 @@
 %\input{10_metoda_oczkowa_wezlowa_AC/_metoda_oczkowa_wezlowa_AC.tex}
 %\input{11_moc_AC/_moc_AC.tex}
 
-\chapter{Podstawowe własności sygnałów}
+\TT{\chapter{Podstawowe własności sygnałów}}{\chapter{Fundamental concepts and measures}}
 \inputTask{zadTG017-ENG.tex}
 %Fundamental concepts and measures
 %	Signals and their models
@@ -165,25 +195,25 @@
 %		Periodic signals
 %		Sinusoidal signals: real and complex
 %		Non-periodic signals
-\section{Podstawowe własności sygnałów}
+\TT{\section{Podstawowe parametry i miary sygnałów ciągłych}}{\section{Basic signal metrics}}
 %	Basic signal metrics
 %		Amplitude
 %		Mean value
-\subsection{Wartość średnia}
-\inputTask{zadKW001.tex}
-\inputTask{zadKW002.tex}
-\inputTask{zadKW007.tex}
+\TT{\subsection{Wartość średnia}}{\subsection{Mean value of a signal}}
+\inputTask{zadKW001-ENG.tex}
+\inputTask{zadKW002-ENG.tex} % ToDo - dodać wersję ze wzorami Eulera - łatwiejsza niż cykliczna
+\inputTask{zadKW007-ENG.tex}
 %		Energy of a signal
-\subsection{Energia sygnału}
-\inputTask{zadKW006.tex}
+\TT{\subsection{Energia sygnału}}{\subsection{Energy of a signal}}
+\inputTask{zadKW006-ENG.tex}
 %		Power of s signal
-\subsection{Moc sygnału}
-\inputTask{zadKW016.tex}
-\inputTask{zadKW004.tex}
-\inputTask{zadKW003.tex}
+\TT{\subsection{Moc i wartość skuteczna sygnału}}{\subsection{Power and effective value of a signal}}
+\inputTask{zadKW016-ENG.tex}
+\inputTask{zadKW004-ENG.tex}
+\inputTask{zadKW003-ENG.tex}
 \inputTask{zadTG016-ENG.tex}
-\inputTask{zadKW005.tex}
-\inputTask{zadKW017.tex}
+\inputTask{zadKW005-ENG.tex}
+\inputTask{zadKW017-ENG.tex} %Wynik ok, ale do sprawdzenia granice calkowania i okres, bo uśredniamy za dwa okresy sin^2, czyli zła ideologia
 \inputTask{zadKW041.tex}
 \inputTask{zadTG015-ENG.tex}
 %		Effective value of a signal (RMS)
@@ -193,42 +223,55 @@
 %		DC and AC signal components
 %		Odd and even signal components
 %Analysis of periodic signals using orthogonal series
-\chapter{Analiza sygnałów okresowych za pomocą szeregów ortogonalnych}
+\TT{\chapter{Analiza sygnałów okresowych za pomocą szeregów ortogonalnych}}{\chapter{Analysis of periodic signals using orthogonal series}}
 %	Hilbert space
 %	Orthogonal bases
 %	Orthogonal series of functions
 %	Trigonometric Fourier series
-\section{Trygonometryczny szerego Fouriera}
-\inputTask{zadKW008.tex}
-\inputTask{zadKW009.tex}
-\inputTask{zadKW010.tex}
-\inputTask{zadKW011.tex}
+\TT{\section{Trygonometryczny szereg Fouriera}}{\section{Trigonometric Fourier series}}
+\inputTask{zadKW008-ENG.tex}
+\inputTask{zadKW009-ENG.tex}
+\inputTask{zadKW010-ENG.tex}
+\inputTask{zadKW011-ENG.tex}
+\inputTask{zadTG018-ENG.tex} %Przypadek szczególny KW44 okres 0-3-6 i amp. A, -A.
+\inputTask{zadKW044-ENG.tex} %Przypadek ogólny TG18 okres 0-(aT)-T i amplituda A, -B.
 %	The influence of signal symmetries on the coefficients of the trigonometric Fourier series
 %	Complex exponential Fourier series
-\section{Zespolony szerego Fouriera}
-\inputTask{zadKW012.tex}
-\inputTask{zadKW013.tex}
-\inputTask{zadKW014.tex}
-\inputTask{zadKW015.tex}
-\inputTask{zadKW018.tex}
 %	The harmonic spectrum of a real signal
+\TT{\section{Zespolony szerego Fouriera}}{\section{Complex exponential Fourier series}}
+\inputTask{zadKW012-ENG.tex}
+\inputTask{zadKW013-ENG.tex}
+\inputTask{zadKW014-ENG.tex}
+\inputTask{zadKW015-ENG.tex}
+\inputTask{zadKW018-ENG.tex}
+\inputTask{zadKW042-ENG.tex}
+\inputTask{zadKW043-ENG.tex} %Sygnał -f(t) z KW18, czyli -Fk z KW18
+
 %	The relationship of the complex exponential and the trigonometric Fourier series
 %	Linearity of Fourier series
 %	The influence of signal symmetries on the coefficients of complex exponential Fourier series
 %	The effect of signal shift in time on the complex exponential Fourier series
+\inputTask{zadKW045-ENG.tex} %jako pierwsze, gdyż tylko przesunięcie
+\inputTask{zadKW048.tex} % do rozwiązania jeszcze - tylko przesunięcie
+\inputTask{zadTG019-ENG.tex}
+\inputTask{zadTG020-ENG.tex}
 %	Spectrum of a product of two signals
+\inputTask{zadKW046.tex} % mnożenie dwóch sygnałów
+\inputTask{zadKW047.tex} % do rozwiązania jeszcze
 %	Computing the power of a signal – the Parseval theorem
-\section{Obliczenia mocy sygnałów - twierdzenie Parsevala}
-\inputTask{zadTG014.tex}
+\TT{\section{Obliczenia mocy sygnałów - twierdzenie Parsevala}}{\section{Computing the power of a signal – the Parseval's theorem}}
+\inputTask{zadTG014-ENG.tex}
+\inputTask{zadTG021-ENG.tex}
+\inputTask{zadTG022-ENG.tex}
 %Analysis of non-periodic signals. Fourier Transformation and Transform
-\chapter{Analiza sygnałów nieokresowych. Transformata Fouriera}
+\TT{\chapter{Analiza sygnałów nieokresowych. Przekształcenie całkowe Fouriera}}{\chapter{Analysis of non-periodic signals. Fourier Transformation and Transform}}
 %	An intuitive introduction
 %	Definition
-\section{Wyznaczanie transformaty Fouriera z definicji}
-\inputTask{zadTG001.tex}
-\inputTask{zadTG002.tex}
-\inputTask{zadTG003.tex}
-\inputTask{zadTG004.tex}
+\TT{\section{Wyznaczanie transformaty Fouriera z definicji}}{\section{Calculation of Fourier Transform by definition}}
+\inputTask{zadTG001-ENG.tex}
+\inputTask{zadTG002-ENG.tex}
+\inputTask{zadTG003-ENG.tex}
+\inputTask{zadTG004-ENG.tex}
 \inputTask{zadKW019.tex}
 \inputTask{zadKW020.tex}
 \inputTask{zadKW029.tex}
@@ -244,7 +287,7 @@
 %		Time-frequency duality (also known as the symmetry theorem)
 %		Derivative theorem (differentiation in time domain)
 %		Integration theorem
-\section{Wykorzystanie twierdzeń do obliczeń transformaty Fouriera}
+\TT{\section{Wykorzystanie twierdzeń do obliczeń transformaty Fouriera}}{\section{Exploiting properties of the Fourier transform}}
 \inputTask{zadTG005.tex}
 \inputTask{zadTG006.tex}
 \inputTask{zadKW021.tex}
@@ -259,7 +302,7 @@
 \inputTask{zadKW031.tex}
 
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
-\section{Obliczenia energii sygnału za pomocą transformaty Fouriera. Twierdzenie Parsevala}
+\TT{\section{Obliczenia energii sygnału za pomocą transformaty Fouriera. Twierdzenie Parsevala}}{\section{Calculating energy of the signal from its Fourier transform. The Parseval's theorem}}
 \inputTask{zadTG009.tex}
 \inputTask{zadTG013.tex}
 \inputTask{zadTG010.tex}
@@ -267,19 +310,19 @@
 %	Fourier transform of a periodic signal
 %	Calculating the power of a signal from its Fourier transform. The Parseval's theorem for power signals
 %Processing of signals by linear and time invariant (LTI) systems
-\chapter{Przetwarzanie sygnałów za pomocą układów LTI}
+\TT{\chapter{Transmisja sygnałów przez układy liniowe o stałych parametrach (LTI)}}{\chapter{Processing of signals by linear and time invariant (LTI) systems}}
 %	Introduction to LTI systems. Fundamental properties
 %	Impulse response of an LTI system
 %	Impulse response of a causal system
 %	The response of an LTI system to arbitrary input
 %	Properties of linear convolution
-\section{Obliczanie splotu ze wzoru}
+\TT{\section{Obliczanie splotu ze wzoru}}{\section{Linear convolution}}
 \inputTask{zadTG008.tex}
 \inputTask{zadKW028.tex}
 %	Frequency response
 %	Determining the frequency response of an electronic circuit
 %	Filters
-\section{Filtry}
+\TT{\section{Filtry}}{\section{Filters}}
 \inputTask{zadTG011.tex}
 \inputTask{zadTG012.tex}
 %Sampling. Discrete-time signals

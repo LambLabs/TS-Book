@@ -1,5 +1,5 @@
 \begin{task}
-Calculate the average power and the effective value (RMS) for the periodic signal given below
+\TT{Oblicz moc i wartość skuteczną sygnału okresowego $f(t)$ przedstawionego na rysunku: }{Calculate the average power and the effective value (RMS) for the periodic signal $f(t)$ given below:}
 
 \begin{figure}[H]
 \centering
@@ -16,81 +16,81 @@ Calculate the average power and the effective value (RMS) for the periodic signa
   \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$3$};
   \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$6$};
   \draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, left] {$A$};
-  \draw[-] (-0.1,-1.5-0.1)--(+0.1,-1.5+0.1) node[midway, left] {$A$};
+  \draw[-] (-0.1,-1.5-0.1)--(+0.1,-1.5+0.1) node[midway, left] {$-A$};
 
 \end{tikzpicture}
 \end{figure}
 
-First of all, the definition of $f(t)$ signal has to be derived.
-This is periodic piecewise function, piecewise linear function to be precise.
-The simplest form of linear function is:
+\TT{W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku. Jest to funkcja przedziałowa. W pierwszym okresie możemy ją opisać za pomocą dwóch prostych. Ogólne równanie prostej to:}{First of all, the definition of $f(t)$ signal has to be derived. This is periodic piecewise function, piecewise linear function to be precise.
+The simplest form of linear function is:}
 
 \begin{equation}
-f(t) = m \cdot t + b
+f(t) = a \cdot t + b
 \end{equation}
 
-In the first interval of the first period (e.g. $t \in (0; 3)$), linear function crosses two points: $(0,0)$ and $(3,A)$. So, in order to derive $m$ and $b$, the following system of the equations has to be solved.  
+\TT{W pierwszym okresie, w pierwszej części, wykres funkcji jest prostą przechodzącą przez dwa punkty: $(0,0)$ oraz $(3,A)$. Możemy więc napisać układ równań, rozwiązać go i znaleźć nieznane parametry $a$ i $b$. }{In the first interval of the first period (i.e. $t \in (0; 3)$), linear function crosses two points: $(0,0)$ and $(3,A)$. So, in order to derive $a$ and $b$, the following system of the equations has to be solved.}  
 
 \begin{align*}
 &\left\{\begin{matrix*}[l]
-0 = m\cdot 0 +b\\ 
-A = m\cdot 3 +b
+0 = a\cdot 0 +b\\ 
+A = a\cdot 3 +b
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
 0 = b\\ 
-A = m \cdot a\cdot T +b
+A = a \cdot 3 +b
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
 0 = b\\ 
-A = m \cdot 3 +0
+A = a \cdot 3 +0
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
 0 = b\\ 
-\frac{A}{3} = m
+\frac{A}{3} = a
 \end{matrix*}\right.
 \end{align*}
 
-As a result we get:
+\TT{Podsumowując, pierwszy odcinek funkcji przedstawionej na rysunku, w pierwszym okresie można opisać wzorem:}{As a result we get:}
 \begin{align*}
 f(t) = \frac{A}{3}\cdot t
 \end{align*}
 
-In the second interval of the first period (e.g. $t \in (3; 6)$), linear function crosses other two points:: $(3,0)$ oraz $(6,-A)$. So, in order to derive $m$ i $b$, the following system of the equations has to be solved.
+\TT{Drugi odcinek funkcji jest prostą przechodzącą przez następujące dwa punkty: $(3,0)$ oraz $(6,-A)$. Możemy więc napisać układ równań, rozwiązać go i znaleźć nieznane parametry $a$ i $b$.}{In the second interval of the first period (i.e. $t \in (3; 6)$), linear function crosses other two points:: $(3,0)$ and $(6,-A)$. So, in order to derive $a$ and $b$, the following system of the equations has to be solved.}
 
 \begin{align*}
 &\left\{\begin{matrix*}[l]
-0 = m\cdot 3 +b\\ 
--A = m\cdot 6 +b
+0 = a\cdot 3 +b\\ 
+-A = a\cdot 6 +b
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
--3 \cdot m = b\\ 
--A = 6 \cdot m -3 \cdot m
+-3 \cdot a = b\\ 
+-A = 6 \cdot a -3 \cdot a
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
--3 \cdot m = b\\ 
--A = 3 \cdot m
+-3 \cdot a = b\\ 
+-A = 3 \cdot a
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
--3 \cdot m = b\\  
--\frac{A}{3} = m
+-3 \cdot a = b\\  
+-\frac{A}{3} = a
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
 -3 \cdot (-\frac{A}{3}) = b\\
--\frac{A}{3} = m
+-\frac{A}{3} = a
 \end{matrix*}\right. \\
 &\left\{\begin{matrix*}[l]
 A = b\\
--\frac{A}{3} = m
+-\frac{A}{3} = a
 \end{matrix*}\right.
 \end{align*}
 
-As a result, second interval of the first period is described by:
+\TT{A więc drugi odcinek funkcji przedstawionej na rysunku w pierwszym okresie, można opisać wzorem:}{As a result, second interval of the first period is described by:}
+
 \begin{align*}
 f(t) = -\frac{A}{3}\cdot t + A
 \end{align*}
 
+\TT{W związku z tym, całą funkcję w pierwszym okresie można zapisać jako funkcje przedziałową:}{As a result the piecewise linear function in the first period is given by:}
 
-As a result the piecewise linear function in the first period is given by:
 \begin{align*}
 f(t) = \left\{\begin{matrix*}[l]
 \frac{A}{3}\cdot t & for &t \in (0;3)\\ 
@@ -98,22 +98,23 @@ f(t) = \left\{\begin{matrix*}[l]
 \end{matrix*}\right.
 \end{align*}
 
-For the whole periodic signal $f(t)$ we get:
+\TT{I ogólniej, całą funkcję można wyrazić następującym wzorem:}{For the whole periodic signal $f(t)$ we get:}
+
 \begin{align*}
 f(t) = \left\{\begin{matrix*}[l]
 \frac{A}{3}\cdot \left( t - k\cdot 6 \right) & for &t \in (0 + k\cdot 6; 3 + k\cdot 6)\\ 
 -\frac{A}{3}\cdot \left( t - k\cdot 6 \right) + A & for & t \in (3 + k \cdot 6; 6+ k\cdot 6)
-\end{matrix*}\right. \wedge k \in I
+\end{matrix*}\right. \wedge k \in \TT{I}{Z}
 \end{align*}
 
-The average power for periodic signals is defined by:
+\TT{Moc sygnału okresowego wyznaczamy ze wzoru:}{The average power for periodic signals is defined by:}
+
 \begin{equation}
 P=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt
 \end{equation}
 
-In our case we get:
-%\begin{equation}
-%\begin{aligned}
+\TT{Podstawiamy do wzoru na moc wzór naszej funkcji:}{In our case we get:}
+
 \begin{align*}
 P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
  &=\frac{1}{6} \cdot \left( \int_{0}^{3}\left|\frac{A}{3}\cdot t \right|^2 \cdot dt
@@ -134,12 +135,12 @@ P&=\frac{1}{T} \cdot \int_{T}^{}\left|f(t)\right|^2 \cdot dt=\\
  &=\frac{A^2}{3}
 \end{align*}
 
-The average power equals to $\frac{A^2}{3}$.
+\TT{Moc sygnału równa się $\frac{A^2}{3}$.}{The average power equals to $\frac{A^2}{3}$.}
 
-The effective value (RMS) is defined by:
+\TT{Wzór na obliczenie wartości skutecznej to:}{The effective value (RMS) is defined by:}
 \begin{equation}
 RMS=\sqrt P
 \end{equation}
 
-Therefore, effective value (RMS) equals to $\frac{A}{\sqrt 3}$.
+\TT{Wartość skuteczna sygnału to $\frac{A}{\sqrt 3}$.}{Therefore, effective value (RMS) equals to $\frac{A}{\sqrt 3}$.}
 \end{task}

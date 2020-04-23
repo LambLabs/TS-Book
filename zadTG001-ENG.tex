@@ -1,0 +1,167 @@
+\begin{task}
+\TT{Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku oraz narysuj jego widmo amplitudowe i fazowe.}{Compute the Fourier transform of a rectangular impulse shown below. Compute and draw magnitude and phase spectra.}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-,red, thick] (-3.5,+0.0) -- (-1.0,+0.0) -- (-1.0,+1.0) -- (1.0,+1.0) -- (1.0,+0.0) -- (3.0,0.0);
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{\tau}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{\tau}{2}$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, above left] {$A$};
+\end{tikzpicture}
+\end{figure}
+
+\TT{W pierwszej kolejności opiszmy sygnał za pomocą sygnałów elementarnych:}{First of all, describe the $f(t)$ signal using elementary signals:}
+
+\begin{equation}
+f(t)=A \cdot \Pi(\frac{t}{\tau}) 
+\end{equation}
+
+\TT{Co można wyrazić jako:}{Which can be expresed as:}
+
+\begin{equation}
+f(t) = \begin{cases}
+0 & \TT{\text{ dla }}{\text{ if }} t \in \left(-\infty; -frac{\tau}{2}\right)\\
+A & \TT{\text{ dla }}{\text{ if }} t \in \left(-frac{\tau}{2}; frac{\tau}{2}\right)\\
+0 & \TT{\text{ dla }}{\text{ if }} t \in \left(frac{\tau}{2}; \infty\right)\\
+\end{cases}
+\end{equation}
+
+\TT{Transformatę Fouriera obliczamy ze wzoru:}{The Fourier transform is defined as:}
+
+\begin{equation}
+F(\jmath \omega )=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt
+\end{equation}
+
+\TT{Podstawiamy do wzoru na transformatę wzór naszej funkcji:}{For the given $f(t)$ signal we get:}
+
+\begin{align*}
+F(\jmath \omega )&=\int_{-\infty }^{\infty}f(t) \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{\infty} A\cdot\Pi(\frac{t}{\tau})  \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{-\frac{\tau}{2}} 0 \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{\frac{\tau}{2} }^{\infty} 0\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\int_{-\infty }^{-\frac{\tau}{2}} 0 \cdot dt + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{\frac{\tau}{2} }^{\infty} 0 \cdot dt=\\
+&=0 + \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} A\cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + 0=\\
+&=A\cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
+&=\begin{Bmatrix}
+z&=-\jmath \cdot \omega \cdot t\\
+dz&=-\jmath \cdot \omega \cdot dt\\
+dt&=\frac{1}{-\jmath \cdot \omega} \cdot dz\\
+\end{Bmatrix}=\\
+&=A\cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{z}\cdot \frac{1}{-\jmath \cdot \omega} \cdot dz=\\
+&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \int_{-\frac{\tau}{2} }^{\frac{\tau}{2}} \cdot e^{z}\cdot dz=\\
+&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \left. e^{z}\right|_{-\frac{\tau}{2} }^{\frac{\tau}{2}}=\\
+&=A\cdot \frac{1}{-\jmath \cdot \omega} \cdot \left. e^{-\jmath \cdot \omega \cdot t}\right|_{-\frac{\tau}{2} }^{\frac{\tau}{2}}=\\
+&=\frac{A}{-\jmath \cdot \omega} \cdot \left(e^{-\jmath \cdot \omega \cdot \frac{\tau}{2}} - e^{-\jmath \cdot \omega \cdot (-\frac{\tau}{2})}\right)=\\
+&=\frac{A}{\jmath \cdot \omega} \cdot \left(e^{\jmath \cdot \omega \cdot \frac{\tau}{2}} - e^{-\jmath \cdot \omega \cdot \frac{\tau}{2}}\right)=\\
+&=\begin{Bmatrix*}[l]
+sin(x)=\frac{e^{\jmath \cdot x} - e^{-\jmath \cdot x}}{2 \cdot \jmath}
+\end{Bmatrix*}=\\
+&=\frac{2 \cdot A}{\omega} \cdot sin\left(\omega \cdot \frac{\tau}{2}\right)=\\
+&=\begin{Bmatrix*}[l]
+\frac{sin(x)}{x}=Sa(x)
+\end{Bmatrix*}=\\
+&=A\cdot \tau \cdot Sa\left(\omega \cdot \frac{\tau}{2}\right)
+\end{align*}
+
+\TT{Transformata sygnału $f(t)=A\cdot\Pi(\frac{t}{\tau})$ to $F(\jmath \omega)=A \cdot \tau \cdot Sa\left(\omega \cdot \frac{\tau}{2}\right)$.}{The Fourier transform of the $f(t)=A\cdot\Pi(\frac{t}{\tau})$ is equal to $F(\jmath \omega)=A \cdot \tau \cdot Sa\left(\omega \cdot \frac{\tau}{2}\right)$.}
+
+
+\TT{Narysujmy widmo sygnału $f(t)=A\cdot\Pi(\frac{t}{\tau})$ czyli:}{Draw complex spectrum of the $f(t)=A\cdot\Pi(\frac{t}{\tau})$:}
+
+\begin{equation}
+F(\jmath \omega)=A \cdot \tau \cdot Sa\left(\omega \cdot \frac{\tau}{2}\right)
+\end{equation}
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+4.0) node[above] {$F(\jmath \cdot \omega)$};
+
+	\draw[scale=1.0,domain=-4.0:4.0,samples=2000,smooth,variable=\x,red,thick] plot ({\x},{3*sinc(3.141592*\x)});
+
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{2 \pi}{\tau}$};
+	\draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{4 \pi}{\tau}$};
+	\draw[-] (-3.0-0.1,-0.1)--(-3.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{6 \pi}{\tau}$};
+	\draw[-] (-4.0-0.1,-0.1)--(-4.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{8 \pi}{\tau}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2 \pi}{\tau}$};
+	\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{4 \pi}{\tau}$};
+	\draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{6 \pi}{\tau}$};
+	\draw[-] (+4.0-0.1,-0.1)--(+4.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{8 \pi}{\tau}$};
+	\draw[-] (-0.1,+3.0-0.1)--(+0.1,+3.0+0.1) node[midway, left] {$A \cdot \tau$};
+
+	\end{tikzpicture}
+\end{figure}
+
+\TT{Widmo amplitudowe obliczamy ze wzoru:}{The magnitude spectrum is defined as:}
+
+\begin{equation}
+M(\omega)=\left | F(j \cdot \omega) \right |
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+4.0) node[above] {$M(\omega)$};
+	
+	\draw[scale=1.0,domain=-4.0:4.0,samples=2000,smooth,variable=\x,red,thick] plot ({\x},{abs(3*sinc(3.141592*\x))});
+	
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{2 \pi}{\tau}$};
+	\draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{4 \pi}{\tau}$};
+	\draw[-] (-3.0-0.1,-0.1)--(-3.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{6 \pi}{\tau}$};
+	\draw[-] (-4.0-0.1,-0.1)--(-4.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{8 \pi}{\tau}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2 \pi}{\tau}$};
+	\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{4 \pi}{\tau}$};
+	\draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{6 \pi}{\tau}$};
+	\draw[-] (+4.0-0.1,-0.1)--(+4.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{8 \pi}{\tau}$};
+	\draw[-] (-0.1,+3.0-0.1)--(+0.1,+3.0+0.1) node[midway, left] {$A \cdot \tau$};
+		
+	\end{tikzpicture}
+\end{figure}
+
+\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
+
+\TT{Widmo fazowe obliczamy ze wzoru:}{The phase spectrum is defined as:}
+
+\begin{equation}
+\Phi ( \omega )=\TT{arctg}{arctan2}(\frac{Im\{F(\jmath \cdot \omega )\}}{Re\{F(\jmath \cdot \omega )\}})
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$\omega$};
+	\draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$\Phi(\omega)$};
+	
+	\draw[-,red] (-4.0,-1.0) -- (-3.0,-1.0);
+	\draw[-,red] (-3.0,0.0) -- (-2.0,0.0);
+	\draw[-,red] (-2.0,1.0) -- (-1.0,1.0);
+	\draw[-,red] (-1.0,0.0) -- (1.0,0.0);
+	\draw[-,red] (1.0,-1.0) -- (2.0,-1.0);
+	\draw[-,red] (2.0,0.0) -- (3.0,0.0);
+	\draw[-,red] (3.0,1.0) -- (4.0,1.0);
+	
+	  
+	\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{2 \pi}{\tau}$};
+	\draw[-] (-2.0-0.1,-0.1)--(-2.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{4 \pi}{\tau}$};
+	\draw[-] (-3.0-0.1,-0.1)--(-3.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{6 \pi}{\tau}$};
+	\draw[-] (-4.0-0.1,-0.1)--(-4.0+0.1,0.1) node[midway, below, outer sep=5pt] {-$\frac{8 \pi}{\tau}$};
+	\draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{2 \pi}{\tau}$};
+	\draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{4 \pi}{\tau}$};
+	\draw[-] (+3.0-0.1,-0.1)--(+3.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{6 \pi}{\tau}$};
+	\draw[-] (+4.0-0.1,-0.1)--(+4.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{8 \pi}{\tau}$};
+	\draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, above left] {$\pi$};
+	\draw[-] (-0.1,-1.0-0.1)--(+0.1,-1.0+0.1) node[midway, above left] {-$\pi$};
+	
+	\end{tikzpicture}
+\end{figure}
+
+\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
+
+\end{task}
+

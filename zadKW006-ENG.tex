@@ -1,0 +1,89 @@
+\begin{task}
+\TT{Oblicz energię sygnału $f(t)$ przedstawionego na rysunku:}{Compute energy of $f(t)$ signal given below:} 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-2.0) -- (+0.0,+2.0) node[above] {$f(t)$};
+
+  \draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, left] {$A$};
+  \draw[-] (-0.1,-1.5-0.1)--(+0.1,-1.5+0.1) node[midway, left] {$-A$};
+  
+  \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(-\x)});
+  \draw[scale=1.0,domain=-2.5:0.0,smooth,variable=\x,red,thick] plot ({\x},{-1.5*exp(\x)});
+\end{tikzpicture}
+\end{figure}
+
+\begin{equation}
+f(t) = \left\{\begin{matrix*}[l]
+-A \cdot e^{a\cdot t} & dla & t \in \left(-\infty; 0\right)\\
+A \cdot e^{-a\cdot t} & dla & t \in \left(0; \infty\right)
+\end{matrix*}\right.
+\end{equation}
+
+\TT{Energię sygnału nieokresowego wyznaczamy ze wzoru:}{Total energy of a non-periodic signal (or in short - signal energy) is defined by:}
+
+\begin{equation}
+E=\lim_{\tau \rightarrow \infty}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(t)\right|^2 \cdot dt
+\end{equation}
+
+\TT{Podstawiamy do wzoru na enargię wzór naszej funkcji}{For the given signal we get}
+
+\begin{align*}
+E&=\lim_{\tau \rightarrow \infty}\int_{-\frac{\tau}{2}}^{\frac{\tau}{2}}\left|f(t)\right|^2 \cdot dt=\\
+ &=\lim_{\tau \rightarrow \infty} \left( 
+   \int_{-\frac{\tau}{2}}^{0}\left| -A \cdot e^{a\cdot t} \right|^2 \cdot dt 
+ + \int_{0}^{\frac{\tau}{2}}\left| A \cdot e^{-a\cdot t} \right|^2 \cdot dt \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \left( 
+   \int_{-\frac{\tau}{2}}^{0}\left( -A \cdot e^{a\cdot t} \right)^2 \cdot dt 
+ + \int_{0}^{\frac{\tau}{2}}\left( A \cdot e^{-a\cdot t} \right)^2 \cdot dt \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \left( 
+   \int_{-\frac{\tau}{2}}^{0}\left( -A\right)^2 \cdot \left(e^{a\cdot t} \right)^2 \cdot dt 
+ + \int_{0}^{\frac{\tau}{2}}\left( A \right)^2 \cdot \left(e^{-a\cdot t} \right)^2 \cdot dt \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \left( 
+   \int_{-\frac{\tau}{2}}^{0} A^2 \cdot e^{2\cdot a\cdot t} \cdot dt 
+ + \int_{0}^{\frac{\tau}{2}} A^2 \cdot e^{-2 \cdot a\cdot t} \cdot dt \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \left( 
+    A^2 \cdot \int_{-\frac{\tau}{2}}^{0}  e^{2\cdot a\cdot t} \cdot dt 
+ +  A^2 \cdot \int_{0}^{\frac{\tau}{2}} e^{-2 \cdot a\cdot t} \cdot dt \right)=\\
+ &=\lim_{\tau \rightarrow \infty} A^2 \cdot \left( 
+   \int_{-\frac{\tau}{2}}^{0}  e^{2\cdot a\cdot t} \cdot dt 
+ + \int_{0}^{\frac{\tau}{2}} e^{-2 \cdot a\cdot t} \cdot dt \right)=\\
+ &=\begin{Bmatrix*}[l]
+   z=2\cdot a \cdot t & w=-2 \cdot a \cdot t\\
+   dz = 2 \cdot a \cdot dt & dw=-2 \cdot a \cdot dt\\
+   dt = \frac{dz}{2\cdot a} & dt = \frac{dw}{-2 \cdot a}
+   \end{Bmatrix*}=\\
+ &=\lim_{\tau \rightarrow \infty} A^2 \cdot \left( 
+    \int_{-\frac{\tau}{2}}^{0}  e^{z} \cdot \frac{dz}{2\cdot a} 
+ +  \int_{0}^{\frac{\tau}{2}} e^{w} \cdot \frac{dw}{-2\cdot a} \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
+    \int_{-\frac{\tau}{2}}^{0}  e^{z} \cdot dz 
+ -  \int_{0}^{\frac{\tau}{2}} e^{w} \cdot dw \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
+    \left. e^{z} \right|_{-\frac{\tau}{2}}^{0} 
+ -  \left. e^{w} \right|_{0}^{\frac{\tau}{2}} \right)=\\ 
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
+    \left. e^{2\cdot a \cdot t} \right|_{-\frac{\tau}{2}}^{0} 
+ -  \left. e^{-2 \cdot a \cdot dt} \right|_{0}^{\frac{\tau}{2}} \right)=\\ 
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
+    \left(e^{2\cdot a \cdot 0} -e^{-2\cdot a \cdot \frac{\tau}{2}} \right)
+ -  \left(e^{-2 \cdot a \cdot \frac{\tau}{2}}-e^{-2 \cdot a \cdot 0} \right) \right)=\\ 
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
+    \left(e^{0} -e^{-a \cdot \tau} \right)
+ -  \left(e^{-a \cdot \tau}-e^{0} \right)\right)=\\
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
+    1 -e^{-a \cdot \tau} -  e^{-a \cdot \tau}+1 \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot \left( 
+    2 - 2\cdot e^{-a \cdot \tau} \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{2\cdot a} \cdot 2 \cdot \left( 
+    1 - e^{-a \cdot \tau} \right)=\\
+ &=\lim_{\tau \rightarrow \infty} \frac{A^2}{a} \cdot \left( 
+ 1 - e^{-a \cdot \tau} \right)=\\
+ &= \frac{A^2}{a}\\
+\end{align*}
+
+\TT{Energia sygnału wynosi $\frac{A^2}{a}$.}{Energy equals to $\frac{A^2}{a}$.}
+\end{task}

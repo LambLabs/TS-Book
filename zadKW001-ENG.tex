@@ -1,0 +1,47 @@
+\begin{task}
+\TT{Oblicz wartość średnią okresowego sygnału $f(t)$ przedstawionego na rysunku:}{Calculate the mean value of the following periodic signal $f(t)$:}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+1.5) node[above] {$f(t)$};
+  \draw[-,red, thick] (-2.5,+0.0) -- (-2.0,+0.0) -- (-2.0,+1.0) -- (-1.0,+1.0) -- (-1.0,+0.0)--(+0.0,+0.0) -- (+0.0,+1.0) -- (+1.0,+1.0) -- (+1.0,+0.0) -- (+2.0,+0.0) -- (+2.0,+1.0) -- (3.0,1.0) -- (3.0,0.0) -- (3.5,0.0);
+  %\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=10pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,1.0-0.1)--(+0.1,1.0+0.1) node[midway, left] {$A$};
+\end{tikzpicture}
+\end{figure}
+
+\TT{Zaczynamy od zapisania wzoru funkcji przedstawionej na rysunku:}{Signal $f(t)$ can de described as:}
+
+\begin{equation}
+   f(x)=\begin{cases}A & t \in \left (  0+k \cdot T; \frac{T}{2}+k \cdot T \right ) \\0 & t \in \left ( \frac{T}{2}+k \cdot T; T +k \cdot T\right )\end{cases} \wedge k \in \TT{C}{Z}
+\end{equation}
+
+\TT{Wartość średnią sygnału okresowego wyznaczamy ze wzoru:}{The mean value for periodic signals is defined by:}
+
+\begin{equation}
+\bar{f}=\frac{1}{T}\int_{T}f(t) \cdot dt
+\end{equation}
+
+\TT{Podstawiamy do wzoru na wartość średnią wzór naszej funkcji dla pierwszego okresu $k=0$:}{Compute mean value for period $k=0$:}
+
+\begin{equation}
+\begin{aligned}
+\bar{f} &=\frac{1}{T}\int_{T}f(t) \cdot dt =\\
+&=\frac{1}{T} \left( \int_{0}^{\frac{T}{2}} A \cdot dt + \int_{\frac{T}{2}}^{T} 0 \cdot dt \right ) = \\
+&=\frac{1}{T} \left( A \cdot \int_{0}^{\frac{T}{2}} dt + 0 \right ) = \\
+&=\frac{1}{T} \left( A \cdot \left. t\right |_{0}^{\frac{T}{2}} \right ) = \\
+&=\frac{A}{T} \cdot \left. t\right |_{0}^{\frac{T}{2}} = \\
+&=\frac{A}{T} \cdot \left( \frac{T}{2} - 0 \right ) = \\
+&=\frac{A}{T} \cdot \left( \frac{T}{2} \right ) = \\
+&=\frac{A}{2} 
+\end{aligned}
+\end{equation}
+
+\TT{Średnia wartość sygnału wynosi $\frac{A}{2}$.}{The mean value equals to $\frac{A}{2}$.}
+\end{task}
