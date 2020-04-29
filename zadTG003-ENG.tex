@@ -90,12 +90,12 @@ f(t) = -\frac{A}{t_{0}}\cdot t + A
 \TT{Podsumowując, sygnał $f(t)$ możemy opisać jako funkcję przedziałową:}{As a result the piecewise linear function is given by:}
 
 \begin{equation}
-f(t) = A \cdot \Lambda(\frac{t}{t_{0}}) = \left\{\begin{matrix*}[l]
-0 & \TT{dla}{for} & t \in \left(-\infty; -t_{0}\right)\\
-\frac{A}{t_{0}} \cdot t + A & \TT{dla}{for} & t \in \left(-t_{0}; 0\right)\\
--\frac{A}{t_{0}} \cdot t + A & \TT{dla}{for} & t \in \left(0; t_{0}\right)\\
-0 & \TT{dla}{for} & t \in \left(t_{0};\infty\right)
-\end{matrix*}\right.
+f(t) = A \cdot \Lambda(\frac{t}{t_{0}}) = \begin{cases}
+0 & \TT{\text{ dla }}{\text{ for }} t \in \left(-\infty; -t_{0}\right)\\
+\frac{A}{t_{0}} \cdot t + A & \TT{\text{ dla }}{\text{ for }} t \in \left(-t_{0}; 0\right)\\
+-\frac{A}{t_{0}} \cdot t + A & \TT{\text{ dla }}{\text{ for }} t \in \left(0; t_{0}\right)\\
+0 & \TT{\text{ dla }}{\text{ for }} t \in \left(t_{0};\infty\right)
+\end{cases}
 \end{equation}
 
 \TT{Podstawiamy do wzoru na transformatę wzór naszej funkcji:}{For the given $f(t)$ signal we get:}
