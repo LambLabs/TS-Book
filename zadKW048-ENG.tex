@@ -1,5 +1,5 @@
 \begin{task}
-\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $g(t)$ przedstawionego na rysunku. Wykorzystaj własności szeregu Fouriera oraz współczynniki zespolonego szeregu Fouriera wyznaczone w zadaniu \ref{TaskKW015}}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series. Draw magnitude and phase spectra.}
+\TT{Wyznacz współczynniki zespolonego szeregu Fouriera dla okresowego sygnału $g(t)$ przedstawionego na rysunku. Wykorzystaj własności szeregu Fouriera oraz współczynniki zespolonego szeregu Fouriera wyznaczone w zadaniu \ref{TaskKW015}}{Calculate coefficients of the periodic signal $f(t)$ shown below for the expansion into a complex exponential Fourier series. Use the knowledge about properties of complex exponential Fourier series and data from Task \ref{TaskKW015}.}
 
 \begin{figure}[H]
   \centering
@@ -26,21 +26,23 @@
 
 % To be done
 
-\TT{W pierwszej kolejności należy opisać sygnał za pomocą wzoru.}{Periodic signal $f(t)$, as a piecewise linear function, is given by:}
+\TT{W pierwszej kolejności należy opisać sygnał za pomocą wzoru.}{Periodic signal $g(t)$, as a piecewise linear function, is given by:}
 
 \begin{equation}
-   g(x)=\begin{cases}
+   g(t)=\begin{cases}
    A\cdot sin\left(\frac{2\pi}{T}\cdot \left(t-D\right)\right) & t \in \left (  D+k \cdot T; D+\frac{T}{2}+k \cdot T \right ) \\
    0 & t \in \left ( D+\frac{T}{2}+k \cdot T; D+T +k \cdot T\right )
    \end{cases} \wedge k \in \TT{C}{Z}
 \end{equation}
 
-\TT{Można zauważyć iż sygnał $g(t)$ jest z przesuniętą w czasie wersją sygnału $f(t)$ z zadania \ref{TaskKW015}}{}
+\TT{Można zauważyć iż sygnał $g(t)$ jest przesuniętą w czasie wersją sygnału $f(t)$ z zadania \ref{TaskKW015}}{Note, that the $g(t)$ signal is the same as $f(t)$ signal from the Task $\frac{T}{2}$, but shifted in time:}
+
 \begin{align*}
 g(t) &= f\left(t - D\right)
 \end{align*}
 
-\TT{Współczynniki zespolonego szeregu Fouriera $F_k$ dla sygnału $f(t)$ wyznaczone w zadaniu \ref{TaskKW015} wynoszą:}{}
+\TT{Współczynniki zespolonego szeregu Fouriera $F_k$ dla sygnału $f(t)$ wyznaczone w zadaniu \ref{TaskKW015} wynoszą:}{{From Task \ref{TaskKW015} we know, that $F_k$ coefficients for the expansion into a complex exponential Fourier series of $f(t)$ signal are equal to:}}
+
 \begin{align*}
 F_0&=\frac{A}{\pi}\\
 F_{-1}&=\jmath \cdot \frac{A}{4}\\
@@ -48,13 +50,15 @@ F_{1}&=-\jmath \cdot \frac{A}{4}\\
 F_k&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\\
 \end{align*}
 
-\TT{Korzystając z twierdzenia o przesunięciu w dziedzinie czasu można wyznaczyć współczynniki $G_k$ na podstawie współczynników $F_k$ sygnału $f(t)$ jako:}{}
+\TT{Korzystając z twierdzenia o przesunięciu w dziedzinie czasu można wyznaczyć współczynniki $G_k$ na podstawie współczynników $F_k$ sygnału $f(t)$ jako:}{Based on the effect of signal shift in time on the complex exponential Fourier series, we can write:}
+
 \begin{align*}
 g(t) &= f(t-t_0)\\
 G_k &= F_{k} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot t_0}
 \end{align*}
   
-\TT{Wstawiając wartości współczynników $F_k$ otrzymujemy}{}
+\TT{Wstawiając wartości współczynników $F_k$ otrzymujemy}{Right now we know everything to calculate $G_k$ coefficients:}
+
 \begin{align*}
 G_k &= F_{k} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot t_0} = \\
 & = \frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot t_0} = \\
@@ -64,10 +68,10 @@ t_0 = D
 & = \frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot D} \\
 \end{align*}
 
-\TT{A wiec współczynniki $G_k$ dla sygnału $g(t)$ są równe $\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot D}$, dla $k \neq 1 \wedge k\neq -1$. Oznacza to iż współczynnik dla $k=1$ i $k=-1$ musimy wyznaczyć jeszcze raz analizując dokładnie co podstawiamy. Zacznijmy od wyznaczenia $G_1$ }{}
+\TT{A wiec współczynniki $G_k$ dla sygnału $g(t)$ są równe $\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot D}$, dla $k \neq 1 \wedge k\neq -1$. Oznacza to iż współczynnik dla $k=1$ i $k=-1$ musimy wyznaczyć jeszcze raz analizując dokładnie co podstawiamy. Zacznijmy od wyznaczenia $G_1$ }{Also $G_1$ and $G_{-1}$ have to be calculated separately:}
 
 \begin{align*}
-G_1 &= F_{1} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t_0} = \\
+G_1 &= F_{1} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot 1 \cdot t_0} = \\
 & = -\jmath \cdot \frac{A}{4} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t_0} = \\
 &=\left\{\begin{array}{ll}
 t_0 = D
@@ -88,6 +92,7 @@ t_0 = D
 
 \TT{Ostatecznie współczynniki zespolonego szeregu Fouriera dla funkcji przedstawionej na rysunku przyjmują wartości.}{To sum up, coefficients for the expansion into a complex exponential Fourier series are given by:}
 \begin{align*}
+G_0&=\frac{A}{\pi}\\
 G_{-1}&=\jmath \cdot \frac{A}{4} \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot D}\\
 G_{1}&=-\jmath \cdot \frac{A}{4} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot D}\\
 G_k&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot D}
