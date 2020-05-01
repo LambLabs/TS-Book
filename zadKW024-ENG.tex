@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz transformatę Fouriera sygnału $f(t)=Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)$ za pomocą twierdzeń, wiedząc że transformata sygnału $\Pi(t)$ jest rowna $Sa\left(\frac{\omega}{2}\right)$.
+\TT{Oblicz transformatę Fouriera sygnału $f(t)=Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)$ twierdzenia opisujące własciwości transformacji Fouriera. Wykorzystaj informację o tym, że $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$.}{Compute the Fourier transform of the $f(t)=Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)$ signal using theorems describing the properties of Fourier transformation. Exploit the following transform $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$.}
 
 \begin{equation}
 f(t) = Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)
@@ -28,7 +28,7 @@ f(t) = Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)
 \end{tikzpicture}
 \end{figure}
 
-W pierwszej kolejności można funkcję $f(t)$ rozpisać następująco
+\TT{W pierwszej kolejności można funkcję $f(t)$ rozpisać następująco:}{Firstly, note that using Euler's identity we can write:}
 
 \begin{align*}
 f(t) &= Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)=\\
@@ -44,26 +44,26 @@ f_2(t) &= Sa\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot 
 &=\frac{1}{2 \cdot \jmath} \cdot \left(f_1(t) - f_2(t) \right)
 \end{align*}
 
-Należy zauważyć iż funkcja $f_1(t)$ i $f_2(t)$ jest złożeniem funkcji $Sa$ i funkcji wykładniczych.
+\TT{Należy zauważyć iż funkcja $f_1(t)$ i $f_2(t)$ jest złożeniem funkcji $Sa$ i funkcji wykładniczych.}{Please note, that $f_1(t)$ and $f_2(t)$ signals are product of $Sa$ and complex exponential functions:}
 
 \begin{align*}
 f_1(t) &= Sa\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t} = g(t)\cdot e^{\jmath \cdot \omega_0 \cdot t}\\
 f_2(t) &= Sa\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t} = g(t) \cdot e^{-\jmath \cdot \omega_0 \cdot t}
 \end{align*}
 
-Znając transformatę sygnału $g(t) = Sa\left(\omega_0 \cdot t\right)$ możemy skorzystać z twierdzenia o przesunięciu w dziedzinie częstotliwości. 
+\TT{Znając transformatę sygnału $g(t) = Sa\left(\omega_0 \cdot t\right)$ możemy skorzystać z twierdzenia o przesunięciu w dziedzinie częstotliwości.}{Knowing the Fourier transform of $g(t) = Sa\left(\omega_0 \cdot t\right)$ we can use the modulation theorem to derive the Fourier transform of $f_x(t)$:}
 
 \begin{align*}
 \FrequencyShiftTeorem{g}{G}{f}{F}
 \end{align*}
 
-Aby wyznaczyć transformatę sygnału $g(t)$ możemy skorzystać z twierdzenia o symetrii. Znając transformatę $H(\jmath \omega)$ sygnału $h(t)$ można wyznaczyć transformatę $G(\jmath \omega)$ sygnału $g(t)$
+\TT{Aby wyznaczyć transformatę sygnału $g(t)$ możemy skorzystać z twierdzenia o symetrii. Znając transformatę $H(\jmath \omega)$ sygnału $h(t)$ można wyznaczyć transformatę $G(\jmath \omega)$ sygnału $g(t)$:}{We know that $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$. Based on time-frequency duality theorem we can derive transform for $g(t)$ signal:}
 
 \begin{align*}
 \SymetryTeorem{h}{H}{g}{G}
 \end{align*}
 
-Tak wiec zacznijmy od transformaty sygnału prostokątnego $h(t)=\Pi(t)$ i wyznaczymy transformatę funkcji $Sa$
+\TT{Tak wiec zacznijmy od transformaty sygnału prostokątnego $h(t)=\Pi(t)$ i wyznaczymy transformatę funkcji $Sa$.}{Let's start with deriving Fourier transform for $Sa$ signal using $h(t)=\Pi(t)$:}
 
 \begin{align*}
 h(t)=\Pi(t) &\overset{F}{\rightarrow} H(\jmath \omega) = Sa\left(\frac{\omega}{2}\right)\\
@@ -71,7 +71,7 @@ g_1(t) = H(t) = Sa\left(\frac{t}{2}\right) &\overset{F}{\rightarrow}
 G_1(\jmath \omega) = 2\pi \cdot h(- \jmath \omega) = \pi \cdot  \Pi\left(-\omega\right) = 2\pi \cdot  \Pi\left(\omega\right)
 \end{align*}
 
-Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $g(t)$ 
+\TT{Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $g(t)$.}{We derived Fourier transform for $g_1(t)$ signal. However, this is not exact the same function as $g(t)$.}
 
 \begin{align*}
 g(t)&=Sa\left(\omega_0 \cdot t\right)=\\
@@ -85,13 +85,11 @@ a = 2\cdot \omega_0
 &=g_1(a\cdot t) 
 \end{align*}
 
-Znając transformatę funkcji $g_1(t)$ możemy wyznaczyć transformatę funkcji $g(t)=g_1(a \cdot t)$ za pomocą twierdzenia o zmianie skali.
+\TT{Znając transformatę funkcji $g_1(t)$ możemy wyznaczyć transformatę funkcji $g(t)=g_1(a \cdot t)$ za pomocą twierdzenia o zmianie skali.}{Now, we can calculate the Fourier transform for $g(t)=g_1(a \cdot t)$ signal using the scaling theorem:}
 
 \begin{align*}
 \TimeScalingTeorem{g_1}{G_1}{g}{G}
 \end{align*}
-
-Podstawiając wyznaczoną transformatę $G_1(\jmath \omega)$
 
 \begin{align*}
 G(\jmath \omega) &= \frac{1}{\left|\alpha \right|} \cdot G_1(\jmath \frac{\omega}{\alpha})=\\
@@ -106,22 +104,20 @@ G_1(\jmath \omega) = 2\pi \cdot \Pi\left(\omega\right)
 &=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega}{2\cdot \omega_0}\right)
 \end{align*}
 
-Tak wiec transformata sygnału $g(t)=Sa\left(\omega_0 \cdot t\right)$ jest równa $G(\jmath \omega)=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega}{2\cdot \omega_0}\right)$
+\TT{Tak wiec transformata sygnału $g(t)=Sa\left(\omega_0 \cdot t\right)$ jest równa $G(\jmath \omega)=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega}{2\cdot \omega_0}\right)$}{As a result the Fourier transform for $g(t)=Sa\left(\omega_0 \cdot t\right)$ signal is equal to $G(\jmath \omega)=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega}{2\cdot \omega_0}\right)$.}
 
-Kolejnym krokiem jest wyznaczenie transformaty dwóch sygnałów
+\TT{Kolejnym krokiem jest wyznaczenie transformaty dwóch sygnałów}{Now, we are able to derive transforms for:}
 
 \begin{align*}
 f_1(t)&=Sa\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t}\\
 f_2(t)&=Sa\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t}\\
 \end{align*}
 
-Korzystając z twierdzenie o przesunięciu w dziedzinie częstotliwości
+\TT{Korzystając z twierdzenie o przesunięciu w dziedzinie częstotliwości}{Based on the modulation theorem we get:}
 
 \begin{align*}
 \FrequencyShiftTeorem{g}{G}{f_1}{F_1}
 \end{align*}
-
-otrzymujemy wprost
 
 \begin{align*}
 F_1(\jmath \omega)&=G\left(\jmath \left(\omega -\omega_0\right)\right)=\\
@@ -133,13 +129,13 @@ F_2(\jmath \omega)&=G\left(\jmath \left(\omega +\omega_0\right)\right)=\\
 &=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right)
 \end{align*}
 
-Ostatecznie korzystając z liniowości transformaty Fouriera
+\TT{Ostatecznie korzystając z liniowości transformaty Fouriera}{Finally, based on the linearity theorem}
 
 \begin{align*}
 \HomogeneousTeorem{f}{F}
 \end{align*}
 
-otrzymujemy
+\TT{otrzymujemy:}{we get:}
 
 \begin{align*}
 F(\jmath \omega)&=F_1(\jmath \omega)-F_2(\jmath \omega)=\\
@@ -147,7 +143,7 @@ F(\jmath \omega)&=F_1(\jmath \omega)-F_2(\jmath \omega)=\\
 \end{align*}
 
 
-Transformata Fouriera sygnału $f(t)$ jest równa $F(\jmath \omega)=\frac{1}{2 \cdot \jmath} \cdot \left( \frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right) - \frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right) \right)$
+\TT{Transformata Fouriera sygnału $f(t)=Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)$ jest równa $F(\jmath \omega)=\frac{1}{2 \cdot \jmath} \cdot \left( \frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right) - \frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right) \right)$}{The Fourier transform of $f(t)=Sa\left(\omega_0 \cdot t\right) \cdot sin\left(\omega_0 \cdot t\right)$ is equal to $F(\jmath \omega)=\frac{1}{2 \cdot \jmath} \cdot \left( \frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega - \omega_0}{2\cdot \omega_0}\right) - \frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right) \right)$.}
 
 \end{task}
 
