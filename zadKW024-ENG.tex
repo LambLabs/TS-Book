@@ -68,7 +68,7 @@ f_2(t) &= Sa\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot 
 \begin{align*}
 h(t)=\Pi(t) &\overset{F}{\rightarrow} H(\jmath \omega) = Sa\left(\frac{\omega}{2}\right)\\
 g_1(t) = H(t) = Sa\left(\frac{t}{2}\right) &\overset{F}{\rightarrow} 
-G_1(\jmath \omega) = 2\pi \cdot h(- \jmath \omega) = \pi \cdot  \Pi\left(-\omega\right) = 2\pi \cdot  \Pi\left(\omega\right)
+G_1(\jmath \omega) = 2\pi \cdot h(- \jmath \omega) = 2\pi \cdot  \Pi\left(-\omega\right) = 2\pi \cdot  \Pi\left(\omega\right)
 \end{align*}
 
 \TT{Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $g(t)$.}{We derived Fourier transform for $g_1(t)$ signal. However, this is not exact the same function as $g(t)$.}
@@ -106,18 +106,20 @@ G_1(\jmath \omega) = 2\pi \cdot \Pi\left(\omega\right)
 
 \TT{Tak wiec transformata sygnału $g(t)=Sa\left(\omega_0 \cdot t\right)$ jest równa $G(\jmath \omega)=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega}{2\cdot \omega_0}\right)$}{As a result the Fourier transform for $g(t)=Sa\left(\omega_0 \cdot t\right)$ signal is equal to $G(\jmath \omega)=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega}{2\cdot \omega_0}\right)$.}
 
-\TT{Kolejnym krokiem jest wyznaczenie transformaty dwóch sygnałów}{Now, we are able to derive transforms for:}
+\TT{Kolejnym krokiem jest wyznaczenie transformaty dwóch sygnałów:}{Now, we are able to derive transforms for:}
 
 \begin{align*}
 f_1(t)&=Sa\left(\omega_0 \cdot t\right) \cdot e^{\jmath \cdot \omega_0 \cdot t}\\
 f_2(t)&=Sa\left(\omega_0 \cdot t\right) \cdot e^{-\jmath \cdot \omega_0 \cdot t}\\
 \end{align*}
 
-\TT{Korzystając z twierdzenie o przesunięciu w dziedzinie częstotliwości}{Based on the modulation theorem we get:}
+\TT{Korzystając z twierdzenie o przesunięciu w dziedzinie częstotliwości:}{Based on the modulation theorem:}
 
 \begin{align*}
 \FrequencyShiftTeorem{g}{G}{f_1}{F_1}
 \end{align*}
+
+\TT{otrzymujemy:}{we get:}
 
 \begin{align*}
 F_1(\jmath \omega)&=G\left(\jmath \left(\omega -\omega_0\right)\right)=\\
@@ -129,7 +131,7 @@ F_2(\jmath \omega)&=G\left(\jmath \left(\omega +\omega_0\right)\right)=\\
 &=\frac{\pi}{ \omega_0 } \cdot \Pi\left( \frac{\omega + \omega_0}{2\cdot \omega_0}\right)
 \end{align*}
 
-\TT{Ostatecznie korzystając z liniowości transformaty Fouriera}{Finally, based on the linearity theorem}
+\TT{Ostatecznie korzystając z liniowości transformacji Fouriera:}{Finally, based on the linearity theorem:}
 
 \begin{align*}
 \HomogeneousTeorem{f}{F}
