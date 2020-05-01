@@ -1,6 +1,6 @@
 \begin{task}
-Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku wykorzystując twierdzenia opisujące własciwości transformacji Fouriera.
-Wykorzystaj informację o tym, że $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$ oraz $\mathcal F\{\Lambda(t)\}=Sa^2\left(\frac{\omega}{2}\right)$.
+\TT{Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku wykorzystując twierdzenia opisujące własciwości transformacji Fouriera.
+Wykorzystaj informację o tym, że $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$ oraz $\mathcal F\{\Lambda(t)\}=Sa^2\left(\frac{\omega}{2}\right)$.}{Compute the Fourier transform of the $f(t)$ signal shown below using theorems describing the properties of Fourier transformation. Exploit the following transforms $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2}\right)$ and $\mathcal F\{\Lambda(t)\}=Sa^2\left(\frac{\omega}{2}\right)$. }
 
 \begin{figure}[H]
   \centering
@@ -15,27 +15,29 @@ Wykorzystaj informację o tym, że $\mathcal F\{\Pi(t)\}=Sa\left(\frac{\omega}{2
   \end{tikzpicture}
 \end{figure}
 
-W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku. Możemy zauważyć iż przedstawiony sygnał można otrzymać przez oodjęcie trójkąta od sygnału prostokątnego. 
-Wykorzystując sygnały elementarne możemy to zapisać następująco:
+\TT{W pierwszej kolejności opiszmy sygnał za pomocą sygnałów elementarnych:}{First of all, describe the $f(t)$ signal using elementary signals:}
+
 \begin{equation}
 f(t) = A \cdot \left(\Pi\left(\frac{t}{2\cdot t_{0}}\right) - \Lambda\left(\frac{t}{t_{0}}\right)\right)
 \end{equation}
 
-Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych sygnałów elementarnych, czyli:
+\TT{Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych sygnałów elementarnych, czyli:}{Based on linearity of the Fourier transformation, we can calculate transforms for elementary signals separately:}
 
 \begin{equation}
 f(t) = A\cdot \left( f_{1}(t) - f_{2}(t) \right)
 \end{equation}
-gdzie:
+\TT{gdzie:}{where:}
 \begin{align*}
 f_{1}(t) = \Pi\left(\frac{t}{2\cdot t_{0}}\right)\\
 f_{2}(t) = \Lambda\left(\frac{t}{t_{0}}\right)
 \end{align*}
 
-Wyznaczmy transformtę sygnału $f_{1}(t)$, czyli $F_{1}(\jmath \omega)$.
+\TT{Wyznaczmy transformtę sygnału $f_{1}(t)$, czyli $F_{1}(\jmath \omega)$.}{Calculate the Fourier transform $F_{1}(\jmath \omega)$ for the first signal $f_{1}(t)$.}
 
-Z treści zadania wiemy, że:
-$\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$. Wykorzystując twierdzenie o zmianie skali mamy:
+\TT{Z treści zadania wiemy, że:}{We know that:}
+$\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.
+
+\TT{Wykorzystując twierdzenie o zmianie skali mamy:}{Based on the scaling theorem we get:}
 
 \begin{align*}
 \TimeScalingTeorem{g}{G}{f}{F}
@@ -49,17 +51,17 @@ $\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$. Wykorzystując twierd
 \Pi(\frac{t}{2\cdot t_{0}}) \xrightarrow{\mathcal F} & 2 \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right)\\
 \end{align*}
 
-Transformata sygnału $f_{1}(t)$ to:
+\TT{Transformata sygnału $f_{1}(t)$ to:}{The Fourier transform of $f_{1}(t)$ signal is equal to:}
 \begin{equation}
 F_{1}(\jmath \omega) = \mathcal F\{f_{1}(t)\} = 2 \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right)
 \end{equation}
 
-Teraz wyznaczmy transformtę sygnału $f_{2}(t)$, czyli $F_{2}(\jmath \omega)$.
+\TT{Wyznaczmy transformtę sygnału $f_{2}(t)$, czyli $F_{2}(\jmath \omega)$.}{Now, we calculate the Fourier transform $F_{2}(\jmath \omega)$ for the second signal $f_{2}(t)$.}
 
-Z treści zadania wiemy, że:
+\TT{Z treści zadania wiemy, że:}{We know that:}
 $\mathcal F \{\Lambda(t)\} = Sa^2\left(\frac{\omega}{2}\right)$.
 
-Wykorzystując twierdzenie o zmianie skali mamy:
+\TT{Wykorzystując twierdzenie o zmianie skali mamy:}{Based on the scaling theorem we get:}
 
 \begin{align*}
 \TimeScalingTeorem{g}{G}{f}{F}
@@ -71,16 +73,16 @@ Wykorzystując twierdzenie o zmianie skali mamy:
 \Lambda(\frac{t}{t_{0}}) \xrightarrow{\mathcal F} & t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)\\
 \end{align*}
 
-Transformata sygnału $f_{2}(t)$ to:
+\TT{Transformata sygnału $f_{2}(t)$ to:}{The Fourier transform of $f_{2}(t)$ signal is equal to:}
 \begin{equation}
 F_{2}(\jmath \omega) = \mathcal F\{f_{2}(t)\} = t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)
 \end{equation}
 
-Czyli transformata sygnału $f(t)$ to:
+\TT{Czyli transformata sygnału $f(t)$ to:}{Finally, the Fourier transform for $f(t)$ signal is equal to:}
 \begin{align*}
 F(\jmath \omega) = \mathcal F\{f(t)\} &= A \cdot \left( 2 \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)\right)
 \end{align*}
 
-Transformata sygnału $f(t) = A \cdot \Pi\left(\frac{t}{2\cdot t_{0}}\right) - A \cdot \Lambda(\frac{t}{t_{0}})$ to $F(\jmath \omega)=2 \cdot  A \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - A \cdot  t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)$
+\TT{Transformata sygnału $f(t) = A \cdot \Pi\left(\frac{t}{2\cdot t_{0}}\right) - A \cdot \Lambda(\frac{t}{t_{0}})$ to $F(\jmath \omega)=2 \cdot  A \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - A \cdot  t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)$.}{The Fourier transform of $f(t) = A \cdot \Pi\left(\frac{t}{2\cdot t_{0}}\right) - A \cdot \Lambda(\frac{t}{t_{0}})$ is equal to $F(\jmath \omega)=2 \cdot  A \cdot t_{0} \cdot Sa\left(\omega \cdot t_{0}\right) - A \cdot  t_{0} \cdot Sa^2\left(\frac{\omega \cdot t_{0}}{2}\right)$.}
 
 \end{task}
