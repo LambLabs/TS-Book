@@ -252,7 +252,7 @@
 %	The influence of signal symmetries on the coefficients of complex exponential Fourier series
 %	The effect of signal shift in time on the complex exponential Fourier series
 \inputTask{zadKW045-ENG.tex} %jako pierwsze, gdyż tylko przesunięcie
-\inputTask{zadKW048-ENG.tex} % Na moje, OK.
+\inputTask{zadKW048-ENG.tex}
 \inputTask{zadTG019-ENG.tex}
 \inputTask{zadTG020-ENG.tex}
 \inputTask{zadKW046.tex} % mnożenie dwóch sygnałów
@@ -274,8 +274,8 @@
 \inputTask{zadTG003-ENG.tex}
 \inputTask{zadTG004-ENG.tex}
 \inputTask{zadKW019-ENG.tex}
-\inputTask[Debug]{zadKW020-ENG.tex}
-\inputTask{zadKW029.tex}
+\inputTask{zadKW020-ENG.tex}
+\inputTask{zadKW029-ENG.tex}
 %	Fourier Transform vs Laplace Transform
 %	The Magnitude Spectrum and Phase Spectrum
 %	Symmetries of the Fourier Transform for real-valued signals
@@ -289,18 +289,19 @@
 %		Derivative theorem (differentiation in time domain)
 %		Integration theorem
 \TT{\section{Wykorzystanie twierdzeń do obliczeń transformaty Fouriera}}{\section{Exploiting properties of the Fourier transform}}
-\inputTask{zadTG005.tex}
-\inputTask{zadTG006.tex}
-\inputTask{zadKW021.tex}
-\inputTask{zadKW022.tex}
-\inputTask{zadKW023.tex}
-\inputTask{zadTG007.tex}
-\inputTask{zadKW024.tex}
-\inputTask{zadKW025.tex}
-\inputTask{zadKW026.tex}
-\inputTask{zadKW027.tex}
-\inputTask{zadKW030.tex}
-\inputTask{zadKW031.tex}
+\inputTask[Debug]{zadKW030.tex} % "|\/|" - linearity, scaling
+\inputTask[Debug]{zadKW031.tex} % stairs - linearity, scaling, shift in time
+\inputTask[Debug]{zadKW024.tex} % Sa*sin - modulation, duality, linearity
+\inputTask[Debug]{zadKW025.tex} % Sa^2*cos - modulation, duality, linearity
+\inputTask[Debug]{zadKW027.tex} %(1/(1-t^2)) - duality, by definition
+\inputTask[Debug]{zadTG005.tex} % triangle - intergate x1, linearity, scaling, shift in time
+\inputTask[Debug]{zadTG006.tex} % triangle - intergate x2, linearity, Dirac sampling
+\inputTask[Debug]{zadKW021.tex} % gate - intergate x1, linearity, Dirac sampling
+\inputTask[Debug]{zadKW022.tex} % ramp - intergate x1, linearity, scaling, Dirac sampling
+\inputTask[Debug]{zadKW023.tex} % slope - intergate x1, linearity, Dirac sampling
+\inputTask[Debug]{zadTG007.tex} % 1-t^2 - integrate x2, linearity, Dirac sampling
+
+\inputTask[Debug]{zadKW026.tex} %sgn - integration x1, linaerity, Dirac sampling
 
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 \TT{\section{Obliczenia energii sygnału za pomocą transformaty Fouriera. Twierdzenie Parsevala}}{\section{Calculating energy of the signal from its Fourier transform. The Parseval's theorem}}
