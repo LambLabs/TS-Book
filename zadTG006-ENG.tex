@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku wykorzystując twierdzenia opisujące własciwości transformacji Fouriera.
+\TT{Oblicz transformatę Fouriera sygnału $f(t)$ wykorzystując twierdzenia opisujące własciwości transformacji Fouriera. Wykorzystaj wiedzę o właściwościach próbkujących delty Diraca.}{Compute the Fourier transform of the $f(t)$ signal given below using theorems describing the properties of Fourier transformation. Exploit the sampling property of Dirac delta.}
 
 \begin{figure}[H]
 \centering
@@ -13,13 +13,13 @@ Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku wykorzy
 \end{tikzpicture}
 \end{figure}
 
-W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku.
-Wykorzystując sygnały elementarne możemy napisać:
+\TT{W pierwszej kolejności opiszmy sygnał za pomocą sygnałów elementarnych:}{First of all, describe the $f(t)$ signal using the elementary signals:}
+
 \begin{equation}
 f(t) = A \cdot \Lambda(\frac{t}{t_{0}})
 \end{equation}
 
-Wyznaczmy pochodną sygnału $f(t)$, czyli sygnał $g(t)= \frac{\partial}{\partial t}f(t)$.
+\TT{Wyznaczmy pochodną sygnału $f(t)$, czyli sygnał $g(t)= \frac{\partial}{\partial t}f(t)$.}{Let's derive derivative of the $f(t)$ signal as $g(t)= \frac{\partial}{\partial t}f(t)$:}
 
 \begin{figure}[H]
 	\centering
@@ -34,19 +34,20 @@ Wyznaczmy pochodną sygnału $f(t)$, czyli sygnał $g(t)= \frac{\partial}{\parti
 	\end{tikzpicture}
 \end{figure}
 
-Można sprawdzić, że całkując sygnał $g(t)$ otrzymamy sygnał $f(t)$, czyli:
+\TT{Można sprawdzić, że całkując sygnał $g(t)$ otrzymamy sygnał $f(t)$, czyli:}{You can check that by integrating the $g(t)$ signal we'll get the $f(t)$ signal:}
 
 \begin{equation}
 f(t) = \int_{-\infty}^{t} g(x) \cdot dx
 \end{equation}
 
-Skoro tak jest, to transformatę sygnału $f(t)$ mozna wyznaczyć z twierdzenia o całkowaniu sygnału, w tym przypadku całkować będziemy sygnał $g(t)$:
+\TT{Skoro tak jest, to transformatę sygnału $f(t)$ mozna wyznaczyć z twierdzenia o całkowaniu sygnału, w tym przypadku całkować będziemy sygnał $g(t)$:}{Therefore, the Fourier transform of the $f(t)$ signal can be determined from the integration theorem. In this case we will integrate the $g(t)$ signal:}
 
 \begin{equation}
 F(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)
 \end{equation}
 
-Pytanie, czy można dalej uprościc sygnał $g(t)$ dokonując jego rózniczkowania. Wyznaczmy pochodną sygnału $g(t)$, czyli drugą pochodną sygnału $f(t)$:
+\TT{Pytanie, czy można dalej uprościc sygnał $g(t)$ dokonując jego rózniczkowania. Wyznaczmy pochodną sygnału $g(t)$, czyli drugą pochodną sygnału $f(t)$:}{Is it possible to calculate derivative again to simply the analysed signal? Let's calculate the derivative of the $g(t)$ signal, so the second derivative of the $f(t)$ signal:}
+
 \begin{equation}
 h(t)= \frac{\partial}{\partial t}g(t) = \frac{\partial^2}{\partial t^2}f(t) 
 \end{equation}
@@ -69,31 +70,32 @@ h(t)= \frac{\partial}{\partial t}g(t) = \frac{\partial^2}{\partial t^2}f(t)
 	\end{tikzpicture}
 \end{figure}
 
-Sygnał $h(t)$ można opisać, wykorzystując sygnały elementarne:
+\TT{Sygnał $h(t)$ można opisać, wykorzystując sygnały elementarne:}{Using the elementary signals we can write:}
+
 \begin{equation}
 h(t) = \frac{A}{t_{0}} \cdot \delta(t-(-t_{0})) -\frac{2 \cdot A}{t_{0}} \cdot \delta(t) + \frac{A}{t_{0}} \cdot \delta(t-(t_{0}))
 \end{equation}
 
-Można sprawdzić, że całkując sygnał $g(t)$ otrzymamy sygnał $f(t)$, czyli:
+\TT{Można sprawdzić, że całkując sygnał $h(t)$ otrzymamy sygnał $g(t)$, czyli:}{You can check that by integrating the $h(t)$ signal we'll get the $g(t)$ signal:}
 
 \begin{equation}
 g(t) = \int_{-\infty}^{t} h(x) \cdot dx
 \end{equation}
 
 
-Skoro tak jest, to transformatę sygnału $f(t)$ mozna wyznaczyć z twierdzenia o całkowaniu sygnału, w tym przypadku całkować będziemy sygnał $g(t)$:
+\TT{Skoro tak jest, to transformatę sygnału $g(t)$ mozna wyznaczyć z twierdzenia o całkowaniu sygnału, w tym przypadku całkować będziemy sygnał $h(t)$:}{Therefore, the Fourier transform of the $g(t)$ signal can be determined from the integration theorem. In this case we will integrate the $h(t)$ signal:}
 
 \begin{equation}
 G(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot H(\jmath \omega) + \pi \cdot \delta(\omega) \cdot H(0)
 \end{equation}
 
-Z powyzszego równania widać, że musimy znać $H(\jmath \omega)$, czyli transformatę sygnału $h(t)$:
+\TT{Z powyższego równania widać, że musimy znać $H(\jmath \omega)$, czyli transformatę sygnału $h(t)$:}{In order to derive $G(\jmath \omega)$ we have to calculate the $H(\jmath \omega)$ transform of the $h(t)$ signal:}
 
 \begin{equation}
 h(t) = \frac{A}{t_{0}} \cdot \delta(t-(-t_{0})) -\frac{2 \cdot A}{t_{0}} \cdot \delta(t) + \frac{A}{t_{0}} \cdot \delta(t-(t_{0}))
 \end{equation}
 
-Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych delt Diraca, czyli:
+\TT{Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych delt Diraca, czyli:}{Based on the linearity theorem, we can derive transforms separately for each Dirac delta signal:}
 
 \begin{align*}
 H(\jmath \omega)&={\mathcal F}\{h(t)\}=\\
@@ -114,14 +116,13 @@ cos(x)=\frac{e^{\jmath \cdot x} + e^{-\jmath \cdot x}}{2}
 &=\frac{2 \cdot A}{t_{0}} \cdot \left(cos(\omega \cdot t_{0}) -1\right)
 \end{align*}
 
-Czyli transformata sygnału $h(t)$ to:
+\TT{Czyli transformata sygnału $h(t)$ to:}{The Fourier transform of the $h(t)$ signal is equal to:}
 
 \begin{equation}
 H(\jmath \omega) = \frac{2 \cdot A}{t_{0}} \cdot \left(cos(\omega \cdot t_{0}) -1\right)
 \end{equation}
 
-
-Mamy wyznaczoną transformatę $H(\jmath \omega)$. Teraz, z twierdzenia o całkowaniu sygnału, możemy wyznaczyć transformatę $G(\jmath \omega)$:
+\TT{Mamy wyznaczoną transformatę $H(\jmath \omega)$. Teraz, z twierdzenia o całkowaniu sygnału, możemy wyznaczyc transformatę $G(\jmath \omega)$:}{We derived the $H(\jmath \omega)$ transform. Now, based on the integration theorem, we can calculate the $G(\jmath \omega)$ Fourier transform.}
 
 \begin{align*}
 G(\jmath \omega)&= \frac{1}{\jmath \cdot \omega} \cdot H(\jmath \omega) + \pi \cdot \delta(\omega) \cdot H(0)=\\
@@ -135,10 +136,7 @@ H(0)=0\\
 &=\frac{2 \cdot A}{\jmath \cdot \omega \cdot t_{0}} \cdot \left(cos(\omega \cdot t_{0}) -1\right)
 \end{align*}
 
-
-
-
-Mamy wyznaczoną transformatę $G(\jmath \omega)$. Teraz, kolejny raz z twierdzenia o całkowaniu sygnału, możemy wyznaczyć transformatę $F(\jmath \omega)$:
+\TT{Mamy wyznaczoną transformatę $G(\jmath \omega)$. Teraz, kolejny raz z twierdzenia o całkowaniu sygnału, możemy wyznaczyć transformatę $F(\jmath \omega)$:}{We derived the $G(\jmath \omega)$ transform. Using the integration theorem once again, we can calculate the $F(\jmath \omega)$ Fourier transform.}
 
 \begin{align*}
 F(\jmath \omega)&= \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)=\\
@@ -165,6 +163,6 @@ cos(2 \cdot x)= 1 - 2 \cdot sin^{2}(x)\\
 &=A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})
 \end{align*}
 
-Transformata sygnału $f(t) = A \cdot \Lambda(\frac{t}{t_{0}})$ to $F(\jmath \omega)=A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})$
+\TT{Transformata sygnału $f(t) = A \cdot \Lambda(\frac{t}{t_{0}})$ to $F(\jmath \omega)=A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})$}{The Fourier transform of $f(t) = A \cdot \Lambda(\frac{t}{t_{0}})$ is equal to $F(\jmath \omega)=A \cdot t_{0} \cdot Sa^{2}(\frac{\omega \cdot t_{0}}{2})$.}
 
 \end{task}
