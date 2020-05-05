@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz transformatę Fouriera sygnału $f(t)=\frac{1}{1+t^2}$ za pomocą twierdzeń.
+\TT{Oblicz transformatę Fouriera sygnału $f(t)=\frac{1}{1+t^2}$ przedstawionego na rysunku wykorzystując twierdzenia opisujące własciwości transformacji Fouriera. Wykorzystaj informację o tym, że $\mathcal F\{e^{-\left|t\right|}\} = \frac{2}{1 + \omega^2}$.}{Compute the Fourier transform of the $f(t)=\frac{1}{1+t^2}$ signal shown below using theorems describing the properties of Fourier transformation. Exploit the following transform  $\mathcal F\{e^{-\left|t\right|}\} = \frac{2}{1 + \omega^2}$.}
 
 \begin{figure}[H]
 \centering
@@ -21,67 +21,47 @@ Oblicz transformatę Fouriera sygnału $f(t)=\frac{1}{1+t^2}$ za pomocą twierdz
 \end{tikzpicture}
 \end{figure}
 
-Załóżmy sygnał $g(t)=e^{-\left|t\right|}$ i wyznaczmy jego transformatę.
+\TT{Z treści zadania wiemy, że:}{We know that:}
+\begin{equation}
+\mathcal F\{e^{-\left|t\right|}\} = \frac{2}{1 + \omega^2}
+\end{equation}
+
+\TT{Oznaczmy $g(t) = e^{-\left|t\right|}$ oraz $G(\jmath \omega)=\frac{2}{1+\omega^2}$.}{Let's denote $g(t) = e^{-\left|t\right|}$ and $G(\jmath \omega)=\frac{2}{1+\omega^2}.$} 
+
+\TT{Na podstawie twierdzenia o symetrii możemy wyznaczyć następującą transformatę:}{Based on duality theorem we can derive the following transform:}
 
 \begin{align*}
-G(\jmath \omega)&=\int_{-\infty}^{\infty} g(t) \cdot e^{-\jmath \cdot \omega \cdot t} \cdot dt=\\
-&=\int_{-\infty}^{\infty} e^{-\left|t\right|} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
-&=\int_{-\infty}^{0} e^{t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt + \int_{0}^{\infty} e^{-t} \cdot e^{-\jmath \cdot \omega \cdot t}\cdot dt=\\
-&=\int_{-\infty}^{0} e^{t -\jmath \cdot \omega \cdot t}\cdot dt + \int_{0}^{\infty} e^{-t -\jmath \cdot \omega \cdot t}\cdot dt=\\
-&=\lim_{\tau \rightarrow \infty} \int_{-\tau}^{0} e^{\left(1-\jmath \cdot \omega \right)\cdot t}\cdot dt + \lim_{\tau \rightarrow \infty} \int_{0}^{\tau} e^{-\left(1 +\jmath \cdot \omega \right)\cdot t}\cdot dt=\\
-&=\begin{Bmatrix}
-z_1=-\left(1+\jmath \cdot \omega \right)\cdot t & z_2 = \left(1-\jmath \cdot \omega \right)\cdot t\\
-dz_1=-\left(1+\jmath \cdot \omega \right)\cdot dt & dz_2 = \left(1-\jmath \cdot \omega \right)\cdot dt\\
-dt=\frac{1}{-\left(1+\jmath \cdot \omega \right)}\cdot dz_1 & dt = \frac{1}{1-\jmath \cdot \omega}\cdot dz_2\\
-\end{Bmatrix}=\\
-&=\lim_{\tau \rightarrow \infty} \int_{-\tau}^{0} e^{z_2}\cdot \frac{1}{1-\jmath \cdot \omega }\cdot dz_2 + \lim_{\tau \rightarrow \infty} \int_{0}^{\tau} e^{z_1}\cdot \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot dz_1=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \lim_{\tau \rightarrow \infty} \int_{-\tau}^{0} e^{z_2}\cdot dz_2 + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \lim_{\tau \rightarrow \infty} \int_{0}^{\tau} e^{z_1}\cdot  dz_1=\\
-&=\frac{1}{1-\jmath \cdot \omega}\cdot \lim_{\tau \rightarrow \infty} \left. e^{z_2}\right|_{-\tau}^{0} + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \lim_{\tau \rightarrow \infty} \left. e^{z_1}\right|_{0}^{\tau}=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \lim_{\tau \rightarrow \infty} \left. e^{\left(1-\jmath \cdot \omega \right)\cdot t}\right|_{-\tau}^{0} + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \lim_{\tau \rightarrow \infty} \left. e^{-\left(1+\jmath \cdot \omega \right)\cdot t}\right|_{0}^{\tau}=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \lim_{\tau \rightarrow \infty} \left( e^{\left(1-\jmath \cdot \omega \right)\cdot 0} - e^{\left(1-\jmath \cdot \omega \right)\cdot (-\tau)}\right) + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \lim_{\tau \rightarrow \infty} \left( e^{-\left(1+\jmath \cdot \omega \right)\cdot \tau} - e^{-\left(1+\jmath \cdot \omega \right)\cdot 0}\right)=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \lim_{\tau \rightarrow \infty} \left( e^{0} - e^{-\left(1-\jmath \cdot \omega \right)\cdot \tau}\right) + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \lim_{\tau \rightarrow \infty} \left( e^{-\left(1+\jmath \cdot \omega \right)\cdot \tau} - e^{0}\right)=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \lim_{\tau \rightarrow \infty} \left( 1 - e^{-\tau +\jmath \cdot \omega \cdot \tau}\right) + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \lim_{\tau \rightarrow \infty} \left( e^{-\tau -\jmath \cdot \omega \cdot \tau} - 1\right)=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \left( \lim_{\tau \rightarrow \infty} 1 - \lim_{\tau \rightarrow \infty} e^{-\tau} \cdot e^{\jmath \cdot \omega \cdot \tau}\right) + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \left(\lim_{\tau \rightarrow \infty} e^{-\tau}\cdot e^{-\jmath \cdot \omega \cdot \tau} - \lim_{\tau \rightarrow \infty} 1\right)=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \left( 1 - \lim_{\tau \rightarrow \infty} e^{-\tau} \cdot \lim_{\tau \rightarrow \infty} e^{\jmath \cdot \omega \cdot \tau}\right) + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \left(\lim_{\tau \rightarrow \infty} e^{-\tau}\cdot \lim_{\tau \rightarrow \infty} e^{-\jmath \cdot \omega \cdot \tau} - 1\right)=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \left( 1 - 0 \cdot \lim_{\tau \rightarrow \infty} e^{\jmath \cdot \omega \cdot \tau}\right) + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \left(0\cdot \lim_{\tau \rightarrow \infty} e^{-\jmath \cdot \omega \cdot \tau} - 1\right)=\\
-&=\frac{1}{1-\jmath \cdot \omega }\cdot \left( 1 - 0 \right) + \frac{1}{-\left(1+\jmath \cdot \omega\right)}\cdot \left(0 - 1\right)=\\
-&=\frac{1}{1-\jmath \cdot \omega } + \frac{1}{-\left(1+\jmath \cdot \omega\right)} \cdot (-1)=\\
-&=\frac{1}{1-\jmath \cdot \omega } + \frac{1}{1+\jmath \cdot \omega}=\\
-&=\frac{\left(1+\jmath \cdot \omega\right)}{\left(1+\jmath \cdot \omega\right) \cdot \left(1-\jmath \cdot \omega\right) } + \frac{\left(1-\jmath \cdot \omega\right)}{\left(1+\jmath \cdot \omega\right)\cdot \left(1-\jmath \cdot \omega\right)}=\\
-&=\frac{\left(1+\jmath \cdot \omega\right) + \left(1-\jmath \cdot \omega\right)}{\left(1+\jmath \cdot \omega\right) \cdot \left(1-\jmath \cdot \omega\right) }=\\
-&=\frac{2}{1+\omega^2}
-\end{align*}
-
-Transformata sygnału $g(t) = e^{-\left|t\right|}$ jest równa $G(\jmath \omega)=\frac{2}{1+\omega^2}$. Postać funkcji $G(\jmath \omega)=\frac{2}{1+\omega^2}$ nie jest identyczna z postacią funkcji $f(t)$, funkcja różni się o współczynnik $2$. 
-
-Z twierdzenia o liniowości transformaty 
-
-\begin{align*}
-g(t) &\xrightarrow{\mathcal F} G(\jmath \omega)\\
-h(t)=\alpha \cdot g(t) &\xrightarrow{\mathcal F} H(\jmath \omega) = \alpha \cdot G(\jmath \omega)\
-\end{align*}
-
-otrzymujemy
-
-\begin{align*}
-h(t) &= \frac{1}{2} \cdot e^{-\left|t\right|}\\
-H(\jmath \omega)&=\frac{1}{2} \cdot \frac{2}{1+\omega^2}=\\
-&=\frac{1}{1+\omega^2}
-\end{align*}
-
-Na podstawie sygnału $h(t)$ i korzystając z twierdzenia o symetrii możemy wyznaczyć transformatę sygnału $f(t)$.
-
-\begin{align*}
-\SymetryTeorem{h}{H}{f}{F}
+\SymetryTeorem{g}{G}{h}{H}
 \end{align*}
 
 \begin{align*}
-F(\jmath \omega)&=2\pi \cdot h(-\omega)=\\
-&=2\pi \cdot \frac{1}{2} \cdot e^{-\left|-\omega\right|}=\\
+H(\jmath \omega)&=2\pi \cdot g(-\omega)=\\
+&=2\pi \cdot e^{-\left|-\omega\right|}=\\
+&=2\pi \cdot e^{-\left|\omega\right|}
+\end{align*}
+
+\TT{Niestety sygnał $h(t)=\frac{2}{1+t^2}$ nie jest równy sygnałowi $f(t)=\frac{1}{1+t^2}$, ale:}{Unfortunately, the $h(t)=\frac{2}{1+t^2}$ signal in not equal to $f(t)=\frac{1}{1+t^2}$ signal. But:}
+
+\begin{equation}
+f(t) = \frac{1}{2} \cdot h(t)
+\end{equation}
+
+\TT{Z twierdzenia o liniowości transformaty możemy obliczyć:}{Based on linearity theorem we can calculate:}
+
+\begin{align*}
+h(t) &\xrightarrow{\mathcal F} H(\jmath \omega)\\
+f(t)=\alpha \cdot h(t) &\xrightarrow{\mathcal F} F(\jmath \omega) = \alpha \cdot H(\jmath \omega)\
+\end{align*}
+
+\TT{Ostatecznie otrzymujemy:}{Finally, we get:}
+
+\begin{align*}
+f(t) &= \frac{1}{2} \cdot \frac{2}{1+t^2}\\
+F(\jmath \omega)&=\frac{1}{2} \cdot 2\pi \cdot e^{-\left|\omega\right|}=\\
 &=\pi \cdot e^{-\left|\omega\right|}
 \end{align*}
 
-Transformata Fouriera sygnału $f(t)=\frac{1}{1+t^2}$ jest równa $F(\jmath \omega)=\pi \cdot e^{-\left|\omega\right|}$
+\TT{Transformata Fouriera sygnału $f(t)=\frac{1}{1+t^2}$ jest równa $F(\jmath \omega)=\pi \cdot e^{-\left|\omega\right|}$.}{The Fourier transform of the $f(t)=\frac{1}{1+t^2}$ signal is equal to $F(\jmath \omega)=\pi \cdot e^{-\left|\omega\right|}$.}
 
 \end{task}
 

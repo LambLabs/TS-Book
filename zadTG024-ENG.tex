@@ -1,0 +1,101 @@
+\begin{task}
+\TT{Oblicz transformatę Fouriera sygnału $f(t)=e^{-\left|t\right|}$ przedstawionego na rysunku wykorzystując twierdzenia opisujące własciwości transformacji Fouriera. Wykorzystaj informację o tym, że $\mathcal F\{A \cdot \mathbb{1}(t) \cdot e^{-a\cdot t}\} = \frac{A}{ a + \jmath \cdot \omega}$.}{Compute the Fourier transform of the $f(t)=e^{-\left|t\right|}$ signal shown below using theorems describing the properties of Fourier transformation. Exploit the following transform  $\mathcal F\{A \cdot \mathbb{1}(t) \cdot e^{-a\cdot t}\}=\frac{A}{ a + \jmath \cdot \omega}$.}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    %\draw (0,0) circle (1in);
+    \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$t$};
+    \draw[->] (+0.0,-1.0) -- (+0.0,+2.0) node[above] {$f(t)$};
+    
+    \draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, left] {$1$};
+    
+    \draw[scale=1.0,domain=-4.0:0.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(\x)});
+    \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(-\x)});
+    
+    \end{tikzpicture}
+\end{figure}
+
+\TT{W pierwszej kolejności należy opisać sygnał za pomocą wzoru:}{The signal $f(t)$, as a piecewise function, is given by:}
+
+\begin{equation}
+f(t) = \begin{cases}
+e^{t} & \TT{\text{ dla }}{\text{ for }} t \in \left(-\infty; 0\right)\\
+e^{-t} & \TT{\text{ dla }}{\text{ for }} t \in \left(0; \infty\right)
+\end{cases}
+\end{equation}
+
+\TT{Oznaczmy sygnał $\mathbb{1}(t) \cdot e^{-t}$ jako $g(t)$:}{Let's denote $\mathbb{1}(t) \cdot e^{-t}$ signal as $g(t)$:}
+
+\begin{equation}
+g(t) = \mathbb{1}(t) \cdot e^{-t}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    %\draw (0,0) circle (1in);
+    \draw[->] (-4.5,+0.0) -- (+4.5,+0.0) node[right] {$t$};
+    \draw[->] (+0.0,-1.0) -- (+0.0,+2.0) node[above] {$g(t)$};
+    
+    \draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, left] {$1$};
+    
+    \draw[scale=1.0,domain=-4.0:0.0,smooth,variable=\x,red,thick] plot ({\x},{0});
+    \draw[scale=1.0,domain=0.0:4.0,smooth,variable=\x,red,thick] plot ({\x},{1.5*exp(-\x)});
+    
+    \end{tikzpicture}
+\end{figure}
+
+\TT{Teraz sygnał $f(t)$ możemy wyrazić jako liniową kombinację sygnałów $g(t)$ oraz $g(-t)$:}{Now, the $f(t)$ signal may be expressed as a linear combination of $g(t)$ and $g(-t)$ signals:}
+
+\begin{equation}
+f(t) = g(t) + g(-t)
+\end{equation}
+
+\TT{Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych sygnałów.}{Based on linearity of the Fourier transformation, we can calculate transforms for elementary signals separately.}
+
+\TT{Wyznaczmy transformtę sygnału $g(t)$, czyli $G(\jmath \omega)$.}{Let's calculate the Fourier transform $G(\jmath \omega)$ for the first signal $g(t)$.}
+
+\TT{Z treści zadania wiemy, że:}{We know that:}
+\begin{equation}
+\mathcal F\{A \cdot \mathbb{1}(t) \cdot e^{-a\cdot t}\}=\frac{A}{ a + \jmath \cdot \omega}
+\end{equation}
+
+\TT{Podstawiając $A=1$ oraz $a=1$ otrzymujemy wprost transformatę sygnału $g(t)$, czyli $G(\jmath \omega)$:}{Substituting $A=1$ and $a=1$ we directly get the Fourier transform $G(\jmath \omega)$ for $g(t)$ signal:}
+
+\begin{align*}
+A \cdot \mathbb{1}(t) \cdot e^{-a\cdot t} &\xrightarrow{\mathcal F} \frac{A}{ a + \jmath \cdot \omega}\\
+\begin{Bmatrix}
+A=1\\
+a=1
+\end{Bmatrix}\\
+g(t) = \mathbb{1}(t) \cdot e^{-t} &\xrightarrow{\mathcal F} \frac{1}{ 1 + \jmath \cdot \omega} = G(\jmath \omega)\\
+\end{align*}
+
+
+\TT{Wykorzystując twierdzenie o zmianie skali, możemy obliczyć transformatę sygnału $g(-t)$:}{Based on the scaling theorem, we can derive the Fourier transform of the $g(-t)$ signal:}
+
+\begin{align*}
+\TimeScalingTeorem{g}{G}{f}{F}
+\end{align*}
+
+\begin{align*}
+g(t) \xrightarrow{\mathcal F} & \frac{1}{ 1 + \jmath \cdot \omega}\\
+g(-1 \cdot t) \xrightarrow{\mathcal F} & \frac{1}{\left|-1\right|} \cdot \frac{1}{ 1 + \jmath \cdot \frac{\omega}{-1}}\\
+g(-t) \xrightarrow{\mathcal F} & \frac{1}{1} \cdot \frac{1}{ 1 - \jmath \cdot \omega}\\
+g(-t) \xrightarrow{\mathcal F} & \frac{1}{ 1 - \jmath \cdot \omega}
+\end{align*}
+
+
+\TT{Czyli transformata sygnału $f(t)$ to:}{Finally, the Fourier transform for the $f(t)$ signal is equal to:}
+
+\begin{align*}
+F(\jmath \omega) = \mathcal F\{f(t)\} & = \frac{1}{ 1 + \jmath \cdot \omega} + \frac{1}{ 1 - \jmath \cdot \omega}\\
+F(\jmath \omega) & = \frac{1 - \jmath \cdot \omega + 1 + \jmath \cdot \omega}{ (1 + \jmath \cdot \omega) \cdot (1 - \jmath \cdot \omega)}\\
+F(\jmath \omega) & = \frac{2}{1 - \jmath^2 \cdot \omega^2}\\
+F(\jmath \omega) & = \frac{2}{1 + \omega^2}
+\end{align*}
+
+\TT{Transformata sygnału $f(t)=e^{-\left|t\right|}$ to $F(\jmath \omega) = \frac{2}{1 + \omega^2}$.}{The Fourier transform of the $f(t)=e^{-\left|t\right|}$ is equal to $F(\jmath \omega) = \frac{2}{1 + \omega^2}$.}
+
+\end{task}
