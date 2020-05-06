@@ -1,0 +1,138 @@
+\begin{task}
+
+\TT{Wyznacz wartość średnią sygnału $f(t)=A\cdot sin^6(t)$, wiedząc, że jego wartość skuteczna wynosi $U=\frac{\sqrt{2}}{2}$. W toku rozwiązania zadania ustal ile wynosi $A$, a następnie oblicz wartość średnią. Rozwiązanie powinno być liczbą.}{} 
+
+\TT{Wartość skuteczna sygnału można wyznaczyć na podstawie mocy sygnału za pomocą wzoru:}{}
+\begin{equation}
+U = \sqrt{P}
+\end{equation}
+
+\TT{Moc sygnału okresowego dana jest wzorem:}{}
+
+\begin{equation}
+P = \frac{1}{T} \int_{T} \left| f(t) \right|^2 \cdot dt
+\end{equation}
+
+\TT{Alternatywnie moc sygnału można wyznaczyć za pomocą twierdzenia Parsewala na podstawie wartości współczynników zespolonego szeregu Fouriera.}{}
+
+\begin{equation}
+P = \sum_{k=-\infty}^{\infty} \left| F_k \right|^2
+\end{equation}
+
+\TT{Współczynniki zespolonego szeregu Fouriera możemy wyznaczyć ze wzoru na współczynniki szeregu Fouriera}{}
+
+\begin{equation}
+F_k = \frac{1}{T} \int_t f(t) \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot k \cdot t} \cdot dt
+\end{equation}
+
+\TT{Wyznaczmy jednak współczynniki szeregu Fouriera inaczej. Rozłóżmy sygnał $f(t)$ na sumę zespolonych sygnałów harmonicznych.}{}
+
+\begin{align*}
+f(t)&=A\cdot sin^6(t)=\\
+&=A\cdot \left( sin(t) \right)^6=\\
+&=\begin{Bmatrix*}[l]
+\EulerSin
+\end{Bmatrix*}=\\
+&=A\cdot\left(\frac{e^{\jmath \cdot t} - e^{-\jmath \cdot t}}{2 \cdot \jmath}\right)^6=\\
+&=\left\{\begin{array}{llllllllllllll}
+n=0: &   &   &   &   &   &   & 1 &   &   &   &   &   &   \\
+n=1: &   &   &   &   &   & 1 &   & 1 &   &   &   &   &   \\
+n=2: &   &   &   &   & 1 &   & 2 &   & 1 &   &   &   &   \\
+n=3: &   &   &   & 1 &   & 3 &   & 3 &   & 1 &   &   &   \\
+n=4: &   &   & 1 &   & 4 &   & 6 &   & 4 &   & 1 &   &   \\
+n=5: &   & 1 &   & 5 &   & 10&   &10 &   & 5 &   & 1 &   \\
+n=6: & 1 &   & 6 &   & 15&   & 20&   & 15&   & 6 &   & 1 
+\end{array}\right\}=\\
+&=A\cdot \frac{\left(e^{\jmath \cdot t} - e^{-\jmath \cdot t}\right)^6}{\left(2 \cdot \jmath\right)^6}=\\
+&=A\cdot \frac{\left(e^{\jmath \cdot t}\right)^6 - 6 \cdot\left(e^{\jmath \cdot t}\right)^5 \cdot \left(e^{-\jmath \cdot t}\right)^1 + 15 \cdot\left(e^{\jmath \cdot t}\right)^4 \cdot \left(e^{-\jmath \cdot t}\right)^2 - 20 \cdot\left(e^{\jmath \cdot t}\right)^3 \cdot \left(e^{-\jmath \cdot t}\right)^3}{2^6 \cdot \jmath^6}+\\
+&+A\cdot \frac{15 \cdot\left(e^{\jmath \cdot t}\right)^2 \cdot \left(e^{-\jmath \cdot t}\right)^4 - 6 \cdot\left(e^{\jmath \cdot t}\right)^1 \cdot \left(e^{-\jmath \cdot t}\right)^5 + \left(e^{-\jmath \cdot t}\right)^6}{2^6 \cdot \jmath^6}=\\
+&=A\cdot \frac{e^{\jmath \cdot 6 \cdot t} - 6 \cdot e^{\jmath \cdot 5 \cdot t} \cdot e^{-\jmath \cdot t} + 15 \cdot e^{\jmath \cdot 4 \cdot t} \cdot e^{-\jmath \cdot 2 \cdot t} - 20 \cdot e^{\jmath \cdot 3 \cdot t} \cdot e^{-\jmath \cdot 3 \cdot t}}{-64}+\\
+&+A\cdot \frac{15 \cdot e^{\jmath \cdot 2\cdot t} \cdot e^{-\jmath \cdot 4 \cdot t} - 6 \cdot e^{\jmath \cdot t} \cdot e^{-\jmath \cdot 5 \cdot t} + e^{-\jmath \cdot 6 \cdot t}}{-64}=\\
+&=A\cdot \frac{e^{\jmath \cdot 6 \cdot t} - 6 \cdot e^{\jmath \cdot 5 \cdot t -\jmath \cdot t} + 15 \cdot e^{\jmath \cdot 4 \cdot t -\jmath \cdot 2 \cdot t} - 20 \cdot e^{\jmath \cdot 3 \cdot t -\jmath \cdot 3 \cdot t}}{-64}+\\
+&+A\cdot \frac{15 \cdot e^{\jmath \cdot 2\cdot t -\jmath \cdot 4 \cdot t} - 6 \cdot e^{\jmath \cdot t -\jmath \cdot 5 \cdot t} + e^{-\jmath \cdot 6 \cdot t}}{-64}=\\
+&=A\cdot \frac{e^{\jmath \cdot 6 \cdot t} - 6 \cdot e^{\jmath \cdot 4 \cdot t} + 15 \cdot e^{\jmath \cdot 2 \cdot t} - 20 \cdot e^{0}}{-64}+\frac{15 \cdot e^{-\jmath \cdot 2\cdot t} - 6 \cdot e^{-\jmath \cdot 4 \cdot t} + e^{-\jmath \cdot 6 \cdot t}}{-64}=\\
+&=A\cdot \frac{e^{\jmath \cdot 6 \cdot t} - 6 \cdot e^{\jmath \cdot 4 \cdot t} + 15 \cdot e^{\jmath \cdot 2 \cdot t} - 20 \cdot e^{0} + 15 \cdot e^{-\jmath \cdot 2\cdot t} - 6 \cdot e^{-\jmath \cdot 4 \cdot t} + e^{-\jmath \cdot 6 \cdot t}}{-64}=\\
+&=-A\cdot \frac{1}{64} \cdot e^{\jmath \cdot 6 \cdot t} + A\cdot \frac{6}{64} \cdot e^{\jmath \cdot 4 \cdot t} - A\cdot \frac{15}{64} \cdot e^{\jmath \cdot 2 \cdot t} + \frac{20}{64} - A\cdot \frac{15}{64} \cdot e^{-\jmath \cdot 2\cdot t} + A\cdot\frac{6}{64} \cdot e^{-\jmath \cdot 4 \cdot t} - A\cdot \frac{1}{64} \cdot e^{-\jmath \cdot 6 \cdot t}=\\
+&=-A\cdot \frac{1}{64} \cdot e^{-\jmath \cdot 6 \cdot t} + A\cdot \frac{6}{64} \cdot e^{-\jmath \cdot 4 \cdot t} - A\cdot \frac{15}{64} \cdot e^{-\jmath \cdot 2 \cdot t} + A\cdot \frac{20}{64} - A\cdot \frac{15}{64} \cdot e^{\jmath \cdot 2\cdot t} +A\cdot \frac{6}{64} \cdot e^{\jmath \cdot 4 \cdot t} - A\cdot \frac{1}{64} \cdot e^{\jmath \cdot 6 \cdot t}
+\end{align*}
+
+\TT{Porównajmy uzyskane rozwinięcie z wzorem na aproksymacje sygnału za pomocą zespolonego szeregu Fouriera}{}
+
+\begin{align*}
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot k \cdot t}
+\end{align*}
+
+\TT{Dla naszego sygnału $T=2\pi$ a wiec mamy}{}
+
+\begin{align*}
+f(t) &= \sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot \frac{2\pi}{2\pi} \cdot k \cdot t}=\\
+&=\sum_{k=-\infty}^{\infty} F_k \cdot e^{\jmath \cdot k \cdot t}=\\
+&=\cdots + F_{-6} \cdot e^{-\jmath \cdot 6 \cdot t} + F_{-5} \cdot e^{-\jmath \cdot 5 \cdot t} + \\
+&+F_{-4} \cdot e^{-\jmath \cdot 4 \cdot t} +F_{-3} \cdot e^{-\jmath \cdot 3 \cdot t} + F_{-2} \cdot e^{-\jmath \cdot 2 \cdot t} +\\
+&+F_{-1} \cdot e^{-\jmath \cdot t} + F_0 + F_{1} \cdot e^{\jmath \cdot t} +\\
+&+F_{2} \cdot e^{\jmath \cdot 2 \cdot t} +F_{3} \cdot e^{\jmath \cdot 3 \cdot t} +F_{4} \cdot e^{\jmath \cdot 4 \cdot t} +\\
+& +F_{5} \cdot e^{\jmath \cdot 5 \cdot t} +F_{6} \cdot e^{\jmath \cdot 6 \cdot t} + \cdots
+\end{align*}
+
+\TT{Przyrównując uzyskany wzór do rozwinięcia naszej funkcji uzyskujemy wprost współczynniki zespolonego szeregu Fouriera dla naszego sygnału:}
+
+\begin{align*}
+F_{-6} &= -A\cdot \frac{1}{64}\\
+F_{-4} &= A\cdot \frac{6}{64}\\
+F_{-2} &=-A\cdot \frac{15}{64}\\
+F_{0}  &=A\cdot \frac{20}{64}\\
+F_{2} &=-A\cdot \frac{15}{64}\\
+F_{4} &= A\cdot \frac{6}{64}\\
+F_{6} &= -A\cdot \frac{1}{64}\\
+\underset{k \notin \left\{-6,-4,-2,0,2,4,6\right\}}{\forall} F_k &= 0
+\end{align*}
+
+\TT{A wiec korzystająć z twierdzenia Parsevala energia sygnału jest równa:}{}
+
+\begin{align*}
+P &= \sum_{k=-\infty}^{\infty} \left| F_k \right|^2 = \\
+  &= \cdots + \left|F_{-6} \right|^2 + \left| F_{-5} \right|^2 + \left| F_{-4} \right|^2 + \left| F_{-3} \right|^2 +\\
+  &+ \left| F_{-2} \right|^2 + \left| F_{-1} \right|^2 + \left| F_0 \right|^2 + \left| F_{1} \right|^2 + \left| F_{2} \right|^2 +\\
+  &+ \left| F_{3} \right|^2 + \left| F_{4} \right|^2 + \left| F_{5} \right|^2 + \left| F_{6} \right|^2 + \cdots = \\
+  &= \left|-A\cdot \frac{1}{64} \right|^2 + \left| 0 \right|^2 + \left| A\cdot \frac{6}{64} \right|^2 + \left| 0 \right|^2 + \\
+  &+ \left|-A\cdot \frac{15}{64} \right|^2 + \left| 0 \right|^2 + \left| A\cdot \frac{20}{64} \right|^2 + \left| 0 \right|^2 + \left| -A\cdot \frac{15}{64} \right|^2 +\\ 
+  &+ \left| 0 \right|^2 + \left| A\cdot \frac{6}{64} \right|^2 + \left| 0 \right|^2 + \left| -A\cdot \frac{1}{64} \right|^2 = \\
+  &= A^2 \cdot \frac{1}{64^2} + A^2 \cdot \frac{6^2}{64^2} + A^2 \cdot \frac{15^2}{64^2} + A^2 \cdot \frac{20^2}{64^2} + A^2 \cdot \frac{15^2}{64^2} + A^2 \cdot \frac{6^2}{64^2} + A^2 \cdot \frac{1}{64^2} = \\
+  &= \frac{A^2}{64^2} \cdot \left( 1 + 6^2 + 15^2 + 20^2 + 15^2 + 6^2 + 1\right) =\\
+  &= \frac{A^2}{64^2} \cdot \left( 1 + 36 + 225 + 400 + 225 + 36 + 1\right) =\\
+  &= \frac{A^2}{64^2} \cdot 924 =\\
+  &= A^2 \cdot \frac{924}{64^2}
+\end{align*}
+
+\TT{Wyznaczmy wartość skuteczną:}{}
+
+\begin{align*}
+U &= \sqrt{P} =\\
+  &= \sqrt{A^2 \cdot \frac{924}{64^2}} =\\
+  &= A \cdot \frac{\sqrt{924}}{64} = \\
+  &= A \cdot \frac{2 \sqrt{231}}{64} = \\
+  &= A \cdot \frac{\sqrt{231}}{32}
+\end{align*}
+
+\TT{Z treści zadania wiemy że wartość skuteczna $U$ równa się $\frac{\sqrt{2}}{2}$, a wiec:}
+
+\begin{align*}
+U = A \cdot \frac{\sqrt{231}}{32} = \frac{\sqrt{2}}{2} \Rightarrow A &= \frac{\sqrt{2}}{2} \cdot \frac{32}{\sqrt{231}} = \\
+ &= \frac{\sqrt{2}}{1} \cdot \frac{16}{\sqrt{231}} = \\
+ &= 16 \cdot \sqrt{\frac{2}{231}} \\
+\end{align*}
+
+\TT{Czyli amplituda sygnału wynosi: }{}$A=16 \cdot \sqrt{\frac{2}{231}}$
+
+\TT{Wartość średnia sygnału to wartość współczynnika $F_0$ a wiec:}{}
+
+\begin{align*}
+\bar{f(t)} &= F_{0} = A\cdot \frac{20}{64}= \\
+&= 16 \cdot \sqrt{\frac{2}{231}} \cdot \frac{20}{64} = \\
+&= \sqrt{\frac{2}{231}} \cdot \frac{20}{4} = \\
+&= \sqrt{\frac{2}{231}} \cdot 5 = \\
+&= 5 \cdot \sqrt{\frac{2}{231}}
+\end{align*}
+
+\TT{Wartość średnia sygnału wynosi }{}$\bar{f(t)}=5 \cdot \sqrt{\frac{2}{231}}$
+\end{task}
