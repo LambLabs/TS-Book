@@ -100,4 +100,108 @@ F(\jmath \omega) = \mathcal F\{f(t)\} &= 2 \cdot \left( 4 \cdot Sa\left(2 \cdot 
 f(t) &= \Pi\left(\frac{t}{4}\right) + \Pi\left(t - \frac{3}{2}\right) + \Pi\left(t + \frac{3}{2}\right)\\
 f(t) &= \Pi\left(\frac{t}{2}\right) + 2 \cdot \Pi\left(t - \frac{3}{2}\right) + 2 \cdot \Pi\left(t + \frac{3}{2}\right)
 \end{align*}
+
+Rozważmy następujący opis sygnału $f(t)$ za pomocą sygnałów elementarnych
+
+\begin{align*}
+f(t) &= \Pi\left(\frac{t}{4}\right) + \Pi\left(t - \frac{3}{2}\right) + \Pi\left(t + \frac{3}{2}\right)
+\end{align*}
+
+Ponieważ transformacja Fouriera jest przekształceniem liniowym, dlatego można wyznaczyć osobno transformaty poszczególnych sygnałów elementarnych, czyli:
+
+\begin{align*}
+f(t) &= f_1(t) + f_2(t) + f_3(t)
+\end{align*}
+
+gdzie:
+
+\begin{align*}
+f_1(t) &= \Pi\left(\frac{t}{4}\right)\\
+f_2(t) &= \Pi\left(t - \frac{3}{2}\right)\\
+f_3(t) &= \Pi\left(t + \frac{3}{2}\right)
+\end{align*}
+
+Wyznaczmy transformatę sygnału $f_1(t)$, czyli $F_1\left(\jmath\omega\right)$. 
+
+Z treści zadania wiemy że: $\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.
+
+Wykorzystując twierdzenie o zmianie skali mamy:
+
+\begin{align*}
+\TimeScalingTeorem{g}{G}{f_1}{F_1}
+\end{align*}
+
+\TT{otrzymujemy:}{we get:}
+
+\begin{align*}
+\Pi(t) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right)\\
+\Pi(\frac{t}{4}) \xrightarrow{\mathcal F} & \frac{1}{\left|\frac{1}{4}\right|} \cdot Sa\left(\frac{ \frac{\omega}{ \frac{1}{4} }}{2}\right)\\
+\Pi(\frac{t}{4}) \xrightarrow{\mathcal F} & 4 \cdot Sa\left(\frac{\omega \cdot 4}{2}\right)\\
+\Pi(\frac{t}{4}) \xrightarrow{\mathcal F} & 4 \cdot Sa\left(2 \cdot \omega \right)\\
+\end{align*}
+
+\TT{Transformata sygnału $f_{1}(t)$ to:}{The Fourier transform of $f_{1}(t)$ signal is equal to:}
+
+\begin{equation}
+F_{1}(\jmath \omega) = \mathcal F\{f_{1}(t)\} = 4 \cdot Sa\left(2 \cdot \omega\right)
+\end{equation}
+
+Wyznaczmy transformatę sygnału $f_2(t)$, czyli $F_2\left(\jmath\omega\right)$.
+Z treści zadania wiemy że: $\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.
+Wykorzystując twierdzenie o przesunięciu w dziedzinie czasu:
+
+\begin{align*}
+\TimeShiftTeorem{g}{G}{f_2}{F_2}
+\end{align*}
+
+otrzymujemy:
+
+\begin{align*}
+\Pi(t) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right)\\
+\Pi\left(t-\frac{3}{2}\right) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{3}{2}}
+\end{align*}
+
+\TT{Transformata sygnału $f_{2}(t)$ to:}{The Fourier transform of $f_{2}(t)$ signal is equal to:}
+
+\begin{equation}
+F_{2}(\jmath \omega) = \mathcal F\{f_{2}(t)\} = Sa\left(\frac{\omega}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{3}{2}}
+\end{equation}
+
+Wyznaczmy transformatę sygnału $f_3(t)$, czyli $F_3\left(\jmath\omega\right)$.
+Z treści zadania wiemy że: $\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.
+Wykorzystując twierdzenie o przesunięciu w dziedzinie czasu:
+
+\begin{align*}
+\TimeShiftTeorem{g}{G}{f_3}{F_3}
+\end{align*}
+
+otrzymujemy:
+
+\begin{align*}
+\Pi(t) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right)\\
+\Pi\left(t+\frac{3}{2}\right) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \left(-\frac{3}{2}\right)}\\
+\Pi\left(t+\frac{3}{2}\right) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right) \cdot e^{\jmath \cdot \omega \cdot \frac{3}{2}}
+\end{align*}
+
+\TT{Transformata sygnału $f_{3}(t)$ to:}{The Fourier transform of $f_{3}(t)$ signal is equal to:}
+
+\begin{equation}
+F_{3}(\jmath \omega) = \mathcal F\{f_{3}(t)\} = Sa\left(\frac{\omega}{2}\right) \cdot e^{\jmath \cdot \omega \cdot \frac{3}{2}}
+\end{equation}
+
+\TT{Czyli transformata sygnału $f(t)$ to:}{Finally, the Fourier transform for $f(t)$ signal is equal to:}
+
+\begin{align*}
+F(\jmath \omega) = \mathcal F\{f(t)\} &= 4 \cdot Sa\left(2 \cdot \omega\right) + Sa\left(\frac{\omega}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{3}{2}} + Sa\left(\frac{\omega}{2}\right) \cdot e^{\jmath \cdot \omega \cdot \frac{3}{2}} =\\
+&= 4 \cdot Sa\left(2 \cdot \omega\right) + Sa\left(\frac{\omega}{2}\right) \cdot \left( e^{-\jmath \cdot \omega \cdot \frac{3}{2}} + e^{\jmath \cdot \omega \cdot \frac{3}{2}}\right) =\\
+&= 4 \cdot Sa\left(2 \cdot \omega\right) + Sa\left(\frac{\omega}{2}\right) \cdot 2 \cdot \frac{ e^{-\jmath \cdot \omega \cdot \frac{3}{2}} + e^{\jmath \cdot \omega \cdot \frac{3}{2}}}{2} =\\
+&=\begin{Bmatrix}
+\EulerCos
+\end{Bmatrix}=\\
+&= 4 \cdot Sa\left(2 \cdot \omega\right) + Sa\left(\frac{\omega}{2}\right) \cdot 2 \cdot cos\left(\omega \cdot \frac{3}{2}\right)=\\
+&= 4 \cdot Sa\left(2 \cdot \omega\right) + 2 \cdot Sa\left(\frac{\omega}{2}\right) \cdot cos\left(\omega \cdot \frac{3}{2}\right)
+\end{align*}
+
+\TT{Transformata sygnału $f(t) = \Pi\left(\frac{t}{4}\right) + \Pi\left(t - \frac{3}{2}\right) + \Pi\left(t + \frac{3}{2}\right)$ to $F(\jmath \omega)=4 \cdot Sa\left(2 \cdot \omega\right) + 2 \cdot Sa\left(\frac{\omega}{2}\right) \cdot cos\left(\omega \cdot \frac{3}{2}\right)$.}{The Fourier transform of $f(t) = \Pi\left(\frac{t}{4}\right) + \Pi\left(t - \frac{3}{2}\right) + \Pi\left(t + \frac{3}{2}\right)$ is equal to $F(\jmath \omega)=4 \cdot Sa\left(2 \cdot \omega\right) + 2 \cdot Sa\left(\frac{\omega}{2}\right) \cdot cos\left(\omega \cdot \frac{3}{2}\right)$.}
+
 \end{task}
