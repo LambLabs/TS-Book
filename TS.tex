@@ -2,8 +2,8 @@
 
 \setdebug
 %\setrelease
-\setPL
-%\setENG
+%\setPL
+\setENG
 
 %\IfFileExists{eforms.sty}{\def\x{T}}{\def\x{F}}
 %\def\booklanguageh{1}
@@ -265,7 +265,7 @@
 \inputTask{zadTG021-ENG.tex}
 \inputTask{zadTG022-ENG.tex}
 \inputTask{zadKW049.tex} %Wyznaczenie wartości średniej ze znanej mocy
-\inputTask{zadKW050.tex} %Wyznaczenie stosunku parzystych harmonicznych do nieparzystych
+\inputTask[Debug]{zadKW050.tex} %Wyznaczenie stosunku parzystych harmonicznych do nieparzystych
 %Analysis of non-periodic signals. Fourier Transformation and Transform
 \TT{\chapter{Analiza sygnałów nieokresowych. Przekształcenie całkowe Fouriera}}{\chapter{Analysis of non-periodic signals. Fourier Transformation and Transform}}
 %	An intuitive introduction
@@ -293,10 +293,10 @@
 %		Integration theorem
 \TT{\section{Wykorzystanie twierdzeń do obliczeń transformaty Fouriera}}{\section{Exploiting properties of the Fourier transformation}}
 \inputTask{zadKW030-ENG.tex} % "|\/|" - linearity, scaling
-\inputTask{zadTG023-ENG.tex} %ToDo sposób 3 - "|-|_|-|" - linearity, scaling, shift in time
+\inputTask{zadTG023-ENG.tex} %ToDo sposób 2 i 3 - "|-|_|-|" - linearity, scaling, shift in time
 \inputTask{zadTG024-ENG.tex} %exp{|t|} - linearity, scaling,
 \inputTask{zadKW031.tex} % stairs - linearity, scaling, shift in time
-\inputTask{zadKW027-ENG.tex} %(1/(1-t^2)) - duality, by definition
+\inputTask{zadKW027-ENG.tex} %(1/(1-t^2)) - duality, linearity
 \inputTask{zadKW024-ENG.tex} % Sa*sin - modulation, duality, scaling, linearity
 \inputTask{zadKW025-ENG.tex} % Sa^2*cos - modulation, duality, scaling, linearity
 \inputTask{zadTG005-ENG.tex} % triangle - intergate x1, linearity, scaling, shift in time
@@ -304,9 +304,10 @@
 \inputTask{zadKW021.tex} % gate - intergate x1, linearity, Dirac sampling
 \inputTask{zadKW022.tex} % ramp - intergate x1, linearity, scaling, Dirac sampling
 \inputTask{zadKW023.tex} % slope - intergate x1, linearity, Dirac sampling
-\inputTask{zadTG007.tex} % 1-t^2 - integrate x2, linearity, Dirac sampling
+\inputTask{zadKW026-ENG.tex} %sgn - integration x1, linaerity, Dirac sampling
+\inputTask[Debug]{zadTG025-ENG.tex} % (t+1)^2 - (t-1)^2 - integration x1, Dirac sampling, linearity
+\inputTask{zadTG007-ENG.tex} % 1-t^2 - integrate x2, duality, linearity, Dirac sampling
 
-\inputTask{zadKW026.tex} %sgn - integration x1, linaerity, Dirac sampling
 
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 \TT{\section{Obliczenia energii sygnału za pomocą transformaty Fouriera. Twierdzenie Parsevala}}{\section{Calculating energy of the signal from its Fourier transform. The Parseval's theorem}}

@@ -1,5 +1,6 @@
 \begin{task}
-Oblicz transformatę Fouriera sygnału $f(t)=sgn(t)$ za pomocą twierdzeń.
+
+\TT{Oblicz transformatę Fouriera sygnału $f(t)=sgn(t)$ wykorzystując twierdzenia opisujące własciwości transformacji Fouriera.}{Compute the Fourier transform of the $f(t)=sgn(t)$ signal using theorems describing the properties of Fourier transformation.}
 
 \begin{figure}[H]
 \centering
@@ -17,7 +18,7 @@ Oblicz transformatę Fouriera sygnału $f(t)=sgn(t)$ za pomocą twierdzeń.
 \end{tikzpicture}
 \end{figure}
 
-Sygnał $f(t)$ można zapisać jako
+\TT{Opiszmy sygnał za pomocą skoków jednostkowych. }{Let's describe the $f(t)$ signal using the elementary signals - step signals:}
 
 \begin{align*}
 f(t) & = sgn(t) =\\
@@ -25,7 +26,7 @@ f(t) & = sgn(t) =\\
 & = f_1(t) - f_2(t)
 \end{align*}
 
-Wyrażnie widac iż funkcja jest złożeniem dwóch skoków jednostkowych
+\TT{gdzie:}{where:}
 
 \begin{align*}
 f_1(t)&= \mathbb{1}(t)\\
@@ -37,7 +38,7 @@ f_2(t)&= \mathbb{1}(-t)\\
   \begin{tikzpicture}
   %\draw (0,0) circle (1in);
   \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
-  \draw[->] (+0.0,-1.5) -- (+0.0,+2.5) node[above] {$f_1(t)$};
+  \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$f_1(t)$};
   
   \draw[-,red, thick] (-3.5,+0.0) -- (+0.0,+0.0);
   \draw[-,red, thick] (+0.0,+0.0) -- (+0.0,+2.0);
@@ -47,7 +48,7 @@ f_2(t)&= \mathbb{1}(-t)\\
   \end{tikzpicture}
 \end{figure}
 
-Transformaty sygnału $f_1(t)=\mathbb{1}(t)$ nie można wyznaczyć wprost ze wzoru. Ale łatwo można wyznaczyć pochodnią $f_1'(t)$
+\TT{Transformaty sygnału $f_1(t)=\mathbb{1}(t)$ nie można wyznaczyć wprost ze wzoru. Ale łatwo można wyznaczyć pochodnią $f_1'(t)$:}{The transform of the $f_1(t)=\mathbb{1}(t)$ signal cannot be derived by classical Fourier transformation. However, the derivative $f_1'(t)$ can be easily derived:}
 
 \begin{align*}
 g(t) = f_1'(t) = \delta(t)
@@ -58,7 +59,7 @@ g(t) = f_1'(t) = \delta(t)
   \begin{tikzpicture}
   %\draw (0,0) circle (1in);
   \draw[->] (-4.0,+0.0) -- (+4.0,+0.0) node[right] {$t$};
-  \draw[->] (+0.0,-1.5) -- (+0.0,+2.5) node[above] {$g(t)$};
+  \draw[->] (+0.0,-1.0) -- (+0.0,+2.5) node[above] {$g(t)$};
   
   \draw[-,red, thick] (-3.5,+0.0) -- (+3.5,+0.0);
   \draw[->,red, thick] (+0.0,+0.0) -- (+0.0,+2.0);
@@ -67,7 +68,7 @@ g(t) = f_1'(t) = \delta(t)
   \end{tikzpicture}
 \end{figure}
 
-dla której w bardzo łatwy sposób można wyznaczyć transformatę Fouriera.
+\TT{Dla sygnału $g(t) = \delta(t)$ w bardzo łatwy sposób można wyznaczyć transformatę Fouriera.}{The Fourier transform for the $g(t) = \delta(t)$ signal can be calculated as:}
 
 \begin{align*}
 G(\jmath \omega) &= \int_{-\infty}^{\infty} g(t) \cdot e^{-\jmath \cdot \omega \cdot t}=\\
@@ -80,15 +81,13 @@ G(\jmath \omega) &= \int_{-\infty}^{\infty} g(t) \cdot e^{-\jmath \cdot \omega \
 &=1
 \end{align*}
 
-Transformatą Fouriera sygnału $g(t)=\delta(t)$ jest $G(\jmath \omega)=1$
+\TT{Transformatą Fouriera sygnału $g(t)=\delta(t)$ jest $G(\jmath \omega)=1$.}{The Fourier transform of the $g(t)=\delta(t)$ signal is equal to $G(\jmath \omega)=1$.}
 
-Korzystając z twierdzenia o całkowaniu można wyznaczyć transformatę funkcji $f_1(t)$
+\TT{Korzystając z twierdzenia o całkowaniu można wyznaczyć transformatę funkcji $f_1(t)$:}{Based on the integration theorem we can calculate the Fourier transform of the $f_1(t)$ signal:}
 
 \begin{align*}
 \IntegralTeorem{g}{G}{f_1}{F_1}
 \end{align*}
-
-Tak wiec mamy
 
 \begin{align*}
 F_1(\jmath \omega)&=\frac{1}{\jmath \cdot \omega } \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)=\\
@@ -96,16 +95,17 @@ F_1(\jmath \omega)&=\frac{1}{\jmath \cdot \omega } \cdot G(\jmath \omega) + \pi 
 &=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)
 \end{align*}
 
-A wiec transformata skoku jednostkowego jest $F_1(\jmath \omega)=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$
+\TT{A więc transformatą skoku jednostkowego jest $F_1(\jmath \omega)=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$.}{The Fourier transform of the step signal $f_1(t)=\mathbb{1}(t)$ is equal to $F_1(\jmath \omega)=\frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$.}
 
-Funkcję $f_2(t)$ można zapisać jako
+\TT{Funkcję $f_2(t)$ można zapisać jako:}{The $f_2(t)$ signal can be described as:}
+
 \begin{align*}
 f_2(t)&=\mathbb{1}(-t)=\\
 &=\mathbb{1}(-1 \cdot t)=\\
 &=f_1(-1 \cdot t)
 \end{align*}
 
-A wiec transformatę funkcji $f_2(t)$ można wyznaczyć z twierdzenia o zmianie skali
+\TT{A wiec transformatę funkcji $f_2(t)$ można wyznaczyć z twierdzenia o zmianie skali}{Therefore, the Fourier transform of the $f_2(t)$ signal can be derived using the scaling theorem:}
 
 \begin{align*}
 \TimeScalingTeorem{f_1}{F_1}{f_2}{F_2}
@@ -121,14 +121,13 @@ a=-1
 &=- \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)
 \end{align*}
 
-A więc transformata funkcji $f_2(t)$ jest równa $F_2(\jmath \omega)- \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$
+\TT{Transformata funkcji $f_2(t)$ jest równa $F_2(\jmath \omega)= - \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$.}{The Fourier transform of the $f_2(t)$ signal is equal to $F_2(\jmath \omega)= - \frac{1}{\jmath \cdot \omega } + \pi \cdot \delta(\omega)$.}
 
-Transformatę funkcji $f(t)$ możemy wyznaczyć z twierdzenia o jednorodności 
+\TT{Transformatę funkcji $f(t)$ możemy wyznaczyć z twierdzenia o jednorodności}{Finally, the Fourier transform of the $f(t)$ signal can be derived using the linearity theorem:}
 
 \begin{align*}
 \HomogeneousTeorem{f}{F}
 \end{align*}
-
 
 \begin{align*}
 F(\jmath \omega)&=F_1(\jmath \omega) - F_2(\jmath \omega)=\\
@@ -137,7 +136,7 @@ F(\jmath \omega)&=F_1(\jmath \omega) - F_2(\jmath \omega)=\\
 &=\frac{2}{\jmath \cdot \omega }
 \end{align*}
 
-Ostatecznie transformata funkcji $f(t)$ jest równa $F(\jmath \omega)=\frac{2}{\jmath \cdot \omega }$.
+\TT{Transformata funkcji $f(t)=sgn(t)$ jest równa $F(\jmath \omega)=\frac{2}{\jmath \cdot \omega }$.}{The Fourier transform of the $f(t)=sgn(t)$ is equal to $F(\jmath \omega)=\frac{2}{\jmath \cdot \omega}$.}
 
 \end{task}
 
