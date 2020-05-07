@@ -28,7 +28,7 @@ f(t)=\begin{cases}
 \end{cases} 
 \end{equation}
 
-\TT{W pierwszej kolejności wyznaczamy pochodną sygnału $f(t)$}{First of all, let's calculate the $f(t) signal$ derivative:}
+\TT{W pierwszej kolejności wyznaczamy pochodną sygnału $f(t)$}{First of all, let's calculate the $f(t)$ signal derivative:}
 
 \begin{equation}
 g(t)=f'(t)=\begin{cases}
@@ -69,7 +69,7 @@ f(t) = \int_{-\infty}^{t} g(x) \cdot dx
 F(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot G(\jmath \omega) + \pi \cdot \delta(\omega) \cdot G(0)
 \end{equation}
 
-\TT{Pytanie, czy można dalej uprościc sygnał $g(t)$ dokonując jego rózniczkowania. Wyznaczmy pochodną sygnału $g(t)$, czyli drugą pochodną sygnału $f(t)$:}{Is it possible to calculate derivative again to simply the analysed signal? Let's calculate the derivative of the $g(t)$ signal, so the second derivative of the $f(t)$ signal:}
+\TT{Pytanie, czy można dalej uprościc sygnał $g(t)$ dokonując jego rózniczkowania. Wyznaczmy pochodną sygnału $g(t)$, czyli drugą pochodną sygnału $f(t)$:}{Is it possible to calculate derivative again to simplify the analysed signal? Let's calculate the derivative of the $g(t)$ signal, so the second derivative of the $f(t)$ signal:}
 
 \begin{equation}
 h(t)= \frac{\partial}{\partial t}g(t) = \frac{\partial^2}{\partial t^2}f(t) 
@@ -173,14 +173,14 @@ $\mathcal F \{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.
 
 \begin{align*}
 \Pi(t) \xrightarrow{\mathcal F} & Sa\left(\frac{\omega}{2}\right)\\
-\Pi(\frac{t}{2}) \xrightarrow{\mathcal F} & \frac{1}{\left|\frac{1}{2}\right|} \cdot Sa\left(\frac{ \frac{\omega}{ \frac{1}{2} }}{2}\right)\\
+\Pi(\frac{1}{2} \cdot t) \xrightarrow{\mathcal F} & \frac{1}{\left|\frac{1}{2}\right|} \cdot Sa\left(\frac{ \frac{\omega}{ \frac{1}{2} }}{2}\right)\\
 \Pi(\frac{t}{2}) \xrightarrow{\mathcal F} & 2 \cdot Sa\left(\frac{\omega \cdot 2}{2}\right)\\
 \Pi(\frac{t}{2}) \xrightarrow{\mathcal F} & 2 \cdot Sa\left(\omega\right)\\
 -2 \cdot \Pi(\frac{t}{2}) \xrightarrow{\mathcal F} & -2 \cdot 2 \cdot Sa\left(\omega\right)\\
 -2 \cdot \Pi(\frac{t}{2}) \xrightarrow{\mathcal F} & -4 \cdot Sa\left(\omega\right)\\
 \end{align*}
 
-\TT{Transformata sygnału $h_{1}(t)$ to:}{The Fourier transform of $h_{1}(t)$ signal is equal to:}
+\TT{Transformata sygnału $h_{1}(t)$ to:}{The Fourier transform of the $h_{1}(t)$ signal is equal to:}
 
 \begin{equation}
 H_{1}(\jmath \omega) = \mathcal F\{H_{1}(t)\} = -4 \cdot Sa\left(\omega\right)
@@ -212,12 +212,12 @@ H_2(\jmath \omega )&=\int_{-\infty }^{\infty}h_2(t) \cdot e^{-\jmath \cdot \omeg
 
 \TT{Transformata sygnału $h_2(t)$ to $H_2(\jmath \omega)=4 \cdot cos\left( \omega\right)$.}{The Fourier transform of the $h_2(t)$ signal is equal to $H_2(\jmath \omega)=4 \cdot cos\left( \omega\right)$.}
 
-\TT{Korzystając z liniowości transformacji Fouriera:}{Basd on the linearity theorem:}
+\TT{Korzystając z liniowości transformacji Fouriera:}{Based on the linearity theorem:}
 \begin{align*}
 \HomogeneousTeorem{h}{H}
 \end{align*}
 
-\TT{można wyznaczyć transformatę Fouriera $H(\jmath \omega)$ funkcji $h(t)$}{the Fourier transform $H(\jmath \omega)$ of the $h(t)$ signal can be derived as:}
+\TT{można wyznaczyć transformatę Fouriera $H(\jmath \omega)$ funkcji $h(t)$}{The Fourier transform $H(\jmath \omega)$ of the $h(t)$ signal can be derived as:}
 
 \begin{align*}
 H(\jmath \omega) &= H_1(\jmath \omega)+H_2(\jmath \omega)=\\
