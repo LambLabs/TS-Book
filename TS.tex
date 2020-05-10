@@ -113,7 +113,7 @@
   #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\xrightarrow{\mathcal F}
   #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(\omega) \cdot #2(0)
 }
-% Twierdzenie o przesunięciu w czasu częstotliwości % \TimeShiftTeorem{g}{G}{f}{F}
+% Twierdzenie o przesunięciu w czasu czasu % \TimeShiftTeorem{g}{G}{f}{F}
 \newcommand{\TimeShiftTeorem}[4]{
   #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
   #3(t) = #1(t-t_0) &\xrightarrow{\mathcal F} 
@@ -273,7 +273,7 @@
 \TT{\section{Wyznaczanie transformaty Fouriera z definicji}}{\section{Calculation of Fourier Transform by definition}}
 \inputTask{zadTG001-ENG.tex}
 \inputTask{zadTG002-ENG.tex}
-\inputTask[Debug]{zadTG003-ENG.tex}
+\inputTask{zadTG003-ENG.tex}
 \inputTask{zadTG004-ENG.tex}
 \inputTask{zadKW019-ENG.tex}
 \inputTask{zadKW020-ENG.tex}
@@ -293,14 +293,14 @@
 %		Integration theorem
 \TT{\section{Wykorzystanie twierdzeń do obliczeń transformaty Fouriera}}{\section{Exploiting properties of the Fourier transformation}}
 \inputTask{zadKW030-ENG.tex} % "|\/|" - linearity, scaling
-\inputTask{zadTG023-ENG.tex} %ToDo sposób 2 i 3 - "|-|_|-|" - linearity, scaling, shift in time
+\inputTask[Debug]{zadTG023-ENG.tex} %ToDo sposób 2 i 3 - "|-|_|-|" - linearity, scaling, shift in time
 \inputTask{zadTG024-ENG.tex} %exp{|t|} - linearity, scaling,
 \inputTask{zadKW031.tex} % stairs - linearity, scaling, shift in time
 \inputTask{zadKW052.tex} % Sa*cos^2 modulation - TODO
-\inputTask[Debug]{zadKW053.tex} % Pi*cos^2 modulation
+\inputTask{zadKW053.tex} % Pi*cos^2 modulation
 \inputTask{zadKW027-ENG.tex} %(1/(1-t^2)) - duality, linearity
 \inputTask{zadKW024-ENG.tex} % Sa*sin - modulation, duality, scaling, linearity
-\inputTask{zadKW025-ENG.tex} % Sa^2*cos - modulation, duality, scaling, linearity
+\inputTask[Debug]{zadKW025-ENG.tex} % Sa^2*cos - modulation, duality, scaling, linearity
 \inputTask{zadTG005-ENG.tex} % triangle - intergate x1, linearity, scaling, shift in time
 \inputTask{zadTG006-ENG.tex} % triangle - intergate x2, linearity, Dirac sampling
 \inputTask{zadKW021.tex} % gate - intergate x1, linearity, Dirac sampling
