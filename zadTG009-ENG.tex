@@ -1,5 +1,5 @@
 \begin{task}
-Oblicz energię sygnału $f(t)=Sa\left(\omega_0 \cdot t\right)$, wiedząc że transformata sygnału $\Pi(t)$ jest równa $Sa\left(\frac{\omega}{2}\right)$.
+\TT{Oblicz energię sygnału $f(t)=Sa\left(\omega_0 \cdot t\right)$, wiedząc że transformata sygnału $\Pi(t)$ jest równa $Sa\left(\frac{\omega}{2}\right)$.}{Compute the energy of the $f(t)=Sa\left(\omega_0 \cdot t\right)$ signal. Exploit the following transform $\mathcal F\{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.}
 
 \begin{equation}
 f(t) = Sa\left(\omega_0 \cdot t\right)
@@ -9,13 +9,14 @@ f(t) = Sa\left(\omega_0 \cdot t\right)
 \Pi(t) \xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right)
 \end{equation}
 
-Energię sygnału można wyznaczyc ze wzoru:
+\TT{Energię sygnału można wyznaczyc ze wzoru:}{The energy of the non-periodic signal may be derived as:}
 
 \begin{equation}
 E= \int_{-\infty }^{\infty}\left|f(t)\right| ^2 \cdot dt
 \end{equation}
 
-Podstawiając dany sygnał $f(t)$ do wzoru na energie otrzymujemy:
+\TT{Podstawiając dany sygnał $f(t)$ do wzoru na energie otrzymujemy:}{For the given $f(t)$ signal we get:}
+
 \begin{align*}
 E &= \int_{-\infty }^{\infty}\left|f(t)\right| ^2 \cdot dt=\\
 &= \int_{-\infty }^{\infty}\left|Sa\left(\omega_0 \cdot t\right)\right| ^2 \cdot dt=\\
@@ -27,32 +28,37 @@ E &= \int_{-\infty }^{\infty}\left|f(t)\right| ^2 \cdot dt=\\
 &=....
 \end{align*}
 
-Próbując obliczyc energię tym sposobem musimy obliczyć całkę cykliczną. A może jest łatwiejszy sposób?
+\TT{Próbując obliczyc energię tym sposobem musimy obliczyć całkę cykliczną. A może jest łatwiejszy sposób?}{In this approach, we have to integrate by parts even several times. Maybe there is an easier approach?}
 
-Spróbumy wykorzystać twierdzenie Parsevala:
+\TT{Spróbumy wykorzystać twierdzenie Parsevala:}{Let's consider the Parseval's theorem given below:}
 
 \begin{equation}
 \Parseval{F}
 \end{equation}
 
-W tym podejściu musimy obliczyć transformatę Fouriera sygnału $f(t)$, czyli $F(\jmath \omega)$.
-Skoro wiemy, że:
+\TT{W tym podejściu musimy obliczyć transformatę Fouriera sygnału $f(t)$, czyli $F(\jmath \omega)$.}{The Fourier transform $F(\jmath \omega)$ of the $f(t)$ signal has to be derived.}
+
+\TT{Z treści zadania wiemy, że:}{We know that:}
 
 \begin{equation}
 g(t) = \Pi(t) \xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right)
 \end{equation}
 
-to, na podstawie twierdzenia o symetrii przekształcenia Fouriera:
+\TT{Na podstawie twierdzenia o symetrii przekształcenia Fouriera:}{Based on the time-frequency duality theorem:}
+
 \begin{align*}
 \SymetryTeorem{g}{G}{f}{F}
 \end{align*}
-otrzymujemy:
+
+\TT{otrzymujemy:}{we get:}
+
 \begin{align*}
 Sa\left(\frac{t}{2}\right) &\xrightarrow{\mathcal F} 2\pi \cdot \Pi(-\omega)\\
 Sa\left(\frac{t}{2}\right) &\xrightarrow{\mathcal F} 2\pi \cdot \Pi(\omega)
 \end{align*}
 
-Teraz musimy przeskalować $Sa\left(\frac{t}{2}\right)$ tak, aby otrzymać $Sa\left(\omega_0 \cdot t\right)$. W tym celu skorzystamy z twierdzenia o zmianie skali podstawiając $\alpha=2 \cdot \omega_0$:
+\TT{Teraz musimy przeskalować $Sa\left(\frac{t}{2}\right)$ tak, aby otrzymać $Sa\left(\omega_0 \cdot t\right)$. W tym celu skorzystamy z twierdzenia o zmianie skali podstawiając $\alpha=2 \cdot \omega_0$:}{Now, the  $Sa\left(\frac{t}{2}\right)$ signal has to be scaled in time in order to get the  $Sa\left(\omega_0 \cdot t\right)$ signal. Let's exploit the scaling in time theorem with $\alpha=2 \cdot \omega_0$:}
+
 \begin{align*}
 \TimeScalingTeorem{f}{F}{g}{G}
 \end{align*}
@@ -63,7 +69,13 @@ Sa\left(2 \cdot \omega_0 \cdot \frac{t}{2}\right) &\xrightarrow{\mathcal F} \fra
 Sa\left(\omega_0 \cdot t\right) &\xrightarrow{\mathcal F} \frac{\pi}{\omega_0} \cdot \Pi(\frac{\omega}{2 \cdot \omega_0})
 \end{align*}
 
-Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right|$.
+\TT{Energię wyznaczymy ze wzoru Parsevala:}{The energy will be computed using Parseval's theorem:}
+
+\begin{equation}
+\Parseval{F}
+\end{equation}
+
+\TT{Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right|$.}{Let's draw the magnitude spectrum of the $f(t)$ signal - $\left|F(\jmath \omega)\right|$:}
 
 \begin{figure}[H]
 	\centering
@@ -92,12 +104,10 @@ Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right
 \end{cases}\\
 \end{align*}
 
-Ponieważ energię wyznaczamy ze wzoru:
-\begin{equation}
-\Parseval{F}
-\end{equation}
 
-to wyznaczmy $\left|F(\jmath \omega)\right|^2$:
+
+\TT{Wyznaczmy też $\left|F(\jmath \omega)\right|^2$:}{Let's derive $\left|F(\jmath \omega)\right|^2$ also:}
+
 \begin{align*}
 \left|F(\jmath \omega)\right|^2 &= \begin{cases}
 0 & \omega \in \left( -\infty; -\omega_0 \right) \\
@@ -105,6 +115,8 @@ to wyznaczmy $\left|F(\jmath \omega)\right|^2$:
 0 & \omega \in \left(\omega_0; \infty \right) \\
 \end{cases}\\
 \end{align*}
+
+\TT{Podstawmy wyznaczone dane do wzoru Parsevala:}{Finally, let's calculate the energy using Parseval's theorem:}
 
 \begin{align*}
 E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^2 \cdot d\omega=\\
@@ -116,7 +128,7 @@ E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^
 &=\frac{\pi}{\omega_0}
 \end{align*}
 
-Energia sygnału $f(t)=Sa\left(\omega_0 \cdot t\right)$ równa się $E=\frac{\pi}{\omega_0}$.
+\TT{Energia sygnału $f(t)=Sa\left(\omega_0 \cdot t\right)$ równa się $E=\frac{\pi}{\omega_0}$.}{The energy of the $f(t)=Sa\left(\omega_0 \cdot t\right)$ signal is equal to $E=\frac{\pi}{\omega_0}$.}
 
 \end{task}
 
