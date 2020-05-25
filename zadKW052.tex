@@ -1,0 +1,126 @@
+\begin{task}
+Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku za pomocą twierdzeń, wiedząc że transformata sygnału prostokątnego $g(t)=\Pi\left(t\right)$ jest równa $G(\jmath\omega)=Sa\left(\frac{\omega}{2}\right)$..
+
+\begin{align*}
+f(t)=A \cdot \frac{cos^2\left(\omega_0 \cdot t\right)}{\omega_0\cdot t} \cdot sin\left(2 \cdot  \omega_0 \cdot t\right)
+\end{align*}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.0) -- (+0.0,+3.0) node[above] {$f(t)$};
+ 
+  \draw[scale=1.0,domain=-4.5:-0.01,smooth,variable=\x,red,thick] plot ({\x},{1.0*(cos(1.0*\x*180/3.14))^2*(sin(2.0*1.0*\x*180/3.14))/(1.0*\x)});
+  \draw[scale=1.0,domain=0.01:4.5,smooth,variable=\x,red,thick] plot ({\x},{1.0*(cos(1.0*\x*180/3.14))^2*(sin(2.0*1.0*\x*180/3.14))/(1.0*\x)});
+  
+  
+  \draw[-] (-0.1,+2.0-0.1)--(+0.1,+2.0+0.1) node[midway, left] {$A$};
+  \draw[-] (+3.1415/2-0.1,-0.1)--(+3.1415/2+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\frac{\pi}{2}$};
+  \draw[-] (-3.1415/2-0.1,-0.1)--(-3.1415/2+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\frac{\pi}{2}$};
+  
+  \draw[-] (+3.1415/1-0.1,-0.1)--(+3.1415/1+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$\pi$};
+  \draw[-] (-3.1415/1-0.1,-0.1)--(-3.1415/1+0.1,0.1) node[midway, below, outer sep=5pt,align=center] {$-\pi$};
+  
+\end{tikzpicture}
+\end{figure}
+
+Przepismy wzór naszej funkcji następująco
+
+\begin{align*}
+f(t)&=A \cdot \frac{cos^2\left(\omega_0 \cdot t\right)}{\omega_0\cdot t} \cdot sin\left(2 \cdot \omega_0 \cdot t\right) =\\
+&=A \cdot cos^2\left(\omega_0 \cdot t\right)\frac{sin\left(2 \cdot \omega_0 \cdot t\right)}{\omega_0\cdot t} =\\
+&=A \cdot cos^2\left(\omega_0 \cdot t\right)\frac{2\cdot sin\left(2 \cdot \omega_0 \cdot t\right)}{2 \cdot \omega_0\cdot t} =\\
+&=\begin{Bmatrix}
+\SaDef
+\end{Bmatrix}=\\
+&=A \cdot cos^2\left(\omega_0 \cdot t\right)2 \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) =\\
+&=2 \cdot A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)
+\end{align*}
+
+Nasz sygnał jest iloczynem pewnej funkcji $h(t)$ oraz cosinusów
+
+\begin{align*}
+f(t)&=2 \cdot A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right) = \\
+f(t)&=2 \cdot A \cdot h(t) \cdot cos\left(\omega_0 \cdot t\right) \cdot cos\left(\omega_0 \cdot t\right)
+\end{align*}
+
+gdzie
+
+\begin{align*}
+h(t)&= Sa\left(2 \cdot \omega_0 \cdot t\right)
+\end{align*}
+
+Wyznaczmy transformatę sygnału $h(t)$. Z treści zadania wiemy że transformata sygnału $g(t)=\Pi\left(t\right)$ jest równa $G(\jmath\omega)=Sa\left(\frac{\omega}{2}\right)$. 
+
+Postać funkcji $g(t)$ nie jest identyczna z postacią funkcji $h(t)$, funkcja różni się skalą. 
+%Dokończyć
+Wyznaczanym transformaty funkcji przeskalowanej $h(t)=\Pi\left(\frac{t}{T}\right)$
+
+Z twierdzenia o zmianie skali mamy 
+
+\begin{align*}
+\TimeScalingTeorem{g}{G}{h}{H}
+\end{align*}
+
+a wiec otrzymujemy
+
+\begin{align*}
+h(t) &= \Pi\left(\frac{t}{T}\right)=\\
+&=\Pi\left(\frac{1}{T}\cdot t\right)=\\
+&=g\left(\frac{1}{T}\cdot t\right)
+\end{align*}
+
+\begin{align*}
+\alpha=\frac{1}{T}
+\end{align*}
+
+\begin{align*}
+H(\jmath \omega)&=\frac{1}{\frac{1}{T}} \cdot G\left(\frac{\jmath \omega}{\frac{1}{T}}\right)=\\
+&=\frac{1}{\frac{1}{T}} \cdot Sa\left(\frac{\frac{\omega}{\frac{1}{T}}}{2}\right)=\\
+&=T \cdot Sa\left(\frac{\omega \cdot T}{2}\right)
+\end{align*}
+
+Dalej wyznaczanym transformaty funkcji przeskalowanej i przesuniętej $h_n(t)=\Pi\left(\frac{t - \frac{T}{2} -n\cdot T }{T}\right)$
+
+Korzystając z twierdzenia o przesunięciu w dziedzinie czasu 
+
+\begin{align*}
+\TimeShiftTeorem{h_n}{H_n}{h}{H}
+\end{align*}
+
+możemy napisać że:
+
+\begin{align*}
+H_n(\jmath\omega) &= H(\jmath\omega) \cdot e^{-\jmath \cdot \omega \cdot t_0}=\\
+&=T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \left(\frac{T}{2} + n\cdot T\right)}
+\end{align*}
+
+Ostatecznie wzór na transformatę sygnału $f(t)$ jest równy 
+\begin{align*}
+F(\jmath\omega) &= \sum_{n=0}^{\infty}  \frac{A}{2^{n}}\cdot H_{n}(\jmath\omega)=\\
+&=\sum_{n=0}^{\infty}  \frac{A}{2^{n}}\cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \left(\frac{T}{2} + n\cdot T\right)}=\\
+&=\sum_{n=0}^{\infty}  \frac{A}{2^{n}}\cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot e^{-\jmath \cdot \omega \cdot n\cdot T}=\\
+&=\sum_{n=0}^{\infty} T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  \frac{A}{2^{n}}\cdot e^{-\jmath \cdot \omega \cdot n\cdot T}=\\
+&=\sum_{n=0}^{\infty} T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  A \cdot \left(\frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}\right)^n=\\
+&=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  \sum_{n=0}^{\infty} \left(\frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}\right)^n
+\end{align*}
+
+Można zauważyć że suma w rozwiązaniu to szereg geometryczny. Z wzoru na sumę szeregu geometrycznego mamy
+
+\begin{align*}
+F(\jmath\omega) &=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot  \sum_{n=0}^{\infty} \left(\frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}\right)^n=\\
+&=\begin{Bmatrix}
+\sum_{n=0}^{\infty}q^n = \frac{1}{1-q}
+\end{Bmatrix}=\\
+&=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot \frac{1}{1 - \frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}}
+\end{align*}
+
+Ostatecznie transformata sygnału $f(t)$ równa się:
+\begin{align*}
+F(\jmath\omega) &=A \cdot T \cdot Sa\left(\frac{\omega \cdot T}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{T}{2}} \cdot \frac{1}{1 - \frac{1}{2}\cdot e^{-\jmath \cdot \omega \cdot T}}
+\end{align*}
+
+\end{task}
+
