@@ -1,5 +1,5 @@
 \begin{task}
-\TT{Oblicz transformatę Fouriera sygnału $f(t)$ przedstawionego na rysunku oraz narysuj jego widmo amplitudowe i fazowe.}{Compute the Fourier transform of a impulse shown below. Compute and draw magnitude and phase spectra.}
+\TT{Oblicz transformatę Fouriera sygnału $f(t)=A \cdot \mathbb{1}(t) \cdot e^{-a\cdot t}$ przedstawionego na rysunku oraz narysuj jego widmo amplitudowe i fazowe.}{Compute the Fourier transform of a impulse $f(t)=A \cdot \mathbb{1}(t) \cdot e^{-a\cdot t}$ shown below. Compute and draw magnitude and phase spectra.}
 
 \begin{figure}[H]
 \centering
@@ -20,8 +20,8 @@
 
 \begin{equation}
 f(t) = \begin{cases}
-0 & \TT{\text{ dla }}{\text{ if }} t \in \left(-\infty; 0\right)\\
-A \cdot e^{-a\cdot t} & \TT{\text{ dla }}{\text{ if }} t \in \left(0; \infty\right)
+0 & \TT{\text{ dla }}{\text{ for }} t \in \left(-\infty; 0\right)\\
+A \cdot e^{-a\cdot t} & \TT{\text{ dla }}{\text{ for }} t \in \left(0; \infty\right)
 \end{cases}
 \end{equation}
 
@@ -64,7 +64,7 @@ dt&=\frac{1}{-( a + \jmath \cdot \omega)} \cdot dz\\
 &=\frac{A}{a + \jmath \cdot \omega}
 \end{align*}
 
-\TT{Transformata sygnału $f(t)$ to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}{The Fourier transform of the $f(t)=A\cdot\Pi(\frac{t}{\tau})$ is equal to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}
+\TT{Transformata sygnału $f(t)$ to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}{The Fourier transform of the $f(t)$ signal is equal to $F(\jmath \omega)=\frac{A}{ a + \jmath \cdot \omega}$.}
 
 \TT{Wyznaczmy jawnie część rzeczywistą i urojoną transformaty:}{Let's explicitly determine the real and imaginary part:}
 
@@ -109,7 +109,7 @@ M(\omega)&=\left| F(j \omega) \right|=\\
   \end{tikzpicture}
 \end{figure}
 
-\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $k$.}
+\TT{Widmo aplitudowe sygnału rzeczywistego jest zawsze parzyste.}{The magnitude spectrum of a \underline{real signal} is an even-symmetric function of $w$.}
 
 \TT{Widmo fazowe obliczamy ze wzoru:}{The phase spectrum is defined as:}
 
@@ -139,6 +139,6 @@ M(\omega)&=\left| F(j \omega) \right|=\\
   \end{tikzpicture}
 \end{figure}
 
-\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $k$.}
+\TT{Widmo fazowe sygnału rzeczywistego jest zawsze nieparzyste.}{The phase spectrum of a \underline{real signal} is an odd-symmetric function of $w$.}
 
 \end{task}

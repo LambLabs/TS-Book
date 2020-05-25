@@ -1,0 +1,155 @@
+\begin{task}
+\label{TaskKW050}
+\TT{Wyznacz stosunek mocy parzystych harmonicznych do mocy całkowitej dla sygnału przedstawionego na rysunku poniżej. Wykorzystaj współczynniki zespolonego szeregu Fouriera obliczone w zadaniu \ref{TaskKW015}}{}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-3.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-1.5) -- (+0.0,+2.0) node[above] {$f(t)$};
+  \draw[scale=1.0,domain=-1.5:-1.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0+1*sin(\x*180.0/3.141592*1*3.141592/1.0)});
+  \draw[-,red, thick] (-1.0,0.0) -- (0.0,0.0);
+  \draw[scale=1.0,domain=0.0:1.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0+1*sin(\x*180.0/3.141592*1*3.141592/1.0)});
+  \draw[-,red, thick] (1.0,0.0) -- (2.0,0.0);
+  \draw[scale=1.0,domain=2.0:3.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{0.0+1*sin(\x*180.0/3.141592*1*3.141592/1.0)});
+  \draw[-,red, thick] (3.0,0.0) -- (3.5,0.0);
+  \draw[-,red, dashed] (-2.0,1.0) -- (4.0,1.0);
+  %\draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=10pt,align=center] {$-\frac{T}{2}$};
+  \draw[-] (-1.0-0.1,-0.1)--(-1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$-\frac{T}{2}$};
+  \draw[-] (+1.0-0.1,-0.1)--(+1.0+0.1,0.1) node[midway, below, outer sep=5pt] {$\frac{T}{2}$};
+  \draw[-] (+2.0-0.1,-0.1)--(+2.0+0.1,0.1) node[midway, below, outer sep=5pt] {$T$};
+  \draw[-] (-0.1,+1.0-0.1)--(+0.1,+1.0+0.1) node[midway, left] {$A$};
+
+\end{tikzpicture}
+\end{figure}
+
+\TT{W pierwszej kolejności należy ustalić wzór funkcji przedstawionej na rysunku. Jest to funkcja przedziałowa, którą możemy opisać w następujący sposób:}{First of all, the definition of $f(t)$ signal has to be derived. This is periodic piecewise function, which may be describe as:}
+
+\begin{equation}
+f(x)=\begin{cases}A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) & t \in \left ( 0+k \cdot T; \frac{T}{2}+k \cdot T \right ) \\
+0 & t \in \left ( \frac{T}{2}+k \cdot T; T+k \cdot T \right )\end{cases} \wedge k \in \TT{C}{Z}
+\end{equation}
+
+\TT{Cele jest obliczenie stusunku mocy parzystych harmonicznych $P_{par}$ do mocy całkowitej $P$.}{}
+
+\begin{align*}
+\frac{P_{par}}{P}
+\end{align*}
+
+\TT{Moc sygnału możemy wyznaczyć z definicji:}{}
+
+\begin{align*}
+P &= \frac{1}{T} \int_{T} \left(f(t)\right)^2 \cdot dt
+\end{align*}
+
+\TT{Podstawiając wzór naszej funkcji otrzymujemy}{}
+
+\begin{align*}
+P &= \frac{1}{T} \int_{0}^{T} \left(f(t)\right)^2 \cdot dt = \\
+&= \frac{1}{T} \int_{0}^{\frac{T}{2}} \left(A \cdot sin\left( \frac{2\pi}{T} \cdot t\right) \right)^2 \cdot dt + \frac{1}{T} \int_{\frac{T}{2}}^{T} \left(0 \right)^2 \cdot dt= \\
+&=\begin{Bmatrix*}[l]
+\EulerSin
+\end{Bmatrix*}=\\
+&= \frac{1}{T} \int_{0}^{\frac{T}{2}} \left(A \cdot 
+\frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}}{2 \cdot \jmath} \right)^2 \cdot dt + 0= \\
+&=\frac{1}{T} \int_{0}^{\frac{T}{2}} A^2 \cdot 
+\frac{\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t} - e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)^2}{2^2 \cdot \jmath^2} \cdot dt =\\
+&=\frac{1}{T} \int_{0}^{\frac{T}{2}} A^2 \cdot 
+\frac{\left(e^{\jmath \cdot \frac{2\pi}{T} \cdot t}\right)^2 -2 \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t} \cdot e^{-\jmath \cdot \frac{2\pi}{T} \cdot t} + \left( e^{-\jmath \cdot \frac{2\pi}{T} \cdot t}\right)^2}{-4} \cdot dt =\\
+&=\frac{1}{T} \int_{0}^{\frac{T}{2}} A^2 \cdot 
+\frac{e^{\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2} -2 \cdot e^{\jmath \cdot \frac{2\pi}{T} \cdot t -\jmath \cdot \frac{2\pi}{T} \cdot t} + e^{-\jmath \cdot \frac{2\pi}{T} \cdot t \cdot 2}}{-4} \cdot dt =\\
+&=\frac{1}{T} \int_{0}^{\frac{T}{2}} A^2 \cdot 
+\frac{e^{\jmath \cdot \frac{4\pi}{T} \cdot t} -2 \cdot e^{0} + e^{-\jmath \cdot \frac{4\pi}{T} \cdot t}}{-4} \cdot dt =\\
+&=\frac{A^2}{-4 \cdot T} \int_{0}^{\frac{T}{2}}\left( 
+e^{\jmath \cdot \frac{4\pi}{T} \cdot t} -2 \cdot 1 + e^{-\jmath \cdot \frac{4\pi}{T} \cdot t}\right) \cdot dt =\\
+&=\frac{A^2}{-4 \cdot T} \left(  
+\int_{0}^{\frac{T}{2}} e^{\jmath \cdot \frac{4\pi}{T} \cdot t} \cdot dt - \int_{0}^{\frac{T}{2}} 2 \cdot dt + \int_{0}^{\frac{T}{2}} e^{-\jmath \cdot \frac{4\pi}{T} \cdot t} \cdot dt \right)=\\
+&=\begin{Bmatrix*}[llll]
+z_1&=\jmath \cdot \frac{4\pi}{T} \cdot t & z2&=-\jmath \cdot \frac{4\pi}{T} \cdot t\\
+dz_1&=\jmath \cdot \frac{4\pi}{T} \cdot dt & dz2&=-\jmath \cdot \frac{4\pi}{T} \cdot dt\\
+dt&=\frac{dz_1}{\jmath \cdot \frac{4\pi}{T}} & dt&=\frac{dz_2}{-\jmath \cdot \frac{4\pi}{T}}
+\end{Bmatrix*}=\\
+&=\frac{A^2}{-4 \cdot T} \left(  
+\int_{0}^{\frac{T}{2}} e^{z_1} \cdot \frac{dz_1}{\jmath \cdot \frac{4\pi}{T}} -  2 \cdot \int_{0}^{\frac{T}{2}} dt + \int_{0}^{\frac{T}{2}} e^{z_2} \cdot \frac{dz_2}{-\jmath \cdot \frac{4\pi}{T}} \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( \frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot 
+\int_{0}^{\frac{T}{2}} e^{z_1} \cdot dz_1 -  2 \cdot \int_{0}^{\frac{T}{2}} dt + \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot \int_{0}^{\frac{T}{2}} e^{z_2} \cdot dz_2 \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( \frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot 
+\left. e^{z_1} \right|_{0}^{\frac{T}{2}} -  2 \cdot \left. t \right|_{0}^{\frac{T}{2}} + \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot \left. e^{z_2} \right|_{0}^{\frac{T}{2}} \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( \frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot 
+\left. e^{\jmath \cdot \frac{4\pi}{T} \cdot t} \right|_{0}^{\frac{T}{2}} -  2 \cdot \left. t \right|_{0}^{\frac{T}{2}} + \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot \left. e^{-\jmath \cdot \frac{4\pi}{T} \cdot t} \right|_{0}^{\frac{T}{2}} \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( \frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot 
+\left( e^{\jmath \cdot \frac{4\pi}{T} \cdot \frac{T}{2}} - e^{\jmath \cdot \frac{4\pi}{T} \cdot 0} \right) -  2 \cdot \left(\frac{T}{2} - 0 \right) + \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot \left( e^{-\jmath \cdot \frac{4\pi}{T} \cdot \frac{T}{2}} - e^{-\jmath \cdot \frac{4\pi}{T} \cdot 0} \right) \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( \frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot 
+\left( e^{\jmath \cdot 2\pi} - e^{0} \right) -  2 \cdot \left(\frac{T}{2}\right) + \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot \left( e^{-\jmath \cdot 2\pi} - e^{0} \right) \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( \frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot 
+\left( 1 - 1 \right) -  T + \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot \left( 1 - 1 \right) \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( \frac{1}{\jmath \cdot \frac{4\pi}{T}} \cdot 0 -  T + \frac{1}{-\jmath \cdot \frac{4\pi}{T}} \cdot 0 \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( 0 -  T + 0 \right)=\\
+&=\frac{A^2}{-4 \cdot T} \left( -  T \right)=\\
+&=\frac{A^2}{4}
+\end{align*}
+
+\TT{Moc sygnału wynosi wiec: }{}$P=\frac{A^2}{4}$
+
+\TT{Moc sygnału możemy wyznaczyć na podstawie współczynników zespolonego szeregu Fouriera $F_k$ za pomocą twierdzenia Parsevala}{}
+
+\begin{align*}
+P = \sum_{k=-\infty}^{\infty} \left| F_k \right|^2
+\end{align*}
+
+\TT{Dla sygnałów rzeczywistych widmo amplitudowe sygnału jest parzyste a wiec mamy}{}
+
+\begin{align*}
+\left|F_{-k}\right|^2 = \left|F_{k}\right|^2 \Rightarrow P &= \sum_{k=-\infty}^{\infty} \left| F_k \right|^2 \\
+&= \left| F_0 \right|^2 + 2\cdot \sum_{k=1}^{\infty} \left| F_k \right|^2
+\end{align*}
+
+\TT{A wiec moc parzystych harmonicznych można wyznaczyć odejmując od mocy całkowitej moc nieparzystych harmonicznych i moc składowej zerowej}{}
+
+\begin{align*}
+P_{par} = P - \left| F_{0} \right|^2 -2\cdot \sum_{k=0}^{\infty} \left| F_{2\cdot k+1} \right|^2
+\end{align*}
+
+\TT{Współczynniki zespolonego szeregu Fouriera dla sygnału przedstawionego powyżej wyznaczone w ramach zadania \ref{TaskKW015} wynoszą}{}
+
+\begin{align*}
+F_0&=\frac{A}{\pi}\\
+F_{-1}&=\jmath \cdot \frac{A}{4}\\
+F_{1}&=-\jmath \cdot \frac{A}{4}\\
+F_k&=\frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{k}+1}{1-k^2}\right)\\
+\end{align*}
+
+\TT{A wiec moc parzystych harmonicznych wynosi}{}
+
+\begin{align*}
+P_{par} &= P - \left| F_{0} \right|^2 -2\cdot \sum_{k=0}^{\infty} \left| F_{2\cdot k+1} \right|^2=\\
+P_{par} &= P - \left| F_{0} \right|^2 -2 \cdot \left| F_{1} \right|^2 - 2\cdot \sum_{k=1}^{\infty} \left| F_{2\cdot k+1} \right|^2=\\
+&= \frac{A^2}{4} - \left| \frac{A}{\pi} \right|^2 -2 \cdot \left| -\jmath \cdot \frac{A}{4} \right|^2 - 2\cdot \sum_{k=1}^{\infty} \left| \frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{2\cdot k+1}+1}{1-\left(2\cdot k+1\right)^2}\right)\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{4^2} - 2\cdot \sum_{k=1}^{\infty} \left| \frac{A}{2 \cdot \pi} \cdot \left(\frac{(-1)^{2\cdot k}\cdot (-1)^1+1}{1-\left(2\cdot k+1\right)^2}\right)\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{4^2} - 2\cdot \sum_{k=1}^{\infty} \left| \frac{A}{2 \cdot \pi} \cdot \left(\frac{\left((-1)^{2}\right)^{k}\cdot (-1)^1+1}{1-\left(2\cdot k+1\right)^2}\right)\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{4^2} - 2\cdot \sum_{k=1}^{\infty} \left|\frac{A}{2 \cdot \pi} \cdot \left(\frac{\left(1\right)^{k}\cdot (-1)+1}{1-\left(2\cdot k+1\right)^2}\right)\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{4^2} - 2\cdot \sum_{k=1}^{\infty} \left| \frac{A}{2 \cdot \pi} \cdot \left(\frac{1\cdot (-1)+1}{1-\left(2\cdot k+1\right)^2}\right)\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{4^2} - 2\cdot \sum_{k=1}^{\infty} \left| \frac{A}{2 \cdot \pi} \cdot \left(\frac{-1+1}{1-\left(2\cdot k+1\right)^2}\right)\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{4^2} - 2\cdot \sum_{k=1}^{\infty} \left| \frac{A}{2 \cdot \pi} \cdot \left(\frac{0}{1-\left(2\cdot k+1\right)^2}\right)\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{4^2} - 2\cdot \sum_{k=1}^{\infty} \left| 0\right|^2=\\
+&= \frac{A^2}{4} - \frac{A^2}{\pi^2} -2 \cdot \frac{A^2}{16} - 0=\\
+&= \frac{2\cdot A^2}{8} - \frac{A^2}{\pi^2} - \frac{A^2}{8}=\\
+&= \frac{A^2}{8} - \frac{A^2}{\pi^2}=\\
+&= A^2 \cdot \left( \frac{1}{8} - \frac{1}{\pi^2}\right)
+\end{align*}
+
+\TT{A wiec moc parzystych harmonicznych wynosi:}{} $P_{par}=A^2 \cdot \left( \frac{1}{8} - \frac{1}{\pi^2}\right)$
+
+\TT{A wiec poszukiwany stosunek parzystych harmoniczych do całkowitej mocy synału wynosi:}{}
+
+\begin{align*}
+\frac{P_{par}}{P} &=\frac{A^2 \cdot \left( \frac{1}{8} - \frac{1}{\pi^2}\right)}{\frac{A^2}{4}} =\\
+&=\left( \frac{1}{8} - \frac{1}{\pi^2}\right) \cdot 4 = \\
+&=\frac{4}{8} - \frac{4}{\pi^2} = \\
+&=\frac{1}{2} - \frac{4}{\pi^2}
+\end{align*}
+
+\TT{A wiec poszukiwany stosunek parzystych harmoniczych do całkowitej mocy synału wynosi:}{} $\frac{1}{2} - \frac{4}{\pi^2}$
+
+\end{task}
