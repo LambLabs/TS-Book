@@ -28,7 +28,7 @@ A \cdot Sa\left(3 \cdot \omega_0 \cdot t\right)&\xrightarrow{\mathcal F} \frac{A
 
 \TT{Transformata sygnału wejściowego $u(t)$ to $U(\jmath \omega)=\frac{A \cdot \pi}{3 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{6 \cdot \omega_0}\right)$.}{The Fourier transform of the input signal $u(t)$ is equal to $U(\jmath \omega)=\frac{A \cdot \pi}{3 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{6 \cdot \omega_0}\right)$.}
 
-\TT{Transformatę sygnału wyjściowego, czyli $Y(\jmath \omega)=U(\jmath \omega) \cdot H(\jmath \omega)$ wyznaczymy graficznie, W tym celu na wykresie transmitancji $H(\jmath \omega)$ dodamy transformatę $U(\jmath \omega)$:}{The Fourier transform of the output signal $Y(\jmath \omega)=U(\jmath \omega) \cdot H(\jmath \omega)$, we will derive graphically. Firstly, we draw the $U(\jmath \omega)$ on the $H(\jmath \omega)$ graph:}
+\TT{Transformatę sygnału wyjściowego, czyli $Y(\jmath \omega)=U(\jmath \omega) \cdot H(\jmath \omega)$ wyznaczymy graficznie, W tym celu na wykresie transmitancji $H(\jmath \omega)$ dodamy transformatę $U(\jmath \omega)$:}{The Fourier transform of the output signal $Y(\jmath \omega)=U(\jmath \omega) \cdot H(\jmath \omega)$ will be derived graphically. Firstly, we draw the $U(\jmath \omega)$ on the $H(\jmath \omega)$ graph:}
  
 \begin{figure}[H]
 	\centering
@@ -80,7 +80,7 @@ A \cdot Sa\left(3 \cdot \omega_0 \cdot t\right)&\xrightarrow{\mathcal F} \frac{A
 Y(\jmath \omega) = \frac{A \cdot \pi}{3 \cdot \omega_0} \cdot \Pi \left(\frac{\omega - 2 \cdot \omega_0}{2 \cdot \omega_0}\right) +  \frac{A \cdot \pi}{3 \cdot \omega_0} \cdot \Pi \left(\frac{\omega + 2 \cdot \omega_0}{2 \cdot \omega_0}\right)
 \end{equation}
 
-\TT{Skoro zanmy transformatę sygnału wyjściowego, to spróbujmy wyznaczyć sygnał wyjściowy w dziedzinie czasu wykorzystując wcześniejsze obliczenia. Transformata $Y(\jmath \omega)$ to suma dwóch przeskalowanych prostokątów, przesuniętych na osi pulsacji. W takim razie można wnioskować, że sygnał w dziedzinie czasiu to będzie suma dwóch zmodulowanych i przeskalowanych funkcji $Sa(t)$.}{Based on earlier calculations, let's try to derive the output $y(t)$ of the system. The $Y(\jmath \omega)$ transform is a sum of two shifted in frequency and scaled rectangular impulses. We can expect, that we will get a sum of two modulated and scaled $Sa(t)$ signals in the time domain.}
+\TT{Skoro zanmy transformatę sygnału wyjściowego, to spróbujmy wyznaczyć sygnał wyjściowy w dziedzinie czasu wykorzystując wcześniejsze obliczenia. Transformata $Y(\jmath \omega)$ to suma dwóch przeskalowanych prostokątów, przesuniętych na osi pulsacji. W takim razie można wnioskować, że sygnał w dziedzinie czasiu to będzie suma dwóch zmodulowanych i przeskalowanych funkcji $Sa(t)$.}{Based on earlier calculations, let's try to derive the output $y(t)$ of the system. The $Y(\jmath \omega)$ transform is a sum of two shifted in frequency and scaled rectangular impulses. Based on time-frequency duality theorem, we can expect, that the output $y(t)$ will be a sum of two modulated and scaled $Sa(t)$ signals in the time domain.}
 
 \begin{align*}
 \Pi(t) &\xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right)\\
@@ -109,7 +109,7 @@ y(t) &= \frac{A}{3} \cdot e^{(\jmath \cdot 2 \cdot \omega_0 \cdot t)} \cdot Sa(\
 &= \frac{2 \cdot A}{3} \cdot Sa(\omega_0 \cdot t) \cdot cos\left(2 \cdot \omega_0 \cdot t)\right)
 \end{align*}
 
-\TT{Odpowied\'{z} układu to $y(t)= \frac{2 \cdot A}{3} \cdot Sa(\omega_0 \cdot t) \cdot cos\left(2 \cdot \omega_0 \cdot t)\right)$.}{The response of the system is equal to $y(t)= \frac{2 \cdot A}{3} \cdot Sa(\omega_0 \cdot t) \cdot cos\left(2 \cdot \omega_0 \cdot t)\right)$.}
+\TT{Odpowied\'{z} układu to $y(t)= \frac{2 \cdot A}{3} \cdot Sa(\omega_0 \cdot t) \cdot cos\left(2 \cdot \omega_0 \cdot t\right)$.}{The response of the system is equal to $y(t)= \frac{2 \cdot A}{3} \cdot Sa(\omega_0 \cdot t) \cdot cos\left(2 \cdot \omega_0 \cdot t\right)$.}
 
 
 \end{task}
