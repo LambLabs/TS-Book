@@ -1,6 +1,6 @@
 \begin{task}
 
-Wyznacz odpowied\'{z} implusową $h(t)$ układu LTI, wiedząc, że sygnały $u(t)$ oraz $y(t)$ wygladają jak na poniższych wykresach. Wykorzystaj informacje o transformatach sygnałów: $\Pi(t) \xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right)$ oraz $\Lambda(t) \xrightarrow{\mathcal F} Sa^2\left(\frac{\omega}{2}\right)$.
+\TT{Wyznacz odpowied\'{z} implusową $h(t)$ układu LTI, wiedząc, że sygnały $u(t)$ oraz $y(t)$ wygladają jak na poniższych wykresach. Wykorzystaj informacje o transformatach sygnałów: $\Pi(t) \xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right)$ oraz $\Lambda(t) \xrightarrow{\mathcal F} Sa^2\left(\frac{\omega}{2}\right)$.}{Calculate the impulse response $h(t)$ of an LTI system for input $u(t)$ and output $y(t)$ signals given below. Exploit transforms: $\Pi(t) \xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right)$ and $\Lambda(t) \xrightarrow{\mathcal F} Sa^2\left(\frac{\omega}{2}\right)$.}
 
 \begin{figure}[H]
 	\centering
@@ -31,26 +31,29 @@ Wyznacz odpowied\'{z} implusową $h(t)$ układu LTI, wiedząc, że sygnały $u(t
 	\end{tikzpicture}
 \end{figure}
 
-Wiemy, że transformatę odpowiedzi układu można wyznaczyć ze wzoru $Y(\jmath \omega)=U(\jmath \omega) \cdot H(\jmath \omega)$ oraz że $h(t) \xrightarrow{\mathcal F} H(\jmath \omega)$. W związku z tym $H(\jmath \omega)=\frac{Y(\jmath \omega)}{U(\jmath \omega)}$ oraz $h(t) \xrightarrow{\mathcal F^{-1}} H(\jmath \omega)$.
+\TT{Wiemy, że transformatę odpowiedzi układu można wyznaczyć ze wzoru $Y(\jmath \omega)=U(\jmath \omega) \cdot H(\jmath \omega)$ oraz że $h(t) \xrightarrow{\mathcal F} H(\jmath \omega)$. W związku z tym $H(\jmath \omega)=\frac{Y(\jmath \omega)}{U(\jmath \omega)}$ oraz $h(t) \xrightarrow{\mathcal F^{-1}} H(\jmath \omega)$.}{We know that for the LTI systems: $Y(\jmath \omega)=U(\jmath \omega) \cdot H(\jmath \omega)$ and $h(t) \xrightarrow{\mathcal F} H(\jmath \omega)$. So, $h(t)=\mathcal F^{-1}\{H(\jmath \omega)\}$ and $H(\jmath \omega)=\frac{Y(\jmath \omega)}{U(\jmath \omega)}$.}
 
-W pierwszym kroku wyznaczmy transformaty sygnałów $u(t)$ oraz $y(t)$:
+\TT{Aby wyznaczyć transmitancję $H(\jmath \omega)$ trzeba obliczyć sygnałów $u(t)$ oraz $y(t)$:}{In order to derive frequency response $H(\jmath \omega)$, the Fourier transforms of the $u(t)$ and $y(t)$ signals have to be computed:}
+
 \begin{align*}
 u(t)&= A \cdot \Pi\left(\frac{t+\frac{t_0}{2}}{t_0}\right) & y(t)&= A \cdot t_0 \cdot \Lambda\left(\frac{t}{t_0}\right)\\
-U(\jmath \omega)&=\mathcal F \{u(t)\} & Y(\jmath \omega)&=\mathcal F \{y(t)\} \\
+u(t) &\xrightarrow{\mathcal F}U(\jmath \omega) & y(t) &\xrightarrow{\mathcal F}Y(\jmath \omega) \\
 \Pi(t) &\xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right) & \Lambda(t) &\xrightarrow{\mathcal F} Sa^2\left(\frac{\omega}{2}\right)\\
 \Pi\left(\frac{1}{t_0} \cdot t \right) &\xrightarrow{\mathcal F} t_0 \cdot Sa\left(\frac{\omega \cdot t_0}{2}\right) & \Lambda\left(\frac{1}{t_0} \cdot t \right) &\xrightarrow{\mathcal F} t_0 \cdot Sa^2\left(\frac{\omega \cdot t_0}{2}\right)\\
 \Pi\left(\frac{t+\frac{t_0}{2}}{t_0}\right) &\xrightarrow{\mathcal F} t_0 \cdot Sa\left(\frac{\omega \cdot t_0}{2}\right) \cdot e^{\jmath \cdot \omega \cdot \frac{t_0}{2}} & A \cdot t_0 \cdot \Lambda\left(\frac{t}{t_0}\right) &\xrightarrow{\mathcal F} A \cdot t_0^2 \cdot Sa^2\left(\frac{\omega \cdot t_0}{2}\right)\\
 A \cdot \Pi\left(\frac{t+\frac{t_0}{2}}{t_0}\right) &\xrightarrow{\mathcal F} A \cdot t_0 \cdot Sa\left(\frac{\omega \cdot t_0}{2}\right) \cdot e^{\jmath \cdot \omega \cdot \frac{t_0}{2}} &  &
 \end{align*}
 
-Skoro zanmy transformaty sygnałów wejściowego i wyjściowego, to możemy wyznaczyc transmitancję układu, czyli $H(\jmath \omega)$. 
+\TT{Skoro zanmy transformaty sygnałów wejściowego i wyjściowego, to możemy wyznaczyc transmitancję układu, czyli $H(\jmath \omega)$.}{Now, frequency response $H(\jmath \omega)$ can be derived:}
+
 \begin{align*}
 H(\jmath \omega)&=\frac{Y(\jmath \omega)}{U(\jmath \omega)}=\\
 &=\frac{A \cdot t_0^2 \cdot Sa^2\left(\frac{\omega \cdot t_0}{2}\right)}{A \cdot t_0 \cdot Sa\left(\frac{\omega \cdot t_0}{2}\right) \cdot e^{\jmath \cdot \omega \cdot \frac{t_0}{2}}}=\\
 &=t_0 \cdot Sa\left(\frac{\omega \cdot t_0}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{t_0}{2}}
 \end{align*}
 
-Teraz możemy wyznaczć odpowied\'{z} implusową układu $h(t)$:
+\TT{Teraz możemy wyznaczć odpowied\'{z} implusową układu $h(t)$:}{Finally, the impulse response $h(t)$ can be calculated:}
+
 \begin{align*}
 h(t) &\xrightarrow{\mathcal F} H(\jmath \omega)\\
 ? &\xrightarrow{\mathcal F} t_0 \cdot Sa\left(\frac{\omega \cdot t_0}{2}\right) \cdot e^{-\jmath \cdot \omega \cdot \frac{t_0}{2}}\\
@@ -60,6 +63,8 @@ h(t) &\xrightarrow{\mathcal F} H(\jmath \omega)\\
 \end{align*}
 
 
-Odpowied\'{z} implusowa układu to $h(t)= \Pi\left(\frac{t-\frac{t_0}{2}}{t_0}\right)$.
+\TT{Odpowied\'{z} implusowa układu to $h(t)= \Pi\left(\frac{t-\frac{t_0}{2}}{t_0}\right)$.}{The impulse response of the system is equal to $h(t)= \Pi\left(\frac{t-\frac{t_0}{2}}{t_0}\right)$.}
+
+
 \end{task}
 
