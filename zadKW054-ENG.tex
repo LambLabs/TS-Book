@@ -64,7 +64,7 @@ f_2(t) &= Sa^2\left(\frac{t-t_0}{T}\right) \cdot e^{-\jmath \cdot \omega_0 \cdot
 \SymetryTeorem{h}{H}{g}{G}
 \end{align*}
 
-\TT{Tak wiec zacznijmy od transformaty sygnału trójkątnego $h(t)=\Lambda(t)$ i wyznaczymy transformatę funkcji $Sa^2$.}{Let's start with deriving Fourier transform for the $Sa^2$ signal using $h(t)=\Lambda(t)$:}
+\TT{Tak wiec zacznijmy od transformaty sygnału trójkątnego $h(t)=\Lambda(t)$ i wyznaczymy transformatę funkcji $Sa^2$.}{Let's start with deriving the Fourier transform for the $Sa^2$ signal using $h(t)=\Lambda(t)$:}
 
 \begin{align*}
 h(t)=\Lambda(t) &\overset{F}{\rightarrow} H(\jmath \omega) = Sa^2\left(\frac{\omega}{2}\right)\\
@@ -72,7 +72,7 @@ g_1(t) = H(t) = Sa^2\left(\frac{t}{2}\right) &\overset{F}{\rightarrow}
 G_1(\jmath \omega) = 2\pi \cdot h(\omega) = 2\pi \cdot  \Lambda\left(-\omega\right) = 2\pi \cdot  \Lambda\left(\omega\right)
 \end{align*}
 
-\TT{Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $g(t)$.}{We derived Fourier transform for $g_1(t)$ signal. However, this is not exactly the same signal as $g(t)$.}
+\TT{Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $g(t)$.}{We derived Fourier transform for the $g_1(t)$ signal. However, this is not exactly the same signal as $g(t)$.}
 
 \begin{align*}
 g(t)&=Sa^2\left(\frac{t-t_0}{T}\right)=\\
@@ -82,13 +82,13 @@ k(t) = Sa^2\left(\frac{t}{T}\right)
 &=k\left(t-t_0\right)
 \end{align*}
 
-Znająć transformatę funkcji $k\left(t\right)$ możemy z łatwością wyznaczyć transformatę sygnału $g(t)$ za pomoca twierdzenia o przesunięciu w czasie
+\TT{Znająć transformatę funkcji $k\left(t\right)$ możemy z łatwością wyznaczyć transformatę sygnału $g(t)$ za pomoca twierdzenia o przesunięciu w czasie:}{Knowing the Fourier transform of $k(t)$ we can use the shift in time theorem to derive the Fourier transform of $g(t)$:}
 
 \begin{align*}
 \TimeShiftTeorem{k}{K}{g}{G}
 \end{align*}
 
-\TT{Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $k(t)$.}{We derived Fourier transform for $g_1(t)$ signal. However, this is not exactly the same signal as $k(t)$.}
+\TT{Wyznaczyliśmy transformatę funkcji $g_1(t)$. Jednak funkcja $g_1(t)$ nie ma takiej samej postaci jak funkcja $k(t)$.}{We derived the Fourier transform for the $g_1(t)$ signal. However, this is not exactly the same signal as $k(t)$.}
 
 \begin{align*}
 k(t)&=Sa^2\left(\frac{t}{T}\right)=\\
