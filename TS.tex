@@ -113,7 +113,7 @@
   #3(t) = \int_{-\infty}^{t} #1(\tau)\cdot d\tau &\xrightarrow{\mathcal F}
   #4(\jmath \omega) = \frac{1}{\jmath \cdot \omega} \cdot #2(\jmath \omega) + \pi \cdot \delta(\omega) \cdot #2(0)
 }
-% Twierdzenie o przesunięciu w czasu częstotliwości % \TimeShiftTeorem{g}{G}{f}{F}
+% Twierdzenie o przesunięciu w czasu czasu % \TimeShiftTeorem{g}{G}{f}{F}
 \newcommand{\TimeShiftTeorem}[4]{
   #1(t) &\xrightarrow{\mathcal F} #2(\jmath \omega)\\
   #3(t) = #1(t-t_0) &\xrightarrow{\mathcal F} 
@@ -263,6 +263,8 @@
 \inputTask{zadTG014-ENG.tex}
 \inputTask{zadTG021-ENG.tex}
 \inputTask{zadTG022-ENG.tex}
+\inputTask[Debug]{zadKW049.tex} %Wyznaczenie wartości średniej ze znanej mocy
+\inputTask[Debug]{zadKW050.tex} %Wyznaczenie stosunku parzystych harmonicznych do nieparzystych
 %Analysis of non-periodic signals. Fourier Transformation and Transform
 \TT{\chapter{Analiza sygnałów nieokresowych. Przekształcenie całkowe Fouriera}}{\chapter{Analysis of non-periodic signals. Fourier Transformation and Transform}}
 %	An intuitive introduction
@@ -275,7 +277,7 @@
 \inputTask{zadKW019-ENG.tex}
 \inputTask{zadKW020-ENG.tex}
 \inputTask{zadKW029-ENG.tex}
-\inputTask{zadKW051.tex} %Jeszcze nie poprawne widmo fazowe
+\inputTask[Debug]{zadKW051.tex} %Jeszcze nie poprawne widmo fazowe
 %	Fourier Transform vs Laplace Transform
 %	The Magnitude Spectrum and Phase Spectrum
 %	Symmetries of the Fourier Transform for real-valued signals
@@ -292,17 +294,18 @@
 \inputTask{zadKW030-ENG.tex} % "|\/|" - linearity, scaling
 \inputTask{zadTG023-ENG.tex} %ToDo sposób 2 i 3 - "|-|_|-|" - linearity, scaling, shift in time
 \inputTask{zadTG024-ENG.tex} %exp{|t|} - linearity, scaling,
-\inputTask{zadKW031.tex} % stairs - linearity, scaling, shift in time
-\inputTask{zadKW052.tex} % Sa*cos^2 modulation - TODO
-\inputTask{zadKW053.tex} % Pi*cos^2 modulation
+\inputTask[Debug]{zadKW031.tex} % stairs - linearity, scaling, shift in time
+\inputTask[Debug]{zadKW052.tex} % Sa*cos^2 modulation - TODO
+\inputTask[Debug]{zadKW053.tex} % Pi*cos^2 modulation
 \inputTask{zadKW027-ENG.tex} %(1/(1-t^2)) - duality, linearity
 \inputTask{zadKW024-ENG.tex} % Sa*sin - modulation, duality, scaling, linearity
-\inputTask[Debug]{zadKW025-ENG.tex} % Sa^2*cos - modulation, duality, scaling, linearity - sprawdzić poprawność
+\inputTask{zadKW025-ENG.tex} % Sa^2*cos - modulation, duality, scaling, linearity - sprawdzić poprawność
+\inputTask{zadKW054-ENG.tex} % Sa^2(t-t0)*cos - modulation, duality, scaling, linearity
 \inputTask{zadTG005-ENG.tex} % triangle - intergate x1, linearity, scaling, shift in time
 \inputTask{zadTG006-ENG.tex} % triangle - intergate x2, linearity, Dirac sampling
-\inputTask{zadKW021.tex} % gate - intergate x1, linearity, Dirac sampling
-\inputTask{zadKW022.tex} % ramp - intergate x1, linearity, scaling, Dirac sampling
-\inputTask{zadKW023.tex} % slope - intergate x1, linearity, Dirac sampling
+\inputTask[Debug]{zadKW021.tex} % gate - intergate x1, linearity, Dirac sampling
+\inputTask[Debug]{zadKW022.tex} % ramp - intergate x1, linearity, scaling, Dirac sampling
+\inputTask[Debug]{zadKW023.tex} % slope - intergate x1, linearity, Dirac sampling
 \inputTask{zadKW026-ENG.tex} %sgn - integration x1, linaerity, Dirac sampling
 \inputTask{zadTG025-ENG.tex} % (t+1)^2 - (t-1)^2 - integration x1, Dirac sampling, linearity
 \inputTask{zadTG007-ENG.tex} % 1-t^2 - integrate x2, duality, linearity, Dirac sampling
@@ -311,8 +314,8 @@
 %	Calculating energy of the signal from its Fourier transform. The Parseval's theorem
 \TT{\section{Obliczenia energii sygnału za pomocą transformaty Fouriera. Twierdzenie Parsevala}}{\section{Calculating energy of the signal from its Fourier transform. The Parseval's theorem}}
 \inputTask{zadTG009-ENG.tex}
-\inputTask{zadTG013.tex}
-\inputTask{zadTG010.tex}
+\inputTask{zadTG013-ENG.tex}
+\inputTask[Debug]{zadTG010.tex}
 %	Generalization of the Fourier transformation for infinite energy signals
 %	Fourier transform of a periodic signal
 %	Calculating the power of a signal from its Fourier transform. The Parseval's theorem for power signals
@@ -324,14 +327,14 @@
 %	The response of an LTI system to arbitrary input
 %	Properties of linear convolution
 \TT{\section{Obliczanie splotu ze wzoru}}{\section{Linear convolution}}
-\inputTask{zadTG008.tex}
-\inputTask{zadKW028.tex}
+\inputTask[Debug]{zadTG008.tex}
+\inputTask[Debug]{zadKW028.tex}
 %	Frequency response
 %	Determining the frequency response of an electronic circuit
 %	Filters
 \TT{\section{Filtry}}{\section{Filters}}
-\inputTask{zadTG011.tex}
-\inputTask{zadTG012.tex}
+\inputTask{zadTG011-ENG.tex}
+\inputTask{zadTG012-ENG.tex}
 %Sampling. Discrete-time signals
 %	Introduction to discrete signals
 %	Spectrum of a sampled signal
