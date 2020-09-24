@@ -1,6 +1,5 @@
 \begin{task}
-Oblicz, jaka część energi sygnału $f(t)=A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)$ przypada na wartości pulsacji 
-$\left| \omega \right| < 2 \cdot \omega_0$. Wykorzystaj informację, że transformata sygnału $\Pi(t)$ jest równa $Sa\left(\frac{\omega}{2}\right)$.
+\TT{Oblicz, jaka część energi sygnału $f(t)=A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)$ przypada na wartości pulsacji $\left| \omega \right| < 2 \cdot \omega_0$. Wykorzystaj informację, że transformata sygnału $\Pi(t)$ jest równa $Sa\left(\frac{\omega}{2}\right)$.}{Determine what part of the energy of the signal $f(t)=A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)$ is represented by its spectral components of  $\left| \omega \right| < 2 \cdot \omega_0$. Exploit the following transform $\mathcal F\{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$.}
 
 \begin{equation}
 f(t) = A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)
@@ -14,15 +13,16 @@ f(t) = A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot 
 \frac{E_{\left| \omega \right| < 2 \cdot \omega_0}}{E} = ?
 \end{equation}
 
-Ponieważ musimy obliczyć energię tylko dla pewnego zakresu pulsacji, to wykorzystamy twierdzenie Parsevala:
+\TT{Spróbumy wykorzystać twierdzenie Parsevala:}{Let's consider the Parseval's theorem given below:}
 
 \begin{equation}
 \Parseval{F}
 \end{equation}
 
-W tym podejściu musimy obliczyć transformatę Fouriera sygnału $f(t)$, czyli $F(\jmath \omega)$.
+\TT{W tym podejściu musimy obliczyć transformatę Fouriera sygnału $f(t)$, czyli $F(\jmath \omega)$.}{The Fourier transform $F(\jmath \omega)$ of the $f(t)$ signal has to be derived.}
 
-Ponieważ możemy korzystać tylko ze znanych twierdzeń oraz wiedzy o transformacie sygnału $\Pi(t)$, to spróbujmy przekształcić sygnał $f(t)$ do postaci, w której wprost możemy zastosować twierdzenia. Zauważmy, że:
+\TT{Ponieważ możemy korzystać tylko ze znanych twierdzeń oraz wiedzy o transformacie sygnału $\Pi(t)$, to spróbujmy przekształcić sygnał $f(t)$ do postaci, w której wprost możemy zastosować twierdzenia. Zauważmy, że:}{In order to take advantage of appropriate theorems and the fact that $\mathcal F\{\Pi(t)\} = Sa\left(\frac{\omega}{2}\right)$, let's rewrite the $f(t)$ signal as:}
+
 \begin{align*}
 f(t) &= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)=\\
 &=\begin{Bmatrix}
@@ -36,44 +36,51 @@ f(t) &= A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot
 &= f_1(t)+f_2(t)+f_3(t)
 \end{align*}
 
-Korzystając z liniowości przekształcenia Fouriera możemy niezależnie obliczyć transformaty dla sygnałów $f_1(t)$, $f_2(t)$ i $f_3(t)$, a następnie zsumować te transformaty. Zacznijmy od sygnału $f_2(t)$:
+\TT{Korzystając z liniowości przekształcenia Fouriera możemy niezależnie obliczyć transformaty dla sygnałów $f_1(t)$, $f_2(t)$ i $f_3(t)$, a następnie zsumować te transformaty.}{Based on the linearity theorem, we can calculate the Fourier transforms for $f_1(t)$, $f_2(t)$ and $f_3(t)$ signals separately.}
 
-Skoro wiemy, że:
+\TT{Zacznijmy od sygnału $f_2(t)$:}{Let's start with the simplest signal, the $f_2(t)$ signal.}
+
+\TT{Z treści zadania wiemy, że:}{We know that:}
 
 \begin{equation}
 g(t) = \Pi(t) \xrightarrow{\mathcal F} Sa\left(\frac{\omega}{2}\right)
 \end{equation}
 
-to, na podstawie twierdzenia o symetrii przekształcenia Fouriera:
+\TT{Na podstawie twierdzenia o symetrii przekształcenia Fouriera:}{Based on the time-frequency duality theorem:}
+
 \begin{align*}
-\SymetryTeorem{g}{G}{f_2}{F_2}
+\SymetryTeorem{g}{G}{h}{H}
 \end{align*}
-otrzymujemy:
+
+\TT{otrzymujemy:}{we get:}
+
 \begin{align*}
 Sa\left(\frac{t}{2}\right) &\xrightarrow{\mathcal F} 2\pi \cdot \Pi(-\omega)\\
 Sa\left(\frac{t}{2}\right) &\xrightarrow{\mathcal F} 2\pi \cdot \Pi(\omega)
 \end{align*}
 
-Teraz musimy przeskalować $Sa\left(\frac{t}{2}\right)$ tak, aby otrzymać $Sa\left(2 \cdot \omega_0 \cdot t\right)$. W tym celu skorzystamy z twierdzenia o zmianie skali podstawiając $\alpha=4 \cdot \omega_0$:
+\TT{Teraz musimy przeskalować $Sa\left(\frac{t}{2}\right)$ tak, aby otrzymać $Sa\left(2 \cdot \omega_0 \cdot t\right)$. W tym celu skorzystamy z twierdzenia o zmianie skali podstawiając $\alpha=4 \cdot \omega_0$:}{Now, the  $Sa\left(\frac{t}{2}\right)$ signal has to be scaled in time in order to get the  $Sa\left(2 \cdot \omega_0 \cdot t\right)$ signal. Let's exploit the scaling in time theorem with $\alpha=4 \cdot \omega_0$:}
+
 \begin{align*}
-\TimeScalingTeorem{f}{F}{f_1}{F_1}
+\TimeScalingTeorem{h}{H}{f_2}{F_2}
 \end{align*}
 
 \begin{align*}
 Sa\left(\frac{t}{2}\right) &\xrightarrow{\mathcal F} 2\pi \cdot \Pi(\omega)\\
-Sa\left(4 \cdot \omega_0 \cdot \frac{t}{2}\right) &\xrightarrow{\mathcal F} \frac{1}{4 \cdot \omega_0} \cdot 2\pi \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)\\
+Sa\left(4 \cdot \omega_0 \cdot \frac{t}{2}\right) &\xrightarrow{\mathcal F} \frac{1}{\left|4 \cdot \omega_0 \right|} \cdot 2\pi \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)\\
 Sa\left(2 \cdot \omega_0 \cdot t\right) &\xrightarrow{\mathcal F} \frac{\pi}{2 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)\\
 f_2(t) = \frac{A}{2} \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) &\xrightarrow{\mathcal F} \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right) = F_2(\jmath \omega)\\
 \end{align*}
 
-Podsumowując, transformata sygnału $f_2(t)$ to $F_2(\jmath \omega)= \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)$.
+\TT{Podsumowując, transformata sygnału $f_2(t)$ to $F_2(\jmath \omega)= \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)$.}{The Fourier transform of the $f_2(t)$ signal is eual to $F_2(\jmath \omega)= \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)$.}
 
-Zauważmy, że $f_1(t)=\frac{1}{2} \cdot f_2(t) \cdot e^{4 \cdot \jmath \cdot \omega_0 \cdot t}$, czyli $f_1(t)$ to zmodulowany sygnał $f_2(t)$. Stosując twierdzenie o modulacji:
+\TT{Zauważmy, że $f_1(t)=\frac{1}{2} \cdot f_2(t) \cdot e^{4 \cdot \jmath \cdot \omega_0 \cdot t}$, czyli $f_1(t)$ to zmodulowany sygnał $f_2(t)$. Stosując twierdzenie o modulacji:}{Please note, that the $f_1(t)$ signal can be rewritten as $\frac{1}{2} \cdot f_2(t) \cdot e^{4 \cdot \jmath \cdot \omega_0 \cdot t}$. Based on the modulation theorem:}
+
 \begin{align*}
 \FrequencyShiftTeorem{f_2}{F_2}{f_1}{F_1}
 \end{align*}
 
-otrzymujemy:
+\TT{otrzymujemy:}{we get:}
 
 \begin{align*}
 f_2(t) &\xrightarrow{\mathcal F} \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)\\
@@ -81,14 +88,15 @@ f_2(t) \cdot e^{4 \cdot \jmath \cdot \omega_0 \cdot t} &\xrightarrow{\mathcal F}
 f_1(t) = \frac{1}{2} \cdot f_2(t) \cdot e^{4 \cdot \jmath \cdot \omega_0 \cdot t} &\xrightarrow{\mathcal F} \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega - 4 \cdot \omega_0}{4 \cdot \omega_0}\right) = F_1(\jmath \omega)\\
 \end{align*}
 
-Podsumowując, transformata sygnału $f_1(t)$ to $F_1(\jmath \omega)= \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega - 4 \cdot \omega_0}{4 \cdot \omega_0}\right)$.
+\TT{Podsumowując, transformata sygnału $f_1(t)$ to $F_1(\jmath \omega)= \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega - 4 \cdot \omega_0}{4 \cdot \omega_0}\right)$.}{The Fourier transform of the $f_1(t)$ signal is equal to $F_1(\jmath \omega)= \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega - 4 \cdot \omega_0}{4 \cdot \omega_0}\right)$.}
 
-Podobnie, zauważmy, że $f_3(t)=\frac{1}{2} \cdot f_2(t) \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}$, czyli $f_3(t)$ to zmodulowany sygnał $f_2(t)$. Stosując twierdzenie o modulacji:
+\TT{Podobnie zauważmy, że $f_3(t)=\frac{1}{2} \cdot f_2(t) \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}$, czyli $f_3(t)$ to zmodulowany sygnał $f_2(t)$. Stosując twierdzenie o modulacji:}{Similarly, the $f_3(t)$ signal can be rewritten as $\frac{1}{2} \cdot f_2(t) \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t}$. Based on the modulation theorem:}
+
 \begin{align*}
 \FrequencyShiftTeorem{f_2}{F_2}{f_3}{F_3}
 \end{align*}
 
-otrzymujemy:
+\TT{otrzymujemy:}{we get:}
 
 \begin{align*}
 f_2(t) &\xrightarrow{\mathcal F} \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right)\\
@@ -96,15 +104,22 @@ f_2(t) \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} &\xrightarrow{\mathcal F
 f_3(t) = \frac{1}{2} \cdot f_2(t) \cdot e^{-4 \cdot \jmath \cdot \omega_0 \cdot t} &\xrightarrow{\mathcal F} \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega + 4 \cdot \omega_0}{4 \cdot \omega_0}\right) = F_3(\jmath \omega)\\
 \end{align*}
 
-Podsumowując, transformata sygnału $f_3(t)$ to $F_3(\jmath \omega)= \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega + 4 \cdot \omega_0}{4 \cdot \omega_0}\right)$.
+\TT{Podsumowując, transformata sygnału $f_3(t)$ to $F_3(\jmath \omega)= \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega + 4 \cdot \omega_0}{4 \cdot \omega_0}\right)$.}{The Fourier transform of the $f_3(t)$ signal is equal to $F_3(\jmath \omega)= \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega + 4 \cdot \omega_0}{4 \cdot \omega_0}\right)$.}
 
-Teraz możemy podać transformatę sygnału $f(t) = f_1(t)+f_2(t)+f_3(t)$,
+\TT{Teraz możemy obliczyć transformatę sygnału $f(t) = f_1(t)+f_2(t)+f_3(t)$:}{Finally, we can derive the Fourier transform of the $f(t) = f_1(t)+f_2(t)+f_3(t)$ signal:}
+
 \begin{align*}
 F(\jmath \omega)&=F_1(\jmath \omega)+F_2(\jmath \omega)+F_3(\jmath \omega)=\\
 &=\frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega - 4 \cdot \omega_0}{4 \cdot \omega_0}\right) + \frac{A \cdot \pi}{4 \cdot \omega_0} \cdot \Pi \left(\frac{\omega}{4 \cdot \omega_0}\right) + \frac{A \cdot \pi}{8 \cdot \omega_0} \cdot \Pi \left(\frac{\omega + 4 \cdot \omega_0}{4 \cdot \omega_0}\right)
 \end{align*}
 
-Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right|$.
+\TT{Energię wyznaczymy ze wzoru Parsevala:}{The energy will be computed using Parseval's theorem:}
+
+\begin{equation}
+\Parseval{F}
+\end{equation}
+
+\TT{Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right|$. Najpierw narysujmy oddzielnie widma $\left|F_1(\jmath \omega)\right|$, $\left|F_2(\jmath \omega)\right|$ oraz $\left|F_3(\jmath \omega)\right|$, a póniej ich sumę.}{Let's draw the magnitude spectrum of the $f(t)$ signal - $\left|F(\jmath \omega)\right|$. Firstly let's draw $\left|F_1(\jmath \omega)\right|$, $\left|F_2(\jmath \omega)\right|$ and $\left|F_3(\jmath \omega)\right|$ separately, and then let's sum them up.}
 
 \begin{figure}[H]
 	\centering
@@ -153,8 +168,6 @@ Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right
 	\end{tikzpicture}  
 \end{figure}
 
-
-
 \begin{align*}
 \left|F(\jmath \omega)\right| &= \begin{cases}
 0 & \omega \in \left( -\infty; -6 \cdot \omega_0 \right) \\
@@ -165,12 +178,8 @@ Narysujmy widmo amplitudowe sygnału $f(t)$, czyli $\left|F(\jmath \omega)\right
 \end{cases}\\
 \end{align*}
 
-Ponieważ energię wyznaczamy ze wzoru:
-\begin{equation}
-\Parseval{F}
-\end{equation}
+\TT{Wyznaczmy też $\left|F(\jmath \omega)\right|^2$:}{Let's derive $\left|F(\jmath \omega)\right|^2$ also:}
 
-to wyznaczmy $\left|F(\jmath \omega)\right|^2$:
 \begin{align*}
 \left|F(\jmath \omega)\right|^2 &= \begin{cases}
 0 & \omega \in \left( -\infty; -6 \cdot \omega_0 \right) \\
@@ -180,6 +189,8 @@ to wyznaczmy $\left|F(\jmath \omega)\right|^2$:
 0 & \omega \in \left(6 \cdot \omega_0; \infty \right) \\
 \end{cases}\\
 \end{align*}
+
+\TT{Podstawmy wyznaczone dane do wzoru Parsevala:}{Finally, let's calculate the energy using Parseval's theorem:}
 
 \begin{align*}
 E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^2 \cdot d\omega=\\
@@ -195,14 +206,14 @@ E &= \frac{1}{2\pi} \cdot \int_{-\infty}^{\infty} \left|F(\jmath \omega)\right|^
 &=\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}
 \end{align*}
 
-Energia sygnału $f(t)=A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)$ równa się $E=\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}$.
+\TT{Energia sygnału $f(t)=A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)$ równa się $E=\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}$.}{The energy of the $f(t)=A \cdot Sa\left(2 \cdot \omega_0 \cdot t\right) \cdot cos^2\left(2 \cdot \omega_0 \cdot t\right)$ signal is equal to $E=\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}$.}
 
-Energię sygnału dla pewnego zakresu pulsacji, także można wyznaczyć z twierdzenia Parsevala, ale zmieniając granice w całce zgodnie z oczekiwanym zakresem pulsacji, czyli dla pulsacji $\left| \omega \right| < 2 \cdot \omega_0$ otrzymamy wzór:
+\TT{Energię sygnału dla pewnego zakresu pulsacji, także można wyznaczyć z twierdzenia Parsevala, ale zmieniając granice w całce zgodnie z oczekiwanym zakresem pulsacji, czyli dla pulsacji $\left| \omega \right| < 2 \cdot \omega_0$ otrzymamy wzór:}{In order to calculate the energy for some range of frequencies, we can integrate Energy Spectral Density $\left(\left|F(\jmath \omega)\right|^2\right)$ over these components. In our case $\left| \omega \right| < 2 \cdot \omega_0$ we get:}
+
 \begin{equation}
 E_{\left| \omega \right| < 2 \cdot \omega_0} = \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left|F(\jmath \omega)\right|^2 \cdot d\omega
 \end{equation}
 
-Podstawiając dane dla naszego sygnału otrzymamy:
 \begin{align*}
 E_{\left| \omega \right| < 2 \cdot \omega_0} &= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left|F(\jmath \omega)\right|^2 \cdot d\omega=\\
 &= \frac{1}{2\pi} \cdot \int_{-2 \cdot \omega_0}^{2 \cdot \omega_0} \left|\frac{A \cdot \pi}{4 \cdot \omega_0}\right|^2 \cdot d\omega=\\
@@ -214,19 +225,19 @@ E_{\left| \omega \right| < 2 \cdot \omega_0} &= \frac{1}{2\pi} \cdot \int_{-2 \c
 &= \frac{A^2 \cdot \pi}{8 \cdot \omega_0}
 \end{align*}
 
-Podsumowując $ E_{\left| \omega \right| < \omega_0} = \frac{A^2 \cdot \pi}{8 \cdot \omega_0}$.
+\TT{Podsumowując $ E_{\left| \omega \right| < \omega_0} = \frac{A^2 \cdot \pi}{8 \cdot \omega_0}$.}{Tu sum up $ E_{\left| \omega \right| < \omega_0} = \frac{A^2 \cdot \pi}{8 \cdot \omega_0}$.}
 
-Teraz możemy obliczyć:
+\TT{Teraz możemy obliczyć:}{Now, we can derive:}
+
 \begin{equation}
 \frac{E_{\left| \omega \right| < 2 \cdot \omega_0}}{E} = ?
 \end{equation}
 
-Podstawiając nasze wczesniejsze wyniki otrzymujemy:
 \begin{align*}
 \frac{E_{\left| \omega \right| < 2 \cdot \omega_0}}{E} = \frac{\frac{A^2 \cdot \pi}{8 \cdot \omega_0}}{\frac{3 \cdot A^2 \cdot \pi}{16 \cdot \omega_0}} =\frac{A^2 \cdot \pi}{8 \cdot \omega_0} \cdot \frac{16 \cdot \omega_0}{3 \cdot A^2 \cdot \pi} =\frac{2}{3} \approx 66\%
 \end{align*}
 
-Na pulsacje z zakresu $\left| \omega \right| < 2 \cdot \omega_0$ przypada około $66\%$ energii sygnału.
+\TT{Na pulsacje z zakresu $\left| \omega \right| < 2 \cdot \omega_0$ przypada około $66\%$ energii sygnału.}{The spectral components of  $\left| \omega \right| < 2 \cdot \omega_0$ represent about $66\%$ of the total energy.}
 
 \end{task}
 
