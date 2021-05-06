@@ -1,0 +1,73 @@
+\begin{task}
+
+\TT{Oblicz wartość średnią okresowego sygnału $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$ przedstawionego na rysunku:}{Calculate the mean value of the following periodic signal $f(t)=A\cdot sin^2\left(\omega_0 \cdot t\right)$:}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  %\draw (0,0) circle (1in);
+  \draw[->] (-5.0,+0.0) -- (+5.0,+0.0) node[right] {$t$};
+  \draw[->] (+0.0,-2.0) -- (+0.0,+2.0) node[above] {$f(t)$};
+
+  \draw[-] (-0.1,+1.5-0.1)--(+0.1,+1.5+0.1) node[midway, left] {$A$};
+  \draw[-] (-0.1,-1.5-0.1)--(+0.1,-1.5+0.1) node[midway, left] {$-A$};
+  
+  \draw[-] (-0.1+2.5,-0.1)--(+0.1+2.5,+0.1) node[midway, below] {$\frac{\pi}{\omega_0}$};
+  \draw[-] (-0.1+1.25,-0.1)--(+0.1+1.25,+0.1) node[midway, below] {$\frac{\pi}{2\cdot\omega_0}$};
+  \draw[-] (-0.1-1.25,-0.1)--(+0.1-1.25,+0.1) node[midway, below] {$-\frac{\pi}{2\cdot\omega_0}$};
+  \draw[-] (-0.1-2.5,-0.1)--(+0.1-2.5,+0.1) node[midway, below] {$-\frac{\pi}{\omega_0}$};
+  
+  \draw[scale=1.0,domain=-4.0:4.0,samples=100,smooth,variable=\x,red,thick] plot ({\x},{1.5*sin(\x*180.0/3.141592*2*3.141592/5.0)^2});
+\end{tikzpicture}
+\end{figure}
+
+\TT{Wartość średnią sygnału okresowego wyznaczamy ze wzoru:}{The mean value for periodic signals is defined by:}
+
+\begin{equation}
+\bar{f}=\frac{1}{T}\int_{T}^{} f(t) \cdot dt
+\end{equation}
+
+\TT{Pierwszym krokiem jest ustalenie okresu funkcji. W naszym przypadku: }{The period of the given signal has to be identified. In our case: }$T=\frac{\pi}{\omega_0}$.
+
+\TT{Podstawiamy do wzoru na wartość średnią wzór naszej funkcji dla zakresu $t \in \left( 0; \frac{\pi}{\omega_0}\right)$:}{Compute mean value for period $t \in \left( 0; \frac{\pi}{\omega_0}\right)$:}
+
+\begin{align*}
+\bar{f} &=\frac{1}{T}\int_{T}^{} f(t) \cdot dt=\\
+&=\frac{1}{\frac{\pi}{\omega_0}}\int_{0}^{\frac{\pi}{\omega_0}} A \cdot sin\left(\omega_0 \cdot t\right)^2 \cdot dt=\\
+&=\frac{\omega_0}{\pi}\int_{0}^{\frac{\pi}{\omega_0}} A \cdot sin\left(\omega_0 \cdot t\right)^2 \cdot dt=\\
+&=\begin{Bmatrix}\EulerSin\end{Bmatrix}=\\
+&=\frac{\omega_0}{\pi}\int_{0}^{\frac{\pi}{\omega_0}} A \cdot \left( \frac{e^{\jmath \cdot \omega_0 \cdot t}-e^{-\jmath \cdot \omega_0 \cdot t}}{2 \cdot \jmath} \right)^2 \cdot dt=\\
+&=\frac{\omega_0}{\pi} \cdot  A \cdot \int_{0}^{\frac{\pi}{\omega_0}} \left( \frac{e^{\jmath \cdot \omega_0 \cdot t}-e^{-\jmath \cdot \omega_0 \cdot t}}{2 \cdot \jmath} \right)^2 \cdot dt=\\
+&=\frac{A \cdot \omega_0}{\pi} \int_{0}^{\frac{\pi}{\omega_0}} \frac{\left(e^{\jmath \cdot \omega_0 \cdot t}-e^{-\jmath \cdot \omega_0 \cdot t}\right)^2}{\left(2 \cdot \jmath\right)^2}  \cdot dt=\\
+&=\frac{A \cdot \omega_0}{\pi} \int_{0}^{\frac{\pi}{\omega_0}} \frac{\left(e^{\jmath \cdot \omega_0 \cdot t}\right)^2 -2 \cdot e^{\jmath \cdot \omega_0 \cdot t} \cdot e^{-\jmath \cdot \omega_0 \cdot t}+ \left(e^{-\jmath \cdot \omega_0 \cdot t}\right)^2}{4 \cdot \jmath^2}  \cdot dt=\\
+&=\frac{A \cdot \omega_0}{\pi} \int_{0}^{\frac{\pi}{\omega_0}} \frac{e^{\jmath \cdot 2 \cdot \omega_0 \cdot t} -2 \cdot e^{\jmath \cdot \omega_0 \cdot t -\jmath \cdot \omega_0 \cdot t}+ e^{-\jmath \cdot 2 \cdot \omega_0 \cdot t}}{4 \cdot \left(-1\right)}  \cdot dt=\\
+&=\frac{A \cdot \omega_0}{\pi} \int_{0}^{\frac{\pi}{\omega_0}} \frac{e^{\jmath \cdot 2 \cdot \omega_0 \cdot t} -2 \cdot e^{0}+ e^{-\jmath \cdot 2 \cdot \omega_0 \cdot t}}{-4} \cdot dt=\\
+&=\frac{A \cdot \omega_0}{\pi} \cdot \frac{1}{-4} \int_{0}^{\frac{\pi}{\omega_0}} \left(e^{\jmath \cdot 2 \cdot \omega_0 \cdot t} -2 \cdot e^{0}+ e^{-\jmath \cdot 2 \cdot \omega_0 \cdot t}\right) \cdot dt=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \int_{0}^{\frac{\pi}{\omega_0}} e^{\jmath \cdot 2 \cdot \omega_0 \cdot t} \cdot dt - \int_{0}^{\frac{\pi}{\omega_0}}2 \cdot e^{0} \cdot dt +  \int_{0}^{\frac{\pi}{\omega_0}} e^{-\jmath \cdot 2 \cdot \omega_0 \cdot t} \cdot dt\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \int_{0}^{\frac{\pi}{\omega_0}} e^{\jmath \cdot 2 \cdot \omega_0 \cdot t} \cdot dt - \int_{0}^{\frac{\pi}{\omega_0}}2 \cdot 1 \cdot dt +  \int_{0}^{\frac{\pi}{\omega_0}} e^{-\jmath \cdot 2 \cdot \omega_0 \cdot t} \cdot dt\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \int_{0}^{\frac{\pi}{\omega_0}} e^{\jmath \cdot 2 \cdot \omega_0 \cdot t} \cdot dt -2 \cdot \int_{0}^{\frac{\pi}{\omega_0}} dt +  \int_{0}^{\frac{\pi}{\omega_0}} e^{-\jmath \cdot 2 \cdot \omega_0 \cdot t} \cdot dt\right)=\\
+&=\begin{Bmatrix}
+z_1 = \jmath \cdot 2 \cdot \omega_0 \cdot t & z_2 = -\jmath \cdot 2 \cdot \omega_0 \cdot t\\
+dz_1 = \jmath \cdot 2 \cdot \omega_0 \cdot dt & dz_2 = -\jmath \cdot 2 \cdot \omega_0 \cdot dt\\
+dt = \frac{dz_1}{\jmath \cdot 2 \cdot \omega_0} & dt = \frac{dz_2}{-\jmath \cdot 2 \cdot \omega_0}\\
+\end{Bmatrix}=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \int_{0}^{\frac{\pi}{\omega_0}} e^{z_1} \cdot \frac{dz_1}{\jmath \cdot 2 \cdot \omega_0} -2 \cdot \int_{0}^{\frac{\pi}{\omega_0}} dt +  \int_{0}^{\frac{\pi}{\omega_0}} e^{z_2} \cdot  \frac{dz_2}{-\jmath \cdot 2 \cdot \omega_0}\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \frac{1}{\jmath \cdot 2 \cdot \omega_0} \cdot \int_{0}^{\frac{\pi}{\omega_0}} e^{z_1} \cdot dz_1 -2 \cdot \int_{0}^{\frac{\pi}{\omega_0}} dt +  \frac{1}{-\jmath \cdot 2 \cdot \omega_0}\cdot \int_{0}^{\frac{\pi}{\omega_0}} e^{z_2} \cdot  dz_2\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \frac{1}{\jmath \cdot 2 \cdot \omega_0} \cdot \left. e^{z_1} \right|_{0}^{\frac{\pi}{\omega_0}} - 2 \cdot \left. t\right|_{0}^{\frac{\pi}{\omega_0}} +  \frac{1}{-\jmath \cdot 2 \cdot \omega_0}\cdot \left. e^{z_2} \right|_{0}^{\frac{\pi}{\omega_0}}\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \frac{1}{\jmath \cdot 2 \cdot \omega_0} \cdot \left. e^{\jmath \cdot 2 \cdot \omega_0 \cdot t} \right|_{0}^{\frac{\pi}{\omega_0}} - 2 \cdot \left. t\right|_{0}^{\frac{\pi}{\omega_0}} +  \frac{1}{-\jmath \cdot 2 \cdot \omega_0}\cdot \left. e^{-\jmath \cdot 2 \cdot \omega_0 \cdot t} \right|_{0}^{\frac{\pi}{\omega_0}}\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \frac{1}{\jmath \cdot 2 \cdot \omega_0} \cdot \left( e^{\jmath \cdot 2 \cdot \omega_0 \cdot \frac{\pi}{\omega_0}}-e^{\jmath \cdot 2 \cdot \omega_0 \cdot 0} \right) - 2 \cdot \left( \frac{\pi}{\omega_0}-0\right) +  \frac{1}{-\jmath \cdot 2 \cdot \omega_0}\cdot \left( e^{-\jmath \cdot 2 \cdot \omega_0 \cdot \frac{\pi}{\omega_0}} -e^{-\jmath \cdot 2 \cdot \omega_0 \cdot 0}\right)\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \frac{1}{\jmath \cdot 2 \cdot \omega_0} \cdot \left( e^{\jmath \cdot 2 \cdot \pi}-e^{0} \right) - 2 \cdot \frac{\pi}{\omega_0} +  \frac{1}{-\jmath \cdot 2 \cdot \omega_0}\cdot \left( e^{-\jmath \cdot 2 \cdot \pi} -e^{0}\right)\right)=\\
+&=\begin{Bmatrix}
+  e^{\jmath \cdot 2 \cdot \pi} = 1\\
+  e^{0} = 1\\
+\end{Bmatrix}=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \frac{1}{\jmath \cdot 2 \cdot \omega_0} \cdot \left( 1-1 \right) - 2 \cdot \frac{\pi}{\omega_0} +  \frac{1}{-\jmath \cdot 2 \cdot \omega_0}\cdot \left( 1 -1\right)\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( \frac{1}{\jmath \cdot 2 \cdot \omega_0} \cdot 0 - 2 \cdot \frac{\pi}{\omega_0} +  \frac{1}{-\jmath \cdot 2 \cdot \omega_0}\cdot 0\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left( 0 - 2 \cdot \frac{\pi}{\omega_0} + 0\right)=\\
+&=\frac{A \cdot \omega_0}{-4 \cdot \pi} \cdot \left(- 2 \cdot \frac{\pi}{\omega_0}\right)=\\
+&=\frac{A \cdot \omega_0}{2 \cdot \pi} \cdot \left(\frac{\pi}{\omega_0}\right)=\\
+&=\frac{A }{2 }
+\end{align*}
+
+\TT{Średnia wartość sygnału wynosi $\frac{1}{2} \cdot A$.}{The mean value equals to $\frac{1}{2} \cdot A$.}
+\end{task}
